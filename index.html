@@ -205,7 +205,6 @@ function imsCard(region){
 
     let html = `<header>
       <h1>תחזית דייג</h1>
-      <div style="font-size:13px;font-weight:700;color:var(--accent)">דיג בז'ירז'ור מהחוף</div>
       ${issueParam?`<div class="issued">מוצגת הפקה מהארכיון (${latest.meta.issued_at_local.replace('T',' · ')}) - משמרת את הפרסום כפי שהיה; הערות חוקיות והמלצות עלולות להתיישן ואין לראות בהן היתר דיג עדכני</div>`:''}
       ${!issueParam&&(age.old||(latest.meta.valid_to&&latest.meta.valid_to<nowIL().date))?`<div class="issued"><span style="color:var(--warn-fg)">${age.old?`התחזית בת ${age.hours} שעות - ייתכן שהרענון היומי נכשל`:''}${age.old&&latest.meta.valid_to&&latest.meta.valid_to<nowIL().date?' · ':''}${latest.meta.valid_to&&latest.meta.valid_to<nowIL().date?`תוקף התחזית הסתיים ב-${latest.meta.valid_to} - כל ההמלצות היסטוריות`:''}</span></div>`:''}
     </header>
