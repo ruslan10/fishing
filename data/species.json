@@ -1,626 +1,604 @@
 {
- "version": 3,
- "coverage_note_he": "רשימה של 12 שמות דגים רלוונטיים לדיג חוף בישראל, מהבקשה והמחקר. ייתכנו מינים רלוונטיים נוספים שטרם אומתו ונוספו; הרשימה תתרחב ככל שיתאמתו מינים נוספים. דגים המוגנים בחוק מוצגים כאזהרה בלבד, ללא המלצת דיג.",
- "data_quality_he": "שמות ומיון מבוססים על מילונאות רשמית; עונות ושעות פעילות מבוססות על ניסיון מצטבר של קהילת הדייגים בישראל ועל פרטי ביולוגיה - ללא אימות מדעי מלא, ולכן רמת הביטחון מוצגת בכל כרטיס. סף הגלים/רוח/טמפרטורה לכל מין הוא היוריסטיקה ניסיונית שלנו ללא תיקוף.",
- "sources": [
-  {
-   "name": "riptide.co.il - מדריך דגים",
-   "url": "https://riptide.co.il/species",
-   "used_for": "עונות, שעות, שמות עממיים"
-  },
-  {
-   "name": "babajig.co.il - מדריך דגי מטרה בישראל",
-   "url": "https://babajig.co.il/fish-targets-israel-guide",
-   "used_for": "עונות, שעות"
-  },
-  {
-   "name": "ויקיפדיה העברית - ערכי מינים",
-   "url": "https://he.wikipedia.org",
-   "used_for": "שמות רשמיים, מיון, ביולוגיה"
-  },
-  {
-   "name": "FishBase - שמות עממיים",
-   "url": "https://fishbase.se",
-   "used_for": "שמות עממיים עבריים"
-  },
-  {
-   "name": "רשות הטבע והגנים",
-   "url": "https://www.parks.org.il",
-   "used_for": "מעמד חוקי של מינים מוגנים"
-  }
- ],
- "species": [
-  {
-   "id": "bluefish",
-   "name_he": "גומבר",
-   "name_he_official": "גומבר טורף",
-   "name_he_alt": [
-    "בלופיש",
-    "גומברי"
-   ],
-   "name_lat": "Pomatomus saltatrix",
-   "name_sources": [
-    "https://he.wikipedia.org/wiki/גומבר_טורף",
-    "https://www.riptide.co.il/species/gomber"
-   ],
-   "season_months": [
-    10,
-    11,
-    12,
-    1,
-    2,
-    3,
-    4
-   ],
-   "season_edge_months": [
-    9,
-    5
-   ],
-   "season_note_he": "סתיו עד אביב; שיא במעברי עונה",
-   "active_hours": [
+  "version": 3,
+  "coverage_note_he": "רשימה של 12 שמות דגים רלוונטיים לדיג חוף בישראל, מהבקשה והמחקר. ייתכנו מינים רלוונטיים נוספים שטרם אומתו ונוספו; הרשימה תתרחב ככל שיתאמתו מינים נוספים. דגים המוגנים בחוק מוצגים כאזהרה בלבד, ללא המלצת דיג.",
+  "data_quality_he": "שמות ומיון מבוססים על מילונאות רשמית; עונות ושעות פעילות מבוססות על ניסיון מצטבר של קהילת הדייגים בישראל ועל פרטי ביולוגיה - ללא אימות מדעי מלא, ולכן רמת הביטחון מוצגת בכל כרטיס. סף הגלים/רוח/טמפרטורה לכל מין הוא היוריסטיקה ניסיונית שלנו ללא תיקוף.",
+  "sources": [
     {
-     "from": 4,
-     "to": 9
+      "name": "riptide.co.il - מדריך דגים",
+      "url": "https://riptide.co.il/species",
+      "used_for": "עונות, שעות, שמות עממיים"
     },
     {
-     "from": 16,
-     "to": 21
-    }
-   ],
-   "active_hours_note_he": "שחר ושעות ערב; לעיתים לילה",
-   "wave_pref": {
-    "min": 0.3,
-    "max": 1.2,
-    "experimental": true
-   },
-   "wind_max_kmh": 22,
-   "sst_pref": {
-    "min": 17,
-    "max": 27,
-    "experimental": true
-   },
-   "confidence": "low",
-   "notes_he": "טורף משטח אגרסיבי, נע בלהקות. אוהב מים מעורבלים וקצף."
-  },
-  {
-   "id": "amberjack",
-   "name_he": "אינטיאס",
-   "name_he_official": "סריול אטלנטי",
-   "name_he_alt": [
-    "שולה"
-   ],
-   "name_lat": "Seriola dumerili",
-   "name_sources": [
-    "https://he.wikipedia.org/wiki/סריול_אטלנטי"
-   ],
-   "season_months": [
-    9,
-    10,
-    11,
-    12
-   ],
-   "season_edge_months": [
-    8,
-    1,
-    2
-   ],
-   "season_note_he": "מתקרב לחוף בסביבות אוקטובר עם קירור המים ושפע דיונונים ; פרטים גדולים שבים לעומק באביב",
-   "active_hours": [
-    {
-     "from": 5,
-     "to": 10
-    }
-   ],
-   "active_hours_note_he": "בוקר",
-   "wave_pref": {
-    "min": 0.2,
-    "max": 1.0,
-    "experimental": true
-   },
-   "wind_max_kmh": 18,
-   "sst_pref": {
-    "min": 18,
-    "max": 26,
-    "experimental": true
-   },
-   "confidence": "low",
-   "notes_he": "סובב מבנים, סלעים ושוברי גלים; בקיץ בעומק. דורש ציוד חזק. דיג חוף בעיקר עם דיונון מחודש אוקטובר."
-  },
-  {
-   "id": "seabass",
-   "name_he": "לברק",
-   "name_he_official": "לברק חלק",
-   "name_he_alt": [
-    "בר ים"
-   ],
-   "name_lat": "Dicentrarchus labrax",
-   "name_sources": [
-    "https://he.wikipedia.org/wiki/לברק"
-   ],
-   "season_months": [
-    12,
-    1,
-    2,
-    3
-   ],
-   "season_edge_months": [
-    11,
-    4
-   ],
-   "season_note_he": "נתפס ליד החוף בעיקר ינואר-מרץ; יש החולקים ורואים בו דג כל השנה - המחלוקת משתקפת ברמת הביטחון",
-   "active_hours": [
-    {
-     "from": 20,
-     "to": 24
+      "name": "babajig.co.il - מדריך דגי מטרה בישראל",
+      "url": "https://babajig.co.il/fish-targets-israel-guide",
+      "used_for": "עונות, שעות"
     },
     {
-     "from": 0,
-     "to": 7
-    }
-   ],
-   "active_hours_note_he": "לילה ושחר",
-   "wave_pref": {
-    "min": 0.3,
-    "max": 1.5,
-    "experimental": true
-   },
-   "wind_max_kmh": 25,
-   "sst_pref": {
-    "min": 14,
-    "max": 24,
-    "experimental": true
-   },
-   "confidence": "low",
-   "notes_he": "פעיל בלילה, אוהב שפכי נחלים ומים סוערים יחסית."
-  },
-  {
-   "id": "meagre",
-   "name_he": "מוסר",
-   "name_he_official": "מסר מלכותי",
-   "name_he_alt": [
-    "עיט הים",
-    "מוסר ים"
-   ],
-   "name_lat": "Argyrosomus regius",
-   "name_sources": [
-    "https://www.parks.org.il/article/fish-length/",
-    "https://www.parks.org.il/new/2026-fishing-closure/"
-   ],
-   "season_months": [
-    9,
-    10,
-    11,
-    12,
-    1
-   ],
-   "season_edge_months": [
-    8,
-    2
-   ],
-   "season_note_he": "סתיו ותחילת חורף ; באביב-קיץ מתאסף ברדודים להשרצה",
-   "active_hours": [
-    {
-     "from": 17,
-     "to": 23
-    }
-   ],
-   "active_hours_note_he": "ערב ולילה",
-   "wave_pref": {
-    "min": 0.2,
-    "max": 0.8,
-    "experimental": true
-   },
-   "wind_max_kmh": 14,
-   "sst_pref": {
-    "min": 18,
-    "max": 26,
-    "experimental": true
-   },
-   "confidence": "low",
-   "notes_he": "מעדיף קרקעית חולית ותנאים שקטים יחסית.",
-   "legal_note_he": "אורך מינימום 40 ס\"מ (טבלת רשות הטבע והגנים, 12/2024). בתקופת הרבייה (ב-2026: 1 במאי - 30 ביוני) חל איסור דיג בכל השיטות על רשימת מינים שנקבעת מדי שנה, ומוסר נכלל בה בפרסומים קודמים - בדקו את הפרסום השנתי העדכני."
-  },
-  {
-   "id": "little-tunny",
-   "name_he": "טונית אטלנטית",
-   "name_he_official": "טונית אטלנטית",
-   "name_he_alt": [],
-   "name_lat": "Euthynnus alletteratus",
-   "name_sources": [
-    "https://fishbase.se/ComNames/CommonNamesList.php?GenusName=Euthynnus&ID=97&SpeciesName=alletteratus&StockCode=111"
-   ],
-   "season_months": [
-    6,
-    7,
-    8,
-    9,
-    10
-   ],
-   "season_edge_months": [
-    5,
-    11
-   ],
-   "season_note_he": "קיץ וסתיו",
-   "active_hours": [
-    {
-     "from": 5,
-     "to": 10
-    }
-   ],
-   "active_hours_note_he": "בוקר",
-   "wave_pref": {
-    "min": 0.2,
-    "max": 1.0,
-    "experimental": true
-   },
-   "wind_max_kmh": 18,
-   "sst_pref": {
-    "min": 21,
-    "max": 30,
-    "experimental": true
-   },
-   "confidence": "low",
-   "notes_he": "רודף להקות דגי פתיון במים פתוחים; מופעים ליד החוף תלויים בדגי פתיון."
-  },
-  {
-   "id": "barracuda",
-   "name_he": "ברקודה",
-   "name_he_official": "אספירנה חלקה",
-   "name_he_alt": [
-    "ברקודה ים-תיכונית",
-    "אספירנה"
-   ],
-   "name_lat": "Sphyraena sphyraena",
-   "name_sources": [
-    "https://he.wikipedia.org/wiki/אספירנה_חלקה",
-    "https://babajig.co.il/fish-targets-israel-guide"
-   ],
-   "season_months": [
-    5,
-    6,
-    7,
-    8,
-    9,
-    10
-   ],
-   "season_edge_months": [
-    4,
-    11
-   ],
-   "season_note_he": "קיץ בעיקר",
-   "active_hours": [
-    {
-     "from": 20,
-     "to": 24
+      "name": "ויקיפדיה העברית - ערכי מינים",
+      "url": "https://he.wikipedia.org",
+      "used_for": "שמות רשמיים, מיון, ביולוגיה"
     },
     {
-     "from": 0,
-     "to": 8
-    }
-   ],
-   "active_hours_note_he": "ערב, לילה ושחר",
-   "wave_pref": {
-    "min": 0.1,
-    "max": 0.8,
-    "experimental": true
-   },
-   "wind_max_kmh": 16,
-   "sst_pref": {
-    "min": 22,
-    "max": 30,
-    "experimental": true
-   },
-   "confidence": "low",
-   "notes_he": "מים חמים ושקטים יחסית. בעונה הקרה נדיר מהחוף."
-  },
-  {
-   "id": "horse-mackerel",
-   "name_he": "טרכון",
-   "name_he_official": "טרכון",
-   "name_he_alt": [
-    "מקרל"
-   ],
-   "name_lat": "Trachurus spp. (בעיקר T. mediterraneus)",
-   "name_sources": [
-    "https://he.wikipedia.org/wiki/טרכון_(דג)",
-    "https://www.fishbase.se/comnames/CommonNamesList.php?GenusName=Trachurus&ID=1365&SpeciesName=trachurus&StockCode=1383"
-   ],
-   "ambiguity_note_he": "השם מכסה כמה מיני Trachurus; ההערכה ברמת הסוג",
-   "season_months": [
-    6,
-    7,
-    8,
-    9,
-    10,
-    11
-   ],
-   "season_edge_months": [
-    5,
-    12
-   ],
-   "season_note_he": "קיץ וסתיו",
-   "active_hours": [
-    {
-     "from": 19,
-     "to": 24
+      "name": "FishBase - שמות עממיים",
+      "url": "https://fishbase.se",
+      "used_for": "שמות עממיים עבריים"
     },
     {
-     "from": 4,
-     "to": 8
+      "name": "רשות הטבע והגנים",
+      "url": "https://www.parks.org.il",
+      "used_for": "מעמד חוקי של מינים מוגנים"
     }
-   ],
-   "active_hours_note_he": "לילה ושחר, בלהקות",
-   "wave_pref": {
-    "min": 0.2,
-    "max": 1.0,
-    "experimental": true
-   },
-   "wind_max_kmh": 20,
-   "sst_pref": {
-    "min": 19,
-    "max": 28,
-    "experimental": true
-   },
-   "confidence": "low",
-   "notes_he": "דג נודד בלהקות, קטן יחסית; משמש גם כפתיון חי לטורפים גדולים."
-  },
-  {
-   "id": "spanish-mackerel",
-   "name_he": "פלמידה לבנה",
-   "name_he_official": "סקומברן זריז",
-   "name_he_alt": [
-    "פלמוד",
-    "פלמידה"
-   ],
-   "name_lat": "Scomberomorus commerson",
-   "name_sources": [
-    "https://he.wikipedia.org/wiki/סקומברן_זריז"
-   ],
-   "ambiguity_note_he": "דייגים קוראים ״פלמידה״ גם לבוניטו האטלנטי - שני דגים שונים; כאן מוצגים בנפרד",
-   "season_months": [
-    6,
-    7,
-    8,
-    9,
-    10,
-    11
-   ],
-   "season_edge_months": [
-    5,
-    12
-   ],
-   "season_note_he": "קיץ וסתיו ; פלש לים התיכון דרך תעלת סואץ",
-   "active_hours": [
+  ],
+  "species": [
     {
-     "from": 4,
-     "to": 9
-    }
-   ],
-   "active_hours_note_he": "שחר ובוקר",
-   "wave_pref": {
-    "min": 0.2,
-    "max": 1.2,
-    "experimental": true
-   },
-   "wind_max_kmh": 20,
-   "sst_pref": {
-    "min": 22,
-    "max": 30,
-    "experimental": true
-   },
-   "confidence": "low",
-   "notes_he": "טורף מהיר אופורטוניסטי; נתפס בט롤ינג ובזריקה מחופים ושוברי גלים."
-  },
-  {
-   "id": "atlantic-bonito",
-   "name_he": "בוניטו אטלנטי",
-   "name_he_official": "בוניטו אטלנטי",
-   "name_he_alt": [
-    "פלמידה (בפי דייגים)"
-   ],
-   "name_lat": "Sarda sarda",
-   "name_sources": [
-    "https://he.wikipedia.org/wiki/בוניטו_אטלנטי",
-    "https://babajig.co.il/fish-targets-israel-guide"
-   ],
-   "ambiguity_note_he": "השם העממי ״פלמידה״ מתייחס אצל דייגים גם לפלמידה הלבנה - שני דגים שונים; כאן מוצגים בנפרד",
-   "season_months": [
-    9,
-    10,
-    11,
-    12,
-    1,
-    2
-   ],
-   "season_edge_months": [
-    8,
-    3
-   ],
-   "season_note_he": "סתיו-חורף; שיא מסורתי בסתיו (\"עונת הפלמידה\")",
-   "active_hours": [
+      "id": "bluefish",
+      "name_he": "גומבר",
+      "name_he_official": "גומבר טורף",
+      "name_he_alt": [
+        "בלופיש",
+        "גומברי"
+      ],
+      "name_lat": "Pomatomus saltatrix",
+      "name_sources": [
+        "https://he.wikipedia.org/wiki/גומבר_טורף",
+        "https://www.riptide.co.il/species/gomber",
+        "https://fishnetil.co.il/fishguide/גומבר-טורפני-מגדיר-הדייגים/"
+      ],
+      "season_note_he": "מחלוקת בין המקורות: לפי חלקם סתיו-אביב, לפי אחרים אביב-קיץ; שיא במעברי עונה",
+      "active_hours_note_he": "שחר ובוקר מוקדם; לפי חלק מהמקורות גם ערב",
+      "wave_pref": {
+        "min": 0.3,
+        "max": 1.2,
+        "experimental": true
+      },
+      "wind_max_kmh": 22,
+      "sst_pref": {
+        "min": 17,
+        "max": 27,
+        "experimental": true
+      },
+      "confidence": "low",
+      "notes_he": "טורף משטח אגרסיבי, נע בלהקות. אוהב מים מעורבלים וקצף.",
+      "season_dispute": true,
+      "active_hours": [
+        {
+          "from": 4,
+          "to": 9
+        }
+      ]
+    },
     {
-     "from": 4,
-     "to": 9
-    }
-   ],
-   "active_hours_note_he": "שחר ובוקר",
-   "wave_pref": {
-    "min": 0.3,
-    "max": 1.2,
-    "experimental": true
-   },
-   "wind_max_kmh": 20,
-   "sst_pref": {
-    "min": 18,
-    "max": 26,
-    "experimental": true
-   },
-   "confidence": "low",
-   "notes_he": "טורף נודד הרודף להקות דגי פתיון; מופעים תלויים בבאשון (דגי פתיון) ליד החוף."
-  },
-  {
-   "id": "dorado",
-   "name_he": "דוראדו",
-   "name_he_official": "רעמתן כחלחל",
-   "name_he_alt": [
-    "דג דולפין",
-    "מאהי מאהי",
-    "פוטה"
-   ],
-   "name_lat": "Coryphaena hippurus",
-   "name_sources": [
-    "https://he.wikipedia.org/wiki/דוראדו",
-    "https://fishnetil.co.il/fishguide/דוראדו-פוטה-רעמתן-כחול-מגדיר-הדייגים/",
-    "https://babajig.co.il/fish-targets-israel-guide"
-   ],
-   "ambiguity_note_he": "בשוק הדגים ״דוראדה״ מכסה לפעמים את הדניס; כאן הכוונה לטורף הפלגי רעמתן כחלחל",
-   "season_months": [
-    6,
-    7,
-    8,
-    9,
-    10
-   ],
-   "season_edge_months": [
-    5,
-    11
-   ],
-   "season_note_he": "קיץ בעיקר, לעיתים עד תחילת סתיו",
-   "active_hours": [
+      "id": "amberjack",
+      "name_he": "אינטיאס",
+      "name_he_official": "סריול אטלנטי",
+      "name_he_alt": [
+        "שולה"
+      ],
+      "name_lat": "Seriola dumerili",
+      "name_sources": [
+        "https://he.wikipedia.org/wiki/סריול_אטלנטי"
+      ],
+      "season_months": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "season_edge_months": [
+        8,
+        1,
+        2
+      ],
+      "season_note_he": "מתקרב לחוף בסביבות אוקטובר עם קירור המים ושפע דיונונים ; פרטים גדולים שבים לעומק באביב",
+      "active_hours": [
+        {
+          "from": 5,
+          "to": 10
+        }
+      ],
+      "active_hours_note_he": "בוקר",
+      "wave_pref": {
+        "min": 0.2,
+        "max": 1.0,
+        "experimental": true
+      },
+      "wind_max_kmh": 18,
+      "sst_pref": {
+        "min": 18,
+        "max": 26,
+        "experimental": true
+      },
+      "confidence": "low",
+      "notes_he": "סובב מבנים, סלעים ושוברי גלים; בקיץ בעומק. דורש ציוד חזק. דיג חוף בעיקר עם דיונון מחודש אוקטובר."
+    },
     {
-     "from": 4,
-     "to": 9
-    }
-   ],
-   "active_hours_note_he": "שחר ובוקר",
-   "wave_pref": {
-    "min": 0.2,
-    "max": 1.2,
-    "experimental": true
-   },
-   "wind_max_kmh": 18,
-   "sst_pref": {
-    "min": 23,
-    "max": 30,
-    "experimental": true
-   },
-   "confidence": "low",
-   "notes_he": "טורף פלגי מהיר; נתפס בעיקר מסירות, אך מגיע לשוברי גלים כשיש דגי פתיון ומים חמים."
-  },
-  {
-   "id": "gilthead",
-   "name_he": "דניס",
-   "name_he_official": "ספרוס זהוב",
-   "name_he_alt": [
-    "דוראדו",
-    "צ'יפורה"
-   ],
-   "name_lat": "Sparus aurata",
-   "name_sources": [
-    "https://he.wikipedia.org/wiki/ספרוס_זהוב"
-   ],
-   "season_months": [
-    10,
-    11,
-    12,
-    1,
-    2,
-    3,
-    4
-   ],
-   "season_edge_months": [
-    9,
-    5
-   ],
-   "season_note_he": "סתיו עד אביב ליד החוף",
-   "active_hours": [
+      "id": "seabass",
+      "name_he": "לברק",
+      "name_he_official": "לברק חלק",
+      "name_he_alt": [
+        "בר ים"
+      ],
+      "name_lat": "Dicentrarchus labrax",
+      "name_sources": [
+        "https://he.wikipedia.org/wiki/לברק",
+        "https://babajig.co.il/fish-targets-israel-guide",
+        "https://www.riptide.co.il/species/lavrak"
+      ],
+      "season_note_he": "מחלוקת בין המקורות: לפי חלקם (riptide) עונת השיא בחורף, לפי אחרים (babajig) נתפס כל השנה",
+      "active_hours": [
+        {
+          "from": 20,
+          "to": 24
+        },
+        {
+          "from": 0,
+          "to": 7
+        }
+      ],
+      "active_hours_note_he": "לילה ושחר",
+      "wave_pref": {
+        "min": 0.3,
+        "max": 1.5,
+        "experimental": true
+      },
+      "wind_max_kmh": 25,
+      "sst_pref": {
+        "min": 14,
+        "max": 24,
+        "experimental": true
+      },
+      "confidence": "low",
+      "notes_he": "פעיל בלילה, אוהב שפכי נחלים ומים סוערים יחסית.",
+      "season_dispute": true
+    },
     {
-     "from": 16,
-     "to": 22
-    }
-   ],
-   "active_hours_note_he": "ערב",
-   "wave_pref": {
-    "min": 0.2,
-    "max": 1.0,
-    "experimental": true
-   },
-   "wind_max_kmh": 18,
-   "sst_pref": {
-    "min": 16,
-    "max": 24,
-    "experimental": true
-   },
-   "confidence": "low",
-   "notes_he": "ניזון מקרקעית ליד סלעים ושוברי גלים; זהיר ובררן."
-  },
-  {
-   "id": "sargo",
-   "name_he": "סרגוס",
-   "name_he_official": "סרגוס (סוג)",
-   "name_he_alt": [],
-   "name_lat": "Diplodus spp. (בעיקר הסרגוס המסורטט)",
-   "name_sources": [
-    "https://www.parks.org.il/article/fish-length/",
-    "https://www.parks.org.il/new/2026-fishing-closure/"
-   ],
-   "ambiguity_note_he": "השם מכסה כמה מיני Diplodus החיים בחופי ישראל; ההערכה ברמת הסוג",
-   "season_months": [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    11,
-    12
-   ],
-   "season_edge_months": [],
-   "season_note_he": "כל השנה",
-   "active_hours": [
+      "id": "meagre",
+      "name_he": "מוסר",
+      "name_he_official": "מסר מלכותי",
+      "name_he_alt": [
+        "עיט הים",
+        "מוסר ים"
+      ],
+      "name_lat": "Argyrosomus regius",
+      "name_sources": [
+        "https://www.parks.org.il/article/fish-length/",
+        "https://www.parks.org.il/new/2026-fishing-closure/"
+      ],
+      "season_months": [
+        9,
+        10,
+        11,
+        12,
+        1
+      ],
+      "season_edge_months": [
+        8,
+        2
+      ],
+      "season_note_he": "סתיו ותחילת חורף ; באביב-קיץ מתאסף ברדודים להשרצה",
+      "active_hours": [
+        {
+          "from": 17,
+          "to": 23
+        }
+      ],
+      "active_hours_note_he": "ערב ולילה",
+      "wave_pref": {
+        "min": 0.2,
+        "max": 0.8,
+        "experimental": true
+      },
+      "wind_max_kmh": 14,
+      "sst_pref": {
+        "min": 18,
+        "max": 26,
+        "experimental": true
+      },
+      "confidence": "low",
+      "notes_he": "מעדיף קרקעית חולית ותנאים שקטים יחסית.",
+      "legal_note_he": "אורך מינימום 40 ס\"מ (טבלת רשות הטבע והגנים, 12/2024). בתקופת הרבייה (ב-2026: 1 במאי - 30 ביוני) חל איסור דיג בכל השיטות על רשימת מינים שנקבעת מדי שנה, ומוסר נכלל בה בפרסום 2026 - בדקו את הפרסום השנתי העדכני."
+    },
     {
-     "from": 6,
-     "to": 18
+      "id": "little-tunny",
+      "name_he": "טונית אטלנטית",
+      "name_he_official": "טונית אטלנטית",
+      "name_he_alt": [],
+      "name_lat": "Euthynnus alletteratus",
+      "name_sources": [
+        "https://fishbase.se/ComNames/CommonNamesList.php?GenusName=Euthynnus&ID=97&SpeciesName=alletteratus&StockCode=111"
+      ],
+      "season_months": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "season_edge_months": [
+        5,
+        11
+      ],
+      "season_note_he": "קיץ וסתיו",
+      "active_hours": [
+        {
+          "from": 5,
+          "to": 10
+        }
+      ],
+      "active_hours_note_he": "בוקר",
+      "wave_pref": {
+        "min": 0.2,
+        "max": 1.0,
+        "experimental": true
+      },
+      "wind_max_kmh": 18,
+      "sst_pref": {
+        "min": 21,
+        "max": 30,
+        "experimental": true
+      },
+      "confidence": "low",
+      "notes_he": "רודף להקות דגי פתיון במים פתוחים; מופעים ליד החוף תלויים בדגי פתיון."
+    },
+    {
+      "id": "barracuda",
+      "name_he": "ברקודה",
+      "name_he_official": "אספירנה חלקה",
+      "name_he_alt": [
+        "ברקודה ים-תיכונית",
+        "אספירנה"
+      ],
+      "name_lat": "Sphyraena sphyraena",
+      "name_sources": [
+        "https://he.wikipedia.org/wiki/אספירנה_חלקה",
+        "https://babajig.co.il/fish-targets-israel-guide"
+      ],
+      "season_months": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "season_edge_months": [
+        4,
+        11
+      ],
+      "season_note_he": "קיץ בעיקר",
+      "active_hours": [
+        {
+          "from": 20,
+          "to": 24
+        },
+        {
+          "from": 0,
+          "to": 8
+        }
+      ],
+      "active_hours_note_he": "ערב, לילה ושחר",
+      "wave_pref": {
+        "min": 0.1,
+        "max": 0.8,
+        "experimental": true
+      },
+      "wind_max_kmh": 16,
+      "sst_pref": {
+        "min": 22,
+        "max": 30,
+        "experimental": true
+      },
+      "confidence": "low",
+      "notes_he": "מים חמים ושקטים יחסית. בעונה הקרה נדיר מהחוף."
+    },
+    {
+      "id": "horse-mackerel",
+      "name_he": "טרכון",
+      "name_he_official": "טרכון",
+      "name_he_alt": [
+        "מקרל"
+      ],
+      "name_lat": "Trachurus spp. (בעיקר T. mediterraneus)",
+      "name_sources": [
+        "https://he.wikipedia.org/wiki/טרכון_(דג)",
+        "https://www.fishbase.se/comnames/CommonNamesList.php?GenusName=Trachurus&ID=1365&SpeciesName=trachurus&StockCode=1383"
+      ],
+      "ambiguity_note_he": "השם מכסה כמה מיני Trachurus; ההערכה ברמת הסוג",
+      "season_months": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "season_edge_months": [
+        5,
+        12
+      ],
+      "season_note_he": "קיץ וסתיו",
+      "active_hours": [
+        {
+          "from": 19,
+          "to": 24
+        },
+        {
+          "from": 4,
+          "to": 8
+        }
+      ],
+      "active_hours_note_he": "לילה ושחר, בלהקות",
+      "wave_pref": {
+        "min": 0.2,
+        "max": 1.0,
+        "experimental": true
+      },
+      "wind_max_kmh": 20,
+      "sst_pref": {
+        "min": 19,
+        "max": 28,
+        "experimental": true
+      },
+      "confidence": "low",
+      "notes_he": "דג נודד בלהקות, קטן יחסית; משמש גם כפתיון חי לטורפים גדולים."
+    },
+    {
+      "id": "spanish-mackerel",
+      "name_he": "פלמידה לבנה",
+      "name_he_official": "סקומברן זריז",
+      "name_he_alt": [
+        "פלמוד",
+        "פלמידה"
+      ],
+      "name_lat": "Scomberomorus commerson",
+      "name_sources": [
+        "https://he.wikipedia.org/wiki/סקומברן_זריז"
+      ],
+      "ambiguity_note_he": "דייגים קוראים ״פלמידה״ גם לבוניטו האטלנטי - שני דגים שונים; כאן מוצגים בנפרד",
+      "season_months": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "season_edge_months": [
+        5,
+        12
+      ],
+      "season_note_he": "קיץ וסתיו ; פלש לים התיכון דרך תעלת סואץ",
+      "active_hours": [
+        {
+          "from": 4,
+          "to": 9
+        }
+      ],
+      "active_hours_note_he": "שחר ובוקר",
+      "wave_pref": {
+        "min": 0.2,
+        "max": 1.2,
+        "experimental": true
+      },
+      "wind_max_kmh": 20,
+      "sst_pref": {
+        "min": 22,
+        "max": 30,
+        "experimental": true
+      },
+      "confidence": "low",
+      "notes_he": "טורף מהיר אופורטוניסטי; נתפס בט롤ינג ובזריקה מחופים ושוברי גלים."
+    },
+    {
+      "id": "atlantic-bonito",
+      "name_he": "בוניטו אטלנטי",
+      "name_he_official": "בוניטו אטלנטי",
+      "name_he_alt": [
+        "פלמידה (בפי דייגים)"
+      ],
+      "name_lat": "Sarda sarda",
+      "name_sources": [
+        "https://he.wikipedia.org/wiki/בוניטו_אטלנטי",
+        "https://babajig.co.il/fish-targets-israel-guide"
+      ],
+      "ambiguity_note_he": "השם העממי ״פלמידה״ מתייחס אצל דייגים גם לפלמידה הלבנה - שני דגים שונים; כאן מוצגים בנפרד",
+      "season_months": [
+        9,
+        10,
+        11,
+        12,
+        1,
+        2
+      ],
+      "season_edge_months": [
+        8,
+        3
+      ],
+      "season_note_he": "סתיו-חורף; שיא מסורתי בסתיו (\"עונת הפלמידה\")",
+      "active_hours": [
+        {
+          "from": 4,
+          "to": 9
+        }
+      ],
+      "active_hours_note_he": "שחר ובוקר",
+      "wave_pref": {
+        "min": 0.3,
+        "max": 1.2,
+        "experimental": true
+      },
+      "wind_max_kmh": 20,
+      "sst_pref": {
+        "min": 18,
+        "max": 26,
+        "experimental": true
+      },
+      "confidence": "low",
+      "notes_he": "טורף נודד הרודף להקות דגי פתיון; מופעים תלויים בבאשון (דגי פתיון) ליד החוף."
+    },
+    {
+      "id": "dorado",
+      "name_he": "דוראדו",
+      "name_he_official": "רעמתן כחלחל",
+      "name_he_alt": [
+        "דג דולפין",
+        "מאהי מאהי",
+        "פוטה"
+      ],
+      "name_lat": "Coryphaena hippurus",
+      "name_sources": [
+        "https://he.wikipedia.org/wiki/דוראדו",
+        "https://fishnetil.co.il/fishguide/דוראדו-פוטה-רעמתן-כחול-מגדיר-הדייגים/",
+        "https://babajig.co.il/fish-targets-israel-guide"
+      ],
+      "ambiguity_note_he": "בשוק הדגים ״דוראדה״ מכסה לפעמים את הדניס; כאן הכוונה לטורף הפלגי רעמתן כחלחל",
+      "season_months": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "season_edge_months": [
+        5,
+        11
+      ],
+      "season_note_he": "קיץ בעיקר, לעיתים עד תחילת סתיו",
+      "active_hours": [
+        {
+          "from": 4,
+          "to": 9
+        }
+      ],
+      "active_hours_note_he": "שחר ובוקר",
+      "wave_pref": {
+        "min": 0.2,
+        "max": 1.2,
+        "experimental": true
+      },
+      "wind_max_kmh": 18,
+      "sst_pref": {
+        "min": 23,
+        "max": 30,
+        "experimental": true
+      },
+      "confidence": "low",
+      "notes_he": "טורף פלגי מהיר; נתפס בעיקר מסירות, אך מגיע לשוברי גלים כשיש דגי פתיון ומים חמים."
+    },
+    {
+      "id": "gilthead",
+      "name_he": "דניס",
+      "name_he_official": "ספרוס זהוב",
+      "name_he_alt": [
+        "דוראדו",
+        "צ'יפורה"
+      ],
+      "name_lat": "Sparus aurata",
+      "name_sources": [
+        "https://he.wikipedia.org/wiki/ספרוס_זהוב"
+      ],
+      "season_months": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3,
+        4
+      ],
+      "season_edge_months": [
+        9,
+        5
+      ],
+      "season_note_he": "סתיו עד אביב ליד החוף",
+      "active_hours": [
+        {
+          "from": 16,
+          "to": 22
+        }
+      ],
+      "active_hours_note_he": "ערב",
+      "wave_pref": {
+        "min": 0.2,
+        "max": 1.0,
+        "experimental": true
+      },
+      "wind_max_kmh": 18,
+      "sst_pref": {
+        "min": 16,
+        "max": 24,
+        "experimental": true
+      },
+      "confidence": "low",
+      "notes_he": "ניזון מקרקעית ליד סלעים ושוברי גלים; זהיר ובררן."
+    },
+    {
+      "id": "sargo",
+      "name_he": "סרגוס",
+      "name_he_official": "סרגוס (סוג)",
+      "name_he_alt": [],
+      "name_lat": "Diplodus spp. (בעיקר הסרגוס המסורטט)",
+      "name_sources": [
+        "https://www.parks.org.il/article/fish-length/",
+        "https://www.parks.org.il/new/2026-fishing-closure/"
+      ],
+      "ambiguity_note_he": "השם מכסה כמה מיני Diplodus החיים בחופי ישראל; ההערכה ברמת הסוג",
+      "season_months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "season_edge_months": [],
+      "season_note_he": "כל השנה",
+      "active_hours": [
+        {
+          "from": 6,
+          "to": 18
+        }
+      ],
+      "active_hours_note_he": "יום",
+      "wave_pref": {
+        "min": 0.1,
+        "max": 0.8,
+        "experimental": true
+      },
+      "wind_max_kmh": 18,
+      "sst_pref": {
+        "min": 16,
+        "max": 28,
+        "experimental": true
+      },
+      "confidence": "low",
+      "notes_he": "חי ליד סלעים ושוברי גלים; טורף קטן שאוהב פתיונות קרקע.",
+      "legal_note_he": "ברשימת האיסור 2026 לתקופת הרבייה מופיע סרגוס הפסים (Diplodus cervinus) בפרט; ההערכה כאן ברמת הסוג, בעיקר סרגוס מסורטט (D. sargus). המינים והמועדים נקבעים בפרסום שנתי - בדקו פרסום עדכני."
+    },
+    {
+      "id": "grouper",
+      "name_he": "לוקוס (דקרים)",
+      "name_he_official": "מיני דקר שונים",
+      "name_he_alt": [
+        "דקר"
+      ],
+      "name_lat": "Epinephelus spp.",
+      "name_sources": [
+        "https://www.parks.org.il/article/fish-length/",
+        "https://www.parks.org.il/new/2026-fishing-closure/",
+        "https://www.parks.org.il/article/דקר-אלכסנדרוני/"
+      ],
+      "status_only": true,
+      "legal_note_he": "אין המלצת דיג על דקרים. דקר אלכסנדרוני (E. costae) מוגן מאפריל 2021 ואסור בדיג בכל השנה (רשות הטבע והגנים). לדקר הסלעים (E. marginatus, דאור) ולדקר המכמורת (E. aeneus, לוקוס) נקבע אורך מינימום 40 ס\"מ (טבלת רשות הטבע והגנים, 12/2024). בתקופת הרבייה (ב-2026: 1 במאי - 30 ביוני) חל איסור דיג בכל השיטות על רשימת מינים שנקבעת מדי שנה, ובפרסום 2026 נכללים כל מיני הדקרים (משפחת Serranidae). הדיג אסור תמיד בשמורות ימיות. השם \"לוקוס\" מכסה מינים עם מעמד שונה - זיהוי מדויק חיוני; בדקו את הפרסום השנתי העדכני לפני הדיג.",
+      "confidence": "low",
+      "notes_he": "מוצג כאזהרה חוקית בלבד. תוקן ב-18.11.2026 מול תקנות הדיג (עדכון 2025) ורשות הטבע והגנים."
     }
-   ],
-   "active_hours_note_he": "יום",
-   "wave_pref": {
-    "min": 0.1,
-    "max": 0.8,
-    "experimental": true
-   },
-   "wind_max_kmh": 18,
-   "sst_pref": {
-    "min": 16,
-    "max": 28,
-    "experimental": true
-   },
-   "confidence": "low",
-   "notes_he": "חי ליד סלעים ושוברי גלים; טורף קטן שאוהב פתיונות קרקע.",
-   "legal_note_he": "ברשימות האיסור לתקופת הרבייה מופיע סרגוס הפסים (Diplodus cervinus) בפרט; ההערכה כאן ברמת הסוג, בעיקר סרגוס מסורטט (D. sargus). המינים והמועדים נקבעים בפרסום שנתי - בדקו פרסום עדכני."
-  },
-  {
-   "id": "grouper",
-   "name_he": "לוקוס (דקרים)",
-   "name_he_official": "מיני דקר שונים",
-   "name_he_alt": [
-    "דקר"
-   ],
-   "name_lat": "Epinephelus spp.",
-   "name_sources": [
-    "https://www.parks.org.il/article/fish-length/",
-    "https://www.parks.org.il/new/2026-fishing-closure/",
-    "https://www.parks.org.il/article/דקר-אלכסנדרוני/"
-   ],
-   "status_only": true,
-   "legal_note_he": "אין המלצת דיג על דקרים. דקר אלכסנדרוני (E. costae) מוגן מאפריל 2021 ואסור בדיג בכל השנה (רשות הטבע והגנים). לדקר הסלעים (E. marginatus, דאור) ולדקר המכמורת (E. aeneus, לוקוס) נקבע אורך מינימום 40 ס\"מ (טבלת רשות הטבע והגנים, 12/2024). בתקופת הרבייה (ב-2026: 1 במאי - 30 ביוני) חל איסור דיג בכל השיטות על רשימת מינים שנקבעת מדי שנה, ובפרסומים קודמים נכללו כל מיני הדקרים. הדיג אסור תמיד בשמורות ימיות. השם \"לוקוס\" מכסה מינים עם מעמד שונה - זיהוי מדויק חיוני; בדקו את הפרסום השנתי העדכני לפני הדיג.",
-   "confidence": "low",
-   "notes_he": "מוצג כאזהרה חוקית בלבד. תוקן ב-18.11.2026 מול תקנות הדיג (עדכון 2025) ורשות הטבע והגנים."
-  }
- ],
- "provenance_note_he": "מקורות כללים: שמות, ביולוגיה ועונות - ויקיפדיה העברית (לפי האקדמיה) ו-FishBase; הרגלי דיג מקומיים (עונות ושעות) - מדריך Babajig (מאי 2026, ניסיון קהילת דייגים), riptide.co.il ו-fishnetil.co.il. טווחי הגלים/הרוח/טמפרטורת המים לכל דג הם היוריסטיקה ניסיונית שלנו ללא תיקוף חיצוני (מסומנים experimental). כלל: רמת ביטחון medium דורשת שני מקורות אקולוגיים מסכימים לכלל הספציפי - כרגע אין דג העומד בכך, ולכן כל הדגים בביטחון low."
+  ],
+  "provenance_note_he": "מקורות כללים: שמות, ביולוגיה ועונות - ויקיפדיה העברית (לפי האקדמיה) ו-FishBase; הרגלי דיג מקומיים (עונות ושעות) - מדריך Babajig (מאי 2026, ניסיון קהילת דייגים), riptide.co.il ו-fishnetil.co.il. טווחי הגלים/הרוח/טמפרטורת המים לכל דג הם היוריסטיקה ניסיונית שלנו ללא תיקוף חיצוני (מסומנים experimental). כלל: רמת ביטחון medium דורשת שני מקורות אקולוגיים מסכימים לכלל הספציפי - כרגע אין דג העומד בכך, ולכן כל הדגים בביטחון low."
 }

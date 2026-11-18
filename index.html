@@ -12,7 +12,7 @@
 <script>
 const HEB_DAYS = ['ראשון','שני','שלישי','רביעי','חמישי','שישי','שבת'];
 const CONF_HE = { low:'נמוכה', medium:'בינונית', high:'גבוהה' };
-const SEASON_BADGE = { in:['on','✓ בעונה'], edge:['end','~ קצה עונה'], off:['off','✕ לא בעונה'] };
+const SEASON_BADGE = { in:['on','✓ בעונה'], edge:['end','~ קצה עונה'], off:['off','✕ לא בעונה'], disputed:['end','~ מחלוקת בעונה'] };
 const BAND = { high:['on','התאמה גבוהה'], medium:['end','התאמה בינונית'], low:['off','התאמה נמוכה'], insufficient:['off','אין מספיק מידע'] };
 const BAND_SHORT = { high:'גבוהה', medium:'בינונית', low:'נמוכה', insufficient:'לא ידוע' };
 function condWord(s){ return s==null?'חסר':s>=85?'מצוינים':s>=70?'טובים':s>=45?'בינוניים':s>=25?'חלשים':'גרועים'; }
@@ -27,6 +27,101 @@ function bestRemaining(day, todayDate, nowHour){
 
 function scoreColor(s){ return s==null?'var(--fg)':s>=70?'var(--ok-fg)':s>=45?'var(--warn-fg)':'var(--off-fg)'; }
 function na(v, unit){ return v==null?'<span class="na">חסר</span>':v+(unit||''); }
+
+// Wave range in cm from hourly min/max (honest temporal spread, not an uncertainty band).
+// Exact cm (data is 2-decimal meters = 1cm precision), ascending min-max, LTR-isolated.
+function waveRangeCm(lo, hi){
+  if(lo==null||hi==null) return null;
+  const loCm = Math.round(lo*100), hiCm = Math.round(hi*100);
+  return loCm===hiCm ? `<bdi class="ltr">${hiCm}</bdi>` : `<bdi class="ltr">${loCm}–${hiCm}</bdi>`;
+}
+// Sea state with official IMS Hebrew terms (CodesForIMSWebSite, matching Douglas degrees),
+// classified by the displayed rounded cm so label and number always agree.
+function seaStateCm(cm){
+  if(cm==null) return null;
+  if(cm<10) return ['שקט','#94a3b8'];
+  if(cm<50) return ['נוח','#67e8f9'];
+  if(cm<125) return ['גלי','#38bdf8'];
+  if(cm<250) return ['גבה גלים','#a78bfa'];
+  if(cm<400) return ['רוגש','#fbbf24'];
+  if(cm<600) return ['סוער','#fb923c'];
+  return ['גועש','#f472b6'];
+}
+// Small inline-SVG weather icons (stroke style, tinted for the dark marine palette).
+// WMO weather_code from Open-Meteo: 0-1 clear, 2 partly, 3 overcast, 45/48 fog,
+// 51-57 drizzle, 61-67 rain, 71-77 snow, 80-82 showers, 85-86 snow showers, 95-99 thunderstorm.
+function wxIcon(code, isDay){
+  const S = (inner, color) => `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="${color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none">${inner}</svg>`;
+  const sun = '<circle cx="12" cy="12" r="4"/><line x1="12" y1="1" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="23"/><line x1="4.2" y1="4.2" x2="6.3" y2="6.3"/><line x1="17.7" y1="17.7" x2="19.8" y2="19.8"/><line x1="1" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="23" y2="12"/><line x1="4.2" y1="19.8" x2="6.3" y2="17.7"/><line x1="17.7" y1="6.3" x2="19.8" y2="4.2"/>';
+  const moon = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
+  const cloud = '<path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>';
+  const partlyD = '<circle cx="7" cy="7" r="2.6"/><line x1="7" y1="1.5" x2="7" y2="3"/><line x1="1.5" y1="7" x2="3" y2="7"/><line x1="3.2" y1="3.2" x2="4.3" y2="4.3"/><line x1="10.8" y1="3.2" x2="9.7" y2="4.3"/><path d="M19 13h-1.1A6.5 6.5 0 1 0 8.5 21.5H19a4 4 0 0 0 0-8z"/>';
+  const partlyN = '<path d="M12.5 2.5A5.5 5.5 0 1 0 18 8.5 4.3 4.3 0 0 1 12.5 2.5z"/><path d="M19 13h-1.1A6.5 6.5 0 1 0 8.5 21.5H19a4 4 0 0 0 0-8z"/>';
+  const drops = '<line x1="8" y1="19" x2="8" y2="21"/><line x1="13" y1="16" x2="13" y2="19"/><line x1="18" y1="19" x2="18" y2="21"/>';
+  if(code==null) return '';
+  if(code===0||code===1) return isDay===0 ? S(moon,'#cbd5e1') : S(sun,'#fbbf24');
+  if(code===2) return isDay===0 ? S(partlyN,'#94a3b8') : S(partlyD,'#fbbf24');
+  if(code===3) return S(cloud,'#94a3b8');
+  if(code===45||code===48) return S('<line x1="3" y1="10" x2="21" y2="10"/><line x1="5" y1="14" x2="19" y2="14"/><line x1="7" y1="18" x2="17" y2="18"/>','#64748b');
+  if(code>=51&&code<=57) return S(cloud+drops,'#67e8f9');
+  if((code>=61&&code<=67)||(code>=80&&code<=82)) return S(cloud+drops,'#60a5fa');
+  if((code>=71&&code<=77)||code===85||code===86) return S(cloud+'<line x1="8" y1="19" x2="8.01" y2="19"/><line x1="12" y1="21" x2="12.01" y2="21"/><line x1="16" y1="19" x2="16.01" y2="19"/>','#e2e8f0');
+  if(code>=95) return S('<path d="M19 16.9A5 5 0 0 0 18 7h-1.26a8 8 0 1 0-11.62 9"/><polyline points="13 11 9 17 15 17 11 23"/>','#f472b6');
+  return S(cloud,'#94a3b8');
+}
+// Moon phase icon: lit fraction drawn from the calculated illumination (approximation),
+// lit side on the right when waxing, on the left when waning (Northern hemisphere view).
+function moonIcon(pct, waxing){
+  if(pct==null) return '';
+  const f = Math.max(0, Math.min(1, pct/100));
+  const r = 10, c = 12;
+  let lit;
+  if(f >= 0.995) lit = `<circle cx="${c}" cy="${c}" r="${r}"/>`;
+  else if(f <= 0.005) lit = '';
+  else {
+    const t = (Math.abs(2*f-1)*r).toFixed(2);
+    const halfSweep = waxing ? 1 : 0;                       // waxing: right half lit
+    const termSweep = waxing ? (f>=0.5?1:0) : (f>=0.5?0:1); // terminator bulge side
+    lit = `<path d="M${c} ${c-r} A${r} ${r} 0 0 ${halfSweep} ${c} ${c+r} A${t} ${r} 0 0 ${termSweep} ${c} ${c-r} Z"/>`;
+  }
+  return `<svg width="20" height="20" viewBox="0 0 24 24" role="img" aria-label="ירח ${pct}% מואר (חישוב מקורב)" style="flex:none"><circle cx="${c}" cy="${c}" r="${r-0.5}" fill="#17253a" stroke="#3b4a63" stroke-width="1"/><g fill="#dbe4f3">${lit}</g></svg>`;
+}
+// Wind source-direction icon: the arrow points AT the compass quadrant the wind comes from
+// (Open-Meteo wind_direction_10m is a from-bearing), matching the Hebrew adjective text.
+function windIcon(deg){
+  if(deg==null) return '';
+  return `<svg width="18" height="18" viewBox="0 0 24 24" role="img" aria-label="חץ כיוון מקור הרוח" style="flex:none"><g transform="rotate(${deg} 12 12)" fill="none" stroke="#93c5fd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="20" x2="12" y2="5"/><polyline points="7 10 12 4.5 17 10"/></g><circle cx="12" cy="12" r="10.5" fill="none" stroke="#3b4a63" stroke-width="1"/></svg>`;
+}
+// Adjectival wind-direction wording ("רוח דרום־מזרחית" = wind FROM the southeast).
+function windAdj(deg){
+  if(deg==null) return '';
+  const a = ['צפונית','צפון־מזרחית','מזרחית','דרום־מזרחית','דרומית','דרום־מערבית','מערבית','צפון־מערבית'];
+  return a[Math.round(((deg % 360) / 45)) % 8];
+}
+const ICON_UMB = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M23 12a11.05 11.05 0 0 0-22 0z"/><path d="M18 19a3 3 0 0 1-6 0v-7"/></svg>';
+const ICON_DROP = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#67e8f9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>';
+const ICON_THERM = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fb923c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/></svg>';
+function wxLine(w){
+  const items = [];
+  const ic = wxIcon(w.wx_code, w.is_day);
+  if(ic) items.push(`<span class="wxi" title="מצב שמיים">${ic}</span>`);
+  if(w.air_temp!=null) items.push(`<span class="wxi">${ICON_THERM}<bdi class="ltr">${Math.round(w.air_temp)}°</bdi></span>`);
+  if(w.precip!=null) items.push(`<span class="wxi">${ICON_UMB}<bdi class="ltr">${w.precip} מ״מ</bdi></span>`);
+  if(w.humidity!=null) items.push(`<span class="wxi">${ICON_DROP}<bdi class="ltr">${Math.round(w.humidity)}%</bdi></span>`);
+  return items.length ? `<div class="wxline">${items.join('')}</div>` : '';
+}
+// Wind strength bands: site-defined local scale (km/h), not an official rating.
+function windCat(k){
+  if(k==null) return null;
+  k = Math.round(k);
+  if(k<12) return ['קלילה','#7dd3fc'];
+  if(k<20) return ['חלשה','#60a5fa'];
+  if(k<29) return ['בינונית','#a78bfa'];
+  if(k<39) return ['חזקה','#fbbf24'];
+  if(k<50) return ['חזקה מאוד','#fb923c'];
+  return ['עזה','#f472b6'];
+}
+function stateChip(pair){ return pair?`<span class="stchip" style="background:${pair[1]}">${pair[0]}</span>`:''; }
 function fmt(v, unit){ return v==null?null:v+(unit||''); }
 
 async function loadJson(p){ const r = await fetch(p); if(!r.ok) throw new Error(p); return r.json(); }
@@ -45,6 +140,38 @@ async function loadJson(p){ const r = await fetch(p); if(!r.ok) throw new Error(
   const spCfg = { species: snap.species || speciesCfg.species, coverage_note_he: snap.coverage_note_he || speciesCfg.coverage_note_he, data_quality_he: snap.data_quality_he || speciesCfg.data_quality_he, provenance_note_he: snap.provenance_note_he || speciesCfg.provenance_note_he, sources: snap.species_sources || speciesCfg.sources };
   const beachList = snap.beaches || beachesCfg.beaches;
   const spById = Object.fromEntries(spCfg.species.map(s=>[s.id,s]));
+// IMS official coast forecast strip (only rendered when the issue carries an ims block;
+// pipeline retrieval is gated behind IMS_ENABLE pending reuse-scope approval).
+function compassHe(deg){
+  if(deg==null||isNaN(deg)) return '';
+  const dirs = ['צפון','צפון-מזרח','מזרח','דרום-מזרח','דרום','דרום-מערב','מערב','צפון-מערב'];
+  return dirs[Math.round(((deg%360)+360)%360/45)%8];
+}
+function imsCard(region){
+  const ims = latest.ims;
+  if(!ims || !ims.available || !ims.regions || !ims.regions[region]) return '';
+  const reg = ims.regions[region];
+  const nowS = nowIL().date + ' ' + String(nowIL().hour).padStart(2,'0') + ':00:00';
+  const cur = reg.slots.find(s => s.valid_from <= nowS && nowS < s.valid_to) || reg.slots[0];
+  if(!cur) return '';
+  const slotLine = s => {
+    const dm = iso => `${iso.slice(8,10)}/${iso.slice(5,7)}`;
+    const span = `<bdi class="ltr">${dm(s.valid_from)} ${s.valid_from.slice(11,16)}–${dm(s.valid_to)} ${s.valid_to.slice(11,16)}</bdi>`;
+    const waves = (s.wave_from_cm!=null&&s.wave_to_cm!=null) ? `<bdi class="ltr">${s.wave_from_cm}–${s.wave_to_cm}</bdi> ס״מ` : 'חסר';
+    const wind = (s.wind_speed_from!=null&&s.wind_speed_to!=null) ? `<bdi class="ltr">${s.wind_speed_from}–${s.wind_speed_to}</bdi> קמ״ש` : 'חסר';
+    const d1 = compassHe(s.wind_dir_from), d2 = s.wind_dir_to!=null&&s.wind_dir_to!==s.wind_dir_from ? compassHe(s.wind_dir_to) : '';
+    const dir = s.wind_dir_from!=null ? 'מ'+d1+(d2?' עד '+d2:'') : '';
+    const sea = s.sea_state_he ? ` · ${s.sea_state_he}` : '';
+    const sst = s.sea_temp!=null ? ` · מי ים <bdi class="ltr">${s.sea_temp}°</bdi>` : '';
+    return `<div class="imsslot"><span class="imst">${span}</span> גלים ${waves}${sea} · רוח ${wind} ${dir}${sst}</div>`;
+  };
+  return `<div class="card imscard">
+    <div class="imstitle">תחזית השירות המטאורולוגי הישראלי · ${reg.name_he}</div>
+    ${reg.slots.map(slotLine).join('')}
+    <div class="imsattr">תחזית שמ״ט הופקה ${ims.issued_at?`${ims.issued_at.slice(8,10)}/${ims.issued_at.slice(5,7)} ${ims.issued_at.slice(11,16)}`:'—'} · מקור הנתונים בפוטר</div>
+  </div>`;
+}
+
   let archive = null;
   try { archive = await loadJson('data/archive-index.json'); } catch(e){}
 
@@ -71,13 +198,18 @@ async function loadJson(p){ const r = await fetch(p); if(!r.ok) throw new Error(
 
     let html = `<header>
       <h1>תחזית דייג</h1>
-      <div class="sub">תחזית דיג לחופי ישראל · נתונים ניסיוניים</div>
-      <div class="issued">הופק: ${latest.meta.issued_at_local.replace('T',' · ')}${issueParam?' · מוצגת הפקה מהארכיון - משמרת את הפרסום כפי שהיה; הערות חוקיות והמלצות עלולות להתיישן ואין לראות בהן היתר דיג עדכני':''}
-        ${!issueParam?` · מתעדכן מדי ערב בסביבות 20:00`:''}
-        ${!issueParam&&latest.meta.valid_from&&latest.meta.valid_to?` · התחזית מכסה 7 ימים קלנדריים (${latest.meta.valid_from}–${latest.meta.valid_to}), כולל יום הרענון`:''}
-        ${!issueParam&&age.old?`<span style="color:var(--warn-fg)"> · התחזית בת ${age.hours} שעות - ייתכן שהרענון היומי נכשל</span>`:''}
-        ${!issueParam&&latest.meta.valid_to&&latest.meta.valid_to<nowIL().date?`<span style="color:var(--warn-fg)"> · תוקף התחזית הסתיים ב-${latest.meta.valid_to} - כל ההמלצות היסטוריות</span>`:''}</div>
+      ${issueParam?`<div class="issued">מוצגת הפקה מהארכיון (${latest.meta.issued_at_local.replace('T',' · ')}) - משמרת את הפרסום כפי שהיה; הערות חוקיות והמלצות עלולות להתיישן ואין לראות בהן היתר דיג עדכני</div>`:''}
+      ${!issueParam&&(age.old||(latest.meta.valid_to&&latest.meta.valid_to<nowIL().date))?`<div class="issued"><span style="color:var(--warn-fg)">${age.old?`התחזית בת ${age.hours} שעות - ייתכן שהרענון היומי נכשל`:''}${age.old&&latest.meta.valid_to&&latest.meta.valid_to<nowIL().date?' · ':''}${latest.meta.valid_to&&latest.meta.valid_to<nowIL().date?`תוקף התחזית הסתיים ב-${latest.meta.valid_to} - כל ההמלצות היסטוריות`:''}</span></div>`:''}
     </header>
+      <h3 class="sec">שבעת הימים הקרובים</h3>
+      <div class="card"><div class="days">${bd.days.map((d,i)=>{
+        const wd = HEB_DAYS[new Date(d.date+'T12:00:00').getDay()];
+        const [bcls, btxt] = BAND[d.day_band]||BAND.insufficient;
+        return `<div class="day ${d.date===today?'today':''} ${i===curDay?'sel':''}" data-day="${i}">
+          <div class="dd">${wd}</div><div class="dt">${d.date.slice(8,10)}.${d.date.slice(5,7)}</div>
+          <div class="wv" style="font-size:10.5px;font-weight:800;white-space:nowrap;line-height:1.25">${waveRangeCm(d.wave_min,d.wave_max)?waveRangeCm(d.wave_min,d.wave_max)+'<div style="font-size:8px;font-weight:400;opacity:.6">ס״מ</div>':(d.wave_max!=null?d.wave_max.toFixed(1)+' מ׳':'')}</div>
+          <div class="bdg ${bcls}" style="font-size:9px;margin-top:3px">${BAND_SHORT[d.day_band]||'?'}</div></div>`;
+      }).join('')}</div></div>
     <div class="tabs">${beachesCfg.regions.map(r=>`<div class="tab ${r.id===curRegion?'on':''}" data-region="${r.id}">${r.name_he}</div>`).join('')}</div>
     <div class="chips">${regionBeaches.map(b=>`<span class="chip ${b.id===curBeach?'on':''}" data-beach="${b.id}">${b.name_he}</span>`).join('')}</div>`;
 
@@ -97,10 +229,13 @@ async function loadJson(p){ const r = await fetch(p); if(!r.ok) throw new Error(
         ${bd.stale?`<div class="stale-strip">${bd.stale_note_he} (${bd.original_issued_at||''})</div>`:''}
         ${bc.caution_he?`<div class="warn-strip" style="background:var(--warn-bg);color:var(--warn-fg)">⚠ ${bc.caution_he}</div>`:''}
         <div class="hero-grid">
-          <div class="hg"><div class="k">גלים</div><div class="v">${wmin!=null?`<span dir="ltr">${wmin.toFixed(1)}–${wmax.toFixed(1)}</span> מ׳`:'חסר'}</div></div>
-          <div class="hg"><div class="k">רוח (בוקר)</div><div class="v">${repWind&&repWind.wind_kmh!=null?Math.round(repWind.wind_kmh)+' קמ״ש'+(repWind.wind_dir?' מ'+repWind.wind_dir:''):'חסר'}</div></div>
+          ${(()=>{ const lo=day.wave_min??wmin, hi=day.wave_max??wmax; const r=waveRangeCm(lo,hi);
+            return `<div class="hg"><div class="k">גלים (טווח היום)</div><div class="v">${r?r+' ס״מ '+stateChip(seaStateCm(Math.round(hi*100))):'חסר'}</div></div>`; })()}
+          ${(()=>{ if(!repWind||repWind.wind_kmh==null) return `<div class="hg"><div class="k">רוח (בוקר)</div><div class="v">חסר</div></div>`;
+            const adj = windAdj(repWind.wind_deg);
+            return `<div class="hg"><div class="k">רוח (בוקר)</div><div class="v" style="display:flex;align-items:center;gap:6px">${windIcon(repWind.wind_deg)}<span>${Math.round(repWind.wind_kmh)} קמ״ש</span>${stateChip(windCat(repWind.wind_kmh))}</div><div style="font-size:11px;font-weight:400;opacity:.75;margin-top:2px">${adj?'רוח '+adj:''}</div></div>`; })()}
           <div class="hg"><div class="k">מי ים</div><div class="v">${day.sst_avg!=null?day.sst_avg.toFixed(1)+'°':'חסר'}</div></div>
-          <div class="hg"><div class="k">ירח</div><div class="v">${day.moon_illumination_pct}% מלא</div></div>
+          <div class="hg"><div class="k">ירח</div><div class="v" style="display:flex;flex-direction:column;align-items:flex-start;gap:2px">${moonIcon(day.moon_illumination_pct, day.moon_waxing)}<span style="font-size:11px;font-weight:400;opacity:.75">${day.moon_illumination_pct}% מואר</span></div></div>
         </div>
         ${(()=>{ const now = nowIL(); const bw = bestRemaining(day, now.date, now.hour);
           if(day.date < now.date){
@@ -121,26 +256,21 @@ async function loadJson(p){ const r = await fetch(p); if(!r.ok) throw new Error(
           return `<div class="light" style="opacity:.55">גובה פני ים (מודל, לא מדידת חוף): <span dir="ltr">${mn.toFixed(2)} עד ${mx.toFixed(2)}</span> מ׳ יחסית לממוצע גלובלי</div>`; })()}
       </div>
 
-      <h3 class="sec">שבעת הימים הקרובים</h3>
-      <div class="card"><div class="days">${bd.days.map((d,i)=>{
-        const wd = HEB_DAYS[new Date(d.date+'T12:00:00').getDay()];
-        const [bcls, btxt] = BAND[d.day_band]||BAND.insufficient;
-        return `<div class="day ${d.date===today?'today':''} ${i===curDay?'sel':''}" data-day="${i}">
-          <div class="dd">${wd}</div><div class="dt">${d.date.slice(8,10)}.${d.date.slice(5,7)}</div>
-          <div class="wv" style="font-size:13px;font-weight:800">${d.wave_max!=null?d.wave_max.toFixed(1)+' מ׳':''}</div>
-          <div class="bdg ${bcls}" style="font-size:9px;margin-top:3px">${BAND_SHORT[d.day_band]||'?'}</div></div>`;
-      }).join('')}</div></div>
+      ${imsCard(curRegion)}
 
       <h3 class="sec">חלונות דיג · ${day.date===today?'היום':day.date} (שעתיים)</h3>
       <div class="card winwrap">${!day.windows?.length?'<div style="padding:14px;font-size:12.5px;opacity:.75">אין נתוני חלונות ליום זה בהפקה הנוכחית.</div>':`<table class="win">
-      <tr><th>שעות</th><th>גלים</th><th>רוח</th><th>זרם</th><th style="width:82px">תנאים</th></tr>
+      <tr><th>שעות</th><th>גלים</th><th>רוח</th><th>זרם</th><th style="width:64px">תנאים</th></tr>
       ${day.windows.map(w=>{ const nw = nowIL(); const isPast = w.past || day.date<nw.date || (day.date===nw.date && w.fromHour+2<=nw.hour);
-        return `<tr class="${isPast?'past':''}"><td><span dir="ltr">${w.from}–${w.to}</span></td><td>${na(w.wave_height!=null?w.wave_height.toFixed(1):null,' מ׳')}</td>
-        <td>${w.wind_kmh!=null?Math.round(w.wind_kmh)+' קמ״ש '+(w.wind_dir?'מ'+w.wind_dir:''):'חסר'}</td>
+        return `<tr class="${isPast?'past':''}"><td><span dir="ltr">${w.from}–${w.to}</span></td><td>${(()=>{ const lo=w.wave_min??w.wave_height, hi=w.wave_max??w.wave_height; const r=waveRangeCm(lo,hi); return r?`<span style="font-weight:700">${r}</span> ס״מ ${stateChip(seaStateCm(Math.round(hi*100)))}`:na(null); })()}</td>
+        <td>${w.wind_kmh!=null?Math.round(w.wind_kmh)+' קמ״ש '+(w.wind_dir?'מ'+w.wind_dir:'')+' '+stateChip(windCat(w.wind_kmh)):'חסר'}</td>
         <td>${w.current_vel!=null&&w.current_vel>0.01?w.current_vel+' קמ״ש '+(w.current_dir?'ל'+w.current_dir:''):'—'}</td>
-        <td><div style="display:flex;align-items:center;gap:6px"><span style="font-size:11px;font-weight:700;color:${scoreColor(w.score)}">${condWord(w.score)}</span>
-        <span class="bar"><i style="width:${w.score||0}%;background:${scoreColor(w.score)}"></i></span></div></td></tr>`;}).join('')}
-      </table><div style="font-size:10.5px;opacity:.6;margin-top:6px">הערכת תנאים מגלים ורוח בלבד, להשוואת שעות באותו יום. שורות אפורות כבר עברו. כיוון רוח וגלים הוא הכיוון <b>שממנו</b> הם באים; כיוון זרם הוא הכיוון <b>שאליו</b> הוא זורם.</div>`}</div>
+        <td><div style="display:flex;flex-direction:column;align-items:stretch;gap:3px"><span style="font-size:11px;font-weight:700;color:${scoreColor(w.score)};text-align:center">${condWord(w.score)}</span>
+        <span class="bar" style="min-width:0"><i style="width:${w.score||0}%;background:${scoreColor(w.score)}"></i></span></div></td></tr>
+        <tr class="wxsub ${isPast?'past':''}"><td colspan="5">${wxLine(w)}</td></tr>`;}).join('')}
+      </table><div style="font-size:10.5px;opacity:.6;margin-top:6px">הערכת תנאים מגלים ורוח בלבד, להשוואת שעות באותו יום. שורות אפורות כבר עברו. כיוון רוח וגלים הוא הכיוון <b>שממנו</b> הם באים; כיוון זרם הוא הכיוון <b>שאליו</b> הוא זורם.</div>
+      <div style="font-size:10.5px;opacity:.75;margin-top:4px;line-height:2">טווח הגלים בס״מ הוא המינימום–המקסימום של ערכי התחזית השעתית בתוך החלון (מעוגל לס״מ שלם). מצב ים במונחי השירות המטאורולוגי הישראלי, לפי הגל המרבי בטווח כפי שהוא מוצג מעוגל: ${stateChip(['שקט','#94a3b8'])} עד 9 · ${stateChip(['נוח','#67e8f9'])} 10-49 · ${stateChip(['גלי','#38bdf8'])} 50-124 · ${stateChip(['גבה גלים','#a78bfa'])} 125-249 · ${stateChip(['רוגש','#fbbf24'])} 250-399 · ${stateChip(['סוער','#fb923c'])} 400-599 · ${stateChip(['גועש','#f472b6'])} 600+ ס״מ<br>
+      רוח בקמ״ש, חלוקת עוצמה מקומית של האתר (אינה סולם רשמי): ${stateChip(['קלילה','#7dd3fc'])} עד 11 · ${stateChip(['חלשה','#60a5fa'])} 12-19 · ${stateChip(['בינונית','#a78bfa'])} 20-28 · ${stateChip(['חזקה','#fbbf24'])} 29-38 · ${stateChip(['חזקה מאוד','#fb923c'])} 39-49 · ${stateChip(['עזה','#f472b6'])} 50+ · הצבעים להבחנה בלבד, אינם דירוג בטיחות.</div>`}</div>
 
       <h3 class="sec">דגי טורפים · התאמה ל${day.date===today?'היום':day.date}</h3>
       <div class="sp-grid">${day.species.map(sp=>{
@@ -176,7 +306,8 @@ async function loadJson(p){ const r = await fetch(p); if(!r.ok) throw new Error(
 
     html += `
     <details class="info card"><summary>אילו נתונים יש ואילו חסרים</summary><div class="body">
-      <b>זמין כיום:</b><ul>${latest.meta.data_availability.available_he.map(x=>`<li>${x}</li>`).join('')}</ul>
+      <b>זמין כיום ומוצג:</b><ul>${latest.meta.data_availability.available_he.map(x=>`<li>${x}</li>`).join('')}</ul>
+      ${latest.meta.data_availability.collected_he?`<b>נאסף אך לא מוצג כרגע:</b><ul>${latest.meta.data_availability.collected_he.map(x=>`<li>${x}</li>`).join('')}</ul>`:''}
       <b>חסר כרגע:</b><ul>${latest.meta.data_availability.missing_he.map(x=>`<li class="missing-item">${x}</li>`).join('')}</ul>
     </div></details>
 
@@ -195,8 +326,9 @@ async function loadJson(p){ const r = await fetch(p); if(!r.ok) throw new Error(
 
     <footer>
       ${latest.meta.attribution_he}<br>
+      ${latest.ims?.available?`<span class="imsfoot">תחזית החופים הרשמית באתר: מקור — השירות המטאורולוגי הישראלי (שמ״ט), ims.gov.il. השמ״ט אינו נושא באחריות כלשהי למידע או לשימוש בו, ואינו צד לפרסומו.</span><br>`:''}
       התחזית ניסיונית לצורכי תכנון בלבד - אינה אחוז תפיסה, אינה הבטחה, ואינה תחליף לשיקול דעת ובטיחות בים. דגים מוגנים בחוק אינם מומלצים; בדקו תקנות דיג עדכניות (רישיון, גדלים ועונות אסורות) לפני היציאה.<br>
-      תחזיות יומיות נשמרות בארכיון בקבצי נתונים מתוארכים, כולל זמן הפקה וזמן תוקף נפרדים.
+      הופק ${latest.meta.issued_at_local.replace('T',' · ')} · מתעדכן מדי ערב בסביבות 20:00 · התחזית מכסה 7 ימים קלנדריים (${latest.meta.valid_from}–${latest.meta.valid_to}), כולל יום הרענון. תחזיות יומיות נשמרות בארכיון בקבצי נתונים מתוארכים.
     </footer>`;
 
     app.innerHTML = html;

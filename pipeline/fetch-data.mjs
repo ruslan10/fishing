@@ -25,15 +25,21 @@ const beaches = JSON.parse(fs.readFileSync(path.join(DATA, 'beaches.json'), 'utf
 const speciesCfg = JSON.parse(fs.readFileSync(path.join(DATA, 'species.json'), 'utf8'));
 
 const MARINE_HOURLY = 'wave_height,wave_direction,wave_period,swell_wave_height,swell_wave_direction,swell_wave_period,wind_wave_height,sea_surface_temperature,ocean_current_velocity,ocean_current_direction,sea_level_height_msl';
-const WX_HOURLY = 'wind_speed_10m,wind_direction_10m,wind_gusts_10m,temperature_2m,pressure_msl';
+const WX_HOURLY = 'wind_speed_10m,wind_direction_10m,wind_gusts_10m,temperature_2m,pressure_msl,relative_humidity_2m,precipitation,weather_code,is_day';
 const WX_DAILY = 'sunrise,sunset';
 
 const DATA_AVAILABILITY = {
   available_he: [
-    'גובה/כיוון/מחזור גלים', 'גלי שטפה (swell) וגלי רוח', 'טמפרטורת מי הים',
-    'מהירות וכיוון זרם', 'רוח, משבי רוח וכיוון', 'לחץ אוויר וטמפרטורת אוויר',
-    'זריחה/שקיעה ואור ראשון/אחרון (מחושב)', 'מלוא ירח (מחושב)',
-    'זרם ימי (ערכים קטנים ליד החוף; שימושיות לדיג לא אומתה)'
+    'גובה גלים', 'טמפרטורת מי הים',
+    'מהירות וכיוון זרם (ערכים קטנים ליד החוף; שימושיות לדיג לא אומתה)',
+    'רוח וכיוון רוח',
+    'מזג אוויר: טמפרטורת אוויר, לחות, משקעים ומצב שמיים לכל חלון',
+    'זריחה/שקיעה ואור ראשון/אחרון (מחושב)', 'מלוא ירח (מחושב)'
+  ],
+  collected_he: [
+    'כיוון ומחזור גלים', 'גלי שטפה (swell) וגלי רוח (גובה ומחזור)',
+    'משבי רוח', 'לחץ אוויר',
+    'גובה פני ים ממודל (מוצג כהערה בלבד, לא כהמלצת דיג)'
   ],
   missing_he: [
     'גאות ושפל מדויקים ברמת חוף (קטנים מאוד בישראל; קיים שדה גובה פני ים ממודל ב-Open-Meteo אך לא אומת מול מדידות חוף ישראליות, ולכן אינו מוצג כהמלצת דיג)',
@@ -56,14 +62,15 @@ async function fetchJson(url, label) {
   return res.json();
 }
 
-// Approximate moon illumination fraction (0..1) for a UTC date.
-function moonIllumination(dateUtc) {
+// Approximate moon phase for a UTC date: illuminated fraction (0-100) and waxing/waning.
+function moonPhase(dateUtc) {
   const synodic = 29.53058867;
   const knownNew = Date.UTC(2000, 0, 6, 18, 14) / 86400000;
   const days = dateUtc.getTime() / 86400000;
   let age = (days - knownNew) % synodic;
   if (age < 0) age += synodic;
-  return Math.round((1 - Math.cos(2 * Math.PI * age / synodic)) / 2 * 100);
+  const pct = Math.round((1 - Math.cos(2 * Math.PI * age / synodic)) / 2 * 100);
+  return { pct, waxing: age < synodic / 2 };
 }
 
 // Civil twilight approximation: sunrise/sunset minus/plus ~28 min at Israel's latitude.
@@ -106,6 +113,7 @@ function bandFit(x, min, max) {
   return Math.max(0.2, 1.0 - dist / span);
 }
 function seasonFactor(sp, month) {
+  if (sp.season_dispute) return { f: 0.55, status: 'disputed' };
   if (sp.season_months.includes(month)) return { f: 1.0, status: 'in' };
   if ((sp.season_edge_months || []).includes(month)) return { f: 0.55, status: 'edge' };
   return { f: 0.15, status: 'off' };
@@ -124,7 +132,7 @@ function fitLabel(f, good, mid, bad) {
 }
 function speciesSuitability(sp, month, dayWindows, sst) {
   const season = seasonFactor(sp, month);
-  const seasonFactorOut = { v: Math.round(season.f * 100), label: season.status === 'in' ? 'בעונה' : season.status === 'edge' ? 'קצה עונה' : 'לא בעונה' };
+  const seasonFactorOut = { v: Math.round(season.f * 100), label: season.status === 'in' ? 'בעונה' : season.status === 'edge' ? 'קצה עונה' : season.status === 'disputed' ? 'מחלוקת במקורות' : 'לא בעונה' };
 
   // time factor: best window score inside the species' active hours vs outside
   let bestIn = -1, bestAny = -1;
@@ -164,9 +172,10 @@ function speciesSuitability(sp, month, dayWindows, sst) {
   const condF = condFits.reduce((a, b) => a + b, 0) / condFits.length;
   const combined = season.f * 0.4 + timeF * 0.2 + condF * 0.4;
   let band = combined >= 0.7 ? 'high' : combined >= 0.45 ? 'medium' : 'low';
-  // Season gate: out of season can never read better than low; edge of season caps at medium.
+  // Season gate: out of season can never read better than low; edge of season or a season
+  // disputed between sources caps at medium - the aggregate must never read as known high fit.
   if (season.status === 'off') band = 'low';
-  else if (season.status === 'edge' && band === 'high') band = 'medium';
+  else if ((season.status === 'edge' || season.status === 'disputed') && band === 'high') band = 'medium';
   // Missing SST: secondary factor, caps at medium rather than blocking inference.
   if (sst == null && band === 'high') { band = 'medium'; reasons.push('טמפרטורת מים חסרה'); }
   if (season.status !== 'in') reasons.push(seasonFactorOut.label);
@@ -289,7 +298,11 @@ async function main() {
         wind_dir: w.hourly.wind_direction_10m?.[h] ?? null,
         gust_kmh: w.hourly.wind_gusts_10m?.[h] ?? null,
         air_temp: w.hourly.temperature_2m?.[h] ?? null,
-        pressure: w.hourly.pressure_msl?.[h] ?? null
+        pressure: w.hourly.pressure_msl?.[h] ?? null,
+        humidity: w.hourly.relative_humidity_2m?.[h] ?? null,
+        precip: w.hourly.precipitation?.[h] ?? null,
+        wx_code: w.hourly.weather_code?.[h] ?? null,
+        is_day: w.hourly.is_day?.[h] ?? null
       });
     }
 
@@ -312,10 +325,34 @@ async function main() {
           sst: round(c('sst')),
           sea_level: round(c('sea_level'), 2),
           current_vel: round(c('current_vel'), 2), current_dir: compass(circMeanDeg(cells.map(x => x.current_dir))),
-          wind_kmh: round(c('wind_kmh')), wind_dir: compass(circMeanDeg(cells.map(x => x.wind_dir))), gust_kmh: round(c('gust_kmh')),
-          air_temp: round(c('air_temp')), pressure: round(c('pressure'))
+          wind_kmh: round(c('wind_kmh')), wind_dir: compass(circMeanDeg(cells.map(x => x.wind_dir))),
+          wind_deg: (m => m == null ? null : Math.round(m))(circMeanDeg(cells.map(x => x.wind_dir))), gust_kmh: round(c('gust_kmh')),
+          air_temp: round(c('air_temp')), pressure: round(c('pressure')),
+          humidity: round(c('humidity')),
+          precip: cells.some(x => x.precip != null) ? round(cells.reduce((a, x) => a + (x.precip ?? 0), 0), 1) : null,
+          // Icon hour: the most severe weather inside the window by an explicit WMO severity
+          // ranking (numeric code order is NOT a severity order), with its own day/night flag.
+          ...(() => {
+            const RANK = c => c == null ? -1
+              : c >= 95 ? 60                    // thunderstorm (+ hail 96/99)
+              : (c >= 80 && c <= 82) ? 50       // rain showers
+              : c >= 85 && c <= 86 ? 50         // snow showers
+              : (c >= 61 && c <= 67) ? 40       // rain
+              : (c >= 71 && c <= 77) ? 40       // snow
+              : (c >= 51 && c <= 57) ? 30       // drizzle
+              : (c === 45 || c === 48) ? 20     // fog
+              : c === 3 ? 10 : c === 2 ? 5 : 0; // overcast / partly / clear
+            const ranked = cells.filter(x => x.wx_code != null)
+              .sort((a, b) => (RANK(b.wx_code) - RANK(a.wx_code)) || (b.wx_code - a.wx_code));
+            const worst = ranked[0];
+            return { wx_code: worst ? worst.wx_code : null, is_day: worst ? (worst.is_day ?? null) : null };
+          })()
         };
         win.score = windowScore(win.wave_height, win.wind_kmh, win.gust_kmh);
+        // Hourly wave min/max inside the window, for an honest range display (not an uncertainty band).
+        const wv = cells.map(x => x.wave_height).filter(x => x != null);
+        win.wave_min = wv.length ? round(Math.min(...wv), 2) : null;
+        win.wave_max = wv.length ? round(Math.max(...wv), 2) : null;
         // For the issue day, windows that already ended are marked past and excluded from recommendations.
         win.past = (date === issueDate) && (start + 2 <= issueHour);
         windows.push(win);
@@ -325,14 +362,16 @@ async function main() {
       const sunrise = di >= 0 ? w.daily.sunrise[di].slice(11, 16) : null;
       const sunset = di >= 0 ? w.daily.sunset[di].slice(11, 16) : null;
       const dateUtc = new Date(date + 'T12:00:00Z');
-      const moon = moonIllumination(dateUtc);
+      const moon = moonPhase(dateUtc);
       const scored = activeWindows.filter(x => x.score != null).sort((a, b) => b.score - a.score);
       const best = scored[0] || null;
       const top3 = scored.slice(0, 3);
       const dayScore = scored.length ? Math.round((best.score * 0.6) + (top3.reduce((s, x) => s + x.score, 0) / top3.length) * 0.4) : null;
       const dayBand = dayScore == null ? 'insufficient' : dayScore >= 70 ? 'high' : dayScore >= 45 ? 'medium' : 'low';
       const daySst = avg(hours.map(x => x.sst));
-      const maxWave = Math.max(...hours.map(x => x.wave_height ?? 0));
+      const dayWaves = hours.map(x => x.wave_height).filter(x => x != null);
+      const maxWave = dayWaves.length ? Math.max(...dayWaves) : 0;
+      const minWave = dayWaves.length ? Math.min(...dayWaves) : null;
       const species = speciesCfg.species.map(sp => sp.status_only
         ? { id: sp.id, status_only: true, confidence: sp.confidence }
         : { id: sp.id, ...speciesSuitability(sp, month, activeWindows, daySst) });
@@ -341,11 +380,13 @@ async function main() {
         sunrise, sunset,
         first_light: sunrise ? shiftMinutes(sunrise, -28) : null,
         last_light: sunset ? shiftMinutes(sunset, 28) : null,
-        moon_illumination_pct: moon,
+        moon_illumination_pct: moon.pct,
+        moon_waxing: moon.waxing,
         day_score: dayScore,
         day_band: dayBand,
         best_window: best ? { from: best.from, to: best.to, score: best.score } : null,
         wave_max: maxWave || null,
+        wave_min: minWave,
         high_wave_warning: maxWave > 1.8,
         sst_avg: daySst,
         windows,
@@ -364,6 +405,48 @@ async function main() {
     process.exit(1);
   }
 
+  // --- IMS official coast forecast (enabled with IMS_ENABLE=1; the daily workflow sets it).
+  // Reuse per IMS terms clauses 2-3 requires prominent attribution + no-liability disclaimer
+  // (both rendered in the site footer). Low-volume fetch of 2 public endpoints once per
+  // evening; on any IMS failure the strip is omitted and the issue still builds.
+  // 24h horizon, 3 Mediterranean regions; displayed next to (never instead of) the
+  // 7-day Open-Meteo forecast.
+  const IMS_REGION_LID = { north: '212', center: '210', south: '213' };
+  let imsBlock = { available: false };
+  if (process.env.IMS_ENABLE === '1') {
+    try {
+      const [fcRes, toolsRes] = await Promise.all([
+        fetch('https://ims.gov.il/he/coasts_forecasts/'),
+        fetch('https://ims.gov.il/he/sea_tools/coasts')
+      ]);
+      if (!fcRes.ok || !toolsRes.ok) throw new Error(`IMS HTTP ${fcRes.status}/${toolsRes.status}`);
+      const fc = (await fcRes.json()).data;
+      const tools = (await toolsRes.json()).data;
+      const regions = {};
+      for (const [region, lid] of Object.entries(IMS_REGION_LID)) {
+        const slots = fc[lid] ? Object.keys(fc[lid]).sort().map(k => {
+          const d = fc[lid][k].data;
+          return {
+            valid_from: d.valid_from, valid_to: d.valid_to,
+            sea_temp: d.sea_temp !== '' ? +d.sea_temp : null,
+            wind_dir_from: +d.wind_dir_from, wind_dir_to: +d.wind_dir_to,
+            wind_speed_from: +d.wind_speed_from, wind_speed_to: +d.wind_speed_to,
+            wave_from_cm: +String(d.wave_height_from).trim(), wave_to_cm: +String(d.wave_height_to).trim(),
+            sea_state_he: tools.sea_state?.[String(d.sea_state).trim()] || null
+          };
+        }) : [];
+        if (slots.length) regions[region] = { name_he: (tools.sea_locations?.[lid]?.name || region).trim(), slots };
+      }
+      const anyIssued = fc[IMS_REGION_LID.center]?.[Object.keys(fc[IMS_REGION_LID.center] || {})[0]]?.data?.issue_date;
+      imsBlock = Object.keys(regions).length
+        ? { available: true, issued_at: anyIssued || null, regions }
+        : { available: false };
+    } catch (e) {
+      console.error(`IMS fetch failed: ${e.message} - IMS strip omitted from this issue.`);
+      imsBlock = { available: false };
+    }
+  }
+
   const issue = {
     // Frozen config snapshot: archived issues render from this, so historical views never mutate
     // when the live species/beach config changes later.
@@ -375,6 +458,7 @@ async function main() {
       species_sources: speciesCfg.sources,
       beaches: beaches.beaches.map(b => ({ id: b.id, name_he: b.name_he, region: b.region, terrain_he: b.terrain_he, caution_he: b.caution_he || null, lat: b.lat, lon: b.lon }))
     },
+    ims: imsBlock,
     meta: {
       version: VERSION,
       issue_id: issueId,
@@ -394,7 +478,7 @@ async function main() {
       ],
       attribution_he: 'נתוני ים ומזג אוויר דרך Open-Meteo (CC BY 4.0), המשלב מודלים של Météo-France/Copernicus Marine Service (MFWAM, SMOC), ECMWF WAM, NOAA NCEP GFS Wave ו-DWD. גובה פני ים ממודל בלבד, דיוק מוגבל בחוף. מלוא ירח ואור ראשון/אחרון מחושבים.',
       data_availability: DATA_AVAILABILITY,
-      scoring_note_he: 'התאמת הדגים היא היוריסטיקה ניסיונית שקופה המחולקת לגורמים (עונה 40%, שעות 20%, תנאים 40%) ומוצגת כרמה איכותית בלבד - לא אחוז תפיסה ולא הבטחה. ציון התנאים בטבלת החלונות משקף גלים ורוח בלבד, להשוואת שעות באותו יום. ייתכן שיכויל בעתיד מדיווחי דיג, אם יצטברו.',
+      scoring_note_he: 'התאמת הדגים היא היוריסטיקה ניסיונית שקופה המחולקת לגורמים (עונה 40%, שעות 20%, תנאים 40%) ומוצגת כרמה איכותית בלבד - לא אחוז תפיסה ולא הבטחה. ציון התנאים בטבלת החלונות משקף גלים ורוח בלבד, להשוואת שעות באותו יום. ספי הגלים/רוח/טמפרטורה לכל מין הם הנחות עבודה ניסיוניות שלנו, ללא תיקוף מדידות. ייתכן שיכויל בעתיד מדיווחי דיג, אם יצטברו.',
       stale_beaches: staleBeaches
     },
     beaches: outBeaches
