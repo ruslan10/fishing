@@ -40,34 +40,16 @@
       ],
       "name_lat": "Pomatomus saltatrix",
       "name_sources": [
-        "https://he.wikipedia.org/wiki/גומבר_טורף",
-        "https://www.riptide.co.il/species/gomber",
-        "https://fishnetil.co.il/fishguide/גומבר-טורפני-מגדיר-הדייגים/",
         "https://israelfishing.co.il/כתבות/מדריך-דייג-גומברים/",
-        "https://babajig.co.il/דיג-גומבר-בפיתיון/"
+        "https://fishnetil.co.il/fishguide/גומבר-טורפני-מגדיר-הדייגים/"
       ],
-      "season_note_he": "נמצא בחופינו כל השנה; המקורות חלוקים על חודשי השיא: קיץ/אביב, או קיץ-סתיו ועד נובמבר-ינואר",
-      "active_hours_note_he": "שחר ובוקר מוקדם (ז'ירז'ור); בדיג בפיתיון גם בלילה",
-      "wave_pref": {
-        "min": 0.3,
-        "max": 1.2,
-        "experimental": true
-      },
-      "wind_max_kmh": 22,
-      "sst_pref": {
-        "min": 17,
-        "max": 27,
-        "experimental": true
-      },
       "confidence": "low",
       "notes_he": "טורף משטח אגרסיבי, נע בלהקות. אוהב מים מעורבלים וקצף. עודכן 18.11.2026: נוכחות כל השנה מול שיאי עונה (מקורות חלוקים על חודשי השיא); הערת לילה איכותנית בלבד (דיג פיתיון), ללא חלון ניקוד - אין מקור לגבולות שעה מדויקים.",
       "season_dispute": true,
-      "active_hours": [
-        {
-          "from": 4,
-          "to": 9
-        }
-      ]
+      "status_only": true,
+      "season_he": "נמצא בחופינו כל השנה; מדריכי ז'ירז'ור שונים מציינים שיאים באביב-קיץ ובסתיו-חורף.",
+      "timing_he": "שחר ובוקר מוקדם. אין בסיס לשעות שעון מדויקות.",
+      "conditions_he": "חפשו פעילות דגי פיתיון קרוב לחוף; טופווטר מוזכר כאפשרות בז'ירז'ור. אין סף גלים מאומת."
     },
     {
       "id": "amberjack",
@@ -78,40 +60,19 @@
       ],
       "name_lat": "Seriola dumerili",
       "name_sources": [
-        "https://he.wikipedia.org/wiki/סריול_אטלנטי"
-      ],
-      "season_months": [
-        9,
-        10,
-        11,
-        12
+        "https://fishnetil.co.il/theguide/%D7%96%D7%99%D7%A8%D7%96%D7%95%D7%A8-%D7%A2%D7%95%D7%A0%D7%95%D7%AA-%D7%94%D7%A9%D7%A0%D7%94-%D7%9E%D7%96%D7%92-%D7%90%D7%95%D7%99%D7%A8-%D7%95%D7%AA%D7%A0%D7%90%D7%99-%D7%94%D7%A1%D7%91%D7%99/"
       ],
       "season_edge_months": [
         8,
         1,
         2
       ],
-      "season_note_he": "מתקרב לחוף בסביבות אוקטובר עם קירור המים ושפע דיונונים ; פרטים גדולים שבים לעומק באביב",
-      "active_hours": [
-        {
-          "from": 5,
-          "to": 10
-        }
-      ],
-      "active_hours_note_he": "בוקר",
-      "wave_pref": {
-        "min": 0.2,
-        "max": 1.0,
-        "experimental": true
-      },
-      "wind_max_kmh": 18,
-      "sst_pref": {
-        "min": 18,
-        "max": 26,
-        "experimental": true
-      },
       "confidence": "low",
-      "notes_he": "סובב מבנים, סלעים ושוברי גלים; בקיץ בעומק. דורש ציוד חזק. דיג חוף בעיקר עם דיונון מחודש אוקטובר."
+      "notes_he": "סובב מבנים, סלעים ושוברי גלים; בקיץ בעומק. דורש ציוד חזק. דיג חוף בעיקר עם דיונון מחודש אוקטובר.",
+      "status_only": true,
+      "season_he": "מדריך ז'ירז'ור מקומי מדגיש סתיו-חורף לפרטים גדולים בקרבת החוף; פרטים צעירים מוזכרים גם בסוף הקיץ. אין גבולות עונה קשיחים.",
+      "timing_he": "אין די מידע מאומת על שעות שיא בז'ירז'ור מהחוף.",
+      "conditions_he": "חפשו נוכחות דגי פיתיון; אין כאן בסיס לספי גלים, רוח או טמפרטורה למין זה."
     },
     {
       "id": "seabass",
@@ -122,36 +83,17 @@
       ],
       "name_lat": "Dicentrarchus labrax",
       "name_sources": [
-        "https://he.wikipedia.org/wiki/לברק",
-        "https://babajig.co.il/fish-targets-israel-guide",
-        "https://www.riptide.co.il/species/lavrak"
+        "https://babajig.co.il/home-3/%D7%9C%D7%9C%D7%9E%D7%95%D7%93-%D7%9C%D7%93%D7%95%D7%92-%D7%96%D7%A8%D7%96%D7%95%D7%A8/%D7%93%D7%92%D7%99-%D7%9E%D7%98%D7%A8%D7%94-%D7%91%D7%92%D7%A8%D7%92%D7%95%D7%A8/%D7%9B%D7%99%D7%A6%D7%93-%D7%9C%D7%AA%D7%A4%D7%95%D7%A1-%D7%90%D7%AA-%D7%94%D7%9C%D7%91%D7%A8%D7%A7-%D7%9E%D7%93%D7%A8%D7%99%D7%9A-%D7%9C%D7%93%D7%99%D7%99%D7%92-%D7%94%D7%9E%D7%AA%D7%97%D7%99%D7%9C/",
+        "https://www.mezulot.co.il/%D7%90%D7%99%D7%9A-%D7%9C%D7%93%D7%95%D7%92-%D7%9C%D7%91%D7%A8%D7%A7",
+        "https://fishnetil.co.il/theguide/%D7%96%D7%99%D7%A8%D7%96%D7%95%D7%A8-%D7%A2%D7%95%D7%A0%D7%95%D7%AA-%D7%94%D7%A9%D7%A0%D7%94-%D7%9E%D7%96%D7%92-%D7%90%D7%95%D7%99%D7%A8-%D7%95%D7%AA%D7%A0%D7%90%D7%99-%D7%94%D7%A1%D7%91%D7%99/"
       ],
-      "season_note_he": "מחלוקת בין המקורות: לפי חלקם עונת השיא בחורף, לפי אחרים נתפס כל השנה",
-      "active_hours": [
-        {
-          "from": 20,
-          "to": 24
-        },
-        {
-          "from": 0,
-          "to": 7
-        }
-      ],
-      "active_hours_note_he": "לילה ושחר",
-      "wave_pref": {
-        "min": 0.3,
-        "max": 1.5,
-        "experimental": true
-      },
-      "wind_max_kmh": 25,
-      "sst_pref": {
-        "min": 14,
-        "max": 24,
-        "experimental": true
-      },
       "confidence": "low",
       "notes_he": "פעיל בלילה, אוהב שפכי נחלים ומים סוערים יחסית.",
-      "season_dispute": true
+      "season_dispute": true,
+      "status_only": true,
+      "season_he": "נוכחות לאורך השנה; חלק ממדריכי הז'ירז'ור מדגישים חורף ואביב, ואחרים מדווחים גם על שיאי קיץ.",
+      "timing_he": "בוקר מוקדם ושקיעה מוזכרים במדריכי ז'ירז'ור; נתפס גם בשעות האור ובלילה בתנאים מתאימים.",
+      "conditions_he": "תעלות, בורות וקצף סמוך לחוף; קיימים גם דיווחי ז'ירז'ור בים רגוע. אין סף גלים מאומת."
     },
     {
       "id": "meagre",
@@ -163,42 +105,23 @@
       ],
       "name_lat": "Argyrosomus regius",
       "name_sources": [
+        "https://fishnetil.co.il/theguide/%D7%96%D7%99%D7%A8%D7%96%D7%95%D7%A8-%D7%A2%D7%95%D7%A0%D7%95%D7%AA-%D7%94%D7%A9%D7%A0%D7%94-%D7%9E%D7%96%D7%92-%D7%90%D7%95%D7%99%D7%A8-%D7%95%D7%AA%D7%A0%D7%90%D7%99-%D7%94%D7%A1%D7%91%D7%99/",
+        "https://babajig.co.il/fish-targets-israel-guide/",
         "https://www.parks.org.il/article/fish-length/",
-        "https://www.parks.org.il/new/2026-fishing-closure/"
-      ],
-      "season_months": [
-        9,
-        10,
-        11,
-        12,
-        1
+        "https://www.parks.org.il/new/2026-fishing-closure/",
+        "https://www.parks.org.il/article/%D7%94%D7%92%D7%91%D7%9C%D7%95%D7%AA-%D7%94%D7%93%D7%99%D7%92-%D7%91%D7%A2%D7%95%D7%A0%D7%95%D7%AA-%D7%94%D7%A8%D7%91%D7%99%D7%99%D7%94-%D7%95%D7%94%D7%92%D7%99%D7%95%D7%A1-%D7%91%D7%99%D7%9D-%D7%94/"
       ],
       "season_edge_months": [
         8,
         2
       ],
-      "season_note_he": "סתיו ותחילת חורף ; באביב-קיץ מתאסף ברדודים להשרצה",
-      "active_hours": [
-        {
-          "from": 17,
-          "to": 23
-        }
-      ],
-      "active_hours_note_he": "ערב ולילה",
-      "wave_pref": {
-        "min": 0.2,
-        "max": 0.8,
-        "experimental": true
-      },
-      "wind_max_kmh": 14,
-      "sst_pref": {
-        "min": 18,
-        "max": 26,
-        "experimental": true
-      },
       "confidence": "low",
       "notes_he": "מעדיף קרקעית חולית ותנאים שקטים יחסית.",
-      "legal_note_he": "אורך מינימום 40 ס\"מ (טבלת רשות הטבע והגנים, 12/2024). בתקופת הרבייה (ב-2026: 1 במאי - 30 ביוני) חל איסור דיג בכל השיטות על רשימת מינים שנקבעת מדי שנה, ומוסר נכלל בה בפרסום 2026 - בדקו את הפרסום השנתי העדכני."
+      "legal_note_he": "אורך מינימום 40 ס\"מ (טבלת רשות הטבע והגנים, 12/2024). בתקופת הרבייה (ב-2026: 1 במאי - 30 ביוני) חל איסור דיג בכל השיטות על רשימת מינים שנקבעת מדי שנה, ומוסר נכלל בה בפרסום 2026 - בדקו את הפרסום השנתי העדכני.",
+      "status_only": true,
+      "season_he": "מדריך ז'ירז'ור מקומי מציין נוכחות כל השנה ופעילות מוגברת בקיץ, אך אין די הצלבה לקביעת חודשי שיא.",
+      "timing_he": "אין די מידע מאומת על שעות שיא בז'ירז'ור מהחוף.",
+      "conditions_he": "אין די מידע מאומת לקביעת תנאי ים מועדפים בז'ירז'ור מהחוף."
     },
     {
       "id": "little-tunny",
@@ -207,40 +130,20 @@
       "name_he_alt": [],
       "name_lat": "Euthynnus alletteratus",
       "name_sources": [
-        "https://fishbase.se/ComNames/CommonNamesList.php?GenusName=Euthynnus&ID=97&SpeciesName=alletteratus&StockCode=111"
-      ],
-      "season_months": [
-        6,
-        7,
-        8,
-        9,
-        10
+        "https://www.iccat.int/Documents/SCRS/Manual/CH2/2_1_10_5_LTA_ENG.pdf",
+        "https://fishes-fnam.linnaeus.naturalis.nl/linnaeus_ng/app/views/species/nsr_taxon.php?cat=TAB_DESCRIPTION&id=109698",
+        "https://fishwake.com/species/little-tunny/"
       ],
       "season_edge_months": [
         5,
         11
       ],
-      "season_note_he": "קיץ וסתיו",
-      "active_hours": [
-        {
-          "from": 5,
-          "to": 10
-        }
-      ],
-      "active_hours_note_he": "בוקר",
-      "wave_pref": {
-        "min": 0.2,
-        "max": 1.0,
-        "experimental": true
-      },
-      "wind_max_kmh": 18,
-      "sst_pref": {
-        "min": 21,
-        "max": 30,
-        "experimental": true
-      },
       "confidence": "low",
-      "notes_he": "רודף להקות דגי פתיון במים פתוחים; מופעים ליד החוף תלויים בדגי פתיון."
+      "notes_he": "רודף להקות דגי פתיון במים פתוחים; מופעים ליד החוף תלויים בדגי פתיון.",
+      "status_only": true,
+      "season_he": "אין די נתונים מקומיים מאומתים לקביעת עונת שיא בז'ירז'ור מהחוף למין זה.",
+      "timing_he": "אין די מידע מאומת על שעות שיא בז'ירז'ור מהחוף.",
+      "conditions_he": "טורף להקתי בעקבות דגי פיתיון; אין בסיס לתרגם זאת לתחזית תפיסה מקומית. אין לבלבל עם בוניטו אטלנטי."
     },
     {
       "id": "barracuda",
@@ -252,46 +155,23 @@
       ],
       "name_lat": "Sphyraena sphyraena",
       "name_sources": [
-        "https://he.wikipedia.org/wiki/אספירנה_חלקה",
-        "https://babajig.co.il/fish-targets-israel-guide"
-      ],
-      "season_months": [
-        5,
-        6,
-        7,
-        8,
-        9,
-        10
+        "https://israelfishing.co.il/%D7%9B%D7%AA%D7%91%D7%95%D7%AA/%D7%9E%D7%93%D7%A8%D7%99%D7%9A-%D7%93%D7%99%D7%99%D7%92-%D7%91%D7%A8%D7%A7%D7%95%D7%93%D7%95%D7%AA/",
+        "https://babajig.co.il/home-3/%D7%9C%D7%9C%D7%9E%D7%95%D7%93-%D7%9C%D7%93%D7%95%D7%92-%D7%96%D7%A8%D7%96%D7%95%D7%A8/%D7%93%D7%92%D7%99-%D7%9E%D7%98%D7%A8%D7%94/%D7%9B%D7%99%D7%A6%D7%93-%D7%9C%D7%AA%D7%A4%D7%95%D7%A1-%D7%90%D7%AA-%D7%94%D7%91%D7%A8%D7%A7%D7%95%D7%93%D7%94-%D7%9E%D7%93%D7%A8%D7%99%D7%9A-%D7%9C%D7%93%D7%99%D7%99%D7%92-%D7%94%D7%9E%D7%AA%D7%97/",
+        "https://fishnetil.co.il/theguide/%D7%96%D7%99%D7%A8%D7%96%D7%95%D7%A8-%D7%A2%D7%95%D7%A0%D7%95%D7%AA-%D7%94%D7%A9%D7%A0%D7%94-%D7%9E%D7%96%D7%92-%D7%90%D7%95%D7%99%D7%A8-%D7%95%D7%AA%D7%A0%D7%90%D7%99-%D7%94%D7%A1%D7%91%D7%99/",
+        "https://www.ciesm.org/atlas/Sphyraenachrysotaenia.php",
+        "https://www.parks.org.il/article/fish-length/"
       ],
       "season_edge_months": [
         4,
         11
       ],
-      "season_note_he": "קיץ בעיקר",
-      "active_hours": [
-        {
-          "from": 20,
-          "to": 24
-        },
-        {
-          "from": 0,
-          "to": 8
-        }
-      ],
-      "active_hours_note_he": "ערב, לילה ושחר",
-      "wave_pref": {
-        "min": 0.1,
-        "max": 0.8,
-        "experimental": true
-      },
-      "wind_max_kmh": 16,
-      "sst_pref": {
-        "min": 22,
-        "max": 30,
-        "experimental": true
-      },
       "confidence": "low",
-      "notes_he": "מים חמים ושקטים יחסית. בעונה הקרה נדיר מהחוף."
+      "notes_he": "מים חמים ושקטים יחסית. בעונה הקרה נדיר מהחוף.",
+      "status_only": true,
+      "season_he": "ברקודות נצפות לאורך רוב השנה; מדריכי ז'ירז'ור חלוקים על שיאי העונה, ולכן אין כאן חלוקה קשיחה לחודשים.",
+      "timing_he": "לילה, שחר ולפנות ערב מוזכרים במדריכי הז'ירז'ור.",
+      "conditions_he": "חפשו פעילות דגי פיתיון ליד אזור סלעי; אין סף גלים מאומת.",
+      "ambiguity_note_he": "השם 'ברקודה' עשוי לשמש לכמה מיני אספירנה; המידע המעשי אינו תמיד מופרד לפי מין."
     },
     {
       "id": "horse-mackerel",
@@ -302,47 +182,20 @@
       ],
       "name_lat": "Trachurus spp. (בעיקר T. mediterraneus)",
       "name_sources": [
-        "https://he.wikipedia.org/wiki/טרכון_(דג)",
-        "https://www.fishbase.se/comnames/CommonNamesList.php?GenusName=Trachurus&ID=1365&SpeciesName=trachurus&StockCode=1383"
+        "http://www.israelsportfishing.co.il/smf/index.php?topic=26423.0",
+        "https://kotar.cet.ac.il/kotarapp/index/Chapter.aspx?nBookID=18534522&nTocEntryID=18625384",
+        "https://www.parks.org.il/article/fish-length/"
       ],
-      "ambiguity_note_he": "השם מכסה כמה מיני Trachurus; ההערכה ברמת הסוג",
-      "season_months": [
-        6,
-        7,
-        8,
-        9,
-        10,
-        11
-      ],
+      "ambiguity_note_he": "כאן הכוונה למיני Trachurus. השם 'טרכון' משמש דייגים גם לצניניות אחרות; אין להעביר לכאן את עונותיהן ותנאיהן.",
       "season_edge_months": [
         5,
         12
       ],
-      "season_note_he": "קיץ וסתיו",
-      "active_hours": [
-        {
-          "from": 19,
-          "to": 24
-        },
-        {
-          "from": 4,
-          "to": 8
-        }
-      ],
-      "active_hours_note_he": "לילה ושחר, בלהקות",
-      "wave_pref": {
-        "min": 0.2,
-        "max": 1.0,
-        "experimental": true
-      },
-      "wind_max_kmh": 20,
-      "sst_pref": {
-        "min": 19,
-        "max": 28,
-        "experimental": true
-      },
       "confidence": "low",
-      "notes_he": "דג נודד בלהקות, קטן יחסית; משמש גם כפתיון חי לטורפים גדולים."
+      "notes_he": "דג נודד בלהקות, קטן יחסית; משמש גם כפתיון חי לטורפים גדולים.",
+      "status_only": true,
+      "season_he": "אין די נתונים מקומיים מאומתים לעונת שיא בז'ירז'ור מהחוף למיני Trachurus.",
+      "timing_he": "אין די מידע מאומת על שעות שיא בז'ירז'ור מהחוף."
     },
     {
       "id": "spanish-mackerel",
@@ -354,42 +207,20 @@
       ],
       "name_lat": "Scomberomorus commerson",
       "name_sources": [
-        "https://he.wikipedia.org/wiki/סקומברן_זריז"
+        "https://merkazhadaig.co.il/fishing-tips/%D7%A4%D7%9C%D7%9E%D7%99%D7%93%D7%94-%D7%9C%D7%91%D7%A0%D7%94/",
+        "https://www.parks.org.il/article/fish-length/"
       ],
-      "ambiguity_note_he": "דייגים קוראים ״פלמידה״ גם לבוניטו האטלנטי - שני דגים שונים; כאן מוצגים בנפרד",
-      "season_months": [
-        6,
-        7,
-        8,
-        9,
-        10,
-        11
-      ],
+      "ambiguity_note_he": "דייגים קוראים \"פלמידה\" גם לבוניטו האטלנטי - שני דגים שונים; כאן מוצגים בנפרד",
       "season_edge_months": [
         5,
         12
       ],
-      "season_note_he": "קיץ וסתיו ; פלש לים התיכון דרך תעלת סואץ",
-      "active_hours": [
-        {
-          "from": 4,
-          "to": 9
-        }
-      ],
-      "active_hours_note_he": "שחר ובוקר",
-      "wave_pref": {
-        "min": 0.2,
-        "max": 1.2,
-        "experimental": true
-      },
-      "wind_max_kmh": 20,
-      "sst_pref": {
-        "min": 22,
-        "max": 30,
-        "experimental": true
-      },
       "confidence": "low",
-      "notes_he": "טורף מהיר אופורטוניסטי; נתפס בט롤ינג ובזריקה מחופים ושוברי גלים."
+      "notes_he": "טורף מהיר אופורטוניסטי; נתפס בט롤ינג ובזריקה מחופים ושוברי גלים.",
+      "status_only": true,
+      "season_he": "מדריך ז'ירז'ור מקומי מתאר התקרבות לחוף בעיקר מהסתיו עד תחילת האביב; אין גבולות עונה קשיחים.",
+      "timing_he": "זריחה ושקיעה; ייתכנו תפיסות גם במשך היום.",
+      "conditions_he": "חפשו דגי פיתיון ליד ריפים ושוברים במקומות המותרים והבטוחים לדיג. תוארו תפיסות גם בים רגוע וגם בים עובד; אין סף גלים מאומת."
     },
     {
       "id": "atlantic-bonito",
@@ -400,43 +231,19 @@
       ],
       "name_lat": "Sarda sarda",
       "name_sources": [
-        "https://he.wikipedia.org/wiki/בוניטו_אטלנטי",
-        "https://babajig.co.il/fish-targets-israel-guide"
+        "https://www.riptide.co.il/species/palmida"
       ],
-      "ambiguity_note_he": "השם העממי ״פלמידה״ מתייחס אצל דייגים גם לפלמידה הלבנה - שני דגים שונים; כאן מוצגים בנפרד",
-      "season_months": [
-        9,
-        10,
-        11,
-        12,
-        1,
-        2
-      ],
+      "ambiguity_note_he": "השם העממי \"פלמידה\" מתייחס אצל דייגים גם לפלמידה הלבנה - שני דגים שונים; כאן מוצגים בנפרד",
       "season_edge_months": [
         8,
         3
       ],
-      "season_note_he": "סתיו-חורף; שיא מסורתי בסתיו (\"עונת הפלמידה\")",
-      "active_hours": [
-        {
-          "from": 4,
-          "to": 9
-        }
-      ],
-      "active_hours_note_he": "שחר ובוקר",
-      "wave_pref": {
-        "min": 0.3,
-        "max": 1.2,
-        "experimental": true
-      },
-      "wind_max_kmh": 20,
-      "sst_pref": {
-        "min": 18,
-        "max": 26,
-        "experimental": true
-      },
       "confidence": "low",
-      "notes_he": "טורף נודד הרודף להקות דגי פתיון; מופעים תלויים בבאשון (דגי פתיון) ליד החוף."
+      "notes_he": "טורף נודד הרודף להקות דגי פתיון; מופעים תלויים בבאשון (דגי פתיון) ליד החוף.",
+      "status_only": true,
+      "season_he": "מדריך ז'ירז'ור מקומי מדגיש להקות בסתיו, עם הופעות גם מסוף הקיץ. אין גבולות עונה קשיחים.",
+      "timing_he": "אין די מידע מאומת על שעות שיא בז'ירז'ור מהחוף.",
+      "conditions_he": "חפשו ריכוזי דגי פיתיון ופעילות ציפורים; אין סף גלים מאומת. אין לבלבל עם פלמידה לבנה או טונית."
     },
     {
       "id": "dorado",
@@ -449,43 +256,21 @@
       ],
       "name_lat": "Coryphaena hippurus",
       "name_sources": [
-        "https://he.wikipedia.org/wiki/דוראדו",
-        "https://fishnetil.co.il/fishguide/דוראדו-פוטה-רעמתן-כחול-מגדיר-הדייגים/",
-        "https://babajig.co.il/fish-targets-israel-guide"
+        "https://fishnetil.co.il/fishguide/%D7%93%D7%95%D7%A8%D7%90%D7%93%D7%95-%D7%A4%D7%95%D7%98%D7%94-%D7%A8%D7%A2%D7%9E%D7%AA%D7%9F-%D7%9B%D7%97%D7%95%D7%9C-%D7%9E%D7%92%D7%93%D7%99%D7%A8-%D7%94%D7%93%D7%99%D7%99%D7%92%D7%99%D7%9D/",
+        "https://fishnetil.co.il/theguide/%D7%96%D7%99%D7%A8%D7%96%D7%95%D7%A8-%D7%A2%D7%95%D7%A0%D7%95%D7%AA-%D7%94%D7%A9%D7%A0%D7%94-%D7%9E%D7%96%D7%92-%D7%90%D7%95%D7%99%D7%A8-%D7%95%D7%AA%D7%A0%D7%90%D7%99-%D7%94%D7%A1%D7%91%D7%99/",
+        "https://babajig.co.il/fish-targets-israel-guide/"
       ],
-      "ambiguity_note_he": "בשוק הדגים ״דוראדה״ מכסה לפעמים את הדניס; כאן הכוונה לטורף הפלגי רעמתן כחלחל",
-      "season_months": [
-        6,
-        7,
-        8,
-        9,
-        10
-      ],
+      "ambiguity_note_he": "בשוק הדגים \"דוראדה\" מכסה לפעמים את הדניס; כאן הכוונה לטורף הפלגי רעמתן כחלחל",
       "season_edge_months": [
         5,
         11
       ],
-      "season_note_he": "קיץ בעיקר, לעיתים עד תחילת סתיו",
-      "active_hours": [
-        {
-          "from": 4,
-          "to": 9
-        }
-      ],
-      "active_hours_note_he": "שחר ובוקר",
-      "wave_pref": {
-        "min": 0.2,
-        "max": 1.2,
-        "experimental": true
-      },
-      "wind_max_kmh": 18,
-      "sst_pref": {
-        "min": 23,
-        "max": 30,
-        "experimental": true
-      },
       "confidence": "low",
-      "notes_he": "טורף פלגי מהיר; נתפס בעיקר מסירות, אך מגיע לשוברי גלים כשיש דגי פתיון ומים חמים."
+      "notes_he": "טורף פלגי מהיר; נתפס בעיקר מסירות, אך מגיע לשוברי גלים כשיש דגי פתיון ומים חמים.",
+      "status_only": true,
+      "season_he": "מדריכי ז'ירז'ור מקומיים מדווחים על הופעות בסתיו ותחילת החורף, לצד מקורות המדגישים קיץ; אין די בסיס לקביעת עונת שיא אחידה מהחוף.",
+      "timing_he": "אין די מידע מאומת על שעות שיא בז'ירז'ור מהחוף.",
+      "conditions_he": "דג מים פתוחים המופיע לעיתים בקרבת החוף; אין סף מקומי מאומת לגלים או לטמפרטורה בז'ירז'ור מהחוף."
     },
     {
       "id": "gilthead",
@@ -497,42 +282,19 @@
       ],
       "name_lat": "Sparus aurata",
       "name_sources": [
-        "https://he.wikipedia.org/wiki/ספרוס_זהוב"
-      ],
-      "season_months": [
-        10,
-        11,
-        12,
-        1,
-        2,
-        3,
-        4
+        "https://www.parks.org.il/article/%D7%9E%D7%A9%D7%A4%D7%97%D7%AA-%D7%94%D7%A1%D7%A4%D7%A8%D7%95%D7%A1%D7%99%D7%99%D7%9D-sparidae/",
+        "https://www.tapuz.co.il/threads/%D7%96%D7%99%D7%A8%D7%96%D7%95%D7%A8-%D7%9C%D7%A1%D7%A8%D7%92%D7%95%D7%A1-%D7%93%D7%A0%D7%99%D7%A1.12511059/"
       ],
       "season_edge_months": [
         9,
         5
       ],
-      "season_note_he": "סתיו עד אביב ליד החוף",
-      "active_hours": [
-        {
-          "from": 16,
-          "to": 22
-        }
-      ],
-      "active_hours_note_he": "ערב",
-      "wave_pref": {
-        "min": 0.2,
-        "max": 1.0,
-        "experimental": true
-      },
-      "wind_max_kmh": 18,
-      "sst_pref": {
-        "min": 16,
-        "max": 24,
-        "experimental": true
-      },
       "confidence": "low",
-      "notes_he": "ניזון מקרקעית ליד סלעים ושוברי גלים; זהיר ובררן."
+      "notes_he": "ניזון מקרקעית ליד סלעים ושוברי גלים; זהיר ובררן.",
+      "status_only": true,
+      "season_he": "אין די מידע מאומת לקביעת עונת שיא בז'ירז'ור מהחוף.",
+      "timing_he": "אין די מידע מאומת על שעות שיא בז'ירז'ור מהחוף.",
+      "conditions_he": "אין די מידע מאומת לקביעת תנאי ים מועדפים בז'ירז'ור מהחוף למין זה."
     },
     {
       "id": "sargo",
@@ -541,47 +303,23 @@
       "name_he_alt": [],
       "name_lat": "Diplodus spp. (בעיקר הסרגוס המסורטט)",
       "name_sources": [
+        "https://fishnetil.co.il/theguide/%D7%96%D7%99%D7%A8%D7%96%D7%95%D7%A8-%D7%A2%D7%95%D7%A0%D7%95%D7%AA-%D7%94%D7%A9%D7%A0%D7%94-%D7%9E%D7%96%D7%92-%D7%90%D7%95%D7%99%D7%A8-%D7%95%D7%AA%D7%A0%D7%90%D7%99-%D7%94%D7%A1%D7%91%D7%99/",
+        "https://www.tapuz.co.il/threads/%D7%96%D7%99%D7%A8%D7%96%D7%95%D7%A8-%D7%9C%D7%A1%D7%A8%D7%92%D7%95%D7%A1-%D7%93%D7%A0%D7%99%D7%A1.12511059/",
+        "https://fishwake.com/species/white-seabream/",
+        "https://www.parks.org.il/article/%D7%9E%D7%A9%D7%A4%D7%97%D7%AA-%D7%94%D7%A1%D7%A4%D7%A8%D7%95%D7%A1%D7%99%D7%99%D7%9D-sparidae/",
         "https://www.parks.org.il/article/fish-length/",
-        "https://www.parks.org.il/new/2026-fishing-closure/"
+        "https://www.parks.org.il/article/%D7%94%D7%92%D7%91%D7%9C%D7%95%D7%AA-%D7%94%D7%93%D7%99%D7%92-%D7%91%D7%A2%D7%95%D7%A0%D7%95%D7%AA-%D7%94%D7%A8%D7%91%D7%99%D7%99%D7%94-%D7%95%D7%94%D7%92%D7%99%D7%95%D7%A1-%D7%91%D7%99%D7%9D-%D7%94/",
+        "https://www.parks.org.il/new/illegal-fishing-10/"
       ],
       "ambiguity_note_he": "השם מכסה כמה מיני Diplodus החיים בחופי ישראל; ההערכה ברמת הסוג",
-      "season_months": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12
-      ],
       "season_edge_months": [],
-      "season_note_he": "כל השנה",
-      "active_hours": [
-        {
-          "from": 6,
-          "to": 18
-        }
-      ],
-      "active_hours_note_he": "יום",
-      "wave_pref": {
-        "min": 0.1,
-        "max": 0.8,
-        "experimental": true
-      },
-      "wind_max_kmh": 18,
-      "sst_pref": {
-        "min": 16,
-        "max": 28,
-        "experimental": true
-      },
       "confidence": "low",
       "notes_he": "חי ליד סלעים ושוברי גלים; טורף קטן שאוהב פתיונות קרקע.",
-      "legal_note_he": "ברשימת האיסור 2026 לתקופת הרבייה מופיע סרגוס הפסים (Diplodus cervinus) בפרט; ההערכה כאן ברמת הסוג, בעיקר סרגוס מסורטט (D. sargus). המינים והמועדים נקבעים בפרסום שנתי - בדקו פרסום עדכני."
+      "legal_note_he": "ברשימת האיסור 2026 לתקופת הרבייה מופיע סרגוס הפסים (Diplodus cervinus) בפרט; ההערכה כאן ברמת הסוג, בעיקר סרגוס מסורטט (D. sargus). המינים והמועדים נקבעים בפרסום שנתי - בדקו פרסום עדכני.",
+      "status_only": true,
+      "season_he": "נוכח לאורך השנה; קיימים דיווחי ז'ירז'ור גם בחורף וגם בקיץ, ללא עונת שיא אחידה מאומתת.",
+      "timing_he": "אין חלון שעות מאומת בז'ירז'ור מהחוף לכל מיני הסרגוס.",
+      "conditions_he": "בז'ירז'ור מוזכרים דמויים קטנים בקרבת סלעים; אין סף גלים מאומת."
     },
     {
       "id": "grouper",
@@ -594,14 +332,16 @@
       "name_sources": [
         "https://www.parks.org.il/article/fish-length/",
         "https://www.parks.org.il/new/2026-fishing-closure/",
-        "https://www.parks.org.il/article/דקר-אלכסנדרוני/"
+        "https://www.parks.org.il/article/דקר-אלכסנדרוני/",
+        "https://www.parks.org.il/article/%D7%94%D7%92%D7%91%D7%9C%D7%95%D7%AA-%D7%94%D7%93%D7%99%D7%92-%D7%91%D7%A2%D7%95%D7%A0%D7%95%D7%AA-%D7%94%D7%A8%D7%91%D7%99%D7%99%D7%94-%D7%95%D7%94%D7%92%D7%99%D7%95%D7%A1-%D7%91%D7%99%D7%9D-%D7%94/"
       ],
       "status_only": true,
-      "legal_note_he": "תנאים מועדפים: ים גלי.\nשימו לב: הדקר האלכסנדרוני הדומה (E. costae) מוגן ואסור בדיג כל השנה. ללוקוס נקבע אורך מינימום 40 ס\"מ, ובתקופת הרבייה (ב-2026: 1.5-30.6) דיג דקרים אסור בכל השיטות.",
+      "legal_note_he": "שימו לב: הדקר האלכסנדרוני הדומה (E. costae) מוגן ואסור בדיג כל השנה. ללוקוס נקבע אורך מינימום 40 ס\"מ, ובתקופת הרבייה (ב-2026: 1.5-30.6) דיג דקרים אסור בכל השיטות.",
       "confidence": "low",
       "notes_he": "מוצג ללא ציון התאמה. תוקן ב-18.11.2026 מול רשות הטבע והגנים: לוקוס = דקר המכמורת (E. aeneus), אינו מין מוגן.",
-      "badge_he": ""
+      "advice_he": "תנאים מועדפים: ים גלי."
     }
   ],
-  "provenance_note_he": "מקורות כללים: שמות, ביולוגיה ועונות - ויקיפדיה העברית (לפי האקדמיה) ו-FishBase; הרגלי דיג מקומיים (עונות ושעות) - מדריך Babajig (מאי 2026, ניסיון קהילת דייגים), riptide.co.il ו-fishnetil.co.il. טווחי הגלים/הרוח/טמפרטורת המים לכל דג הם היוריסטיקה ניסיונית שלנו ללא תיקוף חיצוני (מסומנים experimental). כלל: רמת ביטחון medium דורשת שני מקורות אקולוגיים מסכימים לכלל הספציפי - כרגע אין דג העומד בכך, ולכן כל הדגים בביטחון low."
+  "provenance_note_he": "מקורות כללים: שמות, ביולוגיה ועונות - ויקיפדיה העברית (לפי האקדמיה) ו-FishBase; הרגלי דיג מקומיים (עונות ושעות) - מדריך Babajig (מאי 2026, ניסיון קהילת דייגים), riptide.co.il ו-fishnetil.co.il. טווחי הגלים/הרוח/טמפרטורת המים לכל דג הם היוריסטיקה ניסיונית שלנו ללא תיקוף חיצוני (מסומנים experimental). כלל: רמת ביטחון medium דורשת שני מקורות אקולוגיים מסכימים לכלל הספציפי - כרגע אין דג העומד בכך, ולכן כל הדגים בביטחון low.",
+  "notes_he": "כל הכרטיסים איכותניים בלבד, בהיקף דיג ז'ירז'ור מהחוף בלבד; ציוני התאמה מספריים הוסרו (2026-11-18) - אין מקור מאומת לספי שעות/גלים/רוח/טמפרטורה. עצות פיתיון/סירה/עומק אינן מבוססות בכרטיסים. מקורות בקובץ זה בלבד, לא מוצגים באתר."
 }

@@ -73,12 +73,48 @@ function moonPhase(dateUtc) {
   return { pct, waxing: age < synodic / 2 };
 }
 
-// Civil twilight approximation: sunrise/sunset minus/plus ~28 min at Israel's latitude.
-// Pure HH:MM string math - never Date parsing, which mixes sandbox and local timezones.
-function shiftMinutes(hhmm, delta) {
-  const [h, m] = hhmm.split(':').map(Number);
-  const total = (h * 60 + m + delta + 1440) % 1440;
-  return `${String(Math.floor(total / 60)).padStart(2, '0')}:${String(total % 60).padStart(2, '0')}`;
+// Solar event times via the NOAA sunrise/sunset algorithm, computed per beach and date.
+// zenith 90.833 deg = sunrise/sunset (incl. refraction); 96 deg = civil twilight (dawn/dusk).
+// Returns the event time in UTC hours (float). Pure math, no Date timezone pitfalls.
+function solarEventUtcHours(dateStr, lat, lon, zenithDeg, rising) {
+  const [y, mo, da] = dateStr.split('-').map(Number);
+  const n = Math.round((Date.UTC(y, mo - 1, da) - Date.UTC(y, 0, 0)) / 86400000); // day of year
+  const lngHour = lon / 15;
+  const t = n + ((rising ? 6 : 18) - lngHour) / 24;
+  const M = 0.9856 * t - 3.289;
+  const d2r = Math.PI / 180;
+  let L = (M + 1.916 * Math.sin(M * d2r) + 0.020 * Math.sin(2 * M * d2r) + 282.634) % 360;
+  if (L < 0) L += 360;
+  let RA = Math.atan(0.91764 * Math.tan(L * d2r)) / d2r;
+  RA = ((RA % 360) + 360) % 360;
+  RA = (RA + Math.floor(L / 90) * 90 - Math.floor(RA / 90) * 90) / 15;
+  const sinDec = 0.39782 * Math.sin(L * d2r);
+  const cosDec = Math.cos(Math.asin(sinDec));
+  const cosH = (Math.cos(zenithDeg * d2r) - sinDec * Math.sin(lat * d2r)) / (cosDec * Math.cos(lat * d2r));
+  if (Math.abs(cosH) > 1) return null; // polar day/night - never at Israel's latitude
+  let H = Math.acos(cosH) / d2r;
+  if (rising) H = 360 - H;
+  H /= 15;
+  const T = H + RA - 0.06571 * t - 6.622;
+  let UT = (T - lngHour) % 24;
+  if (UT < 0) UT += 24;
+  return UT;
+}
+
+const hhmmToMin = (hhmm) => { const [h, m] = hhmm.split(':').map(Number); return h * 60 + m; };
+const minToHhmm = (mins) => `${String(Math.floor(((mins % 1440) + 1440) % 1440 / 60)).padStart(2, '0')}:${String(((mins % 1440) + 1440) % 1440 % 60).padStart(2, '0')}`;
+
+// Civil dawn/dusk in local time: computed per beach/date, with the local UTC offset
+// anchored to Open-Meteo's own local sunrise/sunset for that date (handles DST).
+function civilTwilight(dateStr, lat, lon, localSunrise, localSunset, rising) {
+  const anchorLocal = rising ? localSunrise : localSunset;
+  if (!anchorLocal) return null;
+  const anchorUtc = solarEventUtcHours(dateStr, lat, lon, 90.833, rising);
+  const eventUtc = solarEventUtcHours(dateStr, lat, lon, 96, rising);
+  if (anchorUtc == null || eventUtc == null) return null;
+  let offsetMin = hhmmToMin(anchorLocal) - anchorUtc * 60;
+  offsetMin = ((offsetMin + 720) % 1440) - 720; // wrap to +/-12h
+  return minToHhmm(Math.round(eventUtc * 60 + offsetMin));
 }
 const round = (x, p = 1) => (x == null ? null : +x.toFixed(p));
 
@@ -378,8 +414,8 @@ async function main() {
       return {
         date,
         sunrise, sunset,
-        first_light: sunrise ? shiftMinutes(sunrise, -28) : null,
-        last_light: sunset ? shiftMinutes(sunset, 28) : null,
+        first_light: civilTwilight(date, b.lat, b.lon, sunrise, sunset, true),
+        last_light: civilTwilight(date, b.lat, b.lon, sunrise, sunset, false),
         moon_illumination_pct: moon.pct,
         moon_waxing: moon.waxing,
         day_score: dayScore,
