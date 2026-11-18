@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>תחזית דייג - תחזית דיג לחופי ישראל</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎣</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="theme.css">
+</head>
+<body><div class="wrap" id="app">טוען נתונים...</div>
+<script>
+const HEB_DAYS = ['ראשון','שני','שלישי','רביעי','חמישי','שישי','שבת'];
+const CONF_HE = { low:'נמוכה', medium:'בינונית', high:'גבוהה' };
+const SEASON_BADGE = { in:['on','✓ בעונה'], edge:['end','~ קצה עונה'], off:['off','✕ לא בעונה'] };
+const BAND = { high:['on','התאמה גבוהה'], medium:['end','התאמה בינונית'], low:['off','התאמה נמוכה'], insufficient:['off','אין מספיק מידע'] };
+const BAND_SHORT = { high:'גבוהה', medium:'בינונית', low:'נמוכה', insufficient:'לא ידוע' };
+function condWord(s){ return s==null?'חסר':s>=85?'מצוינים':s>=70?'טובים':s>=45?'בינוניים':s>=25?'חלשים':'גרועים'; }
+function nowIL(){ const p = new Intl.DateTimeFormat('sv-SE',{timeZone:'Asia/Jerusalem',dateStyle:'short',timeStyle:'short'}).format(new Date());
+  return { date:p.slice(0,10), hour:+p.slice(11,13) }; }
+// Best remaining window, computed at view time: for today, only windows that haven't ended.
+function bestRemaining(day, todayDate, nowHour){
+  if (day.date < todayDate) return null; // wholly past day: nothing is upcoming
+  const live = (day.windows||[]).filter(w=>w.score!=null && !(day.date===todayDate && w.fromHour+2<=nowHour));
+  return live.sort((a,b)=>b.score-a.score)[0]||null;
+}
+
+function scoreColor(s){ return s==null?'var(--fg)':s>=70?'var(--ok-fg)':s>=45?'var(--warn-fg)':'var(--off-fg)'; }
+function na(v, unit){ return v==null?'<span class="na">חסר</span>':v+(unit||''); }
+function fmt(v, unit){ return v==null?null:v+(unit||''); }
+
+async function loadJson(p){ const r = await fetch(p); if(!r.ok) throw new Error(p); return r.json(); }
+
+(async function(){
+  const appEl = document.getElementById('app');
+  try {
+  const params = new URLSearchParams(location.search);
+  const issueParam = params.get('issue');
+  const [beachesCfg, speciesCfg, latest] = await Promise.all([
+    loadJson('data/beaches.json'), loadJson('data/species.json'),
+    loadJson(issueParam ? 'data/issues/'+encodeURIComponent(issueParam)+'.json' : 'data/latest.json')
+  ]);
+  // Render config: archived issues carry a frozen snapshot so historical views never mutate.
+  const snap = latest.snapshot || {};
+  const spCfg = { species: snap.species || speciesCfg.species, coverage_note_he: snap.coverage_note_he || speciesCfg.coverage_note_he, data_quality_he: snap.data_quality_he || speciesCfg.data_quality_he, provenance_note_he: snap.provenance_note_he || speciesCfg.provenance_note_he, sources: snap.species_sources || speciesCfg.sources };
+  const beachList = snap.beaches || beachesCfg.beaches;
+  const spById = Object.fromEntries(spCfg.species.map(s=>[s.id,s]));
+  let archive = null;
+  try { archive = await loadJson('data/archive-index.json'); } catch(e){}
+
+  let curRegion = 'center', curBeach = null, curDay = -1; // -1 = uninitialized (auto-select today)
+  const app = document.getElementById('app');
+
+  function beachData(id){ return latest.beaches.find(b=>b.id===id); }
+  function beachCfg(id){ return beachList.find(b=>b.id===id); }
+  // Render-time staleness of the whole issue (recomputed every render, not frozen at load).
+  function issueAgeInfo(){ const ms = Date.now() - Date.parse(latest.meta.issued_at_utc); const h = Math.floor(ms/3.6e6);
+    return { hours:h, old: ms > 30*3.6e6 }; }
+
+  function render(){
+    if(!curBeach || !beachList.some(b=>b.id===curBeach && b.region===curRegion)){
+      curBeach = (beachList.find(b=>b.region===curRegion)||{}).id; curDay = -1;
+    }
+    const bc = beachCfg(curBeach), bd = beachData(curBeach);
+    const regionBeaches = beachList.filter(b=>b.region===curRegion);
+    const age = issueAgeInfo();
+    // Select the day matching the actual current date (view time), not blindly day 0.
+    if(bd && bd.days?.length && curDay<0){ const nw0 = nowIL(); const di = bd.days.findIndex(d=>d.date===nw0.date); curDay = di>=0?di:0; }
+    if(curDay<0) curDay = 0;
+    const today = new Date().toLocaleDateString('sv-SE',{timeZone:latest.meta.timezone});
+
+    let html = `<header>
+      <h1>תחזית דייג</h1>
+      <div class="sub">תחזית דיג לחופי ישראל · נתונים ניסיוניים</div>
+      <div class="issued">הופק: ${latest.meta.issued_at_local.replace('T',' · ')}${issueParam?' · מוצגת הפקה מהארכיון':''}
+        ${!issueParam&&age.old?`<span style="color:var(--warn-fg)"> · התחזית בת ${age.hours} שעות - ייתכן שהרענון היומי נכשל</span>`:''}
+        ${!issueParam&&latest.meta.valid_to&&latest.meta.valid_to<nowIL().date?`<span style="color:var(--warn-fg)"> · תוקף התחזית הסתיים ב-${latest.meta.valid_to} - כל ההמלצות היסטוריות</span>`:''}</div>
+    </header>
+    <div class="tabs">${beachesCfg.regions.map(r=>`<div class="tab ${r.id===curRegion?'on':''}" data-region="${r.id}">${r.name_he}</div>`).join('')}</div>
+    <div class="chips">${regionBeaches.map(b=>`<span class="chip ${b.id===curBeach?'on':''}" data-beach="${b.id}">${b.name_he}</span>`).join('')}</div>`;
+
+    if(!bd || bd.missing){
+      html += `<div class="card hero"><h2>${bc?bc.name_he:''}</h2><div class="stale-strip">${bd?bd.missing_note_he:'אין נתונים לחוף זה בהפקה הנוכחית'}</div></div>`;
+    } else {
+      const day = bd.days[Math.min(curDay, bd.days.length-1)];
+      const day0 = bd.days[0];
+      const waves = day.windows.map(w=>w.wave_height).filter(x=>x!=null);
+      const wmin = waves.length?Math.min(...waves):null, wmax = waves.length?Math.max(...waves):null;
+      const winds = day.windows.map(w=>w.wind_kmh).filter(x=>x!=null);
+      const wMaxWind = winds.length?Math.max(...winds):null;
+      const repWind = day.windows.find(w=>w.fromHour>=4&&w.fromHour<10)||day.windows[0];
+
+      html += `<div class="card hero">
+        <h2>${bc.name_he} · ${day.date===today?'היום':day.date} <span style="font-weight:400;font-size:11px;opacity:.6">${bc.terrain_he}</span></h2>
+        ${bd.stale?`<div class="stale-strip">${bd.stale_note_he} (${bd.original_issued_at||''})</div>`:''}
+        ${bc.caution_he?`<div class="warn-strip" style="background:var(--warn-bg);color:var(--warn-fg)">⚠ ${bc.caution_he}</div>`:''}
+        <div class="hero-grid">
+          <div class="hg"><div class="k">גלים</div><div class="v">${wmin!=null?`<span dir="ltr">${wmin.toFixed(1)}–${wmax.toFixed(1)}</span> מ׳`:'חסר'}</div></div>
+          <div class="hg"><div class="k">רוח (בוקר)</div><div class="v">${repWind&&repWind.wind_kmh!=null?Math.round(repWind.wind_kmh)+' קמ״ש'+(repWind.wind_dir?' מ'+repWind.wind_dir:''):'חסר'}</div></div>
+          <div class="hg"><div class="k">מי ים</div><div class="v">${day.sst_avg!=null?day.sst_avg.toFixed(1)+'°':'חסר'}</div></div>
+          <div class="hg"><div class="k">ירח</div><div class="v">${day.moon_illumination_pct}% מלא</div></div>
+        </div>
+        ${(()=>{ const now = nowIL(); const bw = bestRemaining(day, now.date, now.hour);
+          if(day.date < now.date){
+            const hist = day.best_window;
+            return hist ? `<div class="best" style="background:var(--inset-bg);color:var(--fg)"><span>החלון הטוב באותו יום היה: <span dir="ltr">${hist.from}–${hist.to}</span></span><small>הצגה היסטורית - לא המלצה</small></div>` : '';
+          }
+          if(bw){ const inProg = day.date===now.date && now.hour>=bw.fromHour && now.hour<bw.fromHour+2;
+            if(inProg) return `<div class="best"><span>מתאים עכשיו - נותר עד ${bw.to}</span><small>תנאים ${condWord(bw.score)}</small></div>`;
+            return `<div class="best"><span>${day.date===now.date?'החלון הטוב הבא:':'החלון המומלץ:'} <span dir="ltr">${bw.from}–${bw.to}</span></span><small>תנאים ${condWord(bw.score)}</small></div>`; }
+          const tom = bd.days[1] && bd.days[1].best_window;
+          return `<div class="best" style="background:var(--inset-bg);color:var(--fg)"><span>לא נותרו חלונות להיום${tom?` · מחר: <span dir="ltr">${tom.from}–${tom.to}</span>`:''}</span></div>`;
+        })()}
+        ${day.high_wave_warning?`<div class="warn-strip">⚠ גלים גבוהים (עד ${day.wave_max.toFixed(1)} מ׳) - זהירות מוגברת בחוף</div>`:''}
+        <div class="light">אור ראשון ${day.first_light||'חסר'} · זריחה ${day.sunrise||'חסר'} · שקיעה ${day.sunset||'חסר'} · אור אחרון ${day.last_light||'חסר'}
+          · <a href="https://www.google.com/maps/search/?api=1&query=${bc.lat},${bc.lon}" target="_blank" rel="noopener" style="color:var(--accent)">ניווט לחוף ↗</a></div>
+        ${(()=>{ const sl=(day.windows||[]).map(w=>w.sea_level).filter(x=>x!=null); if(!sl.length) return '';
+          const mn=Math.min(...sl), mx=Math.max(...sl);
+          return `<div class="light" style="opacity:.55">גובה פני ים (מודל, לא מדידת חוף): <span dir="ltr">${mn.toFixed(2)} עד ${mx.toFixed(2)}</span> מ׳ יחסית לממוצע גלובלי</div>`; })()}
+      </div>
+
+      <h3 class="sec">שבעת הימים הקרובים</h3>
+      <div class="card"><div class="days">${bd.days.map((d,i)=>{
+        const wd = HEB_DAYS[new Date(d.date+'T12:00:00').getDay()];
+        const [bcls, btxt] = BAND[d.day_band]||BAND.insufficient;
+        return `<div class="day ${d.date===today?'today':''} ${i===curDay?'sel':''}" data-day="${i}">
+          <div class="dd">${wd}</div><div class="dt">${d.date.slice(8,10)}.${d.date.slice(5,7)}</div>
+          <div class="wv" style="font-size:13px;font-weight:800">${d.wave_max!=null?d.wave_max.toFixed(1)+' מ׳':''}</div>
+          <div class="bdg ${bcls}" style="font-size:9px;margin-top:3px">${BAND_SHORT[d.day_band]||'?'}</div></div>`;
+      }).join('')}</div></div>
+
+      <h3 class="sec">חלונות דיג · ${day.date===today?'היום':day.date} (שעתיים)</h3>
+      <div class="card winwrap">${!day.windows?.length?'<div style="padding:14px;font-size:12.5px;opacity:.75">אין נתוני חלונות ליום זה בהפקה הנוכחית.</div>':`<table class="win">
+      <tr><th>שעות</th><th>גלים</th><th>רוח</th><th>זרם</th><th style="width:82px">תנאים</th></tr>
+      ${day.windows.map(w=>{ const nw = nowIL(); const isPast = w.past || day.date<nw.date || (day.date===nw.date && w.fromHour+2<=nw.hour);
+        return `<tr class="${isPast?'past':''}"><td><span dir="ltr">${w.from}–${w.to}</span></td><td>${na(w.wave_height!=null?w.wave_height.toFixed(1):null,' מ׳')}</td>
+        <td>${w.wind_kmh!=null?Math.round(w.wind_kmh)+' קמ״ש '+(w.wind_dir?'מ'+w.wind_dir:''):'חסר'}</td>
+        <td>${w.current_vel!=null&&w.current_vel>0.01?w.current_vel+' קמ״ש '+(w.current_dir?'ל'+w.current_dir:''):'—'}</td>
+        <td><div style="display:flex;align-items:center;gap:6px"><span style="font-size:11px;font-weight:700;color:${scoreColor(w.score)}">${condWord(w.score)}</span>
+        <span class="bar"><i style="width:${w.score||0}%;background:${scoreColor(w.score)}"></i></span></div></td></tr>`;}).join('')}
+      </table><div style="font-size:10.5px;opacity:.6;margin-top:6px">הערכת תנאים מגלים ורוח בלבד, להשוואת שעות באותו יום. שורות אפורות כבר עברו. כיוון רוח וגלים הוא הכיוון <b>שממנו</b> הם באים; כיוון זרם הוא הכיוון <b>שאליו</b> הוא זורם.</div>`}</div>
+
+      <h3 class="sec">דגי טורפים · התאמה ל${day.date===today?'היום':day.date}</h3>
+      <div class="sp-grid">${day.species.map(sp=>{
+        const cfg = spById[sp.id]||{};
+        const [cls,txt] = SEASON_BADGE[sp.status]||['off','?'];
+        const [bcls,btxt] = BAND[sp.band]||BAND.insufficient;
+        const F = sp.factors||{};
+        const factor = (name,f)=>`<div class="factor"><div class="fk">${name}</div>
+          <div class="fv" style="color:${f&&f.v!=null?scoreColor(f.v):'inherit'}">${f?f.label:'חסר'}</div>
+          ${f&&f.detail?`<div class="fd">${f.detail}</div>`:''}</div>`;
+        if(sp.status_only) return `<div class="card sp">
+          <div class="nm">${cfg.name_he||sp.id}</div>
+          <div class="lt">${cfg.name_lat||''}</div>
+          <div class="badges"><span class="bdg off">אין המלצת דיג</span></div>
+          <div style="font-size:11px;line-height:1.6;opacity:.85">${cfg.legal_note_he||''}</div>
+        </div>`;
+        return `<div class="card sp">
+          <div class="nm">${cfg.name_he||sp.id}</div>
+          <div class="lt">${cfg.name_lat||''}</div>
+          ${cfg.name_he_official&&cfg.name_he_official!==cfg.name_he?`<div class="official">שם רשמי: ${cfg.name_he_official}</div>`:''}
+          ${cfg.ambiguity_note_he?`<div class="official">⚠ ${cfg.ambiguity_note_he}</div>`:''}
+          <div class="badges"><span class="bdg ${bcls}" style="font-size:11.5px">${btxt}</span><span class="bdg ${cls}">${txt}</span><span class="bdg hrs">${cfg.active_hours_note_he||''}</span></div>
+          <div class="factors">
+            ${factor('עונה',F.season)}${factor('שעות',F.time)}${factor('גלים',F.wave)}${factor('רוח',F.wind)}${factor('מים',F.sst)}
+          </div>
+          <div class="reasons">${(sp.reasons||[]).map(r=>`<span class="rsn">${r}</span>`).join('')}</div>
+          <div class="conf">ביטחון בהערכה: <b>${CONF_HE[sp.confidence]||sp.confidence}</b></div>
+        </div>`;
+      }).join('')}</div>
+      <div style="font-size:10.5px;opacity:.6;margin:-4px 0 10px">התאמה איכותית מחולקת לגורמים שקופים (עונה/שעות/גלים/רוח/מים) - לא אחוז תפיסה. רמת הביטחון מוצגת בכל כרטיס בנפרד.</div>`;
+    }
+
+    html += `
+    <details class="info card"><summary>אילו נתונים יש ואילו חסרים</summary><div class="body">
+      <b>זמין כיום:</b><ul>${latest.meta.data_availability.available_he.map(x=>`<li>${x}</li>`).join('')}</ul>
+      <b>חסר כרגע:</b><ul>${latest.meta.data_availability.missing_he.map(x=>`<li class="missing-item">${x}</li>`).join('')}</ul>
+    </div></details>
+
+    <details class="info card"><summary>איך מחושבת ההתאמה</summary><div class="body">
+      ${latest.meta.scoring_note_he}<br><br>
+      <b>כיסוי הדגים:</b> ${spCfg.coverage_note_he}<br><br>
+      <b>איכות נתוני הדגים:</b> ${spCfg.data_quality_he}
+    </div></details>
+
+    <details class="info card"><summary>ארכיון הפקות</summary><div class="body">
+      ${archive&&archive.issues.length?archive.issues.slice(0,30).map(i=>
+        `<div><a href="?issue=${encodeURIComponent(i.issue_id)}">${i.issued_at_local.replace('T',' ')}</a> · תקף ${i.valid_from} – ${i.valid_to}</div>`).join('')
+      :'הארכיון נבנה עם ההפקות היומיות.'}
+      ${issueParam?'<div style="margin-top:8px"><a href="./">← חזרה להפקה העדכנית</a></div>':''}
+    </div></details>
+
+    <footer>
+      ${latest.meta.attribution_he}<br>
+      התחזית ניסיונית לצורכי תכנון בלבד - אינה אחוז תפיסה, אינה הבטחה, ואינה תחליף לשיקול דעת ובטיחות בים. דגים מוגנים בחוק אינם מומלצים; בדקו תקנות דיג עדכניות (רישיון, גדלים ועונות אסורות) לפני היציאה.<br>
+      תחזיות יומיות נשמרות בארכיון בקבצי נתונים מתוארכים, כולל זמן הפקה וזמן תוקף נפרדים.
+    </footer>`;
+
+    app.innerHTML = html;
+    app.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{curRegion=t.dataset.region;curBeach=null;curDay=-1;render();});
+    app.querySelectorAll('.chip').forEach(c=>c.onclick=()=>{curBeach=c.dataset.beach;curDay=-1;render();});
+    app.querySelectorAll('.day').forEach(d=>d.onclick=()=>{curDay=+d.dataset.day;render();});
+  }
+  try { render(); } catch(e){ app.innerHTML = 'שגיאה בטעינת הנתונים: '+e.message; }
+  // Live re-render: past windows, best-window recommendation and issue-age warning are computed
+  // at render time, so an open page stays truthful as time passes.
+  let lastSig = '';
+  setInterval(()=>{ const nw = nowIL(); const age = issueAgeInfo(); const sig = nw.date+'|'+nw.hour+'|'+age.old;
+    if(sig!==lastSig){ lastSig=sig; const y=window.scrollY; try{ render(); }catch(e){} window.scrollTo(0,y); } }, 60000);
+  document.addEventListener('visibilitychange', ()=>{ if(!document.hidden){ lastSig=''; } });
+  } catch(e){
+    appEl.innerHTML = `<div class="card" style="text-align:center;padding:30px 16px">
+      <h2 style="margin:0 0 8px">טעינת הנתונים נכשלה</h2>
+      <div style="font-size:12px;opacity:.7;margin-bottom:14px">יתכן שקובץ התחזית חסר או שיש בעיית תקשורת. הנתונים הקודמים לא נפגעו.</div>
+      <button onclick="location.reload()" style="background:var(--accent);color:#04222e;border:0;border-radius:9px;padding:10px 22px;font:700 14px Heebo;cursor:pointer">נסה שוב</button>
+    </div>`;
+  }
+})();
+</script>
+</body></html>

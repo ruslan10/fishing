@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "note_he": "מיפוי סטטי של חופים פופולריים לדיג חוף לאורך הים התיכון בישראל, בחלוקה לצפון/מרכז/דרום. הקואורדינטות (גיאו-קוד מאומת) מייצגות נקודת חוף בעלת שם לצורך תחזית; הופעה של חוף ברשימה אינה אישור דיג או בטיחות במקום. נתוני הים נלקחים מנקודת המודל הימי הקרובה ואינם מאומתים ברמת חוף בודד.",
+  "regions": [
+    { "id": "north", "name_he": "צפון" },
+    { "id": "center", "name_he": "מרכז" },
+    { "id": "south", "name_he": "דרום" }
+  ],
+  "beaches": [
+    { "id": "achziv", "name_he": "אכזיב", "region": "north", "lat": 33.055, "lon": 35.102, "terrain_he": "מעורב - סלעים ורצועות חול", "caution_he": "חלק מהרצועה גובל בשמורת טבע; בדקו שלטים והוראות בשטח" },
+    { "id": "nahariya", "name_he": "נהריה", "region": "north", "lat": 33.005, "lon": 35.090, "terrain_he": "חולי עם שוברי גלים" },
+    { "id": "akko-argaman", "name_he": "עכו - חוף ארגמן", "region": "north", "lat": 32.917, "lon": 35.080, "terrain_he": "חולי רחב" },
+    { "id": "haifa-batgalim", "name_he": "חיפה - בת גלים", "region": "north", "lat": 32.827, "lon": 34.970, "terrain_he": "חולי, מפרץ מוגן יחסית; מתחם דייגים מוכר" },
+    { "id": "atlit", "name_he": "עתלית", "region": "north", "lat": 32.705, "lon": 34.930, "terrain_he": "מעורב - סלעים ומבנים", "caution_he": "בסיס חיל הים סמוך; ייתכנו הגבלות גישה - בדקו שלטים בשטח" },
+    { "id": "dor", "name_he": "חוף דור", "region": "north", "lat": 32.600, "lon": 34.917, "terrain_he": "לגונות, סלעים ושרידי נמל עתיק", "caution_he": "גובל בשמורת תל דור/דור-תנתורה; חלקים מסוימים אסורים לדיג - בדקו שלטים בשטח" },
+    { "id": "caesarea", "name_he": "קיסריה", "region": "center", "lat": 32.498, "lon": 34.890, "terrain_he": "סלעי - מבני נמל עתיקים" },
+    { "id": "olga", "name_he": "חוף אולגה (חדרה)", "region": "center", "lat": 32.439, "lon": 34.878, "terrain_he": "חולי עם סלעי שרטון; מתחם דייגים פופולרי" },
+    { "id": "michmoret", "name_he": "מכמורת", "region": "center", "lat": 32.407, "lon": 34.872, "terrain_he": "חולי עם סלעים; מתחם דייגים פופולרי" },
+    { "id": "netanya", "name_he": "נתניה", "region": "center", "lat": 32.320, "lon": 34.850, "terrain_he": "חולי עם שוברי גלים" },
+    { "id": "herzliya", "name_he": "הרצליה", "region": "center", "lat": 32.165, "lon": 34.795, "terrain_he": "חולי, מרינה ושוברי גלים" },
+    { "id": "telaviv-frishman", "name_he": "תל אביב - פרישמן", "region": "center", "lat": 32.080, "lon": 34.765, "terrain_he": "חולי עם שוברי גלים" },
+    { "id": "jaffa", "name_he": "יפו", "region": "center", "lat": 32.045, "lon": 34.740, "terrain_he": "סלעי - צוקי יפו והנמל" },
+    { "id": "rishon-lezion", "name_he": "ראשון לציון", "region": "center", "lat": 31.970, "lon": 34.720, "terrain_he": "חולי פתוח" },
+    { "id": "palmachim", "name_he": "חוף פלמחים", "region": "center", "lat": 31.925, "lon": 34.699, "terrain_he": "חולי פתוח; מתחם דייגים פופולרי", "caution_he": "גובל במתקן צבאי ובגן לאומי; ייתכנו הגבלות גישה ודיג - בדקו שלטים בשטח" },
+    { "id": "ashdod", "name_he": "אשדוד", "region": "south", "lat": 31.820, "lon": 34.640, "terrain_he": "חולי עם שוברי גלים ונמל" },
+    { "id": "nitzanim", "name_he": "חוף ניצנים", "region": "south", "lat": 31.745, "lon": 34.601, "terrain_he": "חולי פתוח", "caution_he": "גובל בשמורת ניצנים; חלקים מסוימים אסורים לדיג - בדקו שלטים בשטח" },
+    { "id": "ashkelon", "name_he": "אשקלון", "region": "south", "lat": 31.660, "lon": 34.550, "terrain_he": "חולי, מרינה ושוברי גלים" },
+    { "id": "zikim", "name_he": "חוף זיקים", "region": "south", "lat": 31.613, "lon": 34.505, "terrain_he": "חולי פתוח; מתחם דייגים פופולרי" }
+  ]
+}

@@ -1,0 +1,187 @@
+<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { direction: rtl; }
+  body { font-family:'Heebo','Segoe UI',Arial,sans-serif; color:var(--fg); background:var(--bg); -webkit-font-smoothing:antialiased; }
+  .wrap { max-width:430px; margin:0 auto; padding:18px 16px 30px; }
+  .tag-sample { display:inline-block; font-size:11px; padding:2px 8px; border-radius:99px; background:var(--sample-bg); color:var(--sample-fg); }
+  header h1 { font-size:30px; font-weight:800; letter-spacing:.2px; }
+  header .sub { font-size:13px; opacity:.75; margin-top:2px; }
+  header .issued { font-size:11px; opacity:.6; margin-top:6px; }
+  .tabs { display:flex; gap:8px; margin:16px 0 10px; }
+  .tab { flex:1; text-align:center; padding:8px 0; border-radius:12px; font-size:14px; font-weight:700; background:var(--chip-bg); color:var(--chip-fg); border:1px solid var(--chip-border); }
+  .tab.on { background:var(--accent); color:var(--accent-fg); border-color:transparent; }
+  .chips { display:flex; gap:7px; overflow:hidden; flex-wrap:wrap; margin-bottom:14px; }
+  .chip { padding:6px 12px; border-radius:99px; font-size:12.5px; font-weight:600; background:var(--chip-bg); color:var(--chip-fg); border:1px solid var(--chip-border); }
+  .chip.on { background:var(--accent-2); color:var(--accent-2-fg); border-color:transparent; }
+  .card { background:var(--card-bg); border:1px solid var(--card-border); border-radius:var(--radius); padding:14px; margin-bottom:12px; box-shadow:var(--card-shadow); backdrop-filter:var(--card-blur); }
+  .hero h2 { font-size:15px; font-weight:800; margin-bottom:10px; }
+  .hero-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+  .hg { background:var(--inset-bg); border-radius:10px; padding:9px 10px; }
+  .hg .k { font-size:11px; opacity:.65; }
+  .hg .v { font-size:15px; font-weight:800; margin-top:1px; }
+  .hero .light { margin-top:10px; font-size:11.5px; opacity:.7; }
+  .best { margin-top:10px; padding:9px 12px; border-radius:10px; background:var(--best-bg); color:var(--best-fg); font-weight:800; font-size:14px; display:flex; justify-content:space-between; align-items:center; }
+  .best small { font-weight:600; font-size:11px; opacity:.8; }
+  h3.sec { font-size:14px; font-weight:800; margin:16px 0 8px; opacity:.9; }
+  .days { display:grid; grid-template-columns:repeat(7,1fr); gap:5px; }
+  .day { text-align:center; padding:7px 2px; border-radius:10px; background:var(--inset-bg); }
+  .day.today { outline:2px solid var(--accent); }
+  .day .dd { font-size:10px; opacity:.65; }
+  .day .dt { font-size:10.5px; font-weight:700; }
+  .day .sc { font-size:14px; font-weight:800; margin-top:3px; }
+  .day .wv { font-size:9.5px; opacity:.6; }
+  table.win { width:100%; border-collapse:collapse; font-size:12.5px; }
+  table.win th { text-align:right; font-size:11px; opacity:.6; font-weight:600; padding:5px 4px; }
+  table.win td { padding:7px 4px; border-top:1px solid var(--row-border); }
+  .bar { height:6px; border-radius:99px; background:var(--bar-bg); overflow:hidden; min-width:54px; }
+  .bar i { display:block; height:100%; border-radius:99px; }
+  .score-num { font-weight:800; font-size:13px; }
+  .sp-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .sp { padding:12px; }
+  .sp .nm { font-size:16px; font-weight:800; }
+  .sp .lt { font-size:10px; opacity:.55; direction:ltr; text-align:right; }
+  .badges { display:flex; gap:5px; margin:8px 0; flex-wrap:wrap; }
+  .bdg { font-size:10.5px; font-weight:700; padding:3px 8px; border-radius:99px; }
+  .bdg.on { background:var(--ok-bg); color:var(--ok-fg); }
+  .bdg.end { background:var(--warn-bg); color:var(--warn-fg); }
+  .bdg.off { background:var(--off-bg); color:var(--off-fg); }
+  .bdg.hrs { background:var(--inset-bg); color:var(--fg); opacity:.85; }
+  .sp .scoreline { display:flex; align-items:center; gap:8px; margin:6px 0; }
+  .reasons { display:flex; flex-wrap:wrap; gap:4px; margin-top:6px; }
+  .rsn { font-size:10px; padding:2px 7px; border-radius:99px; background:var(--inset-bg); opacity:.85; }
+  .conf { margin-top:8px; font-size:10.5px; opacity:.75; }
+  .conf b { font-weight:800; }
+  footer { margin-top:18px; font-size:10.5px; line-height:1.7; opacity:.6; }
+
+      :root {
+        --bg:#f7f3ea; --fg:#21303a;
+        --card-bg:#ffffff; --card-border:#e7e0d2; --card-shadow:0 1px 4px rgba(60,50,20,.07); --card-blur:none; --radius:16px;
+        --accent:#0e7c7b; --accent-fg:#ffffff; --accent-2:#e8f4f3; --accent-2-fg:#0e7c7b;
+        --chip-bg:#ffffff; --chip-fg:#5c6b74; --chip-border:#e0d8c8;
+        --inset-bg:#f4efe4; --row-border:#ece5d6; --bar-bg:#e9e2d2;
+        --ok-bg:#e2f4e8; --ok-fg:#177a45; --warn-bg:#fdf1d7; --warn-fg:#9a6b0a; --off-bg:#fbe4e0; --off-fg:#b23c2a;
+        --best-bg:#0e7c7b; --best-fg:#ffffff;
+        --sample-bg:#fdf1d7; --sample-fg:#9a6b0a;
+      }
+      header h1 { color:#0e7c7b; }
+    </style></head><body><div class="wrap">
+<header>
+  <h1>תחזית דייג <span class="tag-sample">מיקאפ עיצוב · נתוני דוגמה</span></h1>
+  <div class="sub">תחזית דיג לחופי ישראל</div>
+  <div class="issued">הופק: ד׳ 18.11.2026 · 17:00</div>
+</header>
+<div class="tabs"><div class="tab ">צפון</div><div class="tab on">מרכז</div><div class="tab ">דרום</div></div>
+<div class="chips"><span class="chip ">קיסריה</span><span class="chip ">נתניה</span><span class="chip ">הרצליה</span><span class="chip on">תל אביב - פרישמן</span><span class="chip ">יפו</span><span class="chip ">ראשון לציון</span></div>
+
+<div class="card hero">
+  <h2>תל אביב - פרישמן · היום</h2>
+  <div class="hero-grid">
+    <div class="hg"><div class="k">גלים</div><div class="v">0.5–0.8 מ׳</div></div>
+    <div class="hg"><div class="k">רוח</div><div class="v">מערבית-צפונית · 12 קמ״ש</div></div>
+    <div class="hg"><div class="k">מי ים</div><div class="v">24.0°</div></div>
+    <div class="hg"><div class="k">לילה</div><div class="v">ירח 62%</div></div>
+  </div>
+  <div class="best"><span>החלון המומלץ: 05:30–08:00</span><small>ציון 84</small></div>
+  <div class="light">אור ראשון 05:45 · זריחה 06:12 · שקיעה 16:40</div>
+</div>
+
+<h3 class="sec">שבעת הימים הקרובים</h3>
+<div class="card"><div class="days">
+  <div class="day today"><div class="dd">רביעי</div><div class="dt">18.11</div>
+  <div class="sc" style="color:var(--ok-fg)">82</div><div class="wv">0.6 מ׳</div></div>
+  <div class="day "><div class="dd">חמישי</div><div class="dt">19.11</div>
+  <div class="sc" style="color:var(--ok-fg)">76</div><div class="wv">0.7 מ׳</div></div>
+  <div class="day "><div class="dd">שישי</div><div class="dt">20.11</div>
+  <div class="sc" style="color:var(--warn-fg)">64</div><div class="wv">0.9 מ׳</div></div>
+  <div class="day "><div class="dd">שבת</div><div class="dt">21.11</div>
+  <div class="sc" style="color:var(--warn-fg)">55</div><div class="wv">1.1 מ׳</div></div>
+  <div class="day "><div class="dd">ראשון</div><div class="dt">22.11</div>
+  <div class="sc" style="color:var(--warn-fg)">61</div><div class="wv">0.8 מ׳</div></div>
+  <div class="day "><div class="dd">שני</div><div class="dt">23.11</div>
+  <div class="sc" style="color:var(--ok-fg)">70</div><div class="wv">0.5 מ׳</div></div>
+  <div class="day "><div class="dd">שלישי</div><div class="dt">24.11</div>
+  <div class="sc" style="color:var(--warn-fg)">58</div><div class="wv">0.7 מ׳</div></div></div></div>
+
+<h3 class="sec">חלונות דיג להיום (שעתיים)</h3>
+<div class="card"><table class="win">
+<tr><th>שעות</th><th>גלים</th><th>רוח</th><th style="width:90px">התאמה</th></tr>
+<tr><td>04:00–06:00</td><td>0.5 מ׳</td><td>8 צ״מ</td>
+<td><div style="display:flex;align-items:center;gap:6px"><span class="score-num" style="color:var(--ok-fg)">78</span>
+<span class="bar"><i style="width:78%;background:var(--ok-fg)"></i></span></div></td></tr><tr><td>06:00–08:00</td><td>0.6 מ׳</td><td>10 מ״צ</td>
+<td><div style="display:flex;align-items:center;gap:6px"><span class="score-num" style="color:var(--ok-fg)">84</span>
+<span class="bar"><i style="width:84%;background:var(--ok-fg)"></i></span></div></td></tr><tr><td>08:00–10:00</td><td>0.7 מ׳</td><td>14 מ״צ</td>
+<td><div style="display:flex;align-items:center;gap:6px"><span class="score-num" style="color:var(--ok-fg)">71</span>
+<span class="bar"><i style="width:71%;background:var(--ok-fg)"></i></span></div></td></tr><tr><td>10:00–12:00</td><td>0.8 מ׳</td><td>18 מערבית</td>
+<td><div style="display:flex;align-items:center;gap:6px"><span class="score-num" style="color:var(--warn-fg)">52</span>
+<span class="bar"><i style="width:52%;background:var(--warn-fg)"></i></span></div></td></tr><tr><td>12:00–14:00</td><td>0.9 מ׳</td><td>22 מערבית</td>
+<td><div style="display:flex;align-items:center;gap:6px"><span class="score-num" style="color:var(--off-fg)">40</span>
+<span class="bar"><i style="width:40%;background:var(--off-fg)"></i></span></div></td></tr><tr><td>14:00–16:00</td><td>0.9 מ׳</td><td>20 מערבית</td>
+<td><div style="display:flex;align-items:center;gap:6px"><span class="score-num" style="color:var(--off-fg)">44</span>
+<span class="bar"><i style="width:44%;background:var(--off-fg)"></i></span></div></td></tr><tr><td>16:00–18:00</td><td>0.8 מ׳</td><td>16 מ״צ</td>
+<td><div style="display:flex;align-items:center;gap:6px"><span class="score-num" style="color:var(--warn-fg)">63</span>
+<span class="bar"><i style="width:63%;background:var(--warn-fg)"></i></span></div></td></tr><tr><td>18:00–20:00</td><td>0.7 מ׳</td><td>12 צפונית</td>
+<td><div style="display:flex;align-items:center;gap:6px"><span class="score-num" style="color:var(--warn-fg)">58</span>
+<span class="bar"><i style="width:58%;background:var(--warn-fg)"></i></span></div></td></tr>
+</table></div>
+
+<h3 class="sec">דגי טורפים · התאמה להיום</h3>
+<div class="sp-grid">
+  <div class="card sp">
+    <div class="nm">לוקו</div><div class="lt">Pomatomus saltatrix</div>
+    <div class="badges"><span class="bdg on">✓ בעונה</span><span class="bdg hrs">שחר וערב</span></div>
+    <div class="scoreline"><span class="score-num" style="color:var(--ok-fg);font-size:20px">82</span>
+      <span class="bar" style="flex:1"><i style="width:82%;background:var(--ok-fg)"></i></span></div>
+    <div class="reasons"><span class="rsn">גלים מתונים</span><span class="rsn">רוח חלשה בשחר</span><span class="rsn">מעבר סתיו</span></div>
+    <div class="conf">ביטחון בהערכה: <b>בינונית</b></div>
+  </div>
+  <div class="card sp">
+    <div class="nm">אינטיאס</div><div class="lt">Seriola dumerili</div>
+    <div class="badges"><span class="bdg on">✓ בעונה</span><span class="bdg hrs">בוקר</span></div>
+    <div class="scoreline"><span class="score-num" style="color:var(--ok-fg);font-size:20px">74</span>
+      <span class="bar" style="flex:1"><i style="width:74%;background:var(--ok-fg)"></i></span></div>
+    <div class="reasons"><span class="rsn">מים 24° יחסית חמים</span><span class="rsn">מבנים וסלעים</span></div>
+    <div class="conf">ביטחון בהערכה: <b>בינונית</b></div>
+  </div>
+  <div class="card sp">
+    <div class="nm">לברק</div><div class="lt">Dicentrarchus labrax</div>
+    <div class="badges"><span class="bdg on">✓ בעונה</span><span class="bdg hrs">לילה ושחר</span></div>
+    <div class="scoreline"><span class="score-num" style="color:var(--warn-fg);font-size:20px">68</span>
+      <span class="bar" style="flex:1"><i style="width:68%;background:var(--warn-fg)"></i></span></div>
+    <div class="reasons"><span class="rsn">מים מתקררים</span><span class="rsn">פעילות לילית</span></div>
+    <div class="conf">ביטחון בהערכה: <b>נמוכה</b></div>
+  </div>
+  <div class="card sp">
+    <div class="nm">מוסר</div><div class="lt">Argyrosomus regius</div>
+    <div class="badges"><span class="bdg end">~ סוף עונה</span><span class="bdg hrs">ערב ולילה</span></div>
+    <div class="scoreline"><span class="score-num" style="color:var(--warn-fg);font-size:20px">45</span>
+      <span class="bar" style="flex:1"><i style="width:45%;background:var(--warn-fg)"></i></span></div>
+    <div class="reasons"><span class="rsn">מים עדיין חמים</span><span class="rsn">דורש שקט</span></div>
+    <div class="conf">ביטחון בהערכה: <b>נמוכה</b></div>
+  </div>
+  <div class="card sp">
+    <div class="nm">טונית אטלנטית</div><div class="lt">Euthynnus alletteratus</div>
+    <div class="badges"><span class="bdg end">~ סוף עונה</span><span class="bdg hrs">בוקר</span></div>
+    <div class="scoreline"><span class="score-num" style="color:var(--off-fg);font-size:20px">38</span>
+      <span class="bar" style="flex:1"><i style="width:38%;background:var(--off-fg)"></i></span></div>
+    <div class="reasons"><span class="rsn">מעבר מים קרים</span></div>
+    <div class="conf">ביטחון בהערכה: <b>נמוכה</b></div>
+  </div>
+  <div class="card sp">
+    <div class="nm">ברקודה</div><div class="lt">Sphyraena sphyraena</div>
+    <div class="badges"><span class="bdg off">✕ לא בעונה</span><span class="bdg hrs">קיץ</span></div>
+    <div class="scoreline"><span class="score-num" style="color:var(--off-fg);font-size:20px">22</span>
+      <span class="bar" style="flex:1"><i style="width:22%;background:var(--off-fg)"></i></span></div>
+    <div class="reasons"><span class="rsn">מים מתקררים מדי</span></div>
+    <div class="conf">ביטחון בהערכה: <b>בינונית</b></div>
+  </div>
+</div>
+
+<footer>
+  מקורות תנאים: Open-Meteo (רוח, גלים, טמפ׳ מים) · הערכות עונה ושעות: מדריכי דיג מקומיים, ללא אימות מדעי מלא.<br>
+  הציון הוא התאמת תנאים ניסיונית עם הסבר — לא אחוז תפיסה ולא הבטחה. דגים מוגנים בחוק אינם מומלצים.<br>
+  ארכיון תחזיות נשמר מדי יום בקבצי נתונים מתוארכים.
+</footer>
+</div></body></html>
