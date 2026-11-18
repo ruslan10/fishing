@@ -301,34 +301,14 @@ function imsCard(region){
           <div class="conf">ביטחון בהערכה: <b>${CONF_HE[sp.confidence]||sp.confidence}</b></div>
         </div>`;
       }).join('')}</div>
-      <div style="font-size:10.5px;opacity:.6;margin:-4px 0 10px">התאמה איכותית מחולקת לגורמים שקופים (עונה/שעות/גלים/רוח/מים) - לא אחוז תפיסה. רמת הביטחון מוצגת בכל כרטיס בנפרד.</div>`;
+    `;
     }
 
     html += `
-    <details class="info card"><summary>אילו נתונים יש ואילו חסרים</summary><div class="body">
-      <b>זמין כיום ומוצג:</b><ul>${latest.meta.data_availability.available_he.map(x=>`<li>${x}</li>`).join('')}</ul>
-      ${latest.meta.data_availability.collected_he?`<b>נאסף אך לא מוצג כרגע:</b><ul>${latest.meta.data_availability.collected_he.map(x=>`<li>${x}</li>`).join('')}</ul>`:''}
-      <b>חסר כרגע:</b><ul>${latest.meta.data_availability.missing_he.map(x=>`<li class="missing-item">${x}</li>`).join('')}</ul>
-    </div></details>
-
-    <details class="info card"><summary>איך מחושבת ההתאמה</summary><div class="body">
-      ${latest.meta.scoring_note_he}<br><br>
-      <b>כיסוי הדגים:</b> ${spCfg.coverage_note_he}<br><br>
-      <b>איכות נתוני הדגים:</b> ${spCfg.data_quality_he}
-    </div></details>
-
-    <details class="info card"><summary>ארכיון הפקות</summary><div class="body">
-      ${archive&&archive.issues.length?archive.issues.slice(0,30).map(i=>
-        `<div><a href="?issue=${encodeURIComponent(i.issue_id)}">${i.issued_at_local.replace('T',' ')}</a> · תקף ${i.valid_from} – ${i.valid_to}</div>`).join('')
-      :'הארכיון נבנה עם ההפקות היומיות.'}
-      ${issueParam?'<div style="margin-top:8px"><a href="./">← חזרה להפקה העדכנית</a></div>':''}
-    </div></details>
-
     <footer>
-      ${latest.meta.attribution_he}<br>
-      ${latest.ims?.available?`<span class="imsfoot">תחזית החופים הרשמית באתר: מקור — השירות המטאורולוגי הישראלי (שמ״ט), ims.gov.il. השמ״ט אינו נושא באחריות כלשהי למידע או לשימוש בו, ואינו צד לפרסומו.</span><br>`:''}
-      התחזית ניסיונית לצורכי תכנון בלבד - אינה אחוז תפיסה, אינה הבטחה, ואינה תחליף לשיקול דעת ובטיחות בים. דגים מוגנים בחוק אינם מומלצים; בדקו תקנות דיג עדכניות (רישיון, גדלים ועונות אסורות) לפני היציאה.<br>
-      הופק ${latest.meta.issued_at_local.replace('T',' · ')} · מתעדכן מדי ערב בסביבות 20:00 · התחזית מכסה 7 ימים קלנדריים (${latest.meta.valid_from}–${latest.meta.valid_to}), כולל יום הרענון. תחזיות יומיות נשמרות בארכיון בקבצי נתונים מתוארכים.
+      מזג אוויר וים: Open-Meteo (CC BY 4.0)${latest.ims?.available?` · תחזית חופים רשמית: השירות המטאורולוגי הישראלי (שמ״ט), ims.gov.il - אינו נושא באחריות למידע או לשימוש בו, ואינו צד לפרסומו`:''}<br>
+      תחזית ניסיונית לתכנון בלבד - לא אחוז תפיסה ולא הבטחה לבטיחות; בדקו תקנות דיג לפני היציאה.<br>
+      הופק ${latest.meta.issued_at_local.replace('T',' · ')} · מתעדכן מדי ערב בסביבות 20:00
     </footer>`;
 
     app.innerHTML = html;
