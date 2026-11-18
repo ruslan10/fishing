@@ -141,87 +141,10 @@ function windowScore(waveH, windKmh, gust) {
   if (w == null || v == null) return null;
   return Math.round(0.55 * w + 0.45 * v);
 }
-function bandFit(x, min, max) {
-  if (x == null) return null;
-  if (x >= min && x <= max) return 1.0;
-  const span = (max - min) || 1;
-  const dist = x < min ? (min - x) : (x - max);
-  return Math.max(0.2, 1.0 - dist / span);
-}
-function seasonFactor(sp, month) {
-  if (sp.season_dispute) return { f: 0.55, status: 'disputed' };
-  if (sp.season_months.includes(month)) return { f: 1.0, status: 'in' };
-  if ((sp.season_edge_months || []).includes(month)) return { f: 0.55, status: 'edge' };
-  return { f: 0.15, status: 'off' };
-}
-function hourInRanges(h, ranges) {
-  return ranges.some(r => (r.from <= r.to) ? (h >= r.from && h < r.to) : (h >= r.from || h < r.to));
-}
-
-// Factor-level suitability: each factor is shown separately to avoid false precision.
-// Overall is a qualitative band only, never a percentage-like score.
-function fitLabel(f, good, mid, bad) {
-  if (f == null) return { v: null, label: 'חסר' };
-  if (f >= 0.95) return { v: Math.round(f * 100), label: good };
-  if (f >= 0.5) return { v: Math.round(f * 100), label: mid };
-  return { v: Math.round(f * 100), label: bad };
-}
-function speciesSuitability(sp, month, dayWindows, sst) {
-  const season = seasonFactor(sp, month);
-  const seasonFactorOut = { v: Math.round(season.f * 100), label: season.status === 'in' ? 'בעונה' : season.status === 'edge' ? 'קצה עונה' : season.status === 'disputed' ? 'מחלוקת במקורות' : 'לא בעונה' };
-
-  // time factor: best window score inside the species' active hours vs outside
-  let bestIn = -1, bestAny = -1;
-  for (const w of dayWindows) {
-    if (w.score == null) continue;
-    if (w.score > bestAny) bestAny = w.score;
-    if (hourInRanges(w.fromHour, sp.active_hours) && w.score > bestIn) bestIn = w.score;
-  }
-  const timeF = bestIn >= 70 ? 1.0 : bestIn >= 50 ? 0.6 : (bestAny >= 70 ? 0.45 : 0.3);
-  const timeFactorOut = fitLabel(timeF, 'חלון טוב בשעות הפעילות', 'חלון חלש בשעות הפעילות', 'אין חלון טוב בשעות הפעילות');
-
-  // conditions factors: species-specific wave band, wind ceiling, sst band
-  const rep = dayWindows.reduce((a, b) => ((b.score ?? -1) > (a.score ?? -1) ? b : a), dayWindows[0]);
-  const reasons = [];
-  const wf = bandFit(rep?.wave_height, sp.wave_pref.min, sp.wave_pref.max);
-  const waveOut = fitLabel(wf, 'בטווח מועדף', 'קרוב לטווח', 'מחוץ לטווח');
-  if (wf != null && rep?.wave_height != null) waveOut.detail = `גלים ${rep.wave_height.toFixed(1)} מ׳`;
-  let windOut = { v: null, label: 'חסר' };
-  if (rep?.wind_kmh != null) {
-    const windF = rep.wind_kmh <= sp.wind_max_kmh ? 1.0 : Math.max(0.2, 1 - (rep.wind_kmh - sp.wind_max_kmh) / sp.wind_max_kmh);
-    windOut = fitLabel(windF, 'מתאימה', 'גבולית', 'חזקה מדי');
-    windOut.detail = `רוח ${Math.round(rep.wind_kmh)} קמ״ש`;
-  }
-  const sf = bandFit(sst, sp.sst_pref.min, sp.sst_pref.max);
-  const sstOut = fitLabel(sf, 'מתאימים', 'גבוליים', 'לא מתאימים');
-  if (sf != null && sst != null) sstOut.detail = `מים ${sst.toFixed(0)}°`;
-
-  const windF = rep?.wind_kmh != null ? (rep.wind_kmh <= sp.wind_max_kmh ? 1.0 : Math.max(0.2, 1 - (rep.wind_kmh - sp.wind_max_kmh) / sp.wind_max_kmh)) : null;
-
-  // Essential factors: waves and wind. If either is missing there is no suitability inference -
-  // partial inference would silently present as full-confidence.
-  if (wf == null || windF == null) {
-    const missing = [wf == null ? 'גלים' : null, windF == null ? 'רוח' : null].filter(Boolean).join(' ו');
-    return { band: 'insufficient', status: season.status, reasons: [`חסרים נתוני ${missing} - אין הערכת התאמה`], confidence: sp.confidence, factors: { season: seasonFactorOut, time: timeFactorOut, wave: waveOut, wind: windOut, sst: sstOut } };
-  }
-  const condFits = [wf, windF, sst != null ? sf : null].filter(x => x != null);
-  const condF = condFits.reduce((a, b) => a + b, 0) / condFits.length;
-  const combined = season.f * 0.4 + timeF * 0.2 + condF * 0.4;
-  let band = combined >= 0.7 ? 'high' : combined >= 0.45 ? 'medium' : 'low';
-  // Season gate: out of season can never read better than low; edge of season or a season
-  // disputed between sources caps at medium - the aggregate must never read as known high fit.
-  if (season.status === 'off') band = 'low';
-  else if ((season.status === 'edge' || season.status === 'disputed') && band === 'high') band = 'medium';
-  // Missing SST: secondary factor, caps at medium rather than blocking inference.
-  if (sst == null && band === 'high') { band = 'medium'; reasons.push('טמפרטורת מים חסרה'); }
-  if (season.status !== 'in') reasons.push(seasonFactorOut.label);
-  if (timeF >= 1.0) reasons.push('חלון טוב בשעות הפעילות');
-  if (wf != null && wf >= 0.95 && rep?.wave_height != null) reasons.push(`גלים ${rep.wave_height.toFixed(1)} מ׳ בטווח`);
-  if (wf != null && wf < 0.5 && rep?.wave_height != null) reasons.push(`גלים ${rep.wave_height.toFixed(1)} מ׳ מחוץ לטווח`);
-  if (rep?.wind_kmh != null && rep.wind_kmh > sp.wind_max_kmh) reasons.push(`רוח ${Math.round(rep.wind_kmh)} קמ״ש מעל המועדף`);
-  if (sf != null && sf >= 0.95 && sst != null) reasons.push(`מים ${sst.toFixed(0)}° מתאימים`);
-  return { band, status: season.status, reasons: reasons.slice(0, 3), confidence: sp.confidence, factors: { season: seasonFactorOut, time: timeFactorOut, wave: waveOut, wind: windOut, sst: sstOut } };
-}
+// Species cards are qualitative only (shore-lure scope, 2026-11-18): no reviewed source
+// validates numerical season/hour/wave/wind/SST cutoffs per species, so the old species
+// suitability model was removed rather than re-parameterized. Marine window scoring
+// (windowScore above) is wave/wind comparison only and stays.
 
 function compass(deg) {
   if (deg == null) return null;
@@ -344,7 +267,6 @@ async function main() {
 
     const days = Object.keys(byDate).sort().map(date => {
       const hours = byDate[date];
-      const month = +date.slice(5, 7);
       // 2-hour windows 00-22
       const windows = [];
       for (let start = 0; start < 24; start += 2) {
@@ -408,9 +330,8 @@ async function main() {
       const dayWaves = hours.map(x => x.wave_height).filter(x => x != null);
       const maxWave = dayWaves.length ? Math.max(...dayWaves) : 0;
       const minWave = dayWaves.length ? Math.min(...dayWaves) : null;
-      const species = speciesCfg.species.map(sp => sp.status_only
-        ? { id: sp.id, status_only: true, confidence: sp.confidence }
-        : { id: sp.id, ...speciesSuitability(sp, month, activeWindows, daySst) });
+      // Qualitative schema: cards render from the frozen config snapshot, not per-day numbers.
+      const species = speciesCfg.species.map(sp => ({ id: sp.id, status_only: true }));
       return {
         date,
         sunrise, sunset,
@@ -514,7 +435,7 @@ async function main() {
       ],
       attribution_he: 'נתוני ים ומזג אוויר דרך Open-Meteo (CC BY 4.0), המשלב מודלים של Météo-France/Copernicus Marine Service (MFWAM, SMOC), ECMWF WAM, NOAA NCEP GFS Wave ו-DWD. גובה פני ים ממודל בלבד, דיוק מוגבל בחוף. מלוא ירח ואור ראשון/אחרון מחושבים.',
       data_availability: DATA_AVAILABILITY,
-      scoring_note_he: 'התאמת הדגים היא היוריסטיקה ניסיונית שקופה המחולקת לגורמים (עונה 40%, שעות 20%, תנאים 40%) ומוצגת כרמה איכותית בלבד - לא אחוז תפיסה ולא הבטחה. ציון התנאים בטבלת החלונות משקף גלים ורוח בלבד, להשוואת שעות באותו יום. ספי הגלים/רוח/טמפרטורה לכל מין הם הנחות עבודה ניסיוניות שלנו, ללא תיקוף מדידות. ייתכן שיכויל בעתיד מדיווחי דיג, אם יצטברו.',
+      scoring_note_he: 'כרטיסי הדגים איכותניים בלבד, בהיקף דיג ז\'ירז\'ור מהחוף - ללא ציון התאמה מספרי: אין מקור מאומת לספי עונה/שעות/גלים/רוח/טמפרטורה למין. ציון התנאים בטבלת החלונות ודירוג הימים משקפים גלים ורוח בלבד, להשוואה בין שעות וימים - לא תחזית תפיסה ולא דירוג בטיחות.',
       stale_beaches: staleBeaches
     },
     beaches: outBeaches
