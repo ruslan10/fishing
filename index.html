@@ -182,7 +182,7 @@ function imsCard(region){
   let archive = null;
   try { archive = await loadJson('data/archive-index.json'); } catch(e){}
 
-  let curRegion = 'center', curBeach = null, curDay = -1; // -1 = uninitialized (auto-select today)
+  let curRegion = 'center', curBeach = null, curDay = -1, curDate = null; // curDay -1 = uninitialized; curDate remembers the picked date across beach/region switches
   const app = document.getElementById('app');
 
   function beachData(id){ return latest.beaches.find(b=>b.id===id); }
@@ -193,13 +193,17 @@ function imsCard(region){
 
   function render(){
     if(!curBeach || !beachList.some(b=>b.id===curBeach && b.region===curRegion)){
-      curBeach = (beachList.find(b=>b.region===curRegion)||{}).id; curDay = -1;
+      curBeach = (beachList.find(b=>b.region===curRegion)||{}).id; curDay = -1; // re-resolve from curDate below
     }
     const bc = beachCfg(curBeach), bd = beachData(curBeach);
     const regionBeaches = beachList.filter(b=>b.region===curRegion);
     const age = issueAgeInfo();
-    // Select the day matching the actual current date (view time), not blindly day 0.
-    if(bd && bd.days?.length && curDay<0){ const nw0 = nowIL(); const di = bd.days.findIndex(d=>d.date===nw0.date); curDay = di>=0?di:0; }
+    // Keep the user's picked date when switching beach/region; otherwise select the actual current date, not blindly day 0.
+    if(bd && bd.days?.length && curDay<0){
+      let di = curDate ? bd.days.findIndex(d=>d.date===curDate) : -1;
+      if(di<0){ curDate = null; const nw0 = nowIL(); di = bd.days.findIndex(d=>d.date===nw0.date); }
+      curDay = di>=0?di:0;
+    }
     if(curDay<0) curDay = 0;
     const today = new Date().toLocaleDateString('sv-SE',{timeZone:latest.meta.timezone});
 
@@ -297,7 +301,7 @@ function imsCard(region){
     app.innerHTML = html;
     app.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{curRegion=t.dataset.region;curBeach=null;curDay=-1;render();});
     app.querySelectorAll('.chip').forEach(c=>c.onclick=()=>{curBeach=c.dataset.beach;curDay=-1;render();});
-    app.querySelectorAll('.day').forEach(d=>d.onclick=()=>{curDay=+d.dataset.day;render();});
+    app.querySelectorAll('.day').forEach(d=>d.onclick=()=>{curDay=+d.dataset.day;curDate=bd.days[curDay]?bd.days[curDay].date:null;render();});
   }
   try { render(); } catch(e){ app.innerHTML = 'שגיאה בטעינת הנתונים: '+e.message; }
   // Live re-render: past windows, best-window recommendation and issue-age warning are computed
