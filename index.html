@@ -217,7 +217,7 @@ function imsCard(region){
           <div class="dd">${wd}</div><div class="dt">${d.date.slice(8,10)}.${d.date.slice(5,7)}</div>
           <div class="wv" style="font-size:10.5px;font-weight:800;white-space:nowrap;line-height:1.25">${waveRangeCm(d.wave_min,d.wave_max)?waveRangeCm(d.wave_min,d.wave_max)+'<div style="font-size:8px;font-weight:400;opacity:.6">ס״מ</div>':(d.wave_max!=null?d.wave_max.toFixed(1)+' מ׳':'')}</div>
           <div class="bdg ${bcls}" style="font-size:9px;margin-top:3px">${BAND_SHORT[d.day_band]||'?'}</div></div>`;
-      }).join('')}</div><div style="font-size:10px;opacity:.65;padding:0 10px 8px;line-height:1.4">דירוג הימים: השוואת גלים ורוח בלבד - לא תחזית תפיסה ולא דירוג בטיחות</div></div>
+      }).join('')}</div></div>
     <div class="tabs">${beachesCfg.regions.map(r=>`<div class="tab ${r.id===curRegion?'on':''}" data-region="${r.id}">${r.name_he}</div>`).join('')}</div>
     <div class="chips">${regionBeaches.map(b=>`<span class="chip ${b.id===curBeach?'on':''}" data-beach="${b.id}">${b.name_he}</span>`).join('')}</div>`;
 
