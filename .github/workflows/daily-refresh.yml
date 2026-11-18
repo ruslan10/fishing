@@ -1,0 +1,31 @@
+name: Daily forecast data refresh
+on:
+  schedule:
+    # 03:30 UTC = 05:30/06:30 Israel time, before the morning fishing window
+    - cron: '30 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Fetch and build forecast data
+        run: node pipeline/fetch-data.mjs
+      - name: Commit new issue data
+        run: |
+          git config user.name "fishing-forecast-bot"
+          git config user.email "fishing-forecast-bot@users.noreply.github.com"
+          git add data/issues data/latest.json data/archive-index.json
+          if git diff --cached --quiet; then
+            echo "No data changes"
+          else
+            git commit -m "data: daily forecast refresh $(date -u +%Y-%m-%dT%H:%MZ)"
+            git push
+          fi
