@@ -1,8 +1,10 @@
 name: Daily forecast data refresh
 on:
   schedule:
-    # 03:30 UTC = 05:30/06:30 Israel time, before the morning fishing window
-    - cron: '30 3 * * *'
+    # 17:30 UTC = 19:30 IST (winter) / 20:30 IDT (summer): evening refresh window,
+    # anchored on the user's requested 20:00 Israel time. A single UTC cron cannot
+    # track DST, so local time drifts +-30-60 min seasonally.
+    - cron: '30 17 * * *'
   workflow_dispatch:
 
 permissions:
