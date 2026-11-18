@@ -42,10 +42,12 @@
       "name_sources": [
         "https://he.wikipedia.org/wiki/גומבר_טורף",
         "https://www.riptide.co.il/species/gomber",
-        "https://fishnetil.co.il/fishguide/גומבר-טורפני-מגדיר-הדייגים/"
+        "https://fishnetil.co.il/fishguide/גומבר-טורפני-מגדיר-הדייגים/",
+        "https://israelfishing.co.il/כתבות/מדריך-דייג-גומברים/",
+        "https://babajig.co.il/דיג-גומבר-בפיתיון/"
       ],
-      "season_note_he": "מחלוקת בין המקורות: לפי חלקם סתיו-אביב, לפי אחרים אביב-קיץ; שיא במעברי עונה",
-      "active_hours_note_he": "שחר ובוקר מוקדם; לפי חלק מהמקורות גם ערב",
+      "season_note_he": "נמצא בחופינו כל השנה; המקורות חלוקים על חודשי השיא: קיץ/אביב, או קיץ-סתיו ועד נובמבר-ינואר",
+      "active_hours_note_he": "שחר ובוקר מוקדם (ז'ירז'ור); בדיג בפיתיון גם בלילה",
       "wave_pref": {
         "min": 0.3,
         "max": 1.2,
@@ -58,12 +60,16 @@
         "experimental": true
       },
       "confidence": "low",
-      "notes_he": "טורף משטח אגרסיבי, נע בלהקות. אוהב מים מעורבלים וקצף.",
+      "notes_he": "טורף משטח אגרסיבי, נע בלהקות. אוהב מים מעורבלים וקצף. עודכן 18.11.2026: נוכחות כל השנה מול שיאי עונה (מקורות חלוקים על חודשי השיא); לילה נוסף לפי מדריכי דיג פיתיון.",
       "season_dispute": true,
       "active_hours": [
         {
           "from": 4,
           "to": 9
+        },
+        {
+          "from": 20,
+          "to": 23
         }
       ]
     },
@@ -124,7 +130,7 @@
         "https://babajig.co.il/fish-targets-israel-guide",
         "https://www.riptide.co.il/species/lavrak"
       ],
-      "season_note_he": "מחלוקת בין המקורות: לפי חלקם (riptide) עונת השיא בחורף, לפי אחרים (babajig) נתפס כל השנה",
+      "season_note_he": "מחלוקת בין המקורות: לפי חלקם עונת השיא בחורף, לפי אחרים נתפס כל השנה",
       "active_hours": [
         {
           "from": 20,
