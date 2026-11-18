@@ -1,10 +1,13 @@
 name: Daily forecast data refresh
 on:
   schedule:
-    # 17:30 UTC = 19:30 IST (winter) / 20:30 IDT (summer): evening refresh window,
-    # anchored on the user's requested 20:00 Israel time. A single UTC cron cannot
-    # track DST, so local time drifts +-30-60 min seasonally.
-    - cron: '30 17 * * *'
+    # Two UTC candidate slots so exactly one lands at 20:00 Asia/Jerusalem:
+    # 17:00 UTC = 20:00 IDT (summer), 18:00 UTC = 20:00 IST (winter).
+    # The gate step below runs the refresh only when local time is 20:xx
+    # and no issue exists yet for that local date, so one slot proceeds
+    # per day. GitHub may still fire scheduled runs late.
+    - cron: '0 17 * * *'
+    - cron: '0 18 * * *'
   workflow_dispatch:
 
 permissions:
@@ -15,12 +18,38 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Gate on 20:00 Asia/Jerusalem, once per local date
+        id: gate
+        run: |
+          LOCAL_NOW=$(TZ=Asia/Jerusalem date '+%F %H:%M')
+          LOCAL_HOUR=$(TZ=Asia/Jerusalem date '+%H')
+          LOCAL_DATE=$(TZ=Asia/Jerusalem date '+%F')
+          echo "Local time: $LOCAL_NOW (Asia/Jerusalem)"
+          if [ "${GITHUB_EVENT_NAME:-}" = "workflow_dispatch" ]; then
+            echo "Manual dispatch: proceeding regardless of local hour."
+            echo "proceed=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          if [ "$LOCAL_HOUR" != "20" ]; then
+            echo "Not the 20:00 local slot; skipping."
+            echo "proceed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          if ls data/issues/${LOCAL_DATE}T*.json >/dev/null 2>&1; then
+            echo "An issue already exists for $LOCAL_DATE; skipping duplicate."
+            echo "proceed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          echo "proceed=true" >> "$GITHUB_OUTPUT"
       - uses: actions/setup-node@v4
+        if: steps.gate.outputs.proceed == 'true'
         with:
           node-version: 22
       - name: Fetch and build forecast data
+        if: steps.gate.outputs.proceed == 'true'
         run: node pipeline/fetch-data.mjs
       - name: Commit new issue data
+        if: steps.gate.outputs.proceed == 'true'
         run: |
           git config user.name "fishing-forecast-bot"
           git config user.email "fishing-forecast-bot@users.noreply.github.com"

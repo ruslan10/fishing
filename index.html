@@ -73,6 +73,8 @@ async function loadJson(p){ const r = await fetch(p); if(!r.ok) throw new Error(
       <h1>תחזית דייג</h1>
       <div class="sub">תחזית דיג לחופי ישראל · נתונים ניסיוניים</div>
       <div class="issued">הופק: ${latest.meta.issued_at_local.replace('T',' · ')}${issueParam?' · מוצגת הפקה מהארכיון':''}
+        ${!issueParam?` · מתעדכן מדי ערב בסביבות 20:00`:''}
+        ${!issueParam&&latest.meta.valid_from&&latest.meta.valid_to?` · התחזית מכסה 7 ימים קלנדריים (${latest.meta.valid_from}–${latest.meta.valid_to}), כולל יום הרענון`:''}
         ${!issueParam&&age.old?`<span style="color:var(--warn-fg)"> · התחזית בת ${age.hours} שעות - ייתכן שהרענון היומי נכשל</span>`:''}
         ${!issueParam&&latest.meta.valid_to&&latest.meta.valid_to<nowIL().date?`<span style="color:var(--warn-fg)"> · תוקף התחזית הסתיים ב-${latest.meta.valid_to} - כל ההמלצות היסטוריות</span>`:''}</div>
     </header>

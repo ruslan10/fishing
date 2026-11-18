@@ -383,6 +383,7 @@ async function main() {
       timezone: TZ,
       valid_from: outBeaches.find(b => b.days)?.days?.[0]?.date ?? null,
       valid_to: outBeaches.find(b => b.days)?.days?.slice(-1)[0]?.date ?? null,
+      refresh_policy_he: 'רענון יומי בערב בסביבות 20:00 שעון ישראל; התחזית מכסה 7 ימים קלנדריים כולל יום הרענון; הפקות קודמות נשמרות בארכיון ללא שינוי',
       sources: [
         { name: 'Open-Meteo Marine API', url: 'https://open-meteo.com/en/docs/marine-weather-api', license: 'CC BY 4.0' },
         { name: 'Open-Meteo Forecast API', url: 'https://open-meteo.com/en/docs', license: 'CC BY 4.0' },
