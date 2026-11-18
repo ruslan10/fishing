@@ -72,7 +72,7 @@ async function loadJson(p){ const r = await fetch(p); if(!r.ok) throw new Error(
     let html = `<header>
       <h1>תחזית דייג</h1>
       <div class="sub">תחזית דיג לחופי ישראל · נתונים ניסיוניים</div>
-      <div class="issued">הופק: ${latest.meta.issued_at_local.replace('T',' · ')}${issueParam?' · מוצגת הפקה מהארכיון':''}
+      <div class="issued">הופק: ${latest.meta.issued_at_local.replace('T',' · ')}${issueParam?' · מוצגת הפקה מהארכיון - משמרת את הפרסום כפי שהיה; הערות חוקיות והמלצות עלולות להתיישן ואין לראות בהן היתר דיג עדכני':''}
         ${!issueParam?` · מתעדכן מדי ערב בסביבות 20:00`:''}
         ${!issueParam&&latest.meta.valid_from&&latest.meta.valid_to?` · התחזית מכסה 7 ימים קלנדריים (${latest.meta.valid_from}–${latest.meta.valid_to}), כולל יום הרענון`:''}
         ${!issueParam&&age.old?`<span style="color:var(--warn-fg)"> · התחזית בת ${age.hours} שעות - ייתכן שהרענון היומי נכשל</span>`:''}
@@ -162,6 +162,7 @@ async function loadJson(p){ const r = await fetch(p); if(!r.ok) throw new Error(
           <div class="lt">${cfg.name_lat||''}</div>
           ${cfg.name_he_official&&cfg.name_he_official!==cfg.name_he?`<div class="official">שם רשמי: ${cfg.name_he_official}</div>`:''}
           ${cfg.ambiguity_note_he?`<div class="official">⚠ ${cfg.ambiguity_note_he}</div>`:''}
+          ${cfg.legal_note_he?`<div class="official">⚖ ${cfg.legal_note_he}</div>`:''}
           <div class="badges"><span class="bdg ${bcls}" style="font-size:11.5px">${btxt}</span><span class="bdg ${cls}">${txt}</span><span class="bdg hrs">${cfg.active_hours_note_he||''}</span></div>
           <div class="factors">
             ${factor('עונה',F.season)}${factor('שעות',F.time)}${factor('גלים',F.wave)}${factor('רוח',F.wind)}${factor('מים',F.sst)}
