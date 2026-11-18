@@ -255,7 +255,7 @@ function imsCard(region){
 
       ${imsCard(curRegion)}
 
-      <h3 class="sec">חלונות דיג · ${day.date===today?'היום':day.date} (שעתיים)</h3>
+      <h3 class="sec">תנאי ים לפי שעות · ${day.date===today?'היום':day.date}</h3>
       <div class="card winwrap">${!day.windows?.length?'<div style="padding:14px;font-size:12.5px;opacity:.75">אין נתוני חלונות ליום זה בהפקה הנוכחית.</div>':`<table class="win">
       <tr><th>שעות</th><th>גלים</th><th>רוח</th><th>זרם</th><th style="width:64px">תנאים</th></tr>
       ${day.windows.map(w=>{ const nw = nowIL(); const isPast = w.past || day.date<nw.date || (day.date===nw.date && w.fromHour+2<=nw.hour);
