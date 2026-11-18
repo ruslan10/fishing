@@ -17,12 +17,6 @@ function condWord(s){ return s==null?'חסר':s>=85?'מצוינים':s>=70?'טו
 function nowIL(){ const p = new Intl.DateTimeFormat('sv-SE',{timeZone:'Asia/Jerusalem',dateStyle:'short',timeStyle:'short'}).format(new Date());
   return { date:p.slice(0,10), hour:+p.slice(11,13) }; }
 // Best remaining window, computed at view time: for today, only windows that haven't ended.
-function bestRemaining(day, todayDate, nowHour){
-  if (day.date < todayDate) return null; // wholly past day: nothing is upcoming
-  const live = (day.windows||[]).filter(w=>w.score!=null && !(day.date===todayDate && w.fromHour+2<=nowHour));
-  return live.sort((a,b)=>b.score-a.score)[0]||null;
-}
-
 function scoreColor(s){ return s==null?'var(--fg)':s>=70?'var(--ok-fg)':s>=45?'var(--warn-fg)':'var(--off-fg)'; }
 function na(v, unit){ return v==null?'<span class="na">חסר</span>':v+(unit||''); }
 
@@ -257,23 +251,7 @@ function imsCard(region){
           ${sunItem('שקיעה', day.sunset, 'sunset')}
           ${sunItem('אור אחרון', day.last_light, 'dusk')}
         </div>
-        <div style="font-size:10px;opacity:.65;margin-top:4px;line-height:1.4">אור ראשון/אחרון: דמדומים אזרחיים מחושבים (שמש 6° מתחת לאופק); האור בפועל תלוי במזג האוויר</div>
-        ${(()=>{ const now = nowIL(); const bw = bestRemaining(day, now.date, now.hour);
-          if(day.date < now.date){
-            const hist = day.best_window;
-            return hist ? `<div class="best" style="background:var(--inset-bg);color:var(--fg)"><span>החלון הטוב באותו יום היה: <span dir="ltr">${hist.from}–${hist.to}</span></span><small>הצגה היסטורית - לא המלצה</small></div>` : '';
-          }
-          if(bw){ const inProg = day.date===now.date && now.hour>=bw.fromHour && now.hour<bw.fromHour+2;
-            if(inProg) return `<div class="best"><span>מתאים עכשיו - נותר עד ${bw.to}</span><small>גלים/רוח ${condWord(bw.score)} · השוואה בין שעות, לא תחזית תפיסה</small></div>`;
-            return `<div class="best"><span>${day.date===now.date?'החלון הטוב הבא:':'החלון המומלץ:'} <span dir="ltr">${bw.from}–${bw.to}</span></span><small>גלים/רוח ${condWord(bw.score)} · השוואה בין שעות, לא תחזית תפיסה</small></div>`; }
-          const tom = bd.days[1] && bd.days[1].best_window;
-          return `<div class="best" style="background:var(--inset-bg);color:var(--fg)"><span>לא נותרו חלונות להיום${tom?` · מחר: <span dir="ltr">${tom.from}–${tom.to}</span>`:''}</span></div>`;
-        })()}
         ${day.high_wave_warning?`<div class="warn-strip">⚠ גלים גבוהים (עד ${day.wave_max.toFixed(1)} מ׳) - זהירות מוגברת בחוף</div>`:''}
-        <div class="light"><a href="https://www.google.com/maps/search/?api=1&query=${bc.lat},${bc.lon}" target="_blank" rel="noopener" style="color:var(--accent)">ניווט לחוף ↗</a></div>
-        ${(()=>{ const sl=(day.windows||[]).map(w=>w.sea_level).filter(x=>x!=null); if(!sl.length) return '';
-          const mn=Math.min(...sl), mx=Math.max(...sl);
-          return `<div class="light" style="opacity:.55">גובה פני ים (מודל, לא מדידת חוף): <span dir="ltr">${mn.toFixed(2)} עד ${mx.toFixed(2)}</span> מ׳ יחסית לממוצע גלובלי</div>`; })()}
       </div>
 
       ${imsCard(curRegion)}
