@@ -284,7 +284,7 @@ function imsCard(region){
         if(sp.status_only) return `<div class="card sp">
           <div class="nm">${cfg.name_he||sp.id}</div>
           <div class="lt">${cfg.name_lat||''}</div>
-          <div class="badges"><span class="bdg off">אין המלצת דיג</span></div>
+          <div class="badges">${cfg.badge_he?`<span class="bdg ${cfg.badge_cls||'off'}">${cfg.badge_he}</span>`:''}</div>
           <div style="font-size:11px;line-height:1.6;opacity:.85">${cfg.legal_note_he||''}</div>
         </div>`;
         return `<div class="card sp">
