@@ -328,18 +328,18 @@ function modelComparison(bd,day){
       <h3 class="sec">בחירת יום · מגמות והשוואה לשבוע</h3>
       <div class="card"><div class="days">${bd.days.map((d,i)=>{
         const wd = HEB_DAYS[new Date(d.date+'T12:00:00').getDay()];
-        const maxWind=d.wind_max_kmh??Math.max(...d.windows.map(w=>w.wind_max_kmh??w.wind_kmh).filter(x=>x!=null));
         const morningWindow=d.windows.find(w=>w.fromHour>=4&&w.fromHour<10)||d.windows[0];
         const morningDirection=morningWindow?.wind_deg;
-        const directionNote=Number.isFinite(morningDirection)?`רוח בוקר ${morningWindow.from}–${morningWindow.to}: ${windAdj(morningDirection)}. החץ הוא כיוון הבוקר; המספר מעליו הוא שיא המהירות היומי.`:'';
+        const directionNote=Number.isFinite(morningDirection)?`רוח בוקר ${morningWindow.from}–${morningWindow.to}: ${windAdj(morningDirection)}. המהירות והכיוון הם מאותו טווח בוקר.`:'';
         const dayArrow=directionNote?`<div class="day-wind-arrow" title="${directionNote}" aria-label="${directionNote}" style="display:flex;justify-content:center;align-items:center;flex-direction:column;margin-top:5px">${windIcon(morningDirection)}<span style="font-size:7px;margin-top:1px">בוקר</span></div>`:'<div style="font-size:8px;margin-top:5px">כיוון חסר</div>';
-        const wl=waveLevel(d.wave_max), vl=Number.isFinite(maxWind)?windLevel(maxWind):null;
+        const morningMax=morningWindow?.wind_max_kmh??morningWindow?.wind_kmh;
+        const wl=waveLevel(d.wave_max), vl=Number.isFinite(morningMax)?windLevel(morningMax):null;
         const waveC=wl==null?null:LEVELS[wl],windC=vl==null?null:LEVELS[vl];
         const mini=(c,value,label)=>`<div style="margin-top:4px;padding:4px 1px;border-radius:7px;font-size:10px;font-weight:800;${c?`background:${c.color};color:${c.ink};${c.id==='black'?'outline:1px solid #94a3b8;':''}`:''}"><div style="font-size:8px;font-weight:400">${label}</div>${value}</div>`;
         return `<div class="day ${d.date===today?'today':''} ${i===curDay?'sel':''}" data-day="${i}">
           <div class="dd">${wd}</div><div class="dt">${d.date.slice(8,10)}.${d.date.slice(5,7)}</div>
           ${latest.meta.version>=5?'':mini(waveC,waveRangeCm(d.wave_min,d.wave_max)||'חסר','מודל גלים · ס״מ')}
-          ${mini(windC,vl==null?'חסר':`<bdi>${Math.round(maxWind)}</bdi>`,'מודל רוח · קמ״ש')}${dayArrow}</div>`;
+          ${mini(windC,vl==null?'חסר':windRangeKmh(morningWindow),'רוח בוקר · קמ״ש')}${dayArrow}</div>`;
       }).join('')}</div></div>
 
 `;
@@ -437,7 +437,7 @@ function modelComparison(bd,day){
     if(bd?.days?.length){
       const helpDay=bd.days[Math.min(curDay,bd.days.length-1)];
       const hw=helpDay.windows.find(w=>w.fromHour>=4&&w.fromHour<10)||helpDay.windows[0];
-      if(hw) html+=`<dialog class="wind-dialog" aria-labelledby="wind-help-title"><h2 id="wind-help-title">רוח בוקר</h2><p>ביום שנבחר, בין <bdi>${hw.from}–${hw.to}</bdi> לפי שעון ישראל.</p><p>המספרים הם המהירות הנמוכה והגבוהה בתחזיות השעתיות בטווח הזה, מעוגלות לקמ״ש. זה לא ממוצע יומי ולא משבי רוח.</p><p>הכיוון הוא הכיוון שממנו הרוח נושבת, לפי ממוצע מעגלי של הכיוונים באותן שעות.</p><p>הנתון בכרטיס הוא תחזית ממודל מזג אוויר בגובה 10 מטר, לא מדידה ולא התחזית הרשמית של IMS. בטבלה, בשעות המכוסות בתחזית הרשמית, מוצגים נתוני IMS.</p><p>בבחירת הימים למעלה, החץ מציג את כיוון רוח הבוקר של אותו יום, כמו בכרטיס הזה. המספר הצבעוני מעל החץ הוא שיא מהירות הרוח היומי, לא מהירות הבוקר. החץ מצביע אל הכיוון שממנו נושבת הרוח.</p><form method="dialog"><button>סגירה</button></form></dialog>`;
+      if(hw) html+=`<dialog class="wind-dialog" aria-labelledby="wind-help-title"><h2 id="wind-help-title">רוח בוקר</h2><p>ביום שנבחר, בין <bdi>${hw.from}–${hw.to}</bdi> לפי שעון ישראל.</p><p>המספרים הם המהירות הנמוכה והגבוהה בתחזיות השעתיות בטווח הזה, מעוגלות לקמ״ש. זה לא ממוצע יומי ולא משבי רוח.</p><p>הכיוון הוא הכיוון שממנו הרוח נושבת, לפי ממוצע מעגלי של הכיוונים באותן שעות.</p><p>הנתון בכרטיס הוא תחזית ממודל מזג אוויר בגובה 10 מטר, לא מדידה ולא התחזית הרשמית של IMS. בטבלה, בשעות המכוסות בתחזית הרשמית, מוצגים נתוני IMS.</p><p>בבחירת הימים למעלה, החץ מציג את כיוון רוח הבוקר של אותו יום, כמו בכרטיס הזה. המספרים הצבעוניים מעל החץ הם טווח המהירויות באותו בוקר, כמו בכרטיס הזה. הצבע נקבע לפי המהירות הגבוהה בטווח הבוקר, לא לפי שיא הרוח היומי. החץ מצביע אל הכיוון שממנו נושבת הרוח.</p><form method="dialog"><button>סגירה</button></form></dialog>`;
     }
     app.innerHTML = html;
     const helpButton=app.querySelector('.wind-help'), helpDialog=app.querySelector('.wind-dialog:not(.score-dialog)');
