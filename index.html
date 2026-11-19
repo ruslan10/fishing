@@ -306,13 +306,17 @@ function modelComparison(bd,day){
       <div class="card"><div class="days">${bd.days.map((d,i)=>{
         const wd = HEB_DAYS[new Date(d.date+'T12:00:00').getDay()];
         const maxWind=d.wind_max_kmh??Math.max(...d.windows.map(w=>w.wind_max_kmh??w.wind_kmh).filter(x=>x!=null));
+        const peakWindow=d.windows.filter(w=>Number.isFinite(w.wind_max_kmh??w.wind_kmh)).reduce((best,w)=>!best||(w.wind_max_kmh??w.wind_kmh)>(best.wind_max_kmh??best.wind_kmh)?w:best,null);
+        const peakDirection=peakWindow?.wind_deg;
+        const directionNote=Number.isFinite(peakDirection)?`כיוון מקור הרוח: ${windAdj(peakDirection)}. ממוצע הכיוון בטווח שיא הרוח ${peakWindow.from}–${peakWindow.to}, לא כיוון קבוע לכל היום.`:'';
+        const dayArrow=directionNote?`<div class="day-wind-arrow" title="${directionNote}" aria-label="${directionNote}" style="display:flex;justify-content:center;margin-top:5px">${windIcon(peakDirection)}</div>`:'<div style="font-size:8px;margin-top:5px">כיוון חסר</div>';
         const wl=waveLevel(d.wave_max), vl=Number.isFinite(maxWind)?windLevel(maxWind):null;
         const waveC=wl==null?null:LEVELS[wl],windC=vl==null?null:LEVELS[vl];
         const mini=(c,value,label)=>`<div style="margin-top:4px;padding:4px 1px;border-radius:7px;font-size:10px;font-weight:800;${c?`background:${c.color};color:${c.ink};${c.id==='black'?'outline:1px solid #94a3b8;':''}`:''}"><div style="font-size:8px;font-weight:400">${label}</div>${value}</div>`;
         return `<div class="day ${d.date===today?'today':''} ${i===curDay?'sel':''}" data-day="${i}">
           <div class="dd">${wd}</div><div class="dt">${d.date.slice(8,10)}.${d.date.slice(5,7)}</div>
           ${latest.meta.version>=5?'':mini(waveC,waveRangeCm(d.wave_min,d.wave_max)||'חסר','מודל גלים · ס״מ')}
-          ${mini(windC,vl==null?'חסר':`<bdi>${Math.round(maxWind)}</bdi>`,'מודל רוח · קמ״ש')}</div>`;
+          ${mini(windC,vl==null?'חסר':`<bdi>${Math.round(maxWind)}</bdi>`,'מודל רוח · קמ״ש')}${dayArrow}</div>`;
       }).join('')}</div></div>
 
 `;
@@ -410,7 +414,7 @@ function modelComparison(bd,day){
     if(bd?.days?.length){
       const helpDay=bd.days[Math.min(curDay,bd.days.length-1)];
       const hw=helpDay.windows.find(w=>w.fromHour>=4&&w.fromHour<10)||helpDay.windows[0];
-      if(hw) html+=`<dialog class="wind-dialog" aria-labelledby="wind-help-title"><h2 id="wind-help-title">רוח בוקר</h2><p>ביום שנבחר, בין <bdi>${hw.from}–${hw.to}</bdi> לפי שעון ישראל.</p><p>המספרים הם המהירות הנמוכה והגבוהה בתחזיות השעתיות בטווח הזה, מעוגלות לקמ״ש. זה לא ממוצע יומי ולא משבי רוח.</p><p>הכיוון הוא הכיוון שממנו הרוח נושבת, לפי ממוצע מעגלי של הכיוונים באותן שעות.</p><p>הנתון בכרטיס הוא תחזית ממודל מזג אוויר בגובה 10 מטר, לא מדידה ולא התחזית הרשמית של IMS. בטבלה, בשעות המכוסות בתחזית הרשמית, מוצגים נתוני IMS.</p><form method="dialog"><button>סגירה</button></form></dialog>`;
+      if(hw) html+=`<dialog class="wind-dialog" aria-labelledby="wind-help-title"><h2 id="wind-help-title">רוח בוקר</h2><p>ביום שנבחר, בין <bdi>${hw.from}–${hw.to}</bdi> לפי שעון ישראל.</p><p>המספרים הם המהירות הנמוכה והגבוהה בתחזיות השעתיות בטווח הזה, מעוגלות לקמ״ש. זה לא ממוצע יומי ולא משבי רוח.</p><p>הכיוון הוא הכיוון שממנו הרוח נושבת, לפי ממוצע מעגלי של הכיוונים באותן שעות.</p><p>הנתון בכרטיס הוא תחזית ממודל מזג אוויר בגובה 10 מטר, לא מדידה ולא התחזית הרשמית של IMS. בטבלה, בשעות המכוסות בתחזית הרשמית, מוצגים נתוני IMS.</p><p>בבחירת הימים למעלה, חץ הרוח מצביע אל הכיוון שממנו נושבת הרוח. זהו ממוצע הכיוון בטווח שלוש השעות שבו שיא המהירות היומי, לא כיוון קבוע לכל היום.</p><form method="dialog"><button>סגירה</button></form></dialog>`;
     }
     app.innerHTML = html;
     const helpButton=app.querySelector('.wind-help'), helpDialog=app.querySelector('.wind-dialog');
