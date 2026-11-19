@@ -449,6 +449,7 @@ async function main() {
     beaches: outBeaches
   };
 
+  if(imsBlock.available){ const ip=path.join(DATA,'ims-latest.json');fs.writeFileSync(ip+'.tmp',JSON.stringify({...imsBlock,checked_at:nowUtc.toISOString(),source_url:'https://ims.gov.il/he/coasts'},null,1)+'\n');fs.renameSync(ip+'.tmp',ip); }
   fs.mkdirSync(path.join(DATA, 'issues'), { recursive: true });
   const issuePath = path.join(DATA, 'issues', `${issueId}.json`);
   // Exclusive create: never overwrite an existing issue file (immutability).
