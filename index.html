@@ -270,7 +270,6 @@ function weeklyWaveChart(bd){
     </header>
     <div class="tabs">${beachesCfg.regions.map(r=>`<div class="tab ${r.id===curRegion?'on':''}" data-region="${r.id}">${r.name_he}</div>`).join('')}</div>
     <select class="beachsel" aria-label="בחירת חוף">${regionBeaches.map(b=>`<option value="${b.id}" ${b.id===curBeach?'selected':''}>${b.name_he}</option>`).join('')}</select>
-    ${imsCard(curRegion)}
       <h3 class="sec">מגמת מודל בים · 7 הימים הבאים</h3>
       <div class="card"><div style="font-size:10px;opacity:.65;margin-bottom:6px">מודל משלים נפרד מ־IMS · לא גובה שבירה בחוף</div><div class="days">${bd.days.map((d,i)=>{
         const wd = HEB_DAYS[new Date(d.date+'T12:00:00').getDay()];
@@ -284,6 +283,7 @@ function weeklyWaveChart(bd){
           ${mini(windC,vl==null?'חסר':`<bdi>${Math.round(maxWind)}</bdi>`,'מודל רוח · קמ״ש')}</div>`;
       }).join('')}</div></div>
     ${weeklyWaveChart(bd)}
+    ${imsCard(curRegion)}
 `;
 
     if(!bd || bd.missing){
