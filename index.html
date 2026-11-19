@@ -246,6 +246,28 @@ function waveSourceLabel(bd){
   if(bd?.wave_primary) return 'Open-Meteo · גיבוי';
   return 'Open-Meteo';
 }
+function weeklyWaveChart(bd){
+  const prov=bd?.wave_provenance;
+  const series=prov?.model_series?.[bd.wave_primary];
+  const rows=series?.hourly||[];
+  if(!rows.length) return '';
+  const days=bd.days.map(d=>d.date), byTime=new Map(rows.map(r=>[r.time,r.height]));
+  const samples=days.flatMap(date=>Array.from({length:24},(_,h)=>({time:`${date}T${String(h).padStart(2,'0')}:00`,date,h,height:byTime.get(`${date}T${String(h).padStart(2,'0')}:00`)??null})));
+  const vals=samples.map(r=>r.height).filter(Number.isFinite);
+  if(!vals.length) return '<div class="card">גרף שבועי: נתוני המודל חסרים</div>';
+  const W=1400,H=270,L=42,R=20,T=28,B=205,plot=W-L-R;
+  const max=Math.max(100,Math.ceil(Math.max(...vals)*100/50)*50);
+  const x=i=>W-R-i/(samples.length-1)*plot;
+  const y=v=>B-(v*100/max)*(B-T);
+  const ticks=Array.from({length:max/50+1},(_,i)=>{const cm=i*50,yy=y(cm/100);return `<line x1="${L}" x2="${W-R}" y1="${yy}" y2="${yy}" stroke="#294154"/><text x="${W-3}" y="${yy+4}" font-size="10" text-anchor="end">${Math.round(cm)}</text>`;}).join('');
+  let path='',last=false;
+  for(let i=0;i<samples.length;i++){const v=samples[i].height;if(!Number.isFinite(v)){last=false;continue;}path+=`${last?'L':'M'}${x(i).toFixed(2)},${y(v).toFixed(2)} `;last=true;}
+  const grid=days.map((date,di)=>{const i=di*24,xx=x(i),mid=x(i+11.5);return `<line x1="${xx}" x2="${xx}" y1="${T}" y2="${B}" stroke="#476076" stroke-dasharray="3 4"/><text x="${mid}" y="246" font-size="12" font-weight="700">${date.slice(8,10)}.${date.slice(5,7)}</text>`;}).join('');
+  const hours=samples.filter(r=>r.h%6===0).map(r=>{const i=samples.indexOf(r);return `<text x="${x(i)}" y="224" font-size="10">${String(r.h).padStart(2,'0')}:00</text>`;}).join('');
+  const dots=samples.map((r,i)=>Number.isFinite(r.height)?`<circle cx="${x(i)}" cy="${y(r.height)}" r="2" fill="#62d5f1"><title>${r.time.replace('T',' ')} · ${Math.round(r.height*100)} ס״מ</title></circle>`:'').join('');
+  return `<div class="card weekly-wavechart" style="padding:14px 0 7px"><div style="padding:0 15px;font-size:13px;font-weight:700">גרף שבועי · <bdi>${waveSourceLabel(bd)}</bdi></div><div style="padding:4px 15px 0;font-size:10px;opacity:.65">גובה גלים משמעותי בים · ס״מ · לא תחזית חוף רשמית</div><div class="weekly-wave-scroll" dir="rtl" tabindex="0" role="region" aria-label="גרף גלים שבועי בגלילה אופקית" style="overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;margin-top:8px"><svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="${vals.length} ערכי מודל שעתיים לאורך שבעה ימים, חוסרים אינם מחוברים" style="display:block;max-width:none;direction:ltr;font-family:Heebo,sans-serif;text-anchor:middle;fill:#9db2c4">${ticks}${grid}<path d="${path}" fill="none" stroke="#38c5ef" stroke-width="2.5" stroke-linejoin="round"/>${dots}${hours}</svg></div><div style="font-size:10px;opacity:.6;padding:0 15px 4px">↔ גלילה לשאר השבוע · דגימות שעתיות, הקו ביניהן אינו מדידה</div></div>`;
+}
+
 function modelComparison(bd,day){
   const c=day?.wave_comparison;
   if(!c) return '';
@@ -292,6 +314,7 @@ function modelComparison(bd,day){
       }).join('')}</div></div>
     ${officialWaveChart(curRegion)}
     ${imsCard(curRegion)}
+    ${weeklyWaveChart(bd)}
     ${modelComparison(bd,bd?.days?.[Math.min(curDay,(bd?.days?.length||1)-1)])}
 `;
 
