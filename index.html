@@ -252,6 +252,10 @@ function imsCard(region){
             const adj = windAdj(repWind.wind_deg);
             return `<div class="hg"><div class="k">רוח (בוקר)</div><div class="v" style="display:flex;align-items:center;gap:6px">${windIcon(repWind.wind_deg)}<span style="white-space:nowrap">${windRangeKmh(repWind)} קמ״ש</span>${stateChip(windCat(repWind.wind_max_kmh??repWind.wind_kmh))}</div><div style="font-size:11px;font-weight:400;opacity:.75;margin-top:2px">${adj?'רוח '+adj:''}</div></div>`; })()}
           <div class="hg"><div class="k">מי ים</div><div class="v">${day.sst_avg!=null?day.sst_avg.toFixed(1)+'°':'חסר'}</div></div>
+          ${(()=>{ let lo=day.air_temp_min, hi=day.air_temp_max;
+            if(lo==null||hi==null){ const ts=day.windows.map(w=>w.air_temp).filter(x=>x!=null); if(ts.length){ lo=Math.min(...ts); hi=Math.max(...ts); } }
+            const txt = lo==null ? 'חסר' : (Math.round(lo)===Math.round(hi) ? `<bdi class="ltr">${Math.round(hi)}</bdi>°` : `<bdi class="ltr">${Math.round(lo)}–${Math.round(hi)}</bdi>°`);
+            return `<div class="hg"><div class="k">אוויר (טווח היום)</div><div class="v">${txt}</div></div>`; })()}
           <div class="hg"><div class="k">ירח</div><div class="v" style="display:flex;flex-direction:column;align-items:flex-start;gap:2px">${moonIcon(day.moon_illumination_pct, day.moon_waxing)}<span style="font-size:11px;font-weight:400;opacity:.75">${day.moon_illumination_pct}% מואר</span></div></div>
         </div>
         <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;background:var(--inset-bg);border-radius:12px;padding:10px 6px;margin-top:8px">

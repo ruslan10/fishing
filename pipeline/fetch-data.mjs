@@ -332,6 +332,7 @@ async function main() {
       const dayScore = scored.length ? Math.round((best.score * 0.6) + (top3.reduce((s, x) => s + x.score, 0) / top3.length) * 0.4) : null;
       const dayBand = dayScore == null ? 'insufficient' : dayScore >= 70 ? 'high' : dayScore >= 45 ? 'medium' : 'low';
       const daySst = avg(hours.map(x => x.sst));
+      const dayAir = hours.map(x => x.air_temp).filter(x => x != null);
       const dayWaves = hours.map(x => x.wave_height).filter(x => x != null);
       const maxWave = dayWaves.length ? Math.max(...dayWaves) : 0;
       const minWave = dayWaves.length ? Math.min(...dayWaves) : null;
@@ -351,6 +352,8 @@ async function main() {
         wave_min: minWave,
         high_wave_warning: maxWave > 1.8,
         sst_avg: daySst,
+        air_temp_min: dayAir.length ? round(Math.min(...dayAir)) : null,
+        air_temp_max: dayAir.length ? round(Math.max(...dayAir)) : null,
         windows,
         species
       };
