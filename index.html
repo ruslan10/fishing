@@ -190,10 +190,10 @@ function imsCard(region){
 
 // Daily wave maxima only. Straight segments connect daily samples, not hourly forecasts.
 function weeklyWaveChart(bd){
-  const days=(bd.days||[]).slice(0,7), W=350, H=232, base=211, top=105, step=46;
+  const days=(bd.days||[]).slice(0,7), W=756, H=272, base=252, top=116, step=100;
   const values=days.map(d=>Number.isFinite(d.wave_max)?Math.round(d.wave_max*100):null);
   const ceiling=Math.max(100,Math.ceil(Math.max(0,...values.filter(v=>v!=null))/50)*50);
-  const x=i=>W-37-i*step, y=v=>base-(v/ceiling)*(base-top);
+  const x=i=>W-78-i*step, y=v=>base-(v/ceiling)*(base-top);
   const points=values.map((v,i)=>v==null?null:[x(i),y(v)]);
   let segments=[],current=[];
   for(const pt of [...points,null]){if(pt)current.push(pt);else if(current.length){segments.push(current);current=[];}}
@@ -201,10 +201,10 @@ function weeklyWaveChart(bd){
   const labels=days.map((d,i)=>{
     const strongest=(d.windows||[]).filter(w=>Number.isFinite(w.wind_max_kmh??w.wind_kmh)).reduce((a,w)=>!a||(w.wind_max_kmh??w.wind_kmh)>(a.wind_max_kmh??a.wind_kmh)?w:a,null);
     const deg=strongest?.wind_deg;
-    const arrow=Number.isFinite(deg)?`<g transform="translate(${x(i)} 65) rotate(${deg})"><path d="M0,-9 L5,3 L1.5,1 L1.5,9 L-1.5,9 L-1.5,1 L-5,3 Z" fill="#cbd5e1"/></g>`:`<text x="${x(i)}" y="69">—</text>`;
-    return `<g data-date="${d.date}" data-wave-cm="${values[i]??''}"><title>${d.date}: ${values[i]==null?'חסר':values[i]+' ס״מ'}; מקור הרוח בחלון החזק: ${strongest?.wind_dir||'חסר'}</title><text x="${x(i)}" y="18">${['א׳','ב׳','ג׳','ד׳','ה׳','ו׳','ש׳'][new Date(d.date+'T12:00:00').getDay()]}</text><text x="${x(i)}" y="36" fill="#94a3b8">${d.date.slice(8,10)}/${d.date.slice(5,7)}</text>${arrow}${values[i]==null?`<text x="${x(i)}" y="151">חסר</text>`:`<text class="wave-value" x="${x(i)}" y="${y(values[i])-12}">${values[i]}</text><circle cx="${x(i)}" cy="${y(values[i])}" r="3.5" fill="#e0f2fe" stroke="#0f172a" stroke-width="1.5"/>`}</g>`;
+    const arrow=Number.isFinite(deg)?`<g transform="translate(${x(i)} 79) rotate(${deg})"><path d="M0,-9 L5,3 L1.5,1 L1.5,9 L-1.5,9 L-1.5,1 L-5,3 Z" fill="#cbd5e1"/></g>`:`<text x="${x(i)}" y="69">—</text>`;
+    return `<g data-date="${d.date}" data-wave-cm="${values[i]??''}"><title>${d.date}: ${values[i]==null?'חסר':values[i]+' ס״מ'}; מקור הרוח בחלון החזק: ${strongest?.wind_dir||'חסר'}</title><line x1="${x(i)+50}" y1="7" x2="${x(i)+50}" y2="${base}" stroke="#25394d" stroke-width="1"/><text x="${x(i)}" y="22" font-size="16">${d.date===nowIL().date?'היום':HEB_DAYS[new Date(d.date+'T12:00:00').getDay()]}</text><text x="${x(i)}" y="44" font-size="13" fill="#94a3b8">${d.date.slice(8,10)}/${d.date.slice(5,7)}</text>${arrow}${values[i]==null?`<text x="${x(i)}" y="151">חסר</text>`:`<text class="wave-value" x="${x(i)}" y="${y(values[i])-16}" font-size="16">${values[i]} ס״מ</text><circle cx="${x(i)}" cy="${y(values[i])}" r="3.5" fill="#e0f2fe" stroke="#0f172a" stroke-width="1.5"/>`}</g>`;
   }).join('');
-  return `<div class="card wavechart"><div class="wavechart-title" style="font-size:13px;font-weight:700">גובה הגלים · שיא יומי בס״מ</div><div class="wavechart-key" style="font-size:10px;color:#94a3b8;margin-top:3px">חצים: מאין הרוח בחלון החזק ביום</div><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="גרף שיא גובה הגלים היומי וחצי מקור הרוח לשבוע" style="display:block;width:100%;direction:ltr;font:11px Heebo,sans-serif;text-anchor:middle;fill:#e2e8f0"><line x1="14" y1="${base}" x2="336" y2="${base}" stroke="#334155"/>${areas}${labels}<text x="336" y="227" fill="#94a3b8" font-size="9">0</text></svg></div>`;
+  return `<div class="card wavechart"><div class="wavechart-title" style="font-size:13px;font-weight:700">גובה הגלים · שיא יומי בס״מ</div><div class="wavechart-key" style="font-size:10px;color:#94a3b8;margin-top:3px">חצים: מאין הרוח בחלון החזק ביום</div><div style="overflow-x:auto;direction:rtl;margin:12px -8px 0"><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="גרף שיא גובה הגלים היומי וחצי מקור הרוח לשבוע" style="display:block;width:756px;max-width:none;direction:ltr;font:13px Heebo,sans-serif;text-anchor:middle;fill:#e2e8f0"><line x1="14" y1="${base}" x2="742" y2="${base}" stroke="#334155"/>${areas}${labels}<text x="740" y="269" fill="#94a3b8" font-size="11">0</text></svg></div></div>`;
 }
 
   let archive = null;
