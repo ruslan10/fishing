@@ -137,3 +137,34 @@ its exclusions. This project is not offered under an open-source license.
 Third-party data, dependencies, fonts and assets retain their own terms. Existing
 source credits and bundled license/notice files remain applicable. The generated
 share illustration is not covered by an assertion of exclusive copyright.
+
+## Browser asset releases
+
+Run `python3 pipeline/version-assets.py` after changing browser code/styles/assets.
+The push workflow `version-assets.yml` also runs this automatically on `main`,
+commits generated files and explicitly requests a Pages build. Until that build
+finishes, the previous complete asset release may remain visible.
+
+- Edit source files in their original locations, not files under `static/`.
+- `index.html` references content-hashed copies under `static/`. Imports and CSS
+  dependencies are rewritten recursively. Inline scripts belong to the HTML
+  release. `asset-manifest.json` maps source paths to generated paths.
+- Historical hashed assets are retained, so cached older HTML keeps its matching
+  scripts/styles. Do not delete old files casually or edit them in place.
+- `release.json` is checked with `cache: no-store` on focus/visibility and every
+  five minutes. A newer release navigates to a versioned entry URL, preserving
+  the selected beach/date, query parameters and scroll position. Open dialogs
+  defer the check. A same-release query guard prevents reload loops.
+- Mutable forecast/config JSON already uses fresh no-store requests. Immutable
+  dated issue URLs keep their normal cache behavior and are never rewritten.
+- Third-party font delivery remains controlled by its provider.
+- GitHub Pages controls HTTP cache headers. HTML cached before this mechanism
+  was installed cannot run the new checker; a normal reload may initially be
+  subject to the platform's HTML cache. This does not force offline tabs or
+  WhatsApp's stored link cards to refresh.
+
+Tests: `python3 qa/asset-version-tests.py` and
+`node qa/cache-upgrade-check.js` (Playwright + system Chrome). The browser test
+loads a release with a warm cache, introduces a newly named module export,
+checks automatic upgrade, retained old assets and selected date, and records
+mobile/desktop screenshots. It uses a temporary fixture and never mutates data.

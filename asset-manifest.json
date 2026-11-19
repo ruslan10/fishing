@@ -1,0 +1,10 @@
+{
+  "version": "8001c821c10e15f99abe",
+  "assets": {
+    "assets/fishing-share-v2.jpg": "static/fishing-share-v2.a6583fd38decea44.jpg",
+    "condition-scale.mjs": "static/condition-scale.f2eb3f77e82970ce.mjs",
+    "experimental-score.mjs": "static/experimental-score.2f87b4cdcf8e20cd.mjs",
+    "fishing-assessment.mjs": "static/fishing-assessment.64bc75198d312322.mjs",
+    "theme.css": "static/theme.e219e76aa162eea1.css"
+  }
+}

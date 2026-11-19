@@ -11,8 +11,8 @@
 <meta property="og:title" content="תחזית דייג">
 <meta property="og:description" content="גלים, רוח ותנאי הים לחופי ישראל לפי חוף ויום.">
 <meta property="og:url" content="https://ruslan10.github.io/fishing/">
-<meta property="og:image" content="https://ruslan10.github.io/fishing/assets/fishing-share-v2.jpg">
-<meta property="og:image:secure_url" content="https://ruslan10.github.io/fishing/assets/fishing-share-v2.jpg">
+<meta property="og:image" content="https://ruslan10.github.io/fishing/static/fishing-share-v2.a6583fd38decea44.jpg">
+<meta property="og:image:secure_url" content="https://ruslan10.github.io/fishing/static/fishing-share-v2.a6583fd38decea44.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -20,12 +20,12 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="תחזית דייג">
 <meta name="twitter:description" content="גלים, רוח ותנאי הים לחופי ישראל לפי חוף ויום.">
-<meta name="twitter:image" content="https://ruslan10.github.io/fishing/assets/fishing-share-v2.jpg">
+<meta name="twitter:image" content="https://ruslan10.github.io/fishing/static/fishing-share-v2.a6583fd38decea44.jpg">
 <meta name="twitter:image:alt" content="איור דייג עם חכה מכופפת ודג מזנק מהים, תחזית דייג">
 
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎣</text></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="theme.css?v=e219e76aa162">
+<link rel="stylesheet" href="./static/theme.e219e76aa162eea1.css">
 <style>
 .day-wind-arrow svg {background:#0b1825;border-radius:50%;padding:2px;width:22px;height:22px;box-sizing:border-box}
 .day.sel .day-wind-arrow svg {background:#102131;box-shadow:0 0 0 1px #334e68}
@@ -38,6 +38,27 @@
 .wind-dialog button {font:600 14px Heebo;padding:8px 20px;border:0;border-radius:9px;background:var(--accent);color:#06202b;cursor:pointer;margin-top:12px}
 @media(max-width:767px){.hero-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-grid .hg{min-width:0}.hero-grid .v[style*="display:flex"]{flex-wrap:wrap}}
 </style>
+
+<script id="release-check">
+(()=>{
+ const current='8001c821c10e15f99abe';let checking=false;
+ async function check(){
+  if(checking||document.hidden||document.querySelector('dialog[open]')||!navigator.onLine)return;
+  checking=true;
+  try{
+   const r=await fetch('release.json?t='+Date.now(),{cache:'no-store'});
+   if(!r.ok)return;
+   const next=await r.json();
+   if(next.version&&next.version!==current){
+    // A distinct entry URL bypasses a cached HTML response while preserving selection/archive params.
+    const u=new URL(location.href);if(u.searchParams.get('_release')===next.version)return;try{sessionStorage.setItem('fishing.releaseView',JSON.stringify({date:document.querySelector('.day.sel')?.dataset.date,scroll:scrollY}));}catch(e){}u.searchParams.set('_release',next.version);location.replace(u);
+   }
+  }catch(e){}finally{checking=false;}
+ }
+ addEventListener('focus',check);document.addEventListener('visibilitychange',check);
+ setInterval(check,300000);check();
+})();
+</script>
 </head>
 <body><div class="wrap" id="app">טוען נתונים...</div>
 <script>
@@ -49,9 +70,9 @@
 })();
 </script>
 <script type="module">
-import {fishingAssessment,clarityAssessment} from "./fishing-assessment.mjs";
-import {LEVELS,waveLevel,windLevel} from "./condition-scale.mjs?v=f2eb3f77e829";
-import {windowScore,modelWindowScore} from "./experimental-score.mjs?v=2f87b4cdcf8e";
+import {fishingAssessment,clarityAssessment} from "./static/fishing-assessment.64bc75198d312322.mjs";
+import {LEVELS,waveLevel,windLevel} from "./static/condition-scale.f2eb3f77e82970ce.mjs";
+import {windowScore,modelWindowScore} from "./static/experimental-score.2f87b4cdcf8e20cd.mjs";
 function summaryDatumIcon(kind){
  const paths={sea:'<path d="M3 17c3-3 6 3 9 0s6 3 9 0M3 21c3-3 6 3 9 0s6 3 9 0M10 3v7a4 4 0 1 0 4 0V3a2 2 0 0 0-4 0Z"/>',salt:'<path d="m12 2 7 9a8 8 0 1 1-14 0Z"/><path d="M8 15h.01M15 13h.01M13 18h.01"/>',air:'<path d="M9 4a3 3 0 0 1 6 0v10a5 5 0 1 1-6 0Z"/><path d="M12 7v11M18 5h3M18 9h2"/>',pressure:'<path d="M4 18a9 9 0 1 1 16 0M12 4v3M5 8l2 2M19 8l-2 2M3 14h3M21 14h-3M12 14l4-4"/><circle cx="12" cy="14" r="2"/>',moon:'<path d="M20 15A9 9 0 0 1 9 4a9 9 0 1 0 11 11Z"/>'};
  return `<button type="button" class="summary-datum-icon" data-kind="${kind}" aria-label="הסבר על ${({sea:'טמפרטורת מי הים',salt:'מליחות',air:'טמפרטורת האוויר',pressure:'לחץ ברומטרי',moon:'ירח'})[kind]}" aria-haspopup="dialog" style="cursor:pointer;background:var(--inset-bg);display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;padding:5px;margin-inline-start:4px;border:1px solid var(--border);border-radius:50%;color:var(--accent);vertical-align:middle;box-sizing:border-box"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${paths[kind]}</svg></button>`;
@@ -274,6 +295,8 @@ function officialWindow(region,day,w){
     if(savedBeach){ curBeach=savedBeach.id; curRegion=savedBeach.region; }
   } catch(e){} // Storage may be disabled; the selector must still work.
   function rememberBeach(){ try { localStorage.setItem(BEACH_STORAGE_KEY,curBeach); } catch(e){} }
+  let releaseView=null;
+  try{releaseView=JSON.parse(sessionStorage.getItem('fishing.releaseView'));sessionStorage.removeItem('fishing.releaseView');if(releaseView?.date)curDate=releaseView.date;}catch(e){}
   const app = document.getElementById('app');
 
   function beachData(id){ return latest.beaches.find(b=>b.id===id); }
@@ -373,7 +396,7 @@ function modelComparison(bd,day){
         const wl=waveLevel(d.wave_max), vl=Number.isFinite(morningMax)?windLevel(morningMax):null;
         const waveC=wl==null?null:LEVELS[wl],windC=vl==null?null:LEVELS[vl];
         const mini=(c,value,label)=>`<div style="margin-top:4px;padding:4px 1px;border-radius:7px;font-size:10px;font-weight:800;${c?`background:${c.color};color:${c.ink};${c.id==='black'?'outline:1px solid #94a3b8;':''}`:''}"><div style="font-size:8px;font-weight:400">${label}</div>${value}</div>`;
-        return `<div class="day ${d.date===today?'today':''} ${i===curDay?'sel':''}" data-day="${i}">
+        return `<div class="day ${d.date===today?'today':''} ${i===curDay?'sel':''}" data-day="${i}" data-date="${d.date}">
           <div class="dd">${wd}</div><div class="dt">${d.date.slice(8,10)}.${d.date.slice(5,7)}</div>
           ${latest.meta.version>=5?'':mini(waveC,waveRangeCm(d.wave_min,d.wave_max)||'חסר','מודל גלים · ס״מ')}
           ${mini(windC,vl==null?'חסר':windRangeKmh(morningWindow),'רוח בוקר · קמ״ש')}${dayArrow}</div>`;
@@ -491,6 +514,7 @@ function modelComparison(bd,day){
   try { render(); } catch(e){ app.innerHTML = 'שגיאה בטעינת הנתונים: '+e.message; }
   // Live re-render: past windows, best-window recommendation and issue-age warning are computed
   // at render time, so an open page stays truthful as time passes.
+  if(releaseView)requestAnimationFrame(()=>scrollTo(0,Number(releaseView.scroll)||0));
   if(!issueParam) setInterval(async()=>{try{officialIMS=await loadJson('data/ims-latest.json');const y=scrollY;render();scrollTo(0,y);}catch(e){}},3600000);
   let lastSig = '';
   setInterval(()=>{ const nw = nowIL(); const age = issueAgeInfo(); const sig = nw.date+'|'+nw.hour+'|'+age.old;
