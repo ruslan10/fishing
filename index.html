@@ -305,9 +305,7 @@ function modelComparison(bd,day){
           ${latest.meta.version>=5?'':mini(waveC,waveRangeCm(d.wave_min,d.wave_max)||'חסר','מודל גלים · ס״מ')}
           ${mini(windC,vl==null?'חסר':`<bdi>${Math.round(maxWind)}</bdi>`,'מודל רוח · קמ״ש')}</div>`;
       }).join('')}</div></div>
-    ${imsCard(curRegion)}
-    ${weeklyWaveChart(bd)}
-    ${modelComparison(bd,bd?.days?.[Math.min(curDay,(bd?.days?.length||1)-1)])}
+
 `;
 
     if(!bd || bd.missing){
@@ -359,6 +357,9 @@ function modelComparison(bd,day){
 
 
 
+    ${imsCard(curRegion)}
+    ${weeklyWaveChart(bd)}
+    ${modelComparison(bd,bd?.days?.[Math.min(curDay,(bd?.days?.length||1)-1)])}
       <h3 class="sec">תנאי ים לפי שעות · ${day.date===today?'היום':day.date}</h3>
       <div class="card winwrap">${!day.windows?.length?'<div style="padding:14px;font-size:12.5px;opacity:.75">אין נתוני חלונות ליום זה בהפקה הנוכחית.</div>':`<table class="win">
       <tr><th>שעות</th><th>גלים</th><th>רוח</th><th>זרם</th><th style="width:64px" title="ציון ניסיוני לגלים ורוח, לא הסתברות תפיסה ולא דירוג בטיחות">תנאים</th></tr>
