@@ -267,15 +267,15 @@ async function main() {
 
     const days = Object.keys(byDate).sort().map(date => {
       const hours = byDate[date];
-      // 2-hour windows 00-22
+      // 3-hour windows 00-21
       const windows = [];
-      for (let start = 0; start < 24; start += 2) {
-        const cells = hours.filter(x => x.hour === start || x.hour === start + 1);
+      for (let start = 0; start < 24; start += 3) {
+        const cells = hours.filter(x => x.hour >= start && x.hour < start + 3);
         if (!cells.length) continue;
         const c = k => avg(cells.map(x => x[k]));
         const win = {
           from: `${String(start).padStart(2, '0')}:00`,
-          to: `${String((start + 2) % 24).padStart(2, '0')}:00`,
+          to: `${String((start + 3) % 24).padStart(2, '0')}:00`,
           fromHour: start,
           wave_height: round(c('wave_height'), 2), wave_period: round(c('wave_period')),
           wave_dir: compass(circMeanDeg(cells.map(x => x.wave_direction))),
@@ -317,7 +317,7 @@ async function main() {
         win.wind_min_kmh = wn.length ? round(Math.min(...wn)) : null;
         win.wind_max_kmh = wn.length ? round(Math.max(...wn)) : null;
         // For the issue day, windows that already ended are marked past and excluded from recommendations.
-        win.past = (date === issueDate) && (start + 2 <= issueHour);
+        win.past = (date === issueDate) && (start + 3 <= issueHour);
         windows.push(win);
       }
       const activeWindows = windows.filter(x => !x.past);
