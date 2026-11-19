@@ -491,7 +491,7 @@
   ]
  },
  "environment_history": {
-  "retrieved_at": "2026-11-19T20:53:07.699154+02:00",
+  "retrieved_at": "2026-11-19T21:08:47.742075+02:00",
   "date": "2026-11-19",
   "cutoff": "2026-11-19T00:00:00+02:00",
   "source_kind": "modeled_recent_past_not_observations",
@@ -28854,9 +28854,9 @@
    "wave_cm": "<50;50..100;>100..<200;200..300;>300",
    "wind_kmh": "<12;12..<20;20..<29;29..<50;>=50"
   },
-  "issue_id": "2026-11-19T20-53-10-7dc0ef",
-  "issued_at_local": "2026-11-19T20:53:10",
-  "issued_at_utc": "2026-11-19T18:53:10.040Z",
+  "issue_id": "2026-11-19T21-08-50-77864a",
+  "issued_at_local": "2026-11-19T21:08:50",
+  "issued_at_utc": "2026-11-19T19:08:50.143Z",
   "timezone": "Asia/Jerusalem",
   "valid_from": "2026-11-19",
   "valid_to": "2026-11-25",
@@ -28868,7 +28868,7 @@
     "ncep_gfswave025"
    ],
    "spread": "largest simultaneous hourly spread, never a calibrated confidence interval",
-   "copernicus_retrieved_at": "2026-11-19T20:50:58+02:00"
+   "copernicus_retrieved_at": "2026-11-19T21:08:07+02:00"
   },
   "sources": [
    {
@@ -28939,7 +28939,7 @@
   },
   "scoring_note_he": "כרטיסי הדגים איכותניים בלבד, בהיקף דיג ז'ירז'ור מהחוף - ללא ציון התאמה מספרי: אין מקור מאומת לספי עונה/שעות/גלים/רוח/טמפרטורה למין. צבע הגלים וצבע הרוח המתמשכת מוצגים בנפרד, לפי השיא היומי או בטווח השעות. עמודת התנאים מחזירה את ציון ההשוואה הניסיוני המקורי 0–100, המחושב מממוצעי החלון ומשבים, בנפרד מסולם הצבעים של המדידות. הסולם מקומי וניסיוני, לא תחזית תפיסה ולא דירוג בטיחות.",
   "stale_beaches": [],
-  "issue_file": "issues/2026-11-19T20-53-10-7dc0ef.json"
+  "issue_file": "issues/2026-11-19T21-08-50-77864a.json"
  },
  "beaches": [
   {
@@ -28948,7 +28948,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T20:50:58+02:00",
+    "retrieved_at": "2026-11-19T21:08:07+02:00",
     "cell_lat": 33.0625,
     "cell_lon": 35.083336,
     "dist_km": 1.9,
@@ -28965,7 +28965,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T18:53:10.040Z",
+    "comparison_retrieved_at": "2026-11-19T19:08:50.143Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 33.0625,
@@ -31722,7 +31722,7 @@
        "wave_max": 0.88,
        "wind_min_kmh": 6.6,
        "wind_max_kmh": 8.5,
-       "past": false
+       "past": true
       },
       {
        "from": "21:00",
@@ -34560,7 +34560,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T20:50:58+02:00",
+    "retrieved_at": "2026-11-19T21:08:07+02:00",
     "cell_lat": 33.020832,
     "cell_lon": 35.083336,
     "dist_km": 1.9,
@@ -34577,7 +34577,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T18:53:10.040Z",
+    "comparison_retrieved_at": "2026-11-19T19:08:50.143Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 33.020832,
@@ -37334,7 +37334,7 @@
        "wave_max": 0.85,
        "wind_min_kmh": 4.3,
        "wind_max_kmh": 7.3,
-       "past": false
+       "past": true
       },
       {
        "from": "21:00",
@@ -40172,7 +40172,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T20:50:58+02:00",
+    "retrieved_at": "2026-11-19T21:08:07+02:00",
     "cell_lat": 32.9375,
     "cell_lon": 35.041668,
     "dist_km": 4.2,
@@ -40189,7 +40189,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T18:53:10.040Z",
+    "comparison_retrieved_at": "2026-11-19T19:08:50.143Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 32.9375,
@@ -42946,7 +42946,7 @@
        "wave_max": 0.84,
        "wind_min_kmh": 1.1,
        "wind_max_kmh": 6.5,
-       "past": false
+       "past": true
       },
       {
        "from": "21:00",
@@ -45784,7 +45784,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T20:50:58+02:00",
+    "retrieved_at": "2026-11-19T21:08:07+02:00",
     "cell_lat": 32.854168,
     "cell_lon": 34.958336,
     "dist_km": 3.2,
@@ -45801,7 +45801,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T18:53:10.040Z",
+    "comparison_retrieved_at": "2026-11-19T19:08:50.143Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 32.854168,
@@ -48558,7 +48558,7 @@
        "wave_max": 0.8,
        "wind_min_kmh": 5.5,
        "wind_max_kmh": 6.4,
-       "past": false
+       "past": true
       },
       {
        "from": "21:00",
@@ -51396,7 +51396,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T20:50:58+02:00",
+    "retrieved_at": "2026-11-19T21:08:07+02:00",
     "cell_lat": 32.729168,
     "cell_lon": 34.916668,
     "dist_km": 3,
@@ -51413,7 +51413,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T18:53:10.040Z",
+    "comparison_retrieved_at": "2026-11-19T19:08:50.143Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 32.729168,
@@ -54170,7 +54170,7 @@
        "wave_max": 0.79,
        "wind_min_kmh": 4.2,
        "wind_max_kmh": 6,
-       "past": false
+       "past": true
       },
       {
        "from": "21:00",
@@ -57008,7 +57008,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T20:50:58+02:00",
+    "retrieved_at": "2026-11-19T21:08:07+02:00",
     "cell_lat": 32.604168,
     "cell_lon": 34.875,
     "dist_km": 4,
@@ -57025,7 +57025,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T18:53:10.040Z",
+    "comparison_retrieved_at": "2026-11-19T19:08:50.143Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 32.604168,
@@ -59782,7 +59782,7 @@
        "wave_max": 0.81,
        "wind_min_kmh": 2.8,
        "wind_max_kmh": 5,
-       "past": false
+       "past": true
       },
       {
        "from": "21:00",
@@ -62620,7 +62620,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T20:50:58+02:00",
+    "retrieved_at": "2026-11-19T21:08:07+02:00",
     "cell_lat": 32.520832,
     "cell_lon": 34.875,
     "dist_km": 2.9,
@@ -62637,7 +62637,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T18:53:10.040Z",
+    "comparison_retrieved_at": "2026-11-19T19:08:50.143Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 32.520832,
@@ -65394,7 +65394,7 @@
        "wave_max": 0.76,
        "wind_min_kmh": 3.3,
        "wind_max_kmh": 4.8,
-       "past": false
+       "past": true
       },
       {
        "from": "21:00",
@@ -68232,7 +68232,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T20:50:58+02:00",
+    "retrieved_at": "2026-11-19T21:08:07+02:00",
     "cell_lat": 32.4375,
     "cell_lon": 34.833336,
     "dist_km": 4.2,
@@ -68249,7 +68249,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T18:53:10.040Z",
+    "comparison_retrieved_at": "2026-11-19T19:08:50.143Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 32.4375,
@@ -71006,7 +71006,7 @@
        "wave_max": 0.76,
        "wind_min_kmh": 3.3,
        "wind_max_kmh": 4.8,
-       "past": false
+       "past": true
       },
       {
        "from": "21:00",
@@ -73844,7 +73844,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T20:50:58+02:00",
+    "retrieved_at": "2026-11-19T21:08:07+02:00",
     "cell_lat": 32.395832,
     "cell_lon": 34.833336,
     "dist_km": 3.8,
@@ -73861,7 +73861,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T18:53:10.040Z",
+    "comparison_retrieved_at": "2026-11-19T19:08:50.143Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 32.395832,
@@ -76618,7 +76618,7 @@
        "wave_max": 0.73,
        "wind_min_kmh": 2.6,
        "wind_max_kmh": 4.9,
-       "past": false
+       "past": true
       },
       {
        "from": "21:00",
@@ -79456,7 +79456,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T20:50:58+02:00",
+    "retrieved_at": "2026-11-19T21:08:07+02:00",
     "cell_lat": 32.354168,
     "cell_lon": 34.833336,
     "dist_km": 4.1,
@@ -79473,7 +79473,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T18:53:10.040Z",
+    "comparison_retrieved_at": "2026-11-19T19:08:50.143Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 32.354168,
@@ -82230,7 +82230,7 @@
        "wave_max": 0.69,
        "wind_min_kmh": 3.8,
        "wind_max_kmh": 5.2,
-       "past": false
+       "past": true
       },
       {
        "from": "21:00",
@@ -85068,7 +85068,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T20:50:58+02:00",
+    "retrieved_at": "2026-11-19T21:08:07+02:00",
     "cell_lat": 32.1875,
     "cell_lon": 34.791668,
     "dist_km": 2.5,
@@ -85085,7 +85085,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T18:53:10.040Z",
+    "comparison_retrieved_at": "2026-11-19T19:08:50.143Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 32.1875,
@@ -87842,7 +87842,7 @@
        "wave_max": 0.63,
        "wind_min_kmh": 2.7,
        "wind_max_kmh": 4.1,
-       "past": false
+       "past": true
       },
       {
        "from": "21:00",
@@ -90680,7 +90680,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T20:50:58+02:00",
+    "retrieved_at": "2026-11-19T21:08:07+02:00",
     "cell_lat": 32.0625,
     "cell_lon": 34.75,
     "dist_km": 2.4,
@@ -90697,7 +90697,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T18:53:10.040Z",
+    "comparison_retrieved_at": "2026-11-19T19:08:50.143Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 32.0625,
@@ -93454,7 +93454,7 @@
        "wave_max": 0.6,
        "wind_min_kmh": 1.8,
        "wind_max_kmh": 4.1,
-       "past": false
+       "past": true
       },
       {
        "from": "21:00",
@@ -96292,7 +96292,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T20:50:58+02:00",
+    "retrieved_at": "2026-11-19T21:08:07+02:00",
     "cell_lat": 32.0625,
     "cell_lon": 34.75,
     "dist_km": 2.2,
@@ -96309,7 +96309,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T18:53:10.040Z",
+    "comparison_retrieved_at": "2026-11-19T19:08:50.143Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 32.0625,
@@ -99066,7 +99066,7 @@
        "wave_max": 0.6,
        "wind_min_kmh": 2.6,
        "wind_max_kmh": 4.3,
-       "past": false
+       "past": true
       },
       {
        "from": "21:00",
@@ -101904,7 +101904,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T20:50:58+02:00",
+    "retrieved_at": "2026-11-19T21:08:07+02:00",
     "cell_lat": 31.979166,
     "cell_lon": 34.708336,
     "dist_km": 1.5,
@@ -101921,7 +101921,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T18:53:10.040Z",
+    "comparison_retrieved_at": "2026-11-19T19:08:50.143Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 31.979166,
@@ -104678,7 +104678,7 @@
        "wave_max": 0.58,
        "wind_min_kmh": 2.9,
        "wind_max_kmh": 4.8,
-       "past": false
+       "past": true
       },
       {
        "from": "21:00",
@@ -107516,7 +107516,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T20:50:58+02:00",
+    "retrieved_at": "2026-11-19T21:08:07+02:00",
     "cell_lat": 31.9375,
     "cell_lon": 34.666668,
     "dist_km": 3.4,
@@ -107533,7 +107533,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T18:53:10.040Z",
+    "comparison_retrieved_at": "2026-11-19T19:08:50.143Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 31.9375,
@@ -110290,7 +110290,7 @@
        "wave_max": 0.58,
        "wind_min_kmh": 2.6,
        "wind_max_kmh": 5.6,
-       "past": false
+       "past": true
       },
       {
        "from": "21:00",
@@ -113128,7 +113128,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T20:50:58+02:00",
+    "retrieved_at": "2026-11-19T21:08:07+02:00",
     "cell_lat": 31.8125,
     "cell_lon": 34.625,
     "dist_km": 1.6,
@@ -113145,7 +113145,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T18:53:10.040Z",
+    "comparison_retrieved_at": "2026-11-19T19:08:50.143Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 31.8125,
@@ -115902,7 +115902,7 @@
        "wave_max": 0.52,
        "wind_min_kmh": 0.7,
        "wind_max_kmh": 4.9,
-       "past": false
+       "past": true
       },
       {
        "from": "21:00",
@@ -118740,7 +118740,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T20:50:58+02:00",
+    "retrieved_at": "2026-11-19T21:08:07+02:00",
     "cell_lat": 31.729166,
     "cell_lon": 34.583336,
     "dist_km": 2.4,
@@ -118757,7 +118757,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T18:53:10.040Z",
+    "comparison_retrieved_at": "2026-11-19T19:08:50.143Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 31.729166,
@@ -121514,7 +121514,7 @@
        "wave_max": 0.47,
        "wind_min_kmh": 0.5,
        "wind_max_kmh": 5,
-       "past": false
+       "past": true
       },
       {
        "from": "21:00",
@@ -124352,7 +124352,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T20:50:58+02:00",
+    "retrieved_at": "2026-11-19T21:08:07+02:00",
     "cell_lat": 31.6875,
     "cell_lon": 34.541668,
     "dist_km": 3.2,
@@ -124369,7 +124369,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T18:53:10.040Z",
+    "comparison_retrieved_at": "2026-11-19T19:08:50.143Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 31.6875,
@@ -127126,7 +127126,7 @@
        "wave_max": 0.44,
        "wind_min_kmh": 1.1,
        "wind_max_kmh": 4.5,
-       "past": false
+       "past": true
       },
       {
        "from": "21:00",
@@ -129964,7 +129964,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T20:50:58+02:00",
+    "retrieved_at": "2026-11-19T21:08:07+02:00",
     "cell_lat": 31.645834,
     "cell_lon": 34.5,
     "dist_km": 3.7,
@@ -129981,7 +129981,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T18:53:10.040Z",
+    "comparison_retrieved_at": "2026-11-19T19:08:50.143Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 31.645834,
@@ -132738,7 +132738,7 @@
        "wave_max": 0.42,
        "wind_min_kmh": 1.8,
        "wind_max_kmh": 4.3,
-       "past": false
+       "past": true
       },
       {
        "from": "21:00",
