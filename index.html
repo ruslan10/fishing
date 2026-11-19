@@ -262,14 +262,14 @@ function imsCard(region){
       <h3 class="sec">תנאי ים לפי שעות · ${day.date===today?'היום':day.date}</h3>
       <div class="card winwrap">${!day.windows?.length?'<div style="padding:14px;font-size:12.5px;opacity:.75">אין נתוני חלונות ליום זה בהפקה הנוכחית.</div>':`<table class="win">
       <tr><th>שעות</th><th>גלים</th><th>רוח</th><th>זרם</th><th style="width:64px">תנאים</th></tr>
-      ${day.windows.map(w=>{ const nw = nowIL(); const isPast = w.past || day.date<nw.date || (day.date===nw.date && w.fromHour+2<=nw.hour);
+      ${((!issueParam&&day.date===today)?day.windows.filter(w=>w.fromHour+2>nowIL().hour):day.windows).map(w=>{ const nw = nowIL(); const isPast = w.past || day.date<nw.date || (day.date===nw.date && w.fromHour+2<=nw.hour);
         return `<tr class="${isPast?'past':''}"><td><span dir="ltr">${w.from}–${w.to}</span></td><td>${(()=>{ const lo=w.wave_min??w.wave_height, hi=w.wave_max??w.wave_height; const r=waveRangeCm(lo,hi); return r?`<span style="font-weight:700">${r}</span> ס״מ ${stateChip(seaStateCm(Math.round(hi*100)))}`:na(null); })()}</td>
         <td>${w.wind_kmh!=null?Math.round(w.wind_kmh)+' קמ״ש '+(w.wind_dir?'מ'+w.wind_dir:'')+' '+stateChip(windCat(w.wind_kmh)):'חסר'}</td>
         <td>${w.current_vel!=null&&w.current_vel>0.01?w.current_vel+' קמ״ש '+(w.current_dir?'ל'+w.current_dir:''):'—'}</td>
         <td><div style="display:flex;flex-direction:column;align-items:stretch;gap:3px"><span style="font-size:11px;font-weight:700;color:${scoreColor(w.score)};text-align:center">${condWord(w.score)}</span>
         <span class="bar" style="min-width:0"><i style="width:${w.score||0}%;background:${scoreColor(w.score)}"></i></span></div></td></tr>
         <tr class="wxsub ${isPast?'past':''}"><td colspan="5">${wxLine(w)}</td></tr>`;}).join('')}
-      </table><div style="font-size:10.5px;opacity:.6;margin-top:6px">הערכת תנאים מגלים ורוח בלבד, להשוואת שעות באותו יום. שורות אפורות כבר עברו. כיוון רוח וגלים הוא הכיוון <b>שממנו</b> הם באים; כיוון זרם הוא הכיוון <b>שאליו</b> הוא זורם.</div>
+      </table><div style="font-size:10.5px;opacity:.6;margin-top:6px">הערכת תנאים מגלים ורוח בלבד, להשוואת שעות באותו יום.${day.date<today?' שורות אפורות כבר עברו.':''} כיוון רוח וגלים הוא הכיוון <b>שממנו</b> הם באים; כיוון זרם הוא הכיוון <b>שאליו</b> הוא זורם.</div>
       <div style="font-size:10.5px;opacity:.75;margin-top:4px;line-height:2">טווח הגלים בס״מ הוא המינימום–המקסימום של ערכי התחזית השעתית בתוך החלון (מעוגל לס״מ שלם). מצב ים במונחי השירות המטאורולוגי הישראלי, לפי הגל המרבי בטווח כפי שהוא מוצג מעוגל: ${stateChip(['שקט','#94a3b8'])} עד 9 · ${stateChip(['נוח','#67e8f9'])} 10-49 · ${stateChip(['גלי','#38bdf8'])} 50-124 · ${stateChip(['גבה גלים','#a78bfa'])} 125-249 · ${stateChip(['רוגש','#fbbf24'])} 250-399 · ${stateChip(['סוער','#fb923c'])} 400-599 · ${stateChip(['גועש','#f472b6'])} 600+ ס״מ<br>
       רוח בקמ״ש, חלוקת עוצמה מקומית של האתר (אינה סולם רשמי): ${stateChip(['קלילה','#7dd3fc'])} עד 11 · ${stateChip(['חלשה','#60a5fa'])} 12-19 · ${stateChip(['בינונית','#a78bfa'])} 20-28 · ${stateChip(['חזקה','#fbbf24'])} 29-38 · ${stateChip(['חזקה מאוד','#fb923c'])} 39-49 · ${stateChip(['עזה','#f472b6'])} 50+ · הצבעים להבחנה בלבד, אינם דירוג בטיחות.</div>`}</div>
 
