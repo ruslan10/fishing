@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>תחזית גלים ורוח - 7 הימים הבאים</title>
+<title>תחזית דייג - תחזית דיג לחופי ישראל</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎣</text></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="theme.css">
@@ -215,10 +215,11 @@ function imsCard(region){
     const today = new Date().toLocaleDateString('sv-SE',{timeZone:latest.meta.timezone});
 
     let html = `<header>
-      <h1>תחזית גלים ורוח - 7 הימים הבאים</h1>
+      <h1>תחזית דייג</h1>
       ${issueParam?`<div class="issued">מוצגת הפקה מהארכיון (${latest.meta.issued_at_local.replace('T',' · ')}) - משמרת את הפרסום כפי שהיה; הערות חוקיות והמלצות עלולות להתיישן ואין לראות בהן היתר דיג עדכני</div>`:''}
       ${!issueParam&&(age.old||(latest.meta.valid_to&&latest.meta.valid_to<nowIL().date))?`<div class="issued"><span style="color:var(--warn-fg)">${age.old?`התחזית בת ${age.hours} שעות - ייתכן שהרענון היומי נכשל`:''}${age.old&&latest.meta.valid_to&&latest.meta.valid_to<nowIL().date?' · ':''}${latest.meta.valid_to&&latest.meta.valid_to<nowIL().date?`תוקף התחזית הסתיים ב-${latest.meta.valid_to} - כל ההמלצות היסטוריות`:''}</span></div>`:''}
     </header>
+      <h3 class="sec">תחזית גלים ורוח - 7 הימים הבאים</h3>
       <div class="card"><div class="days">${bd.days.map((d,i)=>{
         const wd = HEB_DAYS[new Date(d.date+'T12:00:00').getDay()];
         const [bcls, btxt] = BAND[d.day_band]||BAND.insufficient;
