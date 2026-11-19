@@ -7,6 +7,15 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎣</text></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="theme.css?v=ae2db27991f1">
+<style>
+.wind-help {display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;padding:5px;margin-inline-start:4px;border:1px solid var(--border);border-radius:50%;background:var(--inset-bg);color:var(--accent);cursor:pointer;vertical-align:middle}
+.wind-help:focus-visible {outline:2px solid var(--accent);outline-offset:3px}
+.wind-dialog {position:fixed;inset:0;margin:auto;max-height:calc(100dvh - 36px);overflow-y:auto;width:min(360px,calc(100vw - 36px));box-sizing:border-box;border:1px solid var(--border);border-radius:18px;padding:22px;background:var(--card-bg,#102131);color:var(--fg,#e2e8f0);font:14px/1.8 Heebo,sans-serif;text-align:right}
+.wind-dialog::backdrop {background:rgba(0,0,0,.65)}
+.wind-dialog h2 {font-size:18px;margin:0 0 12px}
+.wind-dialog p {margin:8px 0}
+.wind-dialog button {font:600 14px Heebo;padding:8px 20px;border:0;border-radius:9px;background:var(--accent);color:#06202b;cursor:pointer;margin-top:12px}
+</style>
 </head>
 <body><div class="wrap" id="app">טוען נתונים...</div>
 <script type="module">
@@ -318,6 +327,8 @@ function modelComparison(bd,day){
       const winds = day.windows.map(w=>w.wind_kmh).filter(x=>x!=null);
       const wMaxWind = winds.length?Math.max(...winds):null;
       const repWind = day.windows.find(w=>w.fromHour>=4&&w.fromHour<10)||day.windows[0];
+      const windHelp = `<button type="button" class="wind-help" aria-label="הסבר על רוח בוקר" aria-haspopup="dialog"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M3 8h12a3 3 0 1 0-3-3M3 12h15a3 3 0 1 1-3 3M3 16h5a2 2 0 1 1-2 2"/></svg></button>`;
+
 
       html += `<div class="card hero">
         <h2>${bc.name_he} · ${day.date===today?'היום':day.date} <span style="font-weight:400;font-size:11px;opacity:.6">${bc.terrain_he}</span></h2>
@@ -326,9 +337,9 @@ function modelComparison(bd,day){
           ${(()=>{ const lo=day.wave_min??wmin, hi=day.wave_max??wmax; const r=waveRangeCm(lo,hi);
             if(latest.meta.version>=5)return '';
             return `<div class="hg"><div class="k">גלים · <bdi>${bd.wave_primary==='copernicus_med'?'Copernicus':waveSourceLabel(bd)}</bdi></div><div class="v">${r?r+' ס״מ '+stateChip(seaStateCm(Math.round(hi*100))):'חסר'}</div></div>`; })()}
-          ${(()=>{ if(!repWind||repWind.wind_kmh==null) return `<div class="hg"><div class="k">רוח בוקר</div><div class="v">חסר</div></div>`;
+          ${(()=>{ if(!repWind||repWind.wind_kmh==null) return `<div class="hg"><div class="k">רוח בוקר ${windHelp}</div><div class="v">חסר</div></div>`;
             const adj = windAdj(repWind.wind_deg);
-            return `<div class="hg"><div class="k">רוח בוקר</div><div class="v" style="display:flex;align-items:center;gap:6px">${windIcon(repWind.wind_deg)}<span style="white-space:nowrap">${windRangeKmh(repWind)} קמ״ש</span>${stateChip(windCat(repWind.wind_max_kmh??repWind.wind_kmh))}</div><div style="font-size:11px;font-weight:400;opacity:.75;margin-top:2px">${adj?'רוח '+adj:''}</div></div>`; })()}
+            return `<div class="hg"><div class="k">רוח בוקר ${windHelp}</div><div class="v" style="display:flex;align-items:center;gap:6px">${windIcon(repWind.wind_deg)}<span style="white-space:nowrap">${windRangeKmh(repWind)} קמ״ש</span>${stateChip(windCat(repWind.wind_max_kmh??repWind.wind_kmh))}</div><div style="font-size:11px;font-weight:400;opacity:.75;margin-top:2px">${adj?'רוח '+adj:''}</div></div>`; })()}
           <div class="hg"><div class="k">מי ים</div><div class="v">${day.sst_avg!=null?day.sst_avg.toFixed(1)+'°':'חסר'}</div></div>
           ${(()=>{ const lo=day.salinity_min, hi=day.salinity_max;
             if(lo==null||hi==null) return `<div class="hg"><div class="k">מליחות</div><div class="v">חסר</div></div>`;
@@ -396,7 +407,15 @@ function modelComparison(bd,day){
       הופק ${latest.meta.issued_at_local.replace('T',' · ')} · מתעדכן מדי ערב בסביבות 20:00
     </footer>`;
 
+    if(bd?.days?.length){
+      const helpDay=bd.days[Math.min(curDay,bd.days.length-1)];
+      const hw=helpDay.windows.find(w=>w.fromHour>=4&&w.fromHour<10)||helpDay.windows[0];
+      if(hw) html+=`<dialog class="wind-dialog" aria-labelledby="wind-help-title"><h2 id="wind-help-title">רוח בוקר</h2><p>ביום שנבחר, בין <bdi>${hw.from}–${hw.to}</bdi> לפי שעון ישראל.</p><p>המספרים הם המהירות הנמוכה והגבוהה בתחזיות השעתיות בטווח הזה, מעוגלות לקמ״ש. זה לא ממוצע יומי ולא משבי רוח.</p><p>הכיוון הוא הכיוון שממנו הרוח נושבת, לפי ממוצע מעגלי של הכיוונים באותן שעות.</p><p>הנתון בכרטיס הוא תחזית ממודל מזג אוויר בגובה 10 מטר, לא מדידה ולא התחזית הרשמית של IMS. בטבלה, בשעות המכוסות בתחזית הרשמית, מוצגים נתוני IMS.</p><form method="dialog"><button>סגירה</button></form></dialog>`;
+    }
     app.innerHTML = html;
+    const helpButton=app.querySelector('.wind-help'), helpDialog=app.querySelector('.wind-dialog');
+    if(helpButton&&helpDialog){helpButton.onclick=()=>helpDialog.showModal();helpDialog.onclick=e=>{if(e.target===helpDialog){const r=helpDialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)helpDialog.close();}};}
+
     app.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{curRegion=t.dataset.region;curBeach=null;curDay=-1;render();rememberBeach();});
     app.querySelector('.beachsel').onchange=e=>{curBeach=e.target.value;curDay=-1;render();rememberBeach();};
     app.querySelectorAll('.day').forEach(d=>d.onclick=()=>{curDay=+d.dataset.day;curDate=bd.days[curDay]?bd.days[curDay].date:null;render();});
