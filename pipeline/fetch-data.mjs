@@ -39,12 +39,13 @@ const DATA_AVAILABILITY = {
   collected_he: [
     'כיוון ומחזור גלים', 'גלי שטפה (swell) וגלי רוח (גובה ומחזור)',
     'משבי רוח', 'לחץ אוויר',
+    'מליחות פני ים (מודל Copernicus MEDSEA 006_013; תא הים התקף הקרוב ביותר, ~1.6-5 ק"מ מהחוף - ערך ממודל, לא מדידה בחוף)',
     'גובה פני ים ממודל (מוצג כהערה בלבד, לא כהמלצת דיג)'
   ],
   missing_he: [
     'גאות ושפל מדויקים ברמת חוף (קטנים מאוד בישראל; קיים שדה גובה פני ים ממודל ב-Open-Meteo אך לא אומת מול מדידות חוף ישראליות, ולכן אינו מוצג כהמלצת דיג)',
     'עכירות/טורבידיות וכלורופיל (Copernicus - דורש הרשמה, טרם נבדק)',
-    'חמצן מומס במים', 'מליחות', 'pH',
+    'חמצן מומס במים', 'pH',
     'נוכחות דגי פתיון ליד החוף',
     'אימות דיוק התחזית ברמת חוף בודד',
     'הסתברות תפיסה מכוילת - לא קיימת כרגע; דיווחי דיג נשמרים מחוץ לאתר בשלב זה, ואין באתר סטטיסטיקת תפיסות'
@@ -217,6 +218,20 @@ async function main() {
   const prevByBeach = {};
   if (prev?.beaches) for (const b of prev.beaches) prevByBeach[b.id] = b;
 
+  // Copernicus modeled sea-surface salinity, pre-fetched by pipeline/fetch-salinity.py
+  // into data/salinity.json (nearest valid sea cell, ~1.6-5 km offshore: modeled value,
+  // never an in-situ beach measurement). Used only when the file is fresh (< 3h old);
+  // otherwise salinity fields stay null and render as missing.
+  let salinity = null;
+  try {
+    const sp = path.join(DATA, 'salinity.json');
+    if (fs.existsSync(sp)) {
+      const s = JSON.parse(fs.readFileSync(sp, 'utf8'));
+      const ageH = (Date.now() - new Date(s.generated_at).getTime()) / 3600000;
+      if (ageH >= 0 && ageH < 3 && s.beaches) salinity = s;
+    }
+  } catch { salinity = null; }
+
   const outBeaches = [];
   const staleBeaches = [];
   let freshBeaches = 0;
@@ -339,6 +354,7 @@ async function main() {
       const minWave = dayWaves.length ? Math.min(...dayWaves) : null;
       // Qualitative schema: cards render from the frozen config snapshot, not per-day numbers.
       const species = speciesCfg.species.map(sp => ({ id: sp.id, status_only: true }));
+      const salDay = salinity?.beaches?.[b.id]?.days?.[date] || null;
       return {
         date,
         sunrise, sunset,
@@ -357,12 +373,16 @@ async function main() {
         air_temp_max: dayAir.length ? round(Math.max(...dayAir)) : null,
         pressure_min: dayPres.length ? round(Math.min(...dayPres)) : null,
         pressure_max: dayPres.length ? round(Math.max(...dayPres)) : null,
+        salinity_min: salDay ? salDay.min : null,
+        salinity_max: salDay ? salDay.max : null,
+        salinity_hours_valid: salDay ? salDay.hours_valid : null,
+        salinity_hours_in_axis: salDay ? salDay.hours_in_axis : null,
         windows,
         species
       };
     });
 
-    outBeaches.push({ id: b.id, days });
+    outBeaches.push({ id: b.id, salinity_dist_km: salinity?.beaches?.[b.id]?.dist_km ?? null, days });
     freshBeaches++;
   });
 

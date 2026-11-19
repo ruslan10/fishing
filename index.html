@@ -252,6 +252,11 @@ function imsCard(region){
             const adj = windAdj(repWind.wind_deg);
             return `<div class="hg"><div class="k">רוח (בוקר)</div><div class="v" style="display:flex;align-items:center;gap:6px">${windIcon(repWind.wind_deg)}<span style="white-space:nowrap">${windRangeKmh(repWind)} קמ״ש</span>${stateChip(windCat(repWind.wind_max_kmh??repWind.wind_kmh))}</div><div style="font-size:11px;font-weight:400;opacity:.75;margin-top:2px">${adj?'רוח '+adj:''}</div></div>`; })()}
           <div class="hg"><div class="k">מי ים</div><div class="v">${day.sst_avg!=null?day.sst_avg.toFixed(1)+'°':'חסר'}</div></div>
+          ${(()=>{ const lo=day.salinity_min, hi=day.salinity_max;
+            if(lo==null||hi==null) return `<div class="hg"><div class="k">מליחות</div><div class="v">חסר</div></div>`;
+            const a=lo.toFixed(1), bb=hi.toFixed(1);
+            const dist=bd.salinity_dist_km;
+            return `<div class="hg" title="מליחות פני ים ממודל (Copernicus MEDSEA, רזולוציה ~4 ק״מ); תא הים התקף הקרוב ביותר לחוף - לא מדידה בחוף"><div class="k">מליחות</div><div class="v">${a===bb?`<bdi class="ltr">${bb}</bdi>`:`<bdi class="ltr">${a}–${bb}</bdi>`} PSU</div><div style="font-size:11px;font-weight:400;opacity:.75;margin-top:2px">מודל${dist?` · ~${dist} ק״מ מהחוף`:''}</div></div>`; })()}
           ${(()=>{ let lo=day.air_temp_min, hi=day.air_temp_max;
             if(lo==null||hi==null){ const ts=day.windows.map(w=>w.air_temp).filter(x=>x!=null); if(ts.length){ lo=Math.min(...ts); hi=Math.max(...ts); } }
             const txt = lo==null ? 'חסר' : (Math.round(lo)===Math.round(hi) ? `<bdi class="ltr">${Math.round(hi)}</bdi>°` : `<bdi class="ltr">${Math.round(lo)}–${Math.round(hi)}</bdi>°`);
@@ -308,7 +313,7 @@ function imsCard(region){
 
     html += `
     <footer>
-      מזג אוויר וים: Open-Meteo (CC BY 4.0)${latest.ims?.available?` · תחזית חופים רשמית: השירות המטאורולוגי הישראלי (שמ״ט), ims.gov.il - אינו נושא באחריות למידע או לשימוש בו, ואינו צד לפרסומו`:''}<br>
+      מזג אוויר וים: Open-Meteo (CC BY 4.0)${latest.ims?.available?` · תחזית חופים רשמית: השירות המטאורולוגי הישראלי (שמ״ט), ims.gov.il - אינו נושא באחריות למידע או לשימוש בו, ואינו צד לפרסומו`:''}${latest.beaches?.some(b=>b.days?.some(d=>d.salinity_min!=null))?`<br>מליחות: Generated using E.U. Copernicus Marine Service Information · <a href="https://doi.org/10.48670/mds-00359" target="_blank" rel="noopener">DOI 10.48670/mds-00359</a>`:''}<br>
       תחזית ניסיונית לתכנון בלבד - לא אחוז תפיסה ולא הבטחה לבטיחות; בדקו תקנות דיג לפני היציאה.<br>
       הופק ${latest.meta.issued_at_local.replace('T',' · ')} · מתעדכן מדי ערב בסביבות 20:00
     </footer>`;

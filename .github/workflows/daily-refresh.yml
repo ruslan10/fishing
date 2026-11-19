@@ -54,6 +54,23 @@ jobs:
         if: steps.gate.outputs.proceed == 'true'
         with:
           node-version: 22
+      - uses: actions/setup-python@v5
+        if: steps.gate.outputs.proceed == 'true'
+        with:
+          python-version: '3.12'
+      - name: Fetch Copernicus salinity (modeled sea-surface, nearest valid sea cell)
+        # Writes data/salinity.json for the node step. Requires repository secrets
+        # COPERNICUS_USERNAME / COPERNICUS_PASSWORD; until they exist the step fails
+        # softly and a fresh salinity.json pushed ahead of the run is used instead.
+        # Failure never blocks the refresh - salinity just renders as missing.
+        if: steps.gate.outputs.proceed == 'true'
+        continue-on-error: true
+        env:
+          COPERNICUSMARINE_SERVICE_USERNAME: ${{ secrets.COPERNICUS_USERNAME }}
+          COPERNICUSMARINE_SERVICE_PASSWORD: ${{ secrets.COPERNICUS_PASSWORD }}
+        run: |
+          pip install -q copernicusmarine
+          python pipeline/fetch-salinity.py
       - name: Fetch and build forecast data
         if: steps.gate.outputs.proceed == 'true'
         env:

@@ -491,13 +491,103 @@
   ]
  },
  "ims": {
-  "available": false
+  "available": true,
+  "issued_at": "2026-11-19 00:09:00",
+  "regions": {
+   "north": {
+    "name_he": "חוף צפון",
+    "slots": [
+     {
+      "valid_from": "2026-11-19 08:00:00",
+      "valid_to": "2026-11-19 20:00:00",
+      "sea_temp": 24,
+      "wind_dir_from": 180,
+      "wind_dir_to": 270,
+      "wind_speed_from": 15,
+      "wind_speed_to": 25,
+      "wave_from_cm": 30,
+      "wave_to_cm": 90,
+      "sea_state_he": "נוח עד גלי"
+     },
+     {
+      "valid_from": "2026-11-19 20:00:00",
+      "valid_to": "2026-11-20 08:00:00",
+      "sea_temp": 24,
+      "wind_dir_from": 225,
+      "wind_dir_to": 135,
+      "wind_speed_from": 10,
+      "wind_speed_to": 20,
+      "wave_from_cm": 30,
+      "wave_to_cm": 80,
+      "sea_state_he": "נוח עד גלי"
+     }
+    ]
+   },
+   "center": {
+    "name_he": "חוף מרכז",
+    "slots": [
+     {
+      "valid_from": "2026-11-19 08:00:00",
+      "valid_to": "2026-11-19 20:00:00",
+      "sea_temp": 24,
+      "wind_dir_from": 180,
+      "wind_dir_to": 270,
+      "wind_speed_from": 15,
+      "wind_speed_to": 25,
+      "wave_from_cm": 30,
+      "wave_to_cm": 90,
+      "sea_state_he": "נוח עד גלי"
+     },
+     {
+      "valid_from": "2026-11-19 20:00:00",
+      "valid_to": "2026-11-20 08:00:00",
+      "sea_temp": 24,
+      "wind_dir_from": 225,
+      "wind_dir_to": 135,
+      "wind_speed_from": 10,
+      "wind_speed_to": 20,
+      "wave_from_cm": 30,
+      "wave_to_cm": 80,
+      "sea_state_he": "נוח עד גלי"
+     }
+    ]
+   },
+   "south": {
+    "name_he": "חוף דרום",
+    "slots": [
+     {
+      "valid_from": "2026-11-19 08:00:00",
+      "valid_to": "2026-11-19 20:00:00",
+      "sea_temp": 24,
+      "wind_dir_from": 180,
+      "wind_dir_to": 270,
+      "wind_speed_from": 15,
+      "wind_speed_to": 25,
+      "wave_from_cm": 30,
+      "wave_to_cm": 90,
+      "sea_state_he": "נוח עד גלי"
+     },
+     {
+      "valid_from": "2026-11-19 20:00:00",
+      "valid_to": "2026-11-20 08:00:00",
+      "sea_temp": 24,
+      "wind_dir_from": 225,
+      "wind_dir_to": 135,
+      "wind_speed_from": 10,
+      "wind_speed_to": 20,
+      "wave_from_cm": 30,
+      "wave_to_cm": 80,
+      "sea_state_he": "נוח עד גלי"
+     }
+    ]
+   }
+  }
  },
  "meta": {
   "version": 3,
-  "issue_id": "2026-11-19T09-34-38-461e44",
-  "issued_at_local": "2026-11-19T09:34:38",
-  "issued_at_utc": "2026-11-19T07:34:38.785Z",
+  "issue_id": "2026-11-19T09-54-43-f885cd",
+  "issued_at_local": "2026-11-19T09:54:43",
+  "issued_at_utc": "2026-11-19T07:54:43.830Z",
   "timezone": "Asia/Jerusalem",
   "valid_from": "2026-11-19",
   "valid_to": "2026-11-25",
@@ -550,13 +640,13 @@
     "גלי שטפה (swell) וגלי רוח (גובה ומחזור)",
     "משבי רוח",
     "לחץ אוויר",
+    "מליחות פני ים (מודל Copernicus MEDSEA 006_013; תא הים התקף הקרוב ביותר, ~1.6-5 ק\"מ מהחוף - ערך ממודל, לא מדידה בחוף)",
     "גובה פני ים ממודל (מוצג כהערה בלבד, לא כהמלצת דיג)"
    ],
    "missing_he": [
     "גאות ושפל מדויקים ברמת חוף (קטנים מאוד בישראל; קיים שדה גובה פני ים ממודל ב-Open-Meteo אך לא אומת מול מדידות חוף ישראליות, ולכן אינו מוצג כהמלצת דיג)",
     "עכירות/טורבידיות וכלורופיל (Copernicus - דורש הרשמה, טרם נבדק)",
     "חמצן מומס במים",
-    "מליחות",
     "pH",
     "נוכחות דגי פתיון ליד החוף",
     "אימות דיוק התחזית ברמת חוף בודד",
@@ -565,11 +655,12 @@
   },
   "scoring_note_he": "כרטיסי הדגים איכותניים בלבד, בהיקף דיג ז'ירז'ור מהחוף - ללא ציון התאמה מספרי: אין מקור מאומת לספי עונה/שעות/גלים/רוח/טמפרטורה למין. ציון התנאים בטבלת החלונות ודירוג הימים משקפים גלים ורוח בלבד, להשוואה בין שעות וימים - לא תחזית תפיסה ולא דירוג בטיחות.",
   "stale_beaches": [],
-  "issue_file": "issues/2026-11-19T09-34-38-461e44.json"
+  "issue_file": "issues/2026-11-19T09-54-43-f885cd.json"
  },
  "beaches": [
   {
    "id": "achziv",
+   "salinity_dist_km": 2.2,
    "days": [
     {
      "date": "2026-11-19",
@@ -594,6 +685,10 @@
      "air_temp_max": 23.4,
      "pressure_min": 1017.5,
      "pressure_max": 1020.5,
+     "salinity_min": 39.53,
+     "salinity_max": 39.56,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -914,6 +1009,10 @@
      "air_temp_max": 25.7,
      "pressure_min": 1019.8,
      "pressure_max": 1021.6,
+     "salinity_min": 39.53,
+     "salinity_max": 39.54,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -1234,6 +1333,10 @@
      "air_temp_max": 24.9,
      "pressure_min": 1017.8,
      "pressure_max": 1020.7,
+     "salinity_min": 39.54,
+     "salinity_max": 39.55,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -1554,6 +1657,10 @@
      "air_temp_max": 23.8,
      "pressure_min": 1017,
      "pressure_max": 1019.6,
+     "salinity_min": 39.55,
+     "salinity_max": 39.56,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -1874,6 +1981,10 @@
      "air_temp_max": 23.6,
      "pressure_min": 1018.8,
      "pressure_max": 1020.7,
+     "salinity_min": 39.56,
+     "salinity_max": 39.57,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -2194,6 +2305,10 @@
      "air_temp_max": 22.6,
      "pressure_min": 1018.8,
      "pressure_max": 1020.8,
+     "salinity_min": 39.57,
+     "salinity_max": 39.58,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -2514,6 +2629,10 @@
      "air_temp_max": 22.3,
      "pressure_min": 1019.3,
      "pressure_max": 1023.9,
+     "salinity_min": 39.57,
+     "salinity_max": 39.58,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -2815,6 +2934,7 @@
   },
   {
    "id": "nahariya",
+   "salinity_dist_km": 1.9,
    "days": [
     {
      "date": "2026-11-19",
@@ -2839,6 +2959,10 @@
      "air_temp_max": 24.1,
      "pressure_min": 1017.5,
      "pressure_max": 1020.5,
+     "salinity_min": 39.57,
+     "salinity_max": 39.58,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -3159,6 +3283,10 @@
      "air_temp_max": 26.4,
      "pressure_min": 1019.8,
      "pressure_max": 1021.7,
+     "salinity_min": 39.56,
+     "salinity_max": 39.57,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -3479,6 +3607,10 @@
      "air_temp_max": 25.4,
      "pressure_min": 1017.7,
      "pressure_max": 1020.7,
+     "salinity_min": 39.56,
+     "salinity_max": 39.57,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -3799,6 +3931,10 @@
      "air_temp_max": 24.7,
      "pressure_min": 1017,
      "pressure_max": 1019.6,
+     "salinity_min": 39.57,
+     "salinity_max": 39.59,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -4119,6 +4255,10 @@
      "air_temp_max": 24.1,
      "pressure_min": 1018.8,
      "pressure_max": 1020.6,
+     "salinity_min": 39.59,
+     "salinity_max": 39.6,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -4439,6 +4579,10 @@
      "air_temp_max": 22.6,
      "pressure_min": 1018.8,
      "pressure_max": 1020.8,
+     "salinity_min": 39.6,
+     "salinity_max": 39.61,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -4759,6 +4903,10 @@
      "air_temp_max": 22.3,
      "pressure_min": 1019.3,
      "pressure_max": 1023.9,
+     "salinity_min": 39.6,
+     "salinity_max": 39.61,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -5060,6 +5208,7 @@
   },
   {
    "id": "akko-argaman",
+   "salinity_dist_km": 4.8,
    "days": [
     {
      "date": "2026-11-19",
@@ -5084,6 +5233,10 @@
      "air_temp_max": 24.4,
      "pressure_min": 1017.6,
      "pressure_max": 1020.5,
+     "salinity_min": 39.6,
+     "salinity_max": 39.62,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -5404,6 +5557,10 @@
      "air_temp_max": 26.5,
      "pressure_min": 1019.8,
      "pressure_max": 1021.8,
+     "salinity_min": 39.62,
+     "salinity_max": 39.63,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -5724,6 +5881,10 @@
      "air_temp_max": 25.7,
      "pressure_min": 1017.7,
      "pressure_max": 1020.7,
+     "salinity_min": 39.63,
+     "salinity_max": 39.64,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -6044,6 +6205,10 @@
      "air_temp_max": 25,
      "pressure_min": 1016.9,
      "pressure_max": 1019.5,
+     "salinity_min": 39.64,
+     "salinity_max": 39.65,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -6364,6 +6529,10 @@
      "air_temp_max": 24,
      "pressure_min": 1018.8,
      "pressure_max": 1020.6,
+     "salinity_min": 39.65,
+     "salinity_max": 39.65,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -6684,6 +6853,10 @@
      "air_temp_max": 22.6,
      "pressure_min": 1018.8,
      "pressure_max": 1020.8,
+     "salinity_min": 39.64,
+     "salinity_max": 39.65,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -7004,6 +7177,10 @@
      "air_temp_max": 22.3,
      "pressure_min": 1019.3,
      "pressure_max": 1023.9,
+     "salinity_min": 39.62,
+     "salinity_max": 39.64,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -7305,6 +7482,7 @@
   },
   {
    "id": "haifa-batgalim",
+   "salinity_dist_km": 3.3,
    "days": [
     {
      "date": "2026-11-19",
@@ -7329,6 +7507,10 @@
      "air_temp_max": 23.7,
      "pressure_min": 1017.7,
      "pressure_max": 1020.5,
+     "salinity_min": 39.62,
+     "salinity_max": 39.64,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -7649,6 +7831,10 @@
      "air_temp_max": 26.3,
      "pressure_min": 1019.9,
      "pressure_max": 1021.7,
+     "salinity_min": 39.62,
+     "salinity_max": 39.63,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -7969,6 +8155,10 @@
      "air_temp_max": 25.2,
      "pressure_min": 1017.7,
      "pressure_max": 1020.8,
+     "salinity_min": 39.58,
+     "salinity_max": 39.61,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -8289,6 +8479,10 @@
      "air_temp_max": 24.2,
      "pressure_min": 1016.9,
      "pressure_max": 1019.6,
+     "salinity_min": 39.56,
+     "salinity_max": 39.57,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -8609,6 +8803,10 @@
      "air_temp_max": 23.5,
      "pressure_min": 1018.8,
      "pressure_max": 1020.7,
+     "salinity_min": 39.56,
+     "salinity_max": 39.56,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -8929,6 +9127,10 @@
      "air_temp_max": 22.3,
      "pressure_min": 1018.8,
      "pressure_max": 1020.9,
+     "salinity_min": 39.56,
+     "salinity_max": 39.57,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -9249,6 +9451,10 @@
      "air_temp_max": 21.9,
      "pressure_min": 1019.5,
      "pressure_max": 1024,
+     "salinity_min": 39.58,
+     "salinity_max": 39.59,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -9550,6 +9756,7 @@
   },
   {
    "id": "atlit",
+   "salinity_dist_km": 3.1,
    "days": [
     {
      "date": "2026-11-19",
@@ -9574,6 +9781,10 @@
      "air_temp_max": 23.8,
      "pressure_min": 1017.6,
      "pressure_max": 1020.4,
+     "salinity_min": 39.66,
+     "salinity_max": 39.67,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -9894,6 +10105,10 @@
      "air_temp_max": 25.7,
      "pressure_min": 1019.8,
      "pressure_max": 1021.8,
+     "salinity_min": 39.66,
+     "salinity_max": 39.66,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -10214,6 +10429,10 @@
      "air_temp_max": 24.9,
      "pressure_min": 1017.8,
      "pressure_max": 1020.6,
+     "salinity_min": 39.64,
+     "salinity_max": 39.65,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -10534,6 +10753,10 @@
      "air_temp_max": 24.4,
      "pressure_min": 1017.1,
      "pressure_max": 1019.4,
+     "salinity_min": 39.63,
+     "salinity_max": 39.64,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -10854,6 +11077,10 @@
      "air_temp_max": 23.6,
      "pressure_min": 1018.8,
      "pressure_max": 1020.7,
+     "salinity_min": 39.62,
+     "salinity_max": 39.63,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -11174,6 +11401,10 @@
      "air_temp_max": 23.3,
      "pressure_min": 1018.8,
      "pressure_max": 1020.9,
+     "salinity_min": 39.61,
+     "salinity_max": 39.62,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -11494,6 +11725,10 @@
      "air_temp_max": 22.9,
      "pressure_min": 1019.5,
      "pressure_max": 1024,
+     "salinity_min": 39.58,
+     "salinity_max": 39.61,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -11795,6 +12030,7 @@
   },
   {
    "id": "dor",
+   "salinity_dist_km": 4.7,
    "days": [
     {
      "date": "2026-11-19",
@@ -11819,6 +12055,10 @@
      "air_temp_max": 23.9,
      "pressure_min": 1017.7,
      "pressure_max": 1020.5,
+     "salinity_min": 39.57,
+     "salinity_max": 39.58,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -12139,6 +12379,10 @@
      "air_temp_max": 25.7,
      "pressure_min": 1019.9,
      "pressure_max": 1021.8,
+     "salinity_min": 39.58,
+     "salinity_max": 39.58,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -12459,6 +12703,10 @@
      "air_temp_max": 24.9,
      "pressure_min": 1017.8,
      "pressure_max": 1020.7,
+     "salinity_min": 39.59,
+     "salinity_max": 39.59,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -12779,6 +13027,10 @@
      "air_temp_max": 24.5,
      "pressure_min": 1017.1,
      "pressure_max": 1019.5,
+     "salinity_min": 39.59,
+     "salinity_max": 39.6,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -13099,6 +13351,10 @@
      "air_temp_max": 23.6,
      "pressure_min": 1018.9,
      "pressure_max": 1020.7,
+     "salinity_min": 39.59,
+     "salinity_max": 39.59,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -13419,6 +13675,10 @@
      "air_temp_max": 22.8,
      "pressure_min": 1018.8,
      "pressure_max": 1020.8,
+     "salinity_min": 39.58,
+     "salinity_max": 39.59,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -13739,6 +13999,10 @@
      "air_temp_max": 22.7,
      "pressure_min": 1019.5,
      "pressure_max": 1023.8,
+     "salinity_min": 39.58,
+     "salinity_max": 39.58,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -14040,6 +14304,7 @@
   },
   {
    "id": "caesarea",
+   "salinity_dist_km": 3,
    "days": [
     {
      "date": "2026-11-19",
@@ -14064,6 +14329,10 @@
      "air_temp_max": 24.3,
      "pressure_min": 1017.7,
      "pressure_max": 1020.5,
+     "salinity_min": 39.6,
+     "salinity_max": 39.6,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -14384,6 +14653,10 @@
      "air_temp_max": 25.7,
      "pressure_min": 1019.9,
      "pressure_max": 1021.8,
+     "salinity_min": 39.6,
+     "salinity_max": 39.6,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -14704,6 +14977,10 @@
      "air_temp_max": 24.8,
      "pressure_min": 1017.7,
      "pressure_max": 1020.7,
+     "salinity_min": 39.59,
+     "salinity_max": 39.61,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -15024,6 +15301,10 @@
      "air_temp_max": 24.8,
      "pressure_min": 1017.1,
      "pressure_max": 1019.5,
+     "salinity_min": 39.59,
+     "salinity_max": 39.59,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -15344,6 +15625,10 @@
      "air_temp_max": 23.6,
      "pressure_min": 1018.8,
      "pressure_max": 1020.7,
+     "salinity_min": 39.58,
+     "salinity_max": 39.59,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -15664,6 +15949,10 @@
      "air_temp_max": 23.5,
      "pressure_min": 1018.7,
      "pressure_max": 1020.7,
+     "salinity_min": 39.58,
+     "salinity_max": 39.59,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -15984,6 +16273,10 @@
      "air_temp_max": 23,
      "pressure_min": 1019.6,
      "pressure_max": 1023.8,
+     "salinity_min": 39.58,
+     "salinity_max": 39.59,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -16285,6 +16578,7 @@
   },
   {
    "id": "olga",
+   "salinity_dist_km": 5,
    "days": [
     {
      "date": "2026-11-19",
@@ -16309,6 +16603,10 @@
      "air_temp_max": 24.3,
      "pressure_min": 1017.7,
      "pressure_max": 1020.5,
+     "salinity_min": 39.55,
+     "salinity_max": 39.57,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -16629,6 +16927,10 @@
      "air_temp_max": 25.7,
      "pressure_min": 1019.9,
      "pressure_max": 1021.8,
+     "salinity_min": 39.55,
+     "salinity_max": 39.56,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -16949,6 +17251,10 @@
      "air_temp_max": 24.8,
      "pressure_min": 1017.7,
      "pressure_max": 1020.7,
+     "salinity_min": 39.56,
+     "salinity_max": 39.58,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -17269,6 +17575,10 @@
      "air_temp_max": 24.8,
      "pressure_min": 1017.1,
      "pressure_max": 1019.5,
+     "salinity_min": 39.57,
+     "salinity_max": 39.57,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -17589,6 +17899,10 @@
      "air_temp_max": 23.6,
      "pressure_min": 1018.8,
      "pressure_max": 1020.7,
+     "salinity_min": 39.57,
+     "salinity_max": 39.57,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -17909,6 +18223,10 @@
      "air_temp_max": 23.5,
      "pressure_min": 1018.7,
      "pressure_max": 1020.7,
+     "salinity_min": 39.57,
+     "salinity_max": 39.57,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -18229,6 +18547,10 @@
      "air_temp_max": 23,
      "pressure_min": 1019.6,
      "pressure_max": 1023.8,
+     "salinity_min": 39.56,
+     "salinity_max": 39.57,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -18530,6 +18852,7 @@
   },
   {
    "id": "michmoret",
+   "salinity_dist_km": 4.5,
    "days": [
     {
      "date": "2026-11-19",
@@ -18554,6 +18877,10 @@
      "air_temp_max": 24.5,
      "pressure_min": 1017.8,
      "pressure_max": 1020.6,
+     "salinity_min": 39.57,
+     "salinity_max": 39.58,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -18874,6 +19201,10 @@
      "air_temp_max": 25.9,
      "pressure_min": 1019.9,
      "pressure_max": 1021.8,
+     "salinity_min": 39.57,
+     "salinity_max": 39.58,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -19194,6 +19525,10 @@
      "air_temp_max": 25,
      "pressure_min": 1017.7,
      "pressure_max": 1020.7,
+     "salinity_min": 39.57,
+     "salinity_max": 39.58,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -19514,6 +19849,10 @@
      "air_temp_max": 24.9,
      "pressure_min": 1017.1,
      "pressure_max": 1019.6,
+     "salinity_min": 39.57,
+     "salinity_max": 39.58,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -19834,6 +20173,10 @@
      "air_temp_max": 23.4,
      "pressure_min": 1018.8,
      "pressure_max": 1020.8,
+     "salinity_min": 39.57,
+     "salinity_max": 39.58,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -20154,6 +20497,10 @@
      "air_temp_max": 23.5,
      "pressure_min": 1018.7,
      "pressure_max": 1020.7,
+     "salinity_min": 39.58,
+     "salinity_max": 39.58,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -20474,6 +20821,10 @@
      "air_temp_max": 23,
      "pressure_min": 1019.6,
      "pressure_max": 1023.8,
+     "salinity_min": 39.57,
+     "salinity_max": 39.58,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -20775,6 +21126,7 @@
   },
   {
    "id": "netanya",
+   "salinity_dist_km": 4.2,
    "days": [
     {
      "date": "2026-11-19",
@@ -20799,6 +21151,10 @@
      "air_temp_max": 23.7,
      "pressure_min": 1017.7,
      "pressure_max": 1020.6,
+     "salinity_min": 39.6,
+     "salinity_max": 39.6,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -21119,6 +21475,10 @@
      "air_temp_max": 25.1,
      "pressure_min": 1019.9,
      "pressure_max": 1021.8,
+     "salinity_min": 39.59,
+     "salinity_max": 39.6,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -21439,6 +21799,10 @@
      "air_temp_max": 24,
      "pressure_min": 1017.7,
      "pressure_max": 1020.7,
+     "salinity_min": 39.58,
+     "salinity_max": 39.59,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -21759,6 +22123,10 @@
      "air_temp_max": 24.3,
      "pressure_min": 1017.2,
      "pressure_max": 1019.6,
+     "salinity_min": 39.58,
+     "salinity_max": 39.59,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -22079,6 +22447,10 @@
      "air_temp_max": 23,
      "pressure_min": 1018.8,
      "pressure_max": 1020.8,
+     "salinity_min": 39.58,
+     "salinity_max": 39.59,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -22399,6 +22771,10 @@
      "air_temp_max": 22.6,
      "pressure_min": 1018.8,
      "pressure_max": 1020.7,
+     "salinity_min": 39.59,
+     "salinity_max": 39.6,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -22719,6 +23095,10 @@
      "air_temp_max": 22.9,
      "pressure_min": 1019.7,
      "pressure_max": 1023.8,
+     "salinity_min": 39.59,
+     "salinity_max": 39.59,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -23020,6 +23400,7 @@
   },
   {
    "id": "herzliya",
+   "salinity_dist_km": 2.5,
    "days": [
     {
      "date": "2026-11-19",
@@ -23044,6 +23425,10 @@
      "air_temp_max": 24.2,
      "pressure_min": 1017.8,
      "pressure_max": 1020.6,
+     "salinity_min": 39.66,
+     "salinity_max": 39.66,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -23364,6 +23749,10 @@
      "air_temp_max": 25.5,
      "pressure_min": 1019.9,
      "pressure_max": 1021.8,
+     "salinity_min": 39.66,
+     "salinity_max": 39.66,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -23684,6 +24073,10 @@
      "air_temp_max": 24.3,
      "pressure_min": 1017.7,
      "pressure_max": 1020.7,
+     "salinity_min": 39.66,
+     "salinity_max": 39.67,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -24004,6 +24397,10 @@
      "air_temp_max": 24.7,
      "pressure_min": 1017.3,
      "pressure_max": 1019.7,
+     "salinity_min": 39.66,
+     "salinity_max": 39.67,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -24324,6 +24721,10 @@
      "air_temp_max": 23.4,
      "pressure_min": 1018.9,
      "pressure_max": 1020.8,
+     "salinity_min": 39.67,
+     "salinity_max": 39.68,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -24644,6 +25045,10 @@
      "air_temp_max": 23.4,
      "pressure_min": 1018.8,
      "pressure_max": 1020.7,
+     "salinity_min": 39.68,
+     "salinity_max": 39.68,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -24964,6 +25369,10 @@
      "air_temp_max": 23.6,
      "pressure_min": 1019.9,
      "pressure_max": 1023.6,
+     "salinity_min": 39.68,
+     "salinity_max": 39.69,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -25265,6 +25674,7 @@
   },
   {
    "id": "telaviv-frishman",
+   "salinity_dist_km": 2.6,
    "days": [
     {
      "date": "2026-11-19",
@@ -25289,6 +25699,10 @@
      "air_temp_max": 24.9,
      "pressure_min": 1017.9,
      "pressure_max": 1020.7,
+     "salinity_min": 39.7,
+     "salinity_max": 39.71,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -25609,6 +26023,10 @@
      "air_temp_max": 26.6,
      "pressure_min": 1020,
      "pressure_max": 1021.9,
+     "salinity_min": 39.71,
+     "salinity_max": 39.72,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -25929,6 +26347,10 @@
      "air_temp_max": 25.3,
      "pressure_min": 1017.7,
      "pressure_max": 1020.7,
+     "salinity_min": 39.71,
+     "salinity_max": 39.72,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -26249,6 +26671,10 @@
      "air_temp_max": 25.2,
      "pressure_min": 1017.4,
      "pressure_max": 1019.7,
+     "salinity_min": 39.71,
+     "salinity_max": 39.72,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -26569,6 +26995,10 @@
      "air_temp_max": 23.8,
      "pressure_min": 1018.9,
      "pressure_max": 1020.9,
+     "salinity_min": 39.71,
+     "salinity_max": 39.72,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -26889,6 +27319,10 @@
      "air_temp_max": 23.4,
      "pressure_min": 1018.8,
      "pressure_max": 1020.7,
+     "salinity_min": 39.71,
+     "salinity_max": 39.72,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -27209,6 +27643,10 @@
      "air_temp_max": 23.6,
      "pressure_min": 1019.9,
      "pressure_max": 1023.6,
+     "salinity_min": 39.71,
+     "salinity_max": 39.72,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -27510,6 +27948,7 @@
   },
   {
    "id": "jaffa",
+   "salinity_dist_km": 2.2,
    "days": [
     {
      "date": "2026-11-19",
@@ -27534,6 +27973,10 @@
      "air_temp_max": 24.6,
      "pressure_min": 1017.8,
      "pressure_max": 1020.7,
+     "salinity_min": 39.7,
+     "salinity_max": 39.71,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -27854,6 +28297,10 @@
      "air_temp_max": 26.3,
      "pressure_min": 1019.9,
      "pressure_max": 1021.8,
+     "salinity_min": 39.71,
+     "salinity_max": 39.72,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -28174,6 +28621,10 @@
      "air_temp_max": 25,
      "pressure_min": 1017.7,
      "pressure_max": 1020.7,
+     "salinity_min": 39.71,
+     "salinity_max": 39.72,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -28494,6 +28945,10 @@
      "air_temp_max": 24.9,
      "pressure_min": 1017.4,
      "pressure_max": 1019.7,
+     "salinity_min": 39.71,
+     "salinity_max": 39.72,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -28814,6 +29269,10 @@
      "air_temp_max": 23.8,
      "pressure_min": 1018.9,
      "pressure_max": 1020.8,
+     "salinity_min": 39.71,
+     "salinity_max": 39.72,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -29134,6 +29593,10 @@
      "air_temp_max": 23.1,
      "pressure_min": 1018.8,
      "pressure_max": 1020.7,
+     "salinity_min": 39.71,
+     "salinity_max": 39.72,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -29454,6 +29917,10 @@
      "air_temp_max": 23.2,
      "pressure_min": 1019.9,
      "pressure_max": 1023.6,
+     "salinity_min": 39.71,
+     "salinity_max": 39.72,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -29755,6 +30222,7 @@
   },
   {
    "id": "rishon-lezion",
+   "salinity_dist_km": 1.6,
    "days": [
     {
      "date": "2026-11-19",
@@ -29779,6 +30247,10 @@
      "air_temp_max": 24.3,
      "pressure_min": 1017.8,
      "pressure_max": 1020.7,
+     "salinity_min": 39.7,
+     "salinity_max": 39.71,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -30099,6 +30571,10 @@
      "air_temp_max": 25.6,
      "pressure_min": 1019.9,
      "pressure_max": 1021.8,
+     "salinity_min": 39.71,
+     "salinity_max": 39.72,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -30419,6 +30895,10 @@
      "air_temp_max": 24.5,
      "pressure_min": 1017.7,
      "pressure_max": 1020.7,
+     "salinity_min": 39.7,
+     "salinity_max": 39.71,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -30739,6 +31219,10 @@
      "air_temp_max": 24.5,
      "pressure_min": 1017.5,
      "pressure_max": 1019.7,
+     "salinity_min": 39.69,
+     "salinity_max": 39.7,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -31059,6 +31543,10 @@
      "air_temp_max": 23.7,
      "pressure_min": 1018.9,
      "pressure_max": 1020.8,
+     "salinity_min": 39.69,
+     "salinity_max": 39.69,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -31379,6 +31867,10 @@
      "air_temp_max": 23.1,
      "pressure_min": 1018.8,
      "pressure_max": 1020.7,
+     "salinity_min": 39.69,
+     "salinity_max": 39.7,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -31699,6 +32191,10 @@
      "air_temp_max": 23.2,
      "pressure_min": 1019.9,
      "pressure_max": 1023.6,
+     "salinity_min": 39.69,
+     "salinity_max": 39.69,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -32000,6 +32496,7 @@
   },
   {
    "id": "palmachim",
+   "salinity_dist_km": 3.8,
    "days": [
     {
      "date": "2026-11-19",
@@ -32024,6 +32521,10 @@
      "air_temp_max": 24,
      "pressure_min": 1017.8,
      "pressure_max": 1020.7,
+     "salinity_min": 39.69,
+     "salinity_max": 39.69,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -32344,6 +32845,10 @@
      "air_temp_max": 25.1,
      "pressure_min": 1019.9,
      "pressure_max": 1021.8,
+     "salinity_min": 39.69,
+     "salinity_max": 39.7,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -32664,6 +33169,10 @@
      "air_temp_max": 24.1,
      "pressure_min": 1017.7,
      "pressure_max": 1020.6,
+     "salinity_min": 39.68,
+     "salinity_max": 39.69,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -32984,6 +33493,10 @@
      "air_temp_max": 24,
      "pressure_min": 1017.5,
      "pressure_max": 1019.6,
+     "salinity_min": 39.68,
+     "salinity_max": 39.68,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -33304,6 +33817,10 @@
      "air_temp_max": 23.3,
      "pressure_min": 1018.9,
      "pressure_max": 1020.8,
+     "salinity_min": 39.68,
+     "salinity_max": 39.68,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -33624,6 +34141,10 @@
      "air_temp_max": 23.6,
      "pressure_min": 1018.8,
      "pressure_max": 1020.7,
+     "salinity_min": 39.67,
+     "salinity_max": 39.68,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -33944,6 +34465,10 @@
      "air_temp_max": 23.4,
      "pressure_min": 1020.1,
      "pressure_max": 1023.6,
+     "salinity_min": 39.66,
+     "salinity_max": 39.67,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -34245,6 +34770,7 @@
   },
   {
    "id": "ashdod",
+   "salinity_dist_km": 1.9,
    "days": [
     {
      "date": "2026-11-19",
@@ -34269,6 +34795,10 @@
      "air_temp_max": 24.5,
      "pressure_min": 1017.9,
      "pressure_max": 1020.8,
+     "salinity_min": 39.74,
+     "salinity_max": 39.74,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -34589,6 +35119,10 @@
      "air_temp_max": 26.1,
      "pressure_min": 1020,
      "pressure_max": 1021.9,
+     "salinity_min": 39.74,
+     "salinity_max": 39.75,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -34909,6 +35443,10 @@
      "air_temp_max": 24.8,
      "pressure_min": 1017.7,
      "pressure_max": 1020.7,
+     "salinity_min": 39.74,
+     "salinity_max": 39.75,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -35229,6 +35767,10 @@
      "air_temp_max": 24.7,
      "pressure_min": 1017.5,
      "pressure_max": 1019.8,
+     "salinity_min": 39.74,
+     "salinity_max": 39.75,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -35549,6 +36091,10 @@
      "air_temp_max": 24,
      "pressure_min": 1019,
      "pressure_max": 1020.8,
+     "salinity_min": 39.75,
+     "salinity_max": 39.75,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -35869,6 +36415,10 @@
      "air_temp_max": 23.6,
      "pressure_min": 1018.8,
      "pressure_max": 1020.7,
+     "salinity_min": 39.75,
+     "salinity_max": 39.75,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -36189,6 +36739,10 @@
      "air_temp_max": 23.5,
      "pressure_min": 1020.1,
      "pressure_max": 1023.6,
+     "salinity_min": 39.75,
+     "salinity_max": 39.75,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -36490,6 +37044,7 @@
   },
   {
    "id": "nitzanim",
+   "salinity_dist_km": 2.6,
    "days": [
     {
      "date": "2026-11-19",
@@ -36514,6 +37069,10 @@
      "air_temp_max": 24.5,
      "pressure_min": 1017.9,
      "pressure_max": 1020.8,
+     "salinity_min": 39.79,
+     "salinity_max": 39.79,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -36834,6 +37393,10 @@
      "air_temp_max": 26,
      "pressure_min": 1020,
      "pressure_max": 1021.9,
+     "salinity_min": 39.79,
+     "salinity_max": 39.79,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -37154,6 +37717,10 @@
      "air_temp_max": 24.8,
      "pressure_min": 1017.8,
      "pressure_max": 1020.7,
+     "salinity_min": 39.79,
+     "salinity_max": 39.8,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -37474,6 +38041,10 @@
      "air_temp_max": 24.6,
      "pressure_min": 1017.6,
      "pressure_max": 1019.8,
+     "salinity_min": 39.79,
+     "salinity_max": 39.8,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -37794,6 +38365,10 @@
      "air_temp_max": 23.8,
      "pressure_min": 1019,
      "pressure_max": 1020.8,
+     "salinity_min": 39.8,
+     "salinity_max": 39.81,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -38114,6 +38689,10 @@
      "air_temp_max": 23.5,
      "pressure_min": 1018.9,
      "pressure_max": 1020.7,
+     "salinity_min": 39.81,
+     "salinity_max": 39.81,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -38434,6 +39013,10 @@
      "air_temp_max": 23.1,
      "pressure_min": 1020.1,
      "pressure_max": 1023.5,
+     "salinity_min": 39.79,
+     "salinity_max": 39.81,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -38735,6 +39318,7 @@
   },
   {
    "id": "ashkelon",
+   "salinity_dist_km": 3.2,
    "days": [
     {
      "date": "2026-11-19",
@@ -38759,6 +39343,10 @@
      "air_temp_max": 24.6,
      "pressure_min": 1018,
      "pressure_max": 1020.8,
+     "salinity_min": 39.8,
+     "salinity_max": 39.8,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -39079,6 +39667,10 @@
      "air_temp_max": 26,
      "pressure_min": 1020,
      "pressure_max": 1021.9,
+     "salinity_min": 39.8,
+     "salinity_max": 39.8,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -39399,6 +39991,10 @@
      "air_temp_max": 25,
      "pressure_min": 1017.9,
      "pressure_max": 1020.7,
+     "salinity_min": 39.8,
+     "salinity_max": 39.82,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -39719,6 +40315,10 @@
      "air_temp_max": 24.5,
      "pressure_min": 1017.7,
      "pressure_max": 1019.9,
+     "salinity_min": 39.81,
+     "salinity_max": 39.82,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -40039,6 +40639,10 @@
      "air_temp_max": 23.6,
      "pressure_min": 1019,
      "pressure_max": 1020.9,
+     "salinity_min": 39.81,
+     "salinity_max": 39.82,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -40359,6 +40963,10 @@
      "air_temp_max": 23.1,
      "pressure_min": 1018.9,
      "pressure_max": 1020.8,
+     "salinity_min": 39.8,
+     "salinity_max": 39.81,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -40679,6 +41287,10 @@
      "air_temp_max": 23,
      "pressure_min": 1020.3,
      "pressure_max": 1023.5,
+     "salinity_min": 39.77,
+     "salinity_max": 39.8,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -40980,6 +41592,7 @@
   },
   {
    "id": "zikim",
+   "salinity_dist_km": 3.7,
    "days": [
     {
      "date": "2026-11-19",
@@ -41004,6 +41617,10 @@
      "air_temp_max": 25.4,
      "pressure_min": 1018,
      "pressure_max": 1020.8,
+     "salinity_min": 39.83,
+     "salinity_max": 39.84,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -41324,6 +41941,10 @@
      "air_temp_max": 26.7,
      "pressure_min": 1020,
      "pressure_max": 1021.9,
+     "salinity_min": 39.84,
+     "salinity_max": 39.84,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -41644,6 +42265,10 @@
      "air_temp_max": 25.7,
      "pressure_min": 1017.9,
      "pressure_max": 1020.7,
+     "salinity_min": 39.84,
+     "salinity_max": 39.85,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -41964,6 +42589,10 @@
      "air_temp_max": 25,
      "pressure_min": 1017.7,
      "pressure_max": 1019.9,
+     "salinity_min": 39.83,
+     "salinity_max": 39.84,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -42284,6 +42913,10 @@
      "air_temp_max": 24.2,
      "pressure_min": 1019,
      "pressure_max": 1020.8,
+     "salinity_min": 39.81,
+     "salinity_max": 39.83,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -42604,6 +43237,10 @@
      "air_temp_max": 23.3,
      "pressure_min": 1018.9,
      "pressure_max": 1020.8,
+     "salinity_min": 39.79,
+     "salinity_max": 39.81,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
@@ -42924,6 +43561,10 @@
      "air_temp_max": 23.2,
      "pressure_min": 1020.3,
      "pressure_max": 1023.5,
+     "salinity_min": 39.79,
+     "salinity_max": 39.79,
+     "salinity_hours_valid": 24,
+     "salinity_hours_in_axis": 24,
      "windows": [
       {
        "from": "00:00",
