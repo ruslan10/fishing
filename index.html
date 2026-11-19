@@ -13,7 +13,6 @@
 const HEB_DAYS = ['ראשון','שני','שלישי','רביעי','חמישי','שישי','שבת'];
 const BAND = { high:['on','התאמה גבוהה'], medium:['end','התאמה בינונית'], low:['off','התאמה נמוכה'], insufficient:['off','אין מספיק מידע'] };
 const BAND_SHORT = { high:'גבוהה', medium:'בינונית', low:'נמוכה', insufficient:'לא ידוע' };
-function condWord(s){ return s==null?'חסר':s>=85?'מצוינים':s>=70?'טובים':s>=45?'בינוניים':s>=25?'חלשים':'גרועים'; }
 function nowIL(){ const p = new Intl.DateTimeFormat('sv-SE',{timeZone:'Asia/Jerusalem',dateStyle:'short',timeStyle:'short'}).format(new Date());
   return { date:p.slice(0,10), hour:+p.slice(11,13) }; }
 // Best remaining window, computed at view time: for today, only windows that haven't ended.
@@ -286,8 +285,7 @@ function imsCard(region){
         return `<tr class="${isPast?'past':''}"><td><span dir="ltr">${w.from}–${w.to}</span></td><td>${(()=>{ const lo=w.wave_min??w.wave_height, hi=w.wave_max??w.wave_height; const r=waveRangeCm(lo,hi); return r?`<span style="font-weight:700">${r}</span> ס״מ ${stateChip(seaStateCm(Math.round(hi*100)))}`:na(null); })()}</td>
         <td>${(()=>{ const t=windRangeKmh(w); return t?t+' קמ״ש '+(w.wind_dir?'מ'+w.wind_dir:'')+' '+stateChip(windCat(w.wind_max_kmh??w.wind_kmh)):'חסר'; })()}</td>
         <td>${w.current_vel!=null&&w.current_vel>0.01?w.current_vel+' קמ״ש '+(w.current_dir?'ל'+w.current_dir:''):'—'}</td>
-        <td><div style="display:flex;flex-direction:column;align-items:stretch;gap:3px"><span style="font-size:11px;font-weight:700;color:${scoreColor(w.score)};text-align:center">${condWord(w.score)}</span>
-        <span class="bar" style="min-width:0"><i style="width:${w.score||0}%;background:${scoreColor(w.score)}"></i></span></div></td></tr>
+        <td><div style="display:flex;align-items:center;justify-content:center;gap:6px"><bdi class="ltr" style="font-size:13px;font-weight:800;color:${scoreColor(w.score)}">${w.score==null?'—':w.score}</bdi><span class="bar" style="display:inline-block;min-width:0;width:38px;flex:0 0 38px"><i style="width:${w.score||0}%;background:${scoreColor(w.score)}"></i></span></div></td></tr>
         <tr class="wxsub ${isPast?'past':''}"><td colspan="5">${wxLine(w)}</td></tr>`;}).join('')}
       </table><div style="font-size:10.5px;opacity:.6;margin-top:6px">הערכת תנאים מגלים ורוח בלבד, להשוואת שעות באותו יום.${day.date<today?' שורות אפורות כבר עברו.':''} כיוון רוח וגלים הוא הכיוון <b>שממנו</b> הם באים; כיוון זרם הוא הכיוון <b>שאליו</b> הוא זורם.</div>
       <div style="font-size:10.5px;opacity:.75;margin-top:4px;line-height:2">טווח הגלים בס״מ הוא המינימום–המקסימום של ערכי התחזית השעתית בתוך החלון (מעוגל לס״מ שלם). מצב ים במונחי השירות המטאורולוגי הישראלי, לפי הגל המרבי בטווח כפי שהוא מוצג מעוגל: ${stateChip(['שקט','#94a3b8'])} עד 9 · ${stateChip(['נוח','#67e8f9'])} 10-49 · ${stateChip(['גלי','#38bdf8'])} 50-124 · ${stateChip(['גבה גלים','#a78bfa'])} 125-249 · ${stateChip(['רוגש','#fbbf24'])} 250-399 · ${stateChip(['סוער','#fb923c'])} 400-599 · ${stateChip(['גועש','#f472b6'])} 600+ ס״מ<br>
