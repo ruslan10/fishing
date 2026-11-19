@@ -20,9 +20,17 @@
 </style>
 </head>
 <body><div class="wrap" id="app">טוען נתונים...</div>
+<script>
+// Catch startup/import failures too, which cannot reach the module's data handler.
+(function(){
+ const failed=()=>{const app=document.getElementById('app');if(!app||app.querySelector('.days'))return;app.innerHTML='<div class="card" style="padding:24px;text-align:center">טעינת האתר לא הושלמה.<br><button id="reload-app" style="margin-top:12px;padding:10px 20px">טעינה מחדש</button></div>';document.getElementById('reload-app').onclick=()=>{const url=new URL(location.href);url.searchParams.set('reload',Date.now());location.replace(url.href);};};
+ window.addEventListener('error',failed);window.addEventListener('unhandledrejection',failed);
+ setTimeout(()=>{if(!document.querySelector('.days'))failed();},20000);
+})();
+</script>
 <script type="module">
-import {LEVELS,waveLevel,windLevel} from "./condition-scale.mjs";
-import {windowScore,modelWindowScore} from "./experimental-score.mjs";
+import {LEVELS,waveLevel,windLevel} from "./condition-scale.mjs?v=f2eb3f77e829";
+import {windowScore,modelWindowScore} from "./experimental-score.mjs?v=2f87b4cdcf8e";
 function scoreColor(s){return s==null?'var(--fg)':s>=70?'var(--ok-fg)':s>=45?'var(--warn-fg)':'var(--off-fg)';}
 const HEB_DAYS = ['ראשון','שני','שלישי','רביעי','חמישי','שישי','שבת'];
 function nowIL(){ const p = new Intl.DateTimeFormat('sv-SE',{timeZone:'Asia/Jerusalem',dateStyle:'short',timeStyle:'short'}).format(new Date());
