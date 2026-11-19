@@ -6,7 +6,7 @@
 <title>תחזית דייג - תחזית דיג לחופי ישראל</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎣</text></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="theme.css?v=6587dbf57c2d">
+<link rel="stylesheet" href="theme.css?v=e219e76aa162">
 <style>
 .day-wind-arrow svg {background:#0b1825;border-radius:50%;padding:2px;width:22px;height:22px;box-sizing:border-box}
 .day.sel .day-wind-arrow svg {background:#102131;box-shadow:0 0 0 1px #334e68}
@@ -429,7 +429,7 @@ function modelComparison(bd,day){
         return `<tr class="${isPast?'past':''}"><td class="hours-cell"><span dir="ltr">${w.from}–${w.to}</span>${wxLine(w,day)}</td><td>${off?`<div class="condition-cell">${stateChip([(off.sea_state_he||'מצב ים').replace(' עד ','–'),seaStateCm(off.wave_to_cm)[1]])}${off.parts?off.parts.map(p=>`<span style="font-size:10px"><bdi class="ltr">${p.overlap_from.slice(11,16)}–${p.overlap_to.slice(11,16)}</bdi><br><bdi class="ltr">${p.wave_from_cm}–${p.wave_to_cm} ס״מ</bdi></span>`).join(''):`<bdi class="ltr">${off.wave_from_cm}–${off.wave_to_cm} ס״מ</bdi>`}</div>`:(()=>{ const lo=w.wave_min??w.wave_height, hi=w.wave_max??w.wave_height; const r=waveRangeCm(lo,hi); if(latest.meta.version>=5)return windowModelHeights(bd,day,w); return r?`<div class="condition-cell"><span style="font-size:9px;color:#94a3b8">${bd.wave_primary==='copernicus_med'?'Copernicus':'מודל משולב'}</span>${stateChip(seaStateCm(Math.round(hi*100)))}<div><span style="font-weight:700">${r}</span> ס״מ</div></div>`:na(null); })()}</td>
         <td>${off?`<div class="condition-cell">${stateChip(windCat(off.wind_speed_to))}${(off.parts||[off]).map(p=>`<span style="font-size:10px">${p.overlap_from?`<bdi class="ltr">${p.overlap_from.slice(11,16)}–${p.overlap_to.slice(11,16)}</bdi><br>`:''}<bdi class="ltr">${p.wind_speed_from}–${p.wind_speed_to} קמ״ש</bdi><br>מ${compassHe(p.wind_dir_from)}${p.wind_dir_to!==p.wind_dir_from?' עד '+compassHe(p.wind_dir_to):''}</span>`).join('')}</div>`:(()=>{ const t=windRangeKmh(w); return t?`<div class="condition-cell">${stateChip(windCat(w.wind_max_kmh??w.wind_kmh))}<div>${t} קמ״ש</div>${w.wind_dir?`<div>מ${w.wind_dir}</div>`:''}</div>`:'חסר'; })()}</td>
         <td>${w.current_vel!=null&&w.current_vel>0.01?w.current_vel+' קמ״ש '+(w.current_dir?'ל'+w.current_dir:''):'—'}</td>
-        <td style="vertical-align:middle">${conditionsCell(bd,day,w)}</td></tr>`;}).join('')}
+        <td>${conditionsCell(bd,day,w)}</td></tr>`;}).join('')}
       </table>`}</div>
 
 

@@ -147,3 +147,9 @@ table.win .condition-cell > bdi { font-size:11px; }
   table.win td:last-child > div { flex-direction:column; gap:4px !important; }
   table.win td:last-child .bar { flex:0 0 6px !important; width:28px !important; min-width:0; }
 }
+
+/* Align hourly data to the same row start, centered under each heading. */
+table.win th, table.win td { text-align:center; }
+table.win tr:not(.wxsub) > td { vertical-align:top; }
+table.win .condition-cell { align-items:center; text-align:center; }
+table.win .window-model-heights { text-align:center; }
