@@ -469,7 +469,7 @@ async function main() {
       timezone: TZ,
       valid_from: outBeaches.find(b => b.days)?.days?.[0]?.date ?? null,
       valid_to: outBeaches.find(b => b.days)?.days?.slice(-1)[0]?.date ?? null,
-      refresh_policy_he: 'רענון יומי בערב בסביבות 20:00 שעון ישראל; התחזית מכסה 7 ימים קלנדריים כולל יום הרענון; הפקות קודמות נשמרות בארכיון ללא שינוי',
+      refresh_policy_he: 'רענון נתונים מתוכנן כל 3 שעות; זמני GitHub Actions עשויים להתעכב; התחזית מכסה 7 ימים קלנדריים כולל יום הרענון; הפקות קודמות נשמרות בארכיון ללא שינוי',
       wave_policy: {primary:'Copernicus MED-WAV if current first-day coverage passes availability gate, otherwise explicitly labeled Open-Meteo best match',
         comparison:['ecmwf_wam','ncep_gfswave025'],
         spread:'largest simultaneous hourly spread, never a calibrated confidence interval',

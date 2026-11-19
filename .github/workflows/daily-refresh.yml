@@ -1,14 +1,13 @@
-name: Daily forecast data refresh
+name: Three-hour forecast data refresh
 on:
   schedule:
-    # Two UTC candidate slots so exactly one lands at 20:00 Asia/Jerusalem:
-    # 17:00 UTC = 20:00 IDT (summer), 18:00 UTC = 20:00 IST (winter).
-    # The gate step below runs the refresh only when local time is 20:xx
-    # and no issue exists yet for the current evening refresh cycle.
-    # GitHub may still fire scheduled runs late.
-    - cron: '0 17 * * *'
-    - cron: '0 18 * * *'
+    # Every3h UTC. Local wall-clock hour shifts with Israel DST.
+    - cron: '10 1,4,7,10,13,16,19,22 * * *'
   workflow_dispatch:
+
+concurrency:
+  group: forecast-refresh
+  cancel-in-progress: false
 
 permissions:
   contents: write
@@ -19,43 +18,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Gate on 20:00 Asia/Jerusalem, once per evening cycle
-        id: gate
-        run: |
-          LOCAL_NOW=$(TZ=Asia/Jerusalem date '+%F %H:%M')
-          LOCAL_HOUR=$(TZ=Asia/Jerusalem date '+%H')
-          LOCAL_DATE=$(TZ=Asia/Jerusalem date '+%F')
-          echo "Local time: $LOCAL_NOW (Asia/Jerusalem)"
-          if [ "${GITHUB_EVENT_NAME:-}" = "workflow_dispatch" ]; then
-            echo "Manual dispatch: proceeding regardless of local hour."
-            echo "proceed=true" >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
-          if [ "$LOCAL_HOUR" != "20" ]; then
-            echo "Not the 20:00 local slot; skipping."
-            echo "proceed=false" >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
-          # Cycle-keyed duplicate guard: skip only when an issue from THIS
-          # evening cycle exists (issued today at 19:00 or later local).
-          # An earlier same-day issue (e.g. a morning or launch issue) must
-          # not block the evening refresh.
-          for f in data/issues/${LOCAL_DATE}T*.json; do
-            [ -e "$f" ] || continue
-            H=$(basename "$f" | cut -c12-13)
-            if [ "$H" -ge 19 ]; then
-              echo "Evening-cycle issue already exists for $LOCAL_DATE ($f); skipping duplicate."
-              echo "proceed=false" >> "$GITHUB_OUTPUT"
-              exit 0
-            fi
-          done
-          echo "proceed=true" >> "$GITHUB_OUTPUT"
       - uses: actions/setup-node@v4
-        if: steps.gate.outputs.proceed == 'true'
         with:
           node-version: 22
       - uses: actions/setup-python@v5
-        if: steps.gate.outputs.proceed == 'true'
         with:
           python-version: '3.12'
       - name: Fetch Copernicus salinity (modeled sea-surface, nearest valid sea cell)
@@ -63,7 +29,6 @@ jobs:
         # COPERNICUS_USERNAME / COPERNICUS_PASSWORD; until they exist the step fails
         # softly and a fresh salinity.json pushed ahead of the run is used instead.
         # Failure never blocks the refresh - salinity just renders as missing.
-        if: steps.gate.outputs.proceed == 'true'
         continue-on-error: true
         env:
           COPERNICUSMARINE_SERVICE_USERNAME: ${{ secrets.COPERNICUS_USERNAME }}
@@ -72,30 +37,28 @@ jobs:
           pip install -q copernicusmarine
           python pipeline/fetch-salinity.py
       - name: Fetch and build forecast data
-        if: steps.gate.outputs.proceed == 'true'
         env:
           # Include the IMS official coast forecast strip (attribution + disclaimer in footer).
           IMS_ENABLE: '1'
         run: node pipeline/fetch-data.mjs
       - name: Commit new issue data
         id: commit
-        if: steps.gate.outputs.proceed == 'true'
         run: |
           git config user.name "fishing-forecast-bot"
           git config user.email "fishing-forecast-bot@users.noreply.github.com"
-          git add data/issues data/latest.json data/archive-index.json
+          git add data/issues data/latest.json data/archive-index.json data/change48 data/change48-latest.json
           if git diff --cached --quiet; then
             echo "No data changes"
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
-            git commit -m "data: daily forecast refresh $(date -u +%Y-%m-%dT%H:%MZ)"
+            git commit -m "data: three-hour forecast refresh $(date -u +%Y-%m-%dT%H:%MZ)"
             git push
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
       - name: Request Pages rebuild
         # GITHUB_TOKEN pushes do NOT trigger branch-source Pages builds, so the
         # site would serve stale data without this explicit build request.
-        if: steps.gate.outputs.proceed == 'true' && steps.commit.outputs.changed == 'true'
+        if: steps.commit.outputs.changed == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
