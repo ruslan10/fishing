@@ -163,6 +163,8 @@ function beachDataValid(m, w, issueDate) {
 }
 
 async function main() {
+  const environmentRun=spawnSync('python3',[path.join(ROOT,'pipeline/fetch-environment-history.py')],{stdio:'inherit'});
+  if(environmentRun.status!==0) console.error('Recent wave/wind history unavailable.');
   const historyRun=spawnSync('python3',[path.join(ROOT,'pipeline/fetch-change48.py')],{stdio:'inherit'});
   if(historyRun.status!==0) console.error('Daily48h unavailable; existing snapshot retained if present.');
   const lats = beaches.beaches.map(b => b.lat).join(',');
@@ -458,6 +460,7 @@ async function main() {
       species_sources: speciesCfg.sources,
       beaches: beaches.beaches.map(b => ({ id: b.id, name_he: b.name_he, region: b.region, terrain_he: b.terrain_he, caution_he: b.caution_he || null, lat: b.lat, lon: b.lon }))
     },
+    environment_history: (()=>{try{const x=JSON.parse(fs.readFileSync(path.join(DATA,'environment-history.json'),'utf8'));return Date.now()-Date.parse(x.retrieved_at)<3*3600000?x:null;}catch(e){return null;}})(),
     change48: (()=>{try{return JSON.parse(fs.readFileSync(path.join(DATA,'change48-latest.json'),'utf8'));}catch(e){return {days:{}};}})(),
     ims: imsBlock,
     meta: {

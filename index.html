@@ -30,6 +30,7 @@
 })();
 </script>
 <script type="module">
+import {fishingAssessment} from "./fishing-assessment.mjs";
 import {LEVELS,waveLevel,windLevel} from "./condition-scale.mjs?v=f2eb3f77e829";
 import {windowScore,modelWindowScore} from "./experimental-score.mjs?v=2f87b4cdcf8e";
 function summaryDatumIcon(kind){
@@ -449,10 +450,18 @@ function modelComparison(bd,day){
     }
     app.innerHTML = html;
     const summaryKinds={'מי ים':'sea','מליחות':'salt','אוויר (טווח היום)':'air','לחץ ברומטרי':'pressure','ירח':'moon'};
-    app.querySelectorAll('.hero-grid .hg .k').forEach(label=>{const kind=summaryKinds[label.textContent.trim()];if(kind){label.insertAdjacentHTML('beforeend',summaryDatumIcon(kind));label.insertAdjacentHTML('afterend',summaryHelp(kind));}});
+    app.querySelectorAll('.hero-grid .hg .k').forEach(label=>{const kind=summaryKinds[label.textContent.trim()];if(kind){label.insertAdjacentHTML('beforeend',summaryDatumIcon(kind));label.insertAdjacentHTML('afterend',summaryHelp(kind));if(kind==='pressure'){label.insertAdjacentHTML('beforeend',`<button class="fish-help" type="button" aria-label="הערכת דיג" aria-haspopup="dialog" style="cursor:pointer;background:var(--inset-bg);border:1px solid var(--border);border-radius:50%;color:var(--accent);width:30px;height:30px;margin-inline-start:4px;font-size:18px">🐟</button>`);}}});
     const helpButton=app.querySelector('.wind-help'), helpDialog=app.querySelector('.wind-dialog:not(.score-dialog):not(.datum-dialog)');
     if(helpButton&&helpDialog){helpButton.onclick=()=>helpDialog.showModal();helpDialog.onclick=e=>{if(e.target===helpDialog){const r=helpDialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)helpDialog.close();}};}
 
+    if(bd?.days?.length){
+      const fd=bd.days[Math.min(curDay,bd.days.length-1)],hist=change48.days?.[fd.date]?.beaches?.[bd.id];
+      const histLine=fd.date>nowIL().date?'שינויי 48 השעות שלפני יום זה עדיין אינם ידועים.':hist?.pressure?.available&&hist?.sst?.available?`ב־48 השעות שלפני תחילת היום, השינוי הגדול ב־24 שעות היה ${hist.pressure.signed_change_24h>0?'+':''}${hist.pressure.signed_change_24h.toFixed(1)} hPa בלחץ ו־${hist.sst.signed_change_24h>0?'+':''}${hist.sst.signed_change_24h.toFixed(1)}°C במי הים. ${hist.pressure.unusual_relative_to_month||hist.sst.unusual_relative_to_month?'נמצא שינוי חריג ביחס לחודש הקודם.':hist.pressure.unusual_relative_to_month!=null&&hist.sst.unusual_relative_to_month!=null?'לא נמצא שינוי חריג ביחס לחודש הקודם.':'אין די נתונים לסיווג חריגות.'}`:'אין די נתוני עבר לשינויי הלחץ וטמפרטורת הים.';
+      const env=latest.environment_history?.date===fd.date?latest.environment_history.beaches?.[bd.id]:null;
+      const pastLine=env&&env.wave.max!=null&&env.wind.max!=null?`ב־48 השעות שלפני היום, שיא הגל במודל היה ${Math.round(env.wave.max*100)} ס״מ ושיא הרוח ${Math.round(env.wind.max)} קמ״ש. `:'אין נתוני גלים ורוח מלאים ל־48 השעות שלפני היום שנבחר. ';
+      const peak=Number.isFinite(fd.wave_max)?`תחזית הגל המרבי ביום זה: ${Math.round(fd.wave_max*100)} ס״מ לפי ${bd.wave_primary==='copernicus_med'?'Copernicus':'המודל הזמין'}. `:'';
+      const dialog=document.createElement('dialog');dialog.className='wind-dialog fish-dialog';dialog.innerHTML=`<h2>הערכת דיג · ${fd.date}</h2><p>${fishingAssessment({day:fd,series:bd.wave_provenance?.model_series,official:issueParam?[]:officialIMS?.regions?.[curRegion]?.slots||[],stale:bd.stale})}</p><p>${histLine.replace(/[0-9][0-9:–.,]*/g,n=>'\u2066'+n+'\u2069')}</p><p>${(pastLine+peak).replace(/[0-9][0-9:–.,]*/g,n=>'\u2066'+n+'\u2069')}אלה נתוני ים ורוח, לא סיווג סערה רשמי.</p><p style="font-size:11px;opacity:.65">תיאור תנאים ממודלים ומתחזית IMS היכן שזמינה, לא תחזית תפיסות. שינויי העבר הם נתון קבוע עד 00:00 בתחילת היום.</p><form method="dialog"><button>סגירה</button></form>`;app.append(dialog);const button=app.querySelector('.fish-help');if(button)button.onclick=()=>dialog.showModal();
+    }
     app.querySelectorAll('.summary-datum-icon').forEach(button=>{const dialog=button.parentElement.nextElementSibling;button.onclick=()=>dialog.showModal();dialog.onclick=e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();}};});
     app.querySelectorAll('.score-help').forEach(button=>{const dialog=button.nextElementSibling;button.onclick=()=>dialog.showModal();dialog.onclick=e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();}};});
     app.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{curRegion=t.dataset.region;curBeach=null;curDay=-1;render();rememberBeach();});

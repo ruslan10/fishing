@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-19T13:54:50+02:00",
+ "generated_at": "2026-11-19T17:00:25+02:00",
  "beaches": {
   "achziv": {
    "cell_lat": 33.062,
@@ -37,7 +37,7 @@
     "2026-11-23": {
      "min": 39.56,
      "max": 39.57,
-     "mean": 39.57,
+     "mean": 39.56,
      "hours_valid": 24,
      "hours_in_axis": 24
     },
@@ -50,7 +50,7 @@
     },
     "2026-11-25": {
      "min": 39.57,
-     "max": 39.58,
+     "max": 39.57,
      "mean": 39.57,
      "hours_valid": 24,
      "hours_in_axis": 24
@@ -72,26 +72,26 @@
     "2026-11-20": {
      "min": 39.56,
      "max": 39.57,
-     "mean": 39.57,
+     "mean": 39.56,
      "hours_valid": 24,
      "hours_in_axis": 24
     },
     "2026-11-21": {
      "min": 39.56,
      "max": 39.57,
-     "mean": 39.57,
+     "mean": 39.56,
      "hours_valid": 24,
      "hours_in_axis": 24
     },
     "2026-11-22": {
      "min": 39.57,
-     "max": 39.59,
-     "mean": 39.58,
+     "max": 39.58,
+     "mean": 39.57,
      "hours_valid": 24,
      "hours_in_axis": 24
     },
     "2026-11-23": {
-     "min": 39.59,
+     "min": 39.58,
      "max": 39.6,
      "mean": 39.59,
      "hours_valid": 24,
@@ -105,8 +105,8 @@
      "hours_in_axis": 24
     },
     "2026-11-25": {
-     "min": 39.6,
-     "max": 39.61,
+     "min": 39.59,
+     "max": 39.6,
      "mean": 39.6,
      "hours_valid": 24,
      "hours_in_axis": 24
@@ -120,14 +120,14 @@
    "days": {
     "2026-11-19": {
      "min": 39.6,
-     "max": 39.62,
+     "max": 39.61,
      "mean": 39.61,
      "hours_valid": 24,
      "hours_in_axis": 24
     },
     "2026-11-20": {
-     "min": 39.62,
-     "max": 39.63,
+     "min": 39.61,
+     "max": 39.62,
      "mean": 39.62,
      "hours_valid": 24,
      "hours_in_axis": 24
@@ -135,7 +135,7 @@
     "2026-11-21": {
      "min": 39.63,
      "max": 39.64,
-     "mean": 39.64,
+     "mean": 39.63,
      "hours_valid": 24,
      "hours_in_axis": 24
     },
@@ -163,7 +163,7 @@
     "2026-11-25": {
      "min": 39.62,
      "max": 39.64,
-     "mean": 39.62,
+     "mean": 39.63,
      "hours_valid": 24,
      "hours_in_axis": 24
     }
@@ -175,7 +175,7 @@
    "dist_km": 3.3,
    "days": {
     "2026-11-19": {
-     "min": 39.62,
+     "min": 39.63,
      "max": 39.64,
      "mean": 39.64,
      "hours_valid": 24,
@@ -189,7 +189,7 @@
      "hours_in_axis": 24
     },
     "2026-11-21": {
-     "min": 39.58,
+     "min": 39.57,
      "max": 39.61,
      "mean": 39.59,
      "hours_valid": 24,
@@ -212,14 +212,14 @@
     "2026-11-24": {
      "min": 39.56,
      "max": 39.57,
-     "mean": 39.57,
+     "mean": 39.56,
      "hours_valid": 24,
      "hours_in_axis": 24
     },
     "2026-11-25": {
-     "min": 39.58,
-     "max": 39.59,
-     "mean": 39.58,
+     "min": 39.57,
+     "max": 39.57,
+     "mean": 39.57,
      "hours_valid": 24,
      "hours_in_axis": 24
     }
@@ -232,49 +232,49 @@
    "days": {
     "2026-11-19": {
      "min": 39.66,
-     "max": 39.67,
-     "mean": 39.66,
-     "hours_valid": 24,
-     "hours_in_axis": 24
-    },
-    "2026-11-20": {
-     "min": 39.66,
      "max": 39.66,
      "mean": 39.66,
      "hours_valid": 24,
      "hours_in_axis": 24
     },
-    "2026-11-21": {
-     "min": 39.64,
-     "max": 39.65,
+    "2026-11-20": {
+     "min": 39.65,
+     "max": 39.66,
      "mean": 39.65,
      "hours_valid": 24,
      "hours_in_axis": 24
     },
-    "2026-11-22": {
-     "min": 39.63,
-     "max": 39.64,
-     "mean": 39.63,
+    "2026-11-21": {
+     "min": 39.62,
+     "max": 39.65,
+     "mean": 39.64,
      "hours_valid": 24,
      "hours_in_axis": 24
     },
-    "2026-11-23": {
+    "2026-11-22": {
      "min": 39.62,
      "max": 39.63,
      "mean": 39.62,
      "hours_valid": 24,
      "hours_in_axis": 24
     },
-    "2026-11-24": {
+    "2026-11-23": {
      "min": 39.61,
      "max": 39.62,
      "mean": 39.61,
      "hours_valid": 24,
      "hours_in_axis": 24
     },
-    "2026-11-25": {
-     "min": 39.58,
+    "2026-11-24": {
+     "min": 39.6,
      "max": 39.61,
+     "mean": 39.61,
+     "hours_valid": 24,
+     "hours_in_axis": 24
+    },
+    "2026-11-25": {
+     "min": 39.59,
+     "max": 39.6,
      "mean": 39.59,
      "hours_valid": 24,
      "hours_in_axis": 24
@@ -289,7 +289,7 @@
     "2026-11-19": {
      "min": 39.57,
      "max": 39.58,
-     "mean": 39.58,
+     "mean": 39.57,
      "hours_valid": 24,
      "hours_in_axis": 24
     },
@@ -301,8 +301,8 @@
      "hours_in_axis": 24
     },
     "2026-11-21": {
-     "min": 39.59,
-     "max": 39.59,
+     "min": 39.58,
+     "max": 39.6,
      "mean": 39.59,
      "hours_valid": 24,
      "hours_in_axis": 24
@@ -316,7 +316,7 @@
     },
     "2026-11-23": {
      "min": 39.59,
-     "max": 39.59,
+     "max": 39.6,
      "mean": 39.59,
      "hours_valid": 24,
      "hours_in_axis": 24
@@ -330,8 +330,8 @@
     },
     "2026-11-25": {
      "min": 39.58,
-     "max": 39.58,
-     "mean": 39.58,
+     "max": 39.59,
+     "mean": 39.59,
      "hours_valid": 24,
      "hours_in_axis": 24
     }
@@ -351,21 +351,21 @@
     },
     "2026-11-20": {
      "min": 39.6,
-     "max": 39.6,
+     "max": 39.61,
      "mean": 39.6,
      "hours_valid": 24,
      "hours_in_axis": 24
     },
     "2026-11-21": {
      "min": 39.59,
-     "max": 39.61,
+     "max": 39.6,
      "mean": 39.6,
      "hours_valid": 24,
      "hours_in_axis": 24
     },
     "2026-11-22": {
      "min": 39.59,
-     "max": 39.59,
+     "max": 39.6,
      "mean": 39.59,
      "hours_valid": 24,
      "hours_in_axis": 24
@@ -385,7 +385,7 @@
      "hours_in_axis": 24
     },
     "2026-11-25": {
-     "min": 39.58,
+     "min": 39.59,
      "max": 39.59,
      "mean": 39.59,
      "hours_valid": 24,
@@ -434,15 +434,15 @@
      "hours_in_axis": 24
     },
     "2026-11-24": {
-     "min": 39.57,
+     "min": 39.56,
      "max": 39.57,
-     "mean": 39.57,
+     "mean": 39.56,
      "hours_valid": 24,
      "hours_in_axis": 24
     },
     "2026-11-25": {
      "min": 39.56,
-     "max": 39.57,
+     "max": 39.56,
      "mean": 39.56,
      "hours_valid": 24,
      "hours_in_axis": 24
@@ -456,8 +456,8 @@
    "days": {
     "2026-11-19": {
      "min": 39.57,
-     "max": 39.58,
-     "mean": 39.58,
+     "max": 39.57,
+     "mean": 39.57,
      "hours_valid": 24,
      "hours_in_axis": 24
     },
@@ -485,21 +485,21 @@
     "2026-11-23": {
      "min": 39.57,
      "max": 39.58,
-     "mean": 39.58,
+     "mean": 39.57,
      "hours_valid": 24,
      "hours_in_axis": 24
     },
     "2026-11-24": {
-     "min": 39.58,
-     "max": 39.58,
-     "mean": 39.58,
+     "min": 39.57,
+     "max": 39.57,
+     "mean": 39.57,
      "hours_valid": 24,
      "hours_in_axis": 24
     },
     "2026-11-25": {
      "min": 39.57,
-     "max": 39.58,
-     "mean": 39.58,
+     "max": 39.57,
+     "mean": 39.57,
      "hours_valid": 24,
      "hours_in_axis": 24
     }
@@ -519,7 +519,7 @@
     },
     "2026-11-20": {
      "min": 39.59,
-     "max": 39.6,
+     "max": 39.61,
      "mean": 39.6,
      "hours_valid": 24,
      "hours_in_axis": 24
@@ -541,21 +541,21 @@
     "2026-11-23": {
      "min": 39.58,
      "max": 39.59,
-     "mean": 39.59,
+     "mean": 39.58,
      "hours_valid": 24,
      "hours_in_axis": 24
     },
     "2026-11-24": {
-     "min": 39.59,
-     "max": 39.6,
-     "mean": 39.59,
+     "min": 39.58,
+     "max": 39.59,
+     "mean": 39.58,
      "hours_valid": 24,
      "hours_in_axis": 24
     },
     "2026-11-25": {
-     "min": 39.59,
+     "min": 39.58,
      "max": 39.59,
-     "mean": 39.59,
+     "mean": 39.58,
      "hours_valid": 24,
      "hours_in_axis": 24
     }
@@ -575,14 +575,14 @@
     },
     "2026-11-20": {
      "min": 39.66,
-     "max": 39.66,
+     "max": 39.67,
      "mean": 39.66,
      "hours_valid": 24,
      "hours_in_axis": 24
     },
     "2026-11-21": {
      "min": 39.66,
-     "max": 39.67,
+     "max": 39.66,
      "mean": 39.66,
      "hours_valid": 24,
      "hours_in_axis": 24
@@ -590,28 +590,28 @@
     "2026-11-22": {
      "min": 39.66,
      "max": 39.67,
-     "mean": 39.67,
+     "mean": 39.66,
      "hours_valid": 24,
      "hours_in_axis": 24
     },
     "2026-11-23": {
-     "min": 39.67,
-     "max": 39.68,
-     "mean": 39.67,
+     "min": 39.66,
+     "max": 39.67,
+     "mean": 39.66,
      "hours_valid": 24,
      "hours_in_axis": 24
     },
     "2026-11-24": {
-     "min": 39.68,
-     "max": 39.68,
-     "mean": 39.68,
+     "min": 39.67,
+     "max": 39.67,
+     "mean": 39.67,
      "hours_valid": 24,
      "hours_in_axis": 24
     },
     "2026-11-25": {
-     "min": 39.68,
-     "max": 39.69,
-     "mean": 39.68,
+     "min": 39.67,
+     "max": 39.67,
+     "mean": 39.67,
      "hours_valid": 24,
      "hours_in_axis": 24
     }
@@ -625,20 +625,20 @@
     "2026-11-19": {
      "min": 39.7,
      "max": 39.71,
-     "mean": 39.71,
+     "mean": 39.7,
      "hours_valid": 24,
      "hours_in_axis": 24
     },
     "2026-11-20": {
      "min": 39.71,
-     "max": 39.72,
+     "max": 39.71,
      "mean": 39.71,
      "hours_valid": 24,
      "hours_in_axis": 24
     },
     "2026-11-21": {
      "min": 39.71,
-     "max": 39.72,
+     "max": 39.71,
      "mean": 39.71,
      "hours_valid": 24,
      "hours_in_axis": 24
@@ -646,27 +646,27 @@
     "2026-11-22": {
      "min": 39.71,
      "max": 39.72,
-     "mean": 39.72,
+     "mean": 39.71,
      "hours_valid": 24,
      "hours_in_axis": 24
     },
     "2026-11-23": {
      "min": 39.71,
      "max": 39.72,
-     "mean": 39.72,
+     "mean": 39.71,
      "hours_valid": 24,
      "hours_in_axis": 24
     },
     "2026-11-24": {
-     "min": 39.71,
+     "min": 39.72,
      "max": 39.72,
      "mean": 39.72,
      "hours_valid": 24,
      "hours_in_axis": 24
     },
     "2026-11-25": {
-     "min": 39.71,
-     "max": 39.72,
+     "min": 39.72,
+     "max": 39.73,
      "mean": 39.72,
      "hours_valid": 24,
      "hours_in_axis": 24
@@ -681,20 +681,20 @@
     "2026-11-19": {
      "min": 39.7,
      "max": 39.71,
-     "mean": 39.71,
+     "mean": 39.7,
      "hours_valid": 24,
      "hours_in_axis": 24
     },
     "2026-11-20": {
      "min": 39.71,
-     "max": 39.72,
+     "max": 39.71,
      "mean": 39.71,
      "hours_valid": 24,
      "hours_in_axis": 24
     },
     "2026-11-21": {
      "min": 39.71,
-     "max": 39.72,
+     "max": 39.71,
      "mean": 39.71,
      "hours_valid": 24,
      "hours_in_axis": 24
@@ -702,27 +702,27 @@
     "2026-11-22": {
      "min": 39.71,
      "max": 39.72,
-     "mean": 39.72,
+     "mean": 39.71,
      "hours_valid": 24,
      "hours_in_axis": 24
     },
     "2026-11-23": {
      "min": 39.71,
      "max": 39.72,
-     "mean": 39.72,
+     "mean": 39.71,
      "hours_valid": 24,
      "hours_in_axis": 24
     },
     "2026-11-24": {
-     "min": 39.71,
+     "min": 39.72,
      "max": 39.72,
      "mean": 39.72,
      "hours_valid": 24,
      "hours_in_axis": 24
     },
     "2026-11-25": {
-     "min": 39.71,
-     "max": 39.72,
+     "min": 39.72,
+     "max": 39.73,
      "mean": 39.72,
      "hours_valid": 24,
      "hours_in_axis": 24
@@ -737,7 +737,7 @@
     "2026-11-19": {
      "min": 39.7,
      "max": 39.71,
-     "mean": 39.71,
+     "mean": 39.7,
      "hours_valid": 24,
      "hours_in_axis": 24
     },
@@ -749,37 +749,37 @@
      "hours_in_axis": 24
     },
     "2026-11-21": {
-     "min": 39.7,
+     "min": 39.71,
      "max": 39.71,
      "mean": 39.71,
      "hours_valid": 24,
      "hours_in_axis": 24
     },
     "2026-11-22": {
-     "min": 39.69,
-     "max": 39.7,
-     "mean": 39.7,
+     "min": 39.71,
+     "max": 39.72,
+     "mean": 39.71,
      "hours_valid": 24,
      "hours_in_axis": 24
     },
     "2026-11-23": {
-     "min": 39.69,
-     "max": 39.69,
-     "mean": 39.69,
+     "min": 39.71,
+     "max": 39.72,
+     "mean": 39.71,
      "hours_valid": 24,
      "hours_in_axis": 24
     },
     "2026-11-24": {
-     "min": 39.69,
-     "max": 39.7,
-     "mean": 39.69,
+     "min": 39.71,
+     "max": 39.71,
+     "mean": 39.71,
      "hours_valid": 24,
      "hours_in_axis": 24
     },
     "2026-11-25": {
-     "min": 39.69,
-     "max": 39.69,
-     "mean": 39.69,
+     "min": 39.71,
+     "max": 39.71,
+     "mean": 39.71,
      "hours_valid": 24,
      "hours_in_axis": 24
     }
@@ -805,37 +805,37 @@
      "hours_in_axis": 24
     },
     "2026-11-21": {
-     "min": 39.68,
-     "max": 39.69,
-     "mean": 39.69,
+     "min": 39.7,
+     "max": 39.7,
+     "mean": 39.7,
      "hours_valid": 24,
      "hours_in_axis": 24
     },
     "2026-11-22": {
-     "min": 39.68,
-     "max": 39.68,
-     "mean": 39.68,
+     "min": 39.7,
+     "max": 39.7,
+     "mean": 39.7,
      "hours_valid": 24,
      "hours_in_axis": 24
     },
     "2026-11-23": {
-     "min": 39.68,
-     "max": 39.68,
-     "mean": 39.68,
+     "min": 39.7,
+     "max": 39.71,
+     "mean": 39.7,
      "hours_valid": 24,
      "hours_in_axis": 24
     },
     "2026-11-24": {
-     "min": 39.67,
-     "max": 39.68,
-     "mean": 39.67,
+     "min": 39.7,
+     "max": 39.71,
+     "mean": 39.7,
      "hours_valid": 24,
      "hours_in_axis": 24
     },
     "2026-11-25": {
-     "min": 39.66,
-     "max": 39.67,
-     "mean": 39.66,
+     "min": 39.7,
+     "max": 39.71,
+     "mean": 39.71,
      "hours_valid": 24,
      "hours_in_axis": 24
     }
@@ -876,22 +876,22 @@
     },
     "2026-11-23": {
      "min": 39.75,
-     "max": 39.75,
+     "max": 39.76,
      "mean": 39.75,
      "hours_valid": 24,
      "hours_in_axis": 24
     },
     "2026-11-24": {
-     "min": 39.75,
-     "max": 39.75,
-     "mean": 39.75,
+     "min": 39.76,
+     "max": 39.77,
+     "mean": 39.76,
      "hours_valid": 24,
      "hours_in_axis": 24
     },
     "2026-11-25": {
-     "min": 39.75,
-     "max": 39.75,
-     "mean": 39.75,
+     "min": 39.77,
+     "max": 39.77,
+     "mean": 39.77,
      "hours_valid": 24,
      "hours_in_axis": 24
     }
@@ -903,9 +903,9 @@
    "dist_km": 2.6,
    "days": {
     "2026-11-19": {
-     "min": 39.79,
+     "min": 39.78,
      "max": 39.79,
-     "mean": 39.79,
+     "mean": 39.78,
      "hours_valid": 24,
      "hours_in_axis": 24
     },
@@ -933,7 +933,7 @@
     "2026-11-23": {
      "min": 39.8,
      "max": 39.81,
-     "mean": 39.8,
+     "mean": 39.81,
      "hours_valid": 24,
      "hours_in_axis": 24
     },
@@ -945,7 +945,7 @@
      "hours_in_axis": 24
     },
     "2026-11-25": {
-     "min": 39.79,
+     "min": 39.8,
      "max": 39.81,
      "mean": 39.81,
      "hours_valid": 24,
@@ -959,7 +959,7 @@
    "dist_km": 3.2,
    "days": {
     "2026-11-19": {
-     "min": 39.8,
+     "min": 39.79,
      "max": 39.8,
      "mean": 39.8,
      "hours_valid": 24,
@@ -967,7 +967,7 @@
     },
     "2026-11-20": {
      "min": 39.8,
-     "max": 39.8,
+     "max": 39.81,
      "mean": 39.8,
      "hours_valid": 24,
      "hours_in_axis": 24
@@ -989,7 +989,7 @@
     "2026-11-23": {
      "min": 39.81,
      "max": 39.82,
-     "mean": 39.82,
+     "mean": 39.81,
      "hours_valid": 24,
      "hours_in_axis": 24
     },
@@ -1001,9 +1001,9 @@
      "hours_in_axis": 24
     },
     "2026-11-25": {
-     "min": 39.77,
+     "min": 39.8,
      "max": 39.8,
-     "mean": 39.78,
+     "mean": 39.8,
      "hours_valid": 24,
      "hours_in_axis": 24
     }
@@ -1016,7 +1016,7 @@
    "days": {
     "2026-11-19": {
      "min": 39.83,
-     "max": 39.84,
+     "max": 39.83,
      "mean": 39.83,
      "hours_valid": 24,
      "hours_in_axis": 24
@@ -1030,7 +1030,7 @@
     },
     "2026-11-21": {
      "min": 39.84,
-     "max": 39.85,
+     "max": 39.84,
      "mean": 39.84,
      "hours_valid": 24,
      "hours_in_axis": 24
@@ -1038,28 +1038,28 @@
     "2026-11-22": {
      "min": 39.83,
      "max": 39.84,
-     "mean": 39.84,
+     "mean": 39.83,
      "hours_valid": 24,
      "hours_in_axis": 24
     },
     "2026-11-23": {
-     "min": 39.81,
+     "min": 39.82,
      "max": 39.83,
-     "mean": 39.82,
+     "mean": 39.83,
      "hours_valid": 24,
      "hours_in_axis": 24
     },
     "2026-11-24": {
-     "min": 39.79,
-     "max": 39.81,
-     "mean": 39.8,
+     "min": 39.82,
+     "max": 39.82,
+     "mean": 39.82,
      "hours_valid": 24,
      "hours_in_axis": 24
     },
     "2026-11-25": {
-     "min": 39.79,
-     "max": 39.79,
-     "mean": 39.79,
+     "min": 39.82,
+     "max": 39.83,
+     "mean": 39.82,
      "hours_valid": 24,
      "hours_in_axis": 24
     }

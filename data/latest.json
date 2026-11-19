@@ -490,6 +490,242 @@
    }
   ]
  },
+ "environment_history": {
+  "retrieved_at": "2026-11-19T17:01:31.819679+02:00",
+  "date": "2026-11-19",
+  "cutoff": "2026-11-19T00:00:00+02:00",
+  "source_kind": "modeled_recent_past_not_observations",
+  "beaches": {
+   "achziv": {
+    "wave": {
+     "valid": 48,
+     "expected": 48,
+     "max": 0.58
+    },
+    "wind": {
+     "valid": 48,
+     "expected": 48,
+     "max": 14.8
+    }
+   },
+   "nahariya": {
+    "wave": {
+     "valid": 48,
+     "expected": 48,
+     "max": 0.58
+    },
+    "wind": {
+     "valid": 48,
+     "expected": 48,
+     "max": 14.8
+    }
+   },
+   "akko-argaman": {
+    "wave": {
+     "valid": 48,
+     "expected": 48,
+     "max": 0.56
+    },
+    "wind": {
+     "valid": 48,
+     "expected": 48,
+     "max": 16.3
+    }
+   },
+   "haifa-batgalim": {
+    "wave": {
+     "valid": 48,
+     "expected": 48,
+     "max": 0.58
+    },
+    "wind": {
+     "valid": 48,
+     "expected": 48,
+     "max": 15.1
+    }
+   },
+   "atlit": {
+    "wave": {
+     "valid": 48,
+     "expected": 48,
+     "max": 0.58
+    },
+    "wind": {
+     "valid": 48,
+     "expected": 48,
+     "max": 12
+    }
+   },
+   "dor": {
+    "wave": {
+     "valid": 48,
+     "expected": 48,
+     "max": 0.56
+    },
+    "wind": {
+     "valid": 48,
+     "expected": 48,
+     "max": 11.9
+    }
+   },
+   "caesarea": {
+    "wave": {
+     "valid": 48,
+     "expected": 48,
+     "max": 0.56
+    },
+    "wind": {
+     "valid": 48,
+     "expected": 48,
+     "max": 11.5
+    }
+   },
+   "olga": {
+    "wave": {
+     "valid": 48,
+     "expected": 48,
+     "max": 0.56
+    },
+    "wind": {
+     "valid": 48,
+     "expected": 48,
+     "max": 11.5
+    }
+   },
+   "michmoret": {
+    "wave": {
+     "valid": 48,
+     "expected": 48,
+     "max": 0.56
+    },
+    "wind": {
+     "valid": 48,
+     "expected": 48,
+     "max": 10.7
+    }
+   },
+   "netanya": {
+    "wave": {
+     "valid": 48,
+     "expected": 48,
+     "max": 0.56
+    },
+    "wind": {
+     "valid": 48,
+     "expected": 48,
+     "max": 10.5
+    }
+   },
+   "herzliya": {
+    "wave": {
+     "valid": 48,
+     "expected": 48,
+     "max": 0.54
+    },
+    "wind": {
+     "valid": 48,
+     "expected": 48,
+     "max": 11
+    }
+   },
+   "telaviv-frishman": {
+    "wave": {
+     "valid": 48,
+     "expected": 48,
+     "max": 0.56
+    },
+    "wind": {
+     "valid": 48,
+     "expected": 48,
+     "max": 10.3
+    }
+   },
+   "jaffa": {
+    "wave": {
+     "valid": 48,
+     "expected": 48,
+     "max": 0.56
+    },
+    "wind": {
+     "valid": 48,
+     "expected": 48,
+     "max": 11.4
+    }
+   },
+   "rishon-lezion": {
+    "wave": {
+     "valid": 48,
+     "expected": 48,
+     "max": 0.56
+    },
+    "wind": {
+     "valid": 48,
+     "expected": 48,
+     "max": 13.5
+    }
+   },
+   "palmachim": {
+    "wave": {
+     "valid": 48,
+     "expected": 48,
+     "max": 0.56
+    },
+    "wind": {
+     "valid": 48,
+     "expected": 48,
+     "max": 12.1
+    }
+   },
+   "ashdod": {
+    "wave": {
+     "valid": 48,
+     "expected": 48,
+     "max": 0.52
+    },
+    "wind": {
+     "valid": 48,
+     "expected": 48,
+     "max": 12.4
+    }
+   },
+   "nitzanim": {
+    "wave": {
+     "valid": 48,
+     "expected": 48,
+     "max": 0.52
+    },
+    "wind": {
+     "valid": 48,
+     "expected": 48,
+     "max": 12.7
+    }
+   },
+   "ashkelon": {
+    "wave": {
+     "valid": 48,
+     "expected": 48,
+     "max": 0.54
+    },
+    "wind": {
+     "valid": 48,
+     "expected": 48,
+     "max": 12.6
+    }
+   },
+   "zikim": {
+    "wave": {
+     "valid": 48,
+     "expected": 48,
+     "max": 0.58
+    },
+    "wind": {
+     "valid": 48,
+     "expected": 48,
+     "max": 12.5
+    }
+   }
+  }
+ },
  "change48": {
   "version": 1,
   "days": {
@@ -1220,13 +1456,13 @@
    "wave_cm": "<50;50..100;>100..<200;200..300;>300",
    "wind_kmh": "<12;12..<20;20..<29;29..<50;>=50"
   },
-  "issue_id": "2026-11-19T16-47-53-4bd7ce",
-  "issued_at_local": "2026-11-19T16:47:53",
-  "issued_at_utc": "2026-11-19T14:47:53.099Z",
+  "issue_id": "2026-11-19T17-01-34-7c0b48",
+  "issued_at_local": "2026-11-19T17:01:34",
+  "issued_at_utc": "2026-11-19T15:01:34.035Z",
   "timezone": "Asia/Jerusalem",
   "valid_from": "2026-11-19",
   "valid_to": "2026-11-25",
-  "refresh_policy_he": "רענון יומי בערב בסביבות 20:00 שעון ישראל; התחזית מכסה 7 ימים קלנדריים כולל יום הרענון; הפקות קודמות נשמרות בארכיון ללא שינוי",
+  "refresh_policy_he": "רענון נתונים מתוכנן כל 3 שעות; זמני GitHub Actions עשויים להתעכב; התחזית מכסה 7 ימים קלנדריים כולל יום הרענון; הפקות קודמות נשמרות בארכיון ללא שינוי",
   "wave_policy": {
    "primary": "Copernicus MED-WAV if current first-day coverage passes availability gate, otherwise explicitly labeled Open-Meteo best match",
    "comparison": [
@@ -1234,7 +1470,7 @@
     "ncep_gfswave025"
    ],
    "spread": "largest simultaneous hourly spread, never a calibrated confidence interval",
-   "copernicus_retrieved_at": "2026-11-19T13:54:32+02:00"
+   "copernicus_retrieved_at": "2026-11-19T16:59:59+02:00"
   },
   "sources": [
    {
@@ -1305,7 +1541,7 @@
   },
   "scoring_note_he": "כרטיסי הדגים איכותניים בלבד, בהיקף דיג ז'ירז'ור מהחוף - ללא ציון התאמה מספרי: אין מקור מאומת לספי עונה/שעות/גלים/רוח/טמפרטורה למין. צבע הגלים וצבע הרוח המתמשכת מוצגים בנפרד, לפי השיא היומי או בטווח השעות. עמודת התנאים מחזירה את ציון ההשוואה הניסיוני המקורי 0–100, המחושב מממוצעי החלון ומשבים, בנפרד מסולם הצבעים של המדידות. הסולם מקומי וניסיוני, לא תחזית תפיסה ולא דירוג בטיחות.",
   "stale_beaches": [],
-  "issue_file": "issues/2026-11-19T16-47-53-4bd7ce.json"
+  "issue_file": "issues/2026-11-19T17-01-34-7c0b48.json"
  },
  "beaches": [
   {
@@ -1314,7 +1550,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T13:54:32+02:00",
+    "retrieved_at": "2026-11-19T16:59:59+02:00",
     "cell_lat": 33.0625,
     "cell_lon": 35.083336,
     "dist_km": 1.9,
@@ -1331,7 +1567,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T14:47:53.099Z",
+    "comparison_retrieved_at": "2026-11-19T15:01:34.035Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 33.0625,
@@ -6597,7 +6833,7 @@
      "pressure_min": 1019.3,
      "pressure_max": 1023.9,
      "salinity_min": 39.57,
-     "salinity_max": 39.58,
+     "salinity_max": 39.57,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
      "windows": [
@@ -6905,7 +7141,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T13:54:32+02:00",
+    "retrieved_at": "2026-11-19T16:59:59+02:00",
     "cell_lat": 33.020832,
     "cell_lon": 35.083336,
     "dist_km": 1.9,
@@ -6922,7 +7158,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T14:47:53.099Z",
+    "comparison_retrieved_at": "2026-11-19T15:01:34.035Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 33.020832,
@@ -10826,7 +11062,7 @@
      "pressure_min": 1017,
      "pressure_max": 1019.7,
      "salinity_min": 39.57,
-     "salinity_max": 39.59,
+     "salinity_max": 39.58,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
      "windows": [
@@ -11279,7 +11515,7 @@
      "air_temp_max": 24.6,
      "pressure_min": 1019.4,
      "pressure_max": 1021.3,
-     "salinity_min": 39.59,
+     "salinity_min": 39.58,
      "salinity_max": 39.6,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
@@ -12187,8 +12423,8 @@
      "air_temp_max": 22.3,
      "pressure_min": 1019.3,
      "pressure_max": 1023.9,
-     "salinity_min": 39.6,
-     "salinity_max": 39.61,
+     "salinity_min": 39.59,
+     "salinity_max": 39.6,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
      "windows": [
@@ -12496,7 +12732,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T13:54:32+02:00",
+    "retrieved_at": "2026-11-19T16:59:59+02:00",
     "cell_lat": 32.9375,
     "cell_lon": 35.041668,
     "dist_km": 4.2,
@@ -12513,7 +12749,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T14:47:53.099Z",
+    "comparison_retrieved_at": "2026-11-19T15:01:34.035Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 32.9375,
@@ -15055,7 +15291,7 @@
      "pressure_min": 1017.6,
      "pressure_max": 1020.5,
      "salinity_min": 39.6,
-     "salinity_max": 39.62,
+     "salinity_max": 39.61,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
      "windows": [
@@ -15508,8 +15744,8 @@
      "air_temp_max": 26.1,
      "pressure_min": 1019.6,
      "pressure_max": 1021.8,
-     "salinity_min": 39.62,
-     "salinity_max": 39.63,
+     "salinity_min": 39.61,
+     "salinity_max": 39.62,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
      "windows": [
@@ -18087,7 +18323,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T13:54:32+02:00",
+    "retrieved_at": "2026-11-19T16:59:59+02:00",
     "cell_lat": 32.854168,
     "cell_lon": 34.958336,
     "dist_km": 3.2,
@@ -18104,7 +18340,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T14:47:53.099Z",
+    "comparison_retrieved_at": "2026-11-19T15:01:34.035Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 32.854168,
@@ -20645,7 +20881,7 @@
      "air_temp_max": 23.8,
      "pressure_min": 1017.7,
      "pressure_max": 1020.5,
-     "salinity_min": 39.62,
+     "salinity_min": 39.63,
      "salinity_max": 39.64,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
@@ -21553,7 +21789,7 @@
      "air_temp_max": 24.8,
      "pressure_min": 1017.6,
      "pressure_max": 1020.7,
-     "salinity_min": 39.58,
+     "salinity_min": 39.57,
      "salinity_max": 39.61,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
@@ -23369,8 +23605,8 @@
      "air_temp_max": 21.9,
      "pressure_min": 1019.5,
      "pressure_max": 1024,
-     "salinity_min": 39.58,
-     "salinity_max": 39.59,
+     "salinity_min": 39.57,
+     "salinity_max": 39.57,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
      "windows": [
@@ -23678,7 +23914,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T13:54:32+02:00",
+    "retrieved_at": "2026-11-19T16:59:59+02:00",
     "cell_lat": 32.729168,
     "cell_lon": 34.916668,
     "dist_km": 3,
@@ -23695,7 +23931,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T14:47:53.099Z",
+    "comparison_retrieved_at": "2026-11-19T15:01:34.035Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 32.729168,
@@ -26237,7 +26473,7 @@
      "pressure_min": 1017.6,
      "pressure_max": 1020.4,
      "salinity_min": 39.66,
-     "salinity_max": 39.67,
+     "salinity_max": 39.66,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
      "windows": [
@@ -26690,7 +26926,7 @@
      "air_temp_max": 25.6,
      "pressure_min": 1019.6,
      "pressure_max": 1021.8,
-     "salinity_min": 39.66,
+     "salinity_min": 39.65,
      "salinity_max": 39.66,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
@@ -27144,7 +27380,7 @@
      "air_temp_max": 24.6,
      "pressure_min": 1017.6,
      "pressure_max": 1020.6,
-     "salinity_min": 39.64,
+     "salinity_min": 39.62,
      "salinity_max": 39.65,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
@@ -27598,8 +27834,8 @@
      "air_temp_max": 24,
      "pressure_min": 1017.1,
      "pressure_max": 1019.7,
-     "salinity_min": 39.63,
-     "salinity_max": 39.64,
+     "salinity_min": 39.62,
+     "salinity_max": 39.63,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
      "windows": [
@@ -28052,8 +28288,8 @@
      "air_temp_max": 23.9,
      "pressure_min": 1019.4,
      "pressure_max": 1021.1,
-     "salinity_min": 39.62,
-     "salinity_max": 39.63,
+     "salinity_min": 39.61,
+     "salinity_max": 39.62,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
      "windows": [
@@ -28506,8 +28742,8 @@
      "air_temp_max": 23.3,
      "pressure_min": 1018.8,
      "pressure_max": 1020.8,
-     "salinity_min": 39.61,
-     "salinity_max": 39.62,
+     "salinity_min": 39.6,
+     "salinity_max": 39.61,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
      "windows": [
@@ -28960,8 +29196,8 @@
      "air_temp_max": 22.9,
      "pressure_min": 1019.5,
      "pressure_max": 1024,
-     "salinity_min": 39.58,
-     "salinity_max": 39.61,
+     "salinity_min": 39.59,
+     "salinity_max": 39.6,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
      "windows": [
@@ -29269,7 +29505,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T13:54:32+02:00",
+    "retrieved_at": "2026-11-19T16:59:59+02:00",
     "cell_lat": 32.604168,
     "cell_lon": 34.875,
     "dist_km": 4,
@@ -29286,7 +29522,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T14:47:53.099Z",
+    "comparison_retrieved_at": "2026-11-19T15:01:34.035Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 32.604168,
@@ -32735,8 +32971,8 @@
      "air_temp_max": 24.6,
      "pressure_min": 1017.7,
      "pressure_max": 1020.7,
-     "salinity_min": 39.59,
-     "salinity_max": 39.59,
+     "salinity_min": 39.58,
+     "salinity_max": 39.6,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
      "windows": [
@@ -33644,7 +33880,7 @@
      "pressure_min": 1019.4,
      "pressure_max": 1021.2,
      "salinity_min": 39.59,
-     "salinity_max": 39.59,
+     "salinity_max": 39.6,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
      "windows": [
@@ -34552,7 +34788,7 @@
      "pressure_min": 1019.5,
      "pressure_max": 1023.8,
      "salinity_min": 39.58,
-     "salinity_max": 39.58,
+     "salinity_max": 39.59,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
      "windows": [
@@ -34860,7 +35096,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T13:54:32+02:00",
+    "retrieved_at": "2026-11-19T16:59:59+02:00",
     "cell_lat": 32.520832,
     "cell_lon": 34.875,
     "dist_km": 2.9,
@@ -34877,7 +35113,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T14:47:53.099Z",
+    "comparison_retrieved_at": "2026-11-19T15:01:34.035Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 32.520832,
@@ -37873,7 +38109,7 @@
      "pressure_min": 1019.7,
      "pressure_max": 1021.8,
      "salinity_min": 39.6,
-     "salinity_max": 39.6,
+     "salinity_max": 39.61,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
      "windows": [
@@ -38327,7 +38563,7 @@
      "pressure_min": 1017.6,
      "pressure_max": 1020.7,
      "salinity_min": 39.59,
-     "salinity_max": 39.61,
+     "salinity_max": 39.6,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
      "windows": [
@@ -38781,7 +39017,7 @@
      "pressure_min": 1017.2,
      "pressure_max": 1019.7,
      "salinity_min": 39.59,
-     "salinity_max": 39.59,
+     "salinity_max": 39.6,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
      "windows": [
@@ -40142,7 +40378,7 @@
      "air_temp_max": 23,
      "pressure_min": 1019.6,
      "pressure_max": 1023.8,
-     "salinity_min": 39.58,
+     "salinity_min": 39.59,
      "salinity_max": 39.59,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
@@ -40451,7 +40687,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T13:54:32+02:00",
+    "retrieved_at": "2026-11-19T16:59:59+02:00",
     "cell_lat": 32.4375,
     "cell_lon": 34.833336,
     "dist_km": 4.2,
@@ -40468,7 +40704,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T14:47:53.099Z",
+    "comparison_retrieved_at": "2026-11-19T15:01:34.035Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 32.4375,
@@ -45279,7 +45515,7 @@
      "air_temp_max": 23.5,
      "pressure_min": 1018.7,
      "pressure_max": 1020.7,
-     "salinity_min": 39.57,
+     "salinity_min": 39.56,
      "salinity_max": 39.57,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
@@ -45734,7 +45970,7 @@
      "pressure_min": 1019.6,
      "pressure_max": 1023.8,
      "salinity_min": 39.56,
-     "salinity_max": 39.57,
+     "salinity_max": 39.56,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
      "windows": [
@@ -46042,7 +46278,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T13:54:32+02:00",
+    "retrieved_at": "2026-11-19T16:59:59+02:00",
     "cell_lat": 32.395832,
     "cell_lon": 34.833336,
     "dist_km": 3.8,
@@ -46059,7 +46295,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T14:47:53.099Z",
+    "comparison_retrieved_at": "2026-11-19T15:01:34.035Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 32.395832,
@@ -48601,7 +48837,7 @@
      "pressure_min": 1017.8,
      "pressure_max": 1020.6,
      "salinity_min": 39.57,
-     "salinity_max": 39.58,
+     "salinity_max": 39.57,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
      "windows": [
@@ -50870,8 +51106,8 @@
      "air_temp_max": 23.5,
      "pressure_min": 1018.7,
      "pressure_max": 1020.7,
-     "salinity_min": 39.58,
-     "salinity_max": 39.58,
+     "salinity_min": 39.57,
+     "salinity_max": 39.57,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
      "windows": [
@@ -51325,7 +51561,7 @@
      "pressure_min": 1019.6,
      "pressure_max": 1023.8,
      "salinity_min": 39.57,
-     "salinity_max": 39.58,
+     "salinity_max": 39.57,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
      "windows": [
@@ -51633,7 +51869,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T13:54:32+02:00",
+    "retrieved_at": "2026-11-19T16:59:59+02:00",
     "cell_lat": 32.354168,
     "cell_lon": 34.833336,
     "dist_km": 4.1,
@@ -51650,7 +51886,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T14:47:53.099Z",
+    "comparison_retrieved_at": "2026-11-19T15:01:34.035Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 32.354168,
@@ -54646,7 +54882,7 @@
      "pressure_min": 1019.6,
      "pressure_max": 1021.8,
      "salinity_min": 39.59,
-     "salinity_max": 39.6,
+     "salinity_max": 39.61,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
      "windows": [
@@ -56461,8 +56697,8 @@
      "air_temp_max": 22.6,
      "pressure_min": 1018.8,
      "pressure_max": 1020.7,
-     "salinity_min": 39.59,
-     "salinity_max": 39.6,
+     "salinity_min": 39.58,
+     "salinity_max": 39.59,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
      "windows": [
@@ -56915,7 +57151,7 @@
      "air_temp_max": 22.9,
      "pressure_min": 1019.7,
      "pressure_max": 1023.8,
-     "salinity_min": 39.59,
+     "salinity_min": 39.58,
      "salinity_max": 39.59,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
@@ -57224,7 +57460,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T13:54:32+02:00",
+    "retrieved_at": "2026-11-19T16:59:59+02:00",
     "cell_lat": 32.1875,
     "cell_lon": 34.791668,
     "dist_km": 2.5,
@@ -57241,7 +57477,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T14:47:53.099Z",
+    "comparison_retrieved_at": "2026-11-19T15:01:34.035Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 32.1875,
@@ -60237,7 +60473,7 @@
      "pressure_min": 1019.6,
      "pressure_max": 1021.8,
      "salinity_min": 39.66,
-     "salinity_max": 39.66,
+     "salinity_max": 39.67,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
      "windows": [
@@ -60691,7 +60927,7 @@
      "pressure_min": 1017.6,
      "pressure_max": 1020.6,
      "salinity_min": 39.66,
-     "salinity_max": 39.67,
+     "salinity_max": 39.66,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
      "windows": [
@@ -61598,8 +61834,8 @@
      "air_temp_max": 24,
      "pressure_min": 1019.3,
      "pressure_max": 1021,
-     "salinity_min": 39.67,
-     "salinity_max": 39.68,
+     "salinity_min": 39.66,
+     "salinity_max": 39.67,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
      "windows": [
@@ -62052,8 +62288,8 @@
      "air_temp_max": 23.4,
      "pressure_min": 1018.8,
      "pressure_max": 1020.7,
-     "salinity_min": 39.68,
-     "salinity_max": 39.68,
+     "salinity_min": 39.67,
+     "salinity_max": 39.67,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
      "windows": [
@@ -62506,8 +62742,8 @@
      "air_temp_max": 23.6,
      "pressure_min": 1019.9,
      "pressure_max": 1023.6,
-     "salinity_min": 39.68,
-     "salinity_max": 39.69,
+     "salinity_min": 39.67,
+     "salinity_max": 39.67,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
      "windows": [
@@ -62815,7 +63051,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T13:54:32+02:00",
+    "retrieved_at": "2026-11-19T16:59:59+02:00",
     "cell_lat": 32.0625,
     "cell_lon": 34.75,
     "dist_km": 2.4,
@@ -62832,7 +63068,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T14:47:53.099Z",
+    "comparison_retrieved_at": "2026-11-19T15:01:34.035Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 32.0625,
@@ -65828,7 +66064,7 @@
      "pressure_min": 1019.6,
      "pressure_max": 1021.8,
      "salinity_min": 39.71,
-     "salinity_max": 39.72,
+     "salinity_max": 39.71,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
      "windows": [
@@ -66282,7 +66518,7 @@
      "pressure_min": 1017.7,
      "pressure_max": 1020.6,
      "salinity_min": 39.71,
-     "salinity_max": 39.72,
+     "salinity_max": 39.71,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
      "windows": [
@@ -67643,7 +67879,7 @@
      "air_temp_max": 23.4,
      "pressure_min": 1018.8,
      "pressure_max": 1020.7,
-     "salinity_min": 39.71,
+     "salinity_min": 39.72,
      "salinity_max": 39.72,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
@@ -68097,8 +68333,8 @@
      "air_temp_max": 23.6,
      "pressure_min": 1019.9,
      "pressure_max": 1023.6,
-     "salinity_min": 39.71,
-     "salinity_max": 39.72,
+     "salinity_min": 39.72,
+     "salinity_max": 39.73,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
      "windows": [
@@ -68406,7 +68642,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T13:54:32+02:00",
+    "retrieved_at": "2026-11-19T16:59:59+02:00",
     "cell_lat": 32.0625,
     "cell_lon": 34.75,
     "dist_km": 2.2,
@@ -68423,7 +68659,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T14:47:53.099Z",
+    "comparison_retrieved_at": "2026-11-19T15:01:34.035Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 32.0625,
@@ -71419,7 +71655,7 @@
      "pressure_min": 1019.6,
      "pressure_max": 1021.8,
      "salinity_min": 39.71,
-     "salinity_max": 39.72,
+     "salinity_max": 39.71,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
      "windows": [
@@ -71873,7 +72109,7 @@
      "pressure_min": 1017.8,
      "pressure_max": 1020.6,
      "salinity_min": 39.71,
-     "salinity_max": 39.72,
+     "salinity_max": 39.71,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
      "windows": [
@@ -73234,7 +73470,7 @@
      "air_temp_max": 23.1,
      "pressure_min": 1018.8,
      "pressure_max": 1020.7,
-     "salinity_min": 39.71,
+     "salinity_min": 39.72,
      "salinity_max": 39.72,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
@@ -73688,8 +73924,8 @@
      "air_temp_max": 23.2,
      "pressure_min": 1019.9,
      "pressure_max": 1023.6,
-     "salinity_min": 39.71,
-     "salinity_max": 39.72,
+     "salinity_min": 39.72,
+     "salinity_max": 39.73,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
      "windows": [
@@ -73997,7 +74233,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T13:54:32+02:00",
+    "retrieved_at": "2026-11-19T16:59:59+02:00",
     "cell_lat": 31.979166,
     "cell_lon": 34.708336,
     "dist_km": 1.5,
@@ -74014,7 +74250,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T14:47:53.099Z",
+    "comparison_retrieved_at": "2026-11-19T15:01:34.035Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 31.979166,
@@ -77463,7 +77699,7 @@
      "air_temp_max": 24.8,
      "pressure_min": 1017.8,
      "pressure_max": 1020.5,
-     "salinity_min": 39.7,
+     "salinity_min": 39.71,
      "salinity_max": 39.71,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
@@ -77917,8 +78153,8 @@
      "air_temp_max": 24.3,
      "pressure_min": 1017.4,
      "pressure_max": 1019.9,
-     "salinity_min": 39.69,
-     "salinity_max": 39.7,
+     "salinity_min": 39.71,
+     "salinity_max": 39.72,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
      "windows": [
@@ -78371,8 +78607,8 @@
      "air_temp_max": 24,
      "pressure_min": 1019.2,
      "pressure_max": 1021,
-     "salinity_min": 39.69,
-     "salinity_max": 39.69,
+     "salinity_min": 39.71,
+     "salinity_max": 39.72,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
      "windows": [
@@ -78825,8 +79061,8 @@
      "air_temp_max": 23.1,
      "pressure_min": 1018.8,
      "pressure_max": 1020.7,
-     "salinity_min": 39.69,
-     "salinity_max": 39.7,
+     "salinity_min": 39.71,
+     "salinity_max": 39.71,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
      "windows": [
@@ -79279,8 +79515,8 @@
      "air_temp_max": 23.2,
      "pressure_min": 1019.9,
      "pressure_max": 1023.6,
-     "salinity_min": 39.69,
-     "salinity_max": 39.69,
+     "salinity_min": 39.71,
+     "salinity_max": 39.71,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
      "windows": [
@@ -79588,7 +79824,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T13:54:32+02:00",
+    "retrieved_at": "2026-11-19T16:59:59+02:00",
     "cell_lat": 31.9375,
     "cell_lon": 34.666668,
     "dist_km": 3.4,
@@ -79605,7 +79841,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T14:47:53.099Z",
+    "comparison_retrieved_at": "2026-11-19T15:01:34.035Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 31.9375,
@@ -83054,8 +83290,8 @@
      "air_temp_max": 24.2,
      "pressure_min": 1017.7,
      "pressure_max": 1020.5,
-     "salinity_min": 39.68,
-     "salinity_max": 39.69,
+     "salinity_min": 39.7,
+     "salinity_max": 39.7,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
      "windows": [
@@ -83508,8 +83744,8 @@
      "air_temp_max": 23.9,
      "pressure_min": 1017.4,
      "pressure_max": 1019.7,
-     "salinity_min": 39.68,
-     "salinity_max": 39.68,
+     "salinity_min": 39.7,
+     "salinity_max": 39.7,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
      "windows": [
@@ -83962,8 +84198,8 @@
      "air_temp_max": 23.5,
      "pressure_min": 1019.3,
      "pressure_max": 1021,
-     "salinity_min": 39.68,
-     "salinity_max": 39.68,
+     "salinity_min": 39.7,
+     "salinity_max": 39.71,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
      "windows": [
@@ -84416,8 +84652,8 @@
      "air_temp_max": 23.6,
      "pressure_min": 1018.8,
      "pressure_max": 1020.7,
-     "salinity_min": 39.67,
-     "salinity_max": 39.68,
+     "salinity_min": 39.7,
+     "salinity_max": 39.71,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
      "windows": [
@@ -84870,8 +85106,8 @@
      "air_temp_max": 23.4,
      "pressure_min": 1020.1,
      "pressure_max": 1023.6,
-     "salinity_min": 39.66,
-     "salinity_max": 39.67,
+     "salinity_min": 39.7,
+     "salinity_max": 39.71,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
      "windows": [
@@ -85179,7 +85415,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T13:54:32+02:00",
+    "retrieved_at": "2026-11-19T16:59:59+02:00",
     "cell_lat": 31.8125,
     "cell_lon": 34.625,
     "dist_km": 1.6,
@@ -85196,7 +85432,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T14:47:53.099Z",
+    "comparison_retrieved_at": "2026-11-19T15:01:34.035Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 31.8125,
@@ -89554,7 +89790,7 @@
      "pressure_min": 1019.2,
      "pressure_max": 1020.9,
      "salinity_min": 39.75,
-     "salinity_max": 39.75,
+     "salinity_max": 39.76,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
      "windows": [
@@ -90007,8 +90243,8 @@
      "air_temp_max": 23.6,
      "pressure_min": 1018.8,
      "pressure_max": 1020.7,
-     "salinity_min": 39.75,
-     "salinity_max": 39.75,
+     "salinity_min": 39.76,
+     "salinity_max": 39.77,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
      "windows": [
@@ -90461,8 +90697,8 @@
      "air_temp_max": 23.5,
      "pressure_min": 1020.1,
      "pressure_max": 1023.6,
-     "salinity_min": 39.75,
-     "salinity_max": 39.75,
+     "salinity_min": 39.77,
+     "salinity_max": 39.77,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
      "windows": [
@@ -90770,7 +91006,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T13:54:32+02:00",
+    "retrieved_at": "2026-11-19T16:59:59+02:00",
     "cell_lat": 31.729166,
     "cell_lon": 34.583336,
     "dist_km": 2.4,
@@ -90787,7 +91023,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T14:47:53.099Z",
+    "comparison_retrieved_at": "2026-11-19T15:01:34.035Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 31.729166,
@@ -93328,7 +93564,7 @@
      "air_temp_max": 24.2,
      "pressure_min": 1017.9,
      "pressure_max": 1020.8,
-     "salinity_min": 39.79,
+     "salinity_min": 39.78,
      "salinity_max": 39.79,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
@@ -96052,7 +96288,7 @@
      "air_temp_max": 23.1,
      "pressure_min": 1020.1,
      "pressure_max": 1023.5,
-     "salinity_min": 39.79,
+     "salinity_min": 39.8,
      "salinity_max": 39.81,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
@@ -96361,7 +96597,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T13:54:32+02:00",
+    "retrieved_at": "2026-11-19T16:59:59+02:00",
     "cell_lat": 31.6875,
     "cell_lon": 34.541668,
     "dist_km": 3.2,
@@ -96378,7 +96614,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T14:47:53.099Z",
+    "comparison_retrieved_at": "2026-11-19T15:01:34.035Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 31.6875,
@@ -98919,7 +99155,7 @@
      "air_temp_max": 24.3,
      "pressure_min": 1018,
      "pressure_max": 1020.8,
-     "salinity_min": 39.8,
+     "salinity_min": 39.79,
      "salinity_max": 39.8,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
@@ -99374,7 +99610,7 @@
      "pressure_min": 1019.5,
      "pressure_max": 1021.9,
      "salinity_min": 39.8,
-     "salinity_max": 39.8,
+     "salinity_max": 39.81,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
      "windows": [
@@ -101643,7 +101879,7 @@
      "air_temp_max": 23,
      "pressure_min": 1020.3,
      "pressure_max": 1023.5,
-     "salinity_min": 39.77,
+     "salinity_min": 39.8,
      "salinity_max": 39.8,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
@@ -101952,7 +102188,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T13:54:32+02:00",
+    "retrieved_at": "2026-11-19T16:59:59+02:00",
     "cell_lat": 31.645834,
     "cell_lon": 34.5,
     "dist_km": 3.7,
@@ -101969,7 +102205,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T14:47:53.099Z",
+    "comparison_retrieved_at": "2026-11-19T15:01:34.035Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 31.645834,
@@ -104511,7 +104747,7 @@
      "pressure_min": 1018,
      "pressure_max": 1020.8,
      "salinity_min": 39.83,
-     "salinity_max": 39.84,
+     "salinity_max": 39.83,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
      "windows": [
@@ -105419,7 +105655,7 @@
      "pressure_min": 1017.8,
      "pressure_max": 1020.6,
      "salinity_min": 39.84,
-     "salinity_max": 39.85,
+     "salinity_max": 39.84,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
      "windows": [
@@ -106326,7 +106562,7 @@
      "air_temp_max": 24.4,
      "pressure_min": 1019.2,
      "pressure_max": 1020.9,
-     "salinity_min": 39.81,
+     "salinity_min": 39.82,
      "salinity_max": 39.83,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
@@ -106780,8 +107016,8 @@
      "air_temp_max": 23.3,
      "pressure_min": 1018.9,
      "pressure_max": 1020.8,
-     "salinity_min": 39.79,
-     "salinity_max": 39.81,
+     "salinity_min": 39.82,
+     "salinity_max": 39.82,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
      "windows": [
@@ -107234,8 +107470,8 @@
      "air_temp_max": 23.2,
      "pressure_min": 1020.3,
      "pressure_max": 1023.5,
-     "salinity_min": 39.79,
-     "salinity_max": 39.79,
+     "salinity_min": 39.82,
+     "salinity_max": 39.83,
      "salinity_hours_valid": 24,
      "salinity_hours_in_axis": 24,
      "windows": [

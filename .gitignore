@@ -1,2 +1,4 @@
 pipeline/__pycache__/
 data/copernicus-waves.json
+
+data/environment-history.json
