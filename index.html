@@ -10,7 +10,7 @@
 </head>
 <body><div class="wrap" id="app">טוען נתונים...</div>
 <script type="module">
-import {LEVELS,waveLevel,windLevel,windowLevel,dayLevel} from "./condition-scale.mjs";
+import {LEVELS,waveLevel,windLevel} from "./condition-scale.mjs";
 const HEB_DAYS = ['ראשון','שני','שלישי','רביעי','חמישי','שישי','שבת'];
 function nowIL(){ const p = new Intl.DateTimeFormat('sv-SE',{timeZone:'Asia/Jerusalem',dateStyle:'short',timeStyle:'short'}).format(new Date());
   return { date:p.slice(0,10), hour:+p.slice(11,13) }; }
@@ -213,13 +213,16 @@ function imsCard(region){
       ${!issueParam&&(age.old||(latest.meta.valid_to&&latest.meta.valid_to<nowIL().date))?`<div class="issued"><span style="color:var(--warn-fg)">${age.old?`התחזית בת ${age.hours} שעות - ייתכן שהרענון היומי נכשל`:''}${age.old&&latest.meta.valid_to&&latest.meta.valid_to<nowIL().date?' · ':''}${latest.meta.valid_to&&latest.meta.valid_to<nowIL().date?`תוקף התחזית הסתיים ב-${latest.meta.valid_to} - כל ההמלצות היסטוריות`:''}</span></div>`:''}
     </header>
       <h3 class="sec">תחזית גלים ורוח - 7 הימים הבאים</h3>
-      <div class="card"><div style="font-size:10px;opacity:.65;margin-bottom:6px">עוצמת גלים ורוח · שיא יומי · <bdi class="ltr">1–5</bdi></div><div class="days">${bd.days.map((d,i)=>{
+      <div class="card"><div style="font-size:10px;opacity:.65;margin-bottom:6px">גלים ורוח בנפרד · צבע לפי השיא היומי</div><div class="days">${bd.days.map((d,i)=>{
         const wd = HEB_DAYS[new Date(d.date+'T12:00:00').getDay()];
-        const level=dayLevel(d), category=level==null?null:LEVELS[level];
+        const maxWind=d.wind_max_kmh??Math.max(...d.windows.map(w=>w.wind_max_kmh??w.wind_kmh).filter(x=>x!=null));
+        const wl=waveLevel(d.wave_max), vl=Number.isFinite(maxWind)?windLevel(maxWind):null;
+        const waveC=wl==null?null:LEVELS[wl],windC=vl==null?null:LEVELS[vl];
+        const mini=(c,value,label)=>`<div style="margin-top:4px;padding:4px 1px;border-radius:7px;font-size:10px;font-weight:800;${c?`background:${c.color};color:${c.ink};${c.id==='black'?'outline:1px solid #94a3b8;':''}`:''}"><div style="font-size:8px;font-weight:400">${label}</div>${value}</div>`;
         return `<div class="day ${d.date===today?'today':''} ${i===curDay?'sel':''}" data-day="${i}">
           <div class="dd">${wd}</div><div class="dt">${d.date.slice(8,10)}.${d.date.slice(5,7)}</div>
-          <div class="wv" style="font-size:10.5px;font-weight:800;white-space:nowrap;line-height:1.25">${waveRangeCm(d.wave_min,d.wave_max)?waveRangeCm(d.wave_min,d.wave_max)+'<div style="font-size:8px;font-weight:400;opacity:.6">ס״מ</div>':(d.wave_max!=null?d.wave_max.toFixed(1)+' מ׳':'')}</div>
-          <div class="bdg" title="${category?category.name:'חסר'} · עוצמת התנאים המרבית ביום, לא דירוג בטיחות" style="font-size:11px;margin-top:3px;${category?`background:${category.color};color:${category.ink};border:1px solid #64748b`: ''}">${level==null?'חסר':`<bdi>${level+1}</bdi>`}</div></div>`;
+          ${mini(waveC,waveRangeCm(d.wave_min,d.wave_max)||'חסר','גלים · ס״מ')}
+          ${mini(windC,vl==null?'חסר':`<bdi>${Math.round(maxWind)}</bdi>`,'רוח שיא · קמ״ש')}</div>`;
       }).join('')}</div></div>
     <div class="tabs">${beachesCfg.regions.map(r=>`<div class="tab ${r.id===curRegion?'on':''}" data-region="${r.id}">${r.name_he}</div>`).join('')}</div>
     <select class="beachsel" aria-label="בחירת חוף">${regionBeaches.map(b=>`<option value="${b.id}" ${b.id===curBeach?'selected':''}>${b.name_he}</option>`).join('')}</select>`;
@@ -274,17 +277,17 @@ function imsCard(region){
 
       <h3 class="sec">תנאי ים לפי שעות · ${day.date===today?'היום':day.date}</h3>
       <div class="card winwrap">${!day.windows?.length?'<div style="padding:14px;font-size:12.5px;opacity:.75">אין נתוני חלונות ליום זה בהפקה הנוכחית.</div>':`<table class="win">
-      <tr><th>שעות</th><th>גלים</th><th>רוח</th><th>זרם</th><th style="width:64px">עוצמה</th></tr>
+      <tr><th>שעות</th><th>גלים</th><th>רוח</th><th>זרם</th></tr>
       ${((!issueParam&&day.date===today)?day.windows.filter(w=>w.fromHour+((+w.to.slice(0,2))-w.fromHour+24)%24>nowIL().hour):day.windows).map(w=>{ const nw = nowIL(); const spanH = ((+w.to.slice(0,2))-w.fromHour+24)%24; const isPast = w.past || day.date<nw.date || (day.date===nw.date && w.fromHour+spanH<=nw.hour);
         return `<tr class="${isPast?'past':''}"><td><span dir="ltr">${w.from}–${w.to}</span></td><td>${(()=>{ const lo=w.wave_min??w.wave_height, hi=w.wave_max??w.wave_height; const r=waveRangeCm(lo,hi); return r?`<span style="font-weight:700">${r}</span> ס״מ ${stateChip(seaStateCm(Math.round(hi*100)))}`:na(null); })()}</td>
         <td>${(()=>{ const t=windRangeKmh(w); return t?t+' קמ״ש '+(w.wind_dir?'מ'+w.wind_dir:'')+' '+stateChip(windCat(w.wind_max_kmh??w.wind_kmh)):'חסר'; })()}</td>
         <td>${w.current_vel!=null&&w.current_vel>0.01?w.current_vel+' קמ״ש '+(w.current_dir?'ל'+w.current_dir:''):'—'}</td>
-        <td>${(()=>{const level=windowLevel(w),c=level==null?null:LEVELS[level];return `<div title="${c?c.name:'חסר'} · עוצמת תנאים 1–5" style="display:flex;align-items:center;justify-content:center;gap:6px"><bdi class="ltr" style="font-size:13px;font-weight:800;color:${c&&level!==4?c.color:'var(--fg)'}">${level==null?'—':level+1}</bdi><span class="bar" style="display:inline-block;min-width:0;width:38px;flex:0 0 38px;${level===4?'outline:1px solid #94a3b8;':''}"><i style="width:${level==null?0:(level+1)*20}%;background:${c?c.color:'transparent'}"></i></span></div>`})()}</td></tr>
-        <tr class="wxsub ${isPast?'past':''}"><td colspan="5">${wxLine(w)}</td></tr>`;}).join('')}
-      </table><div style="font-size:10.5px;opacity:.6;margin-top:6px">עוצמת תנאים <bdi class="ltr">1–5</bdi>: לפי הגלים או הרוח, המחמיר מביניהם. הסיכום היומי וטווחי השעות מציגים את השיא, לא ממוצע. סולם מקומי ניסיוני, לא דירוג בטיחות ולא הסתברות תפיסה. משבים מוצגים בנפרד ואינם נכללים בצבע.${day.date<today?' שורות אפורות כבר עברו.':''} כיוון רוח וגלים הוא הכיוון <b>שממנו</b> הם באים; כיוון זרם הוא הכיוון <b>שאליו</b> הוא זורם.</div>
-      <div style="font-size:10.5px;opacity:.75;margin-top:4px;line-height:2">${LEVELS.map((c,i)=>stateChip([`${i+1} · ${c.name}`,c.color])).join(' ')}<br>
-      גלים בס״מ: 1 מתחת ל־50 · 2 מ־50 עד 100 כולל · 3 מעל 100 ומתחת ל־200 · 4 מ־200 עד 300 כולל · 5 מעל 300.<br>
-      רוח מתמשכת בקמ״ש: 1 מתחת ל־12 · 2 מ־12 ומתחת ל־20 · 3 מ־20 ומתחת ל־29 · 4 מ־29 ומתחת ל־50 · 5 מ־50.<br>
+        </tr>
+        <tr class="wxsub ${isPast?'past':''}"><td colspan="4">${wxLine(w)}</td></tr>`;}).join('')}
+      </table><div style="font-size:10.5px;opacity:.6;margin-top:6px">צבע הגלים וצבע הרוח נפרדים, לפי השיא בכל יום או טווח שעות. סולם מקומי, לא דירוג בטיחות ולא הסתברות תפיסה. משבים מוצגים בנפרד ואינם נכללים בצבע.${day.date<today?' שורות אפורות כבר עברו.':''} כיוון רוח וגלים הוא הכיוון <b>שממנו</b> הם באים; כיוון זרם הוא הכיוון <b>שאליו</b> הוא זורם.</div>
+      <div style="font-size:10.5px;opacity:.75;margin-top:4px;line-height:2">${LEVELS.map(c=>stateChip([c.name,c.color])).join(' ')}<br>
+      גלים בס״מ: ירוק מתחת ל־50 · צהוב 50–100 כולל · כתום מעל 100 ומתחת ל־200 · אדום 200–300 כולל · שחור מעל 300.<br>
+      רוח מתמשכת בקמ״ש: ירוק מתחת ל־12 · צהוב 12 עד פחות מ־20 · כתום 20 עד פחות מ־29 · אדום 29 עד פחות מ־50 · שחור מ־50.<br>
       הסיווג לפי הערכים המעוגלים המוצגים. טווח הגלים הוא המינימום והמקסימום השעתיים; שמות מצב הים לפי מונחי שמ״ט, הצבעים לפי הסולם המקומי.</div>`}</div>
 
       <h3 class="sec">דגי טורפים · ז'ירז'ור מהחוף</h3>

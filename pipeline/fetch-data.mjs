@@ -11,7 +11,6 @@
  * On per-beach failure, that beach carries forward its last good data, marked stale.
  */
 import fs from 'node:fs';
-import {LEVELS, combinedLevel} from '../condition-scale.mjs';
 import crypto from 'node:crypto';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -121,11 +120,6 @@ function civilTwilight(dateStr, lat, lon, localSunrise, localSunset, rising) {
 const round = (x, p = 1) => (x == null ? null : +x.toFixed(p));
 
 // --- Experimental scoring heuristics (documented, to be calibrated from user trip logs) ---
-// Five-level site-defined strength index. Lower means calmer, not safer.
-function windowScore(waveH,windKmh){
-  const level=combinedLevel(waveH,windKmh);
-  return level==null?null:level+1;
-}
 // Species cards are qualitative only (shore-lure scope, 2026-11-18): no reviewed source
 // validates numerical season/hour/wave/wind/SST cutoffs per species, so the old species
 // suitability model was removed rather than re-parameterized. Marine window scoring
@@ -315,7 +309,7 @@ async function main() {
         const wn = cells.map(x => x.wind_kmh).filter(x => x != null);
         win.wind_min_kmh = wn.length ? round(Math.min(...wn)) : null;
         win.wind_max_kmh = wn.length ? round(Math.max(...wn)) : null;
-        win.score = windowScore(win.wave_max,win.wind_max_kmh);
+
         // For the issue day, windows that already ended are marked past and excluded from recommendations.
         win.past = (date === issueDate) && (start + 3 <= issueHour);
         windows.push(win);
@@ -326,15 +320,8 @@ async function main() {
       const sunset = di >= 0 ? w.daily.sunset[di].slice(11, 16) : null;
       const dateUtc = new Date(date + 'T12:00:00Z');
       const moon = moonPhase(dateUtc);
-      const scored = activeWindows.filter(x => x.score != null).sort((a, b) => a.score - b.score);
-      const best = scored[0] || null;
-      // Full-day peak, including already-passed hours. A calm window cannot hide rougher hours.
-      const dayPeakWaves=hours.map(x=>x.wave_height).filter(x=>x!=null);
       const dayPeakWind=hours.map(x=>x.wind_kmh).filter(x=>x!=null);
-      const peakWave=dayPeakWaves.length?Math.max(...dayPeakWaves):null;
       const peakWind=dayPeakWind.length?Math.max(...dayPeakWind):null;
-      const dayScore=windowScore(peakWave,peakWind);
-      const dayBand=dayScore==null?'insufficient':LEVELS[dayScore-1].id;
       const daySst = avg(hours.map(x => x.sst));
       const dayAir = hours.map(x => x.air_temp).filter(x => x != null);
       const dayPres = hours.map(x => x.pressure).filter(x => x != null);
@@ -351,10 +338,7 @@ async function main() {
         last_light: civilTwilight(date, b.lat, b.lon, sunrise, sunset, false),
         moon_illumination_pct: moon.pct,
         moon_waxing: moon.waxing,
-        day_score: dayScore,
         wind_max_kmh: peakWind==null?null:round(peakWind),
-        day_band: dayBand,
-        best_window: best ? { from: best.from, to: best.to, score: best.score } : null,
         wave_max: maxWave || null,
         wave_min: minWave,
         high_wave_warning: maxWave > 1.8,
@@ -439,7 +423,7 @@ async function main() {
     ims: imsBlock,
     meta: {
       version: VERSION,
-      conditions_scale: { version:1, meaning:'strength_1_to_5_higher_is_stronger', aggregation:'full-day and interval hourly maxima; worse of wave and sustained wind; rounded display values', wave_cm:'<50;50..100;>100..<200;200..300;>300', wind_kmh:'<12;12..<20;20..<29;29..<50;>=50' },
+      conditions_scale: { version:1, meaning:'separate_wave_and_wind_colors_no_combined_score', aggregation:'separate full-day and interval hourly maxima; rounded display values', wave_cm:'<50;50..100;>100..<200;200..300;>300', wind_kmh:'<12;12..<20;20..<29;29..<50;>=50' },
       issue_id: issueId,
       issued_at_local: issuedLocal,
       issued_at_utc: nowUtc.toISOString(),
@@ -457,7 +441,7 @@ async function main() {
       ],
       attribution_he: 'נתוני ים ומזג אוויר דרך Open-Meteo (CC BY 4.0), המשלב מודלים של Météo-France/Copernicus Marine Service (MFWAM, SMOC), ECMWF WAM, NOAA NCEP GFS Wave ו-DWD. גובה פני ים ממודל בלבד, דיוק מוגבל בחוף. מלוא ירח ואור ראשון/אחרון מחושבים.',
       data_availability: DATA_AVAILABILITY,
-      scoring_note_he: 'כרטיסי הדגים איכותניים בלבד, בהיקף דיג ז\'ירז\'ור מהחוף - ללא ציון התאמה מספרי: אין מקור מאומת לספי עונה/שעות/גלים/רוח/טמפרטורה למין. מדד עוצמת התנאים 1–5 משקף את שיא הגלים והרוח המתמשכת, המחמיר מביניהם; מספר גבוה מציין תנאים חזקים יותר. הסולם מקומי וניסיוני, לא תחזית תפיסה ולא דירוג בטיחות.',
+      scoring_note_he: 'כרטיסי הדגים איכותניים בלבד, בהיקף דיג ז\'ירז\'ור מהחוף - ללא ציון התאמה מספרי: אין מקור מאומת לספי עונה/שעות/גלים/רוח/טמפרטורה למין. צבע הגלים וצבע הרוח המתמשכת מוצגים בנפרד, לפי השיא היומי או בטווח השעות. אין מדד משולב ואין ציון מספרי. הסולם מקומי וניסיוני, לא תחזית תפיסה ולא דירוג בטיחות.',
       stale_beaches: staleBeaches
     },
     beaches: outBeaches
