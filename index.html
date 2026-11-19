@@ -41,7 +41,7 @@
 
 <script id="release-check">
 (()=>{
- const current='63cb65b54de3cfacdd1e';let checking=false;
+ const current='633d0e0d0accb2ee0333';let checking=false;
  async function check(){
   if(checking||document.hidden||document.querySelector('dialog[open]')||!navigator.onLine)return;
   checking=true;
@@ -282,7 +282,14 @@ function officialWindow(region,day,w){
   if(!parts.length||parts[0].valid_from>start||parts.at(-1).valid_to<end) return null;
   if(parts.length===1) return parts[0];
   if(parts.some((p,i)=>i&&parts[i-1].valid_to<p.valid_from)) return null;
-  return {...parts[0],parts:parts.map(p=>({...p,overlap_from:p.valid_from>start?p.valid_from:start,overlap_to:p.valid_to<end?p.valid_to:end})),wave_to_cm:Math.max(...parts.map(p=>p.wave_to_cm)),wind_speed_to:Math.max(...parts.map(p=>p.wind_speed_to))};
+  const merged=[];
+  for(const p of parts){
+    const from=p.valid_from>start?p.valid_from:start,to=p.valid_to<end?p.valid_to:end;
+    const last=merged.at(-1);
+    if(last&&last.wave_from_cm===p.wave_from_cm&&last.wave_to_cm===p.wave_to_cm&&last.overlap_to===from)last.overlap_to=to;
+    else merged.push({...p,overlap_from:from,overlap_to:to});
+  }
+  return {...parts[0],parts:merged.length>1?merged:null,wave_to_cm:Math.max(...parts.map(p=>p.wave_to_cm)),wind_speed_to:Math.max(...parts.map(p=>p.wind_speed_to))};
 }
 
   let archive = null;
