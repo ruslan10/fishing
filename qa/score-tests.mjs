@@ -1,0 +1,12 @@
+import assert from 'node:assert/strict';
+import {modelWindowScore} from '../experimental-score.mjs';
+const w={fromHour:6,to:'09:00',wind_kmh:6,gust_kmh:10};
+const s=h=>({hourly:[6,7,8].map(i=>({time:`2026-11-20T0${i}:00`,height:h}))});
+assert.equal(modelWindowScore({a:s(.7),b:s(.8)},'2026-11-20',w).score,98);
+assert.equal(modelWindowScore({a:s(.7),b:s(null)},'2026-11-20',w).models.length,1);
+assert.equal(modelWindowScore({a:s(0)},'2026-11-20',w).score,68);
+assert.equal(modelWindowScore({a:s(null)},'2026-11-20',w).score,null);
+assert.equal(modelWindowScore({a:s(.7)},'2026-11-20',{...w,gust_kmh:null}).score,null);
+assert.equal(modelWindowScore({a:{hourly:s(.7).hourly.slice(0,2)}},'2026-11-20',w).score,null);
+assert.equal(modelWindowScore({a:s(.7),b:s(1.5)},'2026-11-20',w).score,87);
+console.log('experimental equal-weight summary, complete hours, nulls and zero tests passed');

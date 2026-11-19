@@ -21,3 +21,22 @@ export function windowScore(waveH, windKmh, gust) {
   if (w == null || v == null) return null;
   return Math.round(0.55 * w + 0.45 * v);
 }
+
+// Descriptive equal-weight mean of the historical scores, not model validation.
+// Require every hour within each interval; do not fill gaps or select a primary model.
+export function modelWindowScore(series, date, w) {
+  const from=w.fromHour, to=w.to==='00:00'?24:Number(w.to.slice(0,2));
+  const models=[];
+  if(!Number.isFinite(w.wind_kmh)||!Number.isFinite(w.gust_kmh))
+    return {score:null,models,total:Object.keys(series||{}).length,reason:'wind'};
+  for(const [id,s] of Object.entries(series||{})) {
+    const byTime=new Map((s.hourly||[]).map(r=>[r.time,r.height]));
+    const values=Array.from({length:to-from},(_,i)=>byTime.get(`${date}T${String(from+i).padStart(2,'0')}:00`));
+    if(!values.length||values.some(v=>!Number.isFinite(v)))continue;
+    const height=values.reduce((a,b)=>a+b,0)/values.length;
+    const score=windowScore(height,w.wind_kmh,w.gust_kmh);
+    if(score!=null)models.push({id,height,score,hours:values.length});
+  }
+  return {score:models.length?Math.round(models.reduce((sum,m)=>sum+m.score,0)/models.length):null,
+    models,total:Object.keys(series||{}).length,reason:models.length?null:'waves'};
+}
