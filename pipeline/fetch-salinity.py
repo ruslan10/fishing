@@ -27,6 +27,7 @@ carries "Generated using E.U. Copernicus Marine Service Information" and the pro
 import json
 import os
 import sys
+import subprocess
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -61,6 +62,8 @@ def main() -> int:
     end_utc = start_utc + timedelta(days=7)
 
     ds = cm.open_dataset(
+        username=os.environ["COPERNICUSMARINE_SERVICE_USERNAME"],
+        password=os.environ["COPERNICUSMARINE_SERVICE_PASSWORD"],
         dataset_id=DATASET_ID,
         minimum_longitude=34.2,
         maximum_longitude=35.4,
@@ -137,6 +140,13 @@ def main() -> int:
 
 
 if __name__ == "__main__":
+    # Existing CI entry point already has Copernicus credentials. Fetch the
+    # independent wave cache here without changing the workflow's permission scope.
+    # Wave failure must not block salinity, or the reverse. The node consumer
+    # applies its own freshness/coverage gates for each source independently.
+    wave_result = subprocess.run([sys.executable, str(ROOT / "pipeline" / "fetch-waves.py")])
+    if wave_result.returncode:
+        print("Copernicus waves unavailable; issue builder will label fallback", file=sys.stderr)
     try:
         sys.exit(main())
     except Exception as e:  # noqa: BLE001 - failure must not kill the main refresh

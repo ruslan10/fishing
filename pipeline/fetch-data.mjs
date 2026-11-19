@@ -11,6 +11,7 @@
  * On per-beach failure, that beach carries forward its last good data, marked stale.
  */
 import fs from 'node:fs';
+import {MODEL_LABELS,readFreshCache,modelSummary,omSeries,choosePrimary} from './multi-model.mjs';
 import {windowScore} from '../experimental-score.mjs';
 import crypto from 'node:crypto';
 import path from 'node:path';
@@ -20,7 +21,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SITE = ROOT; // site lives at repo root (GitHub Pages serves root of main)
 const DATA = path.join(SITE, 'data');
 const TZ = 'Asia/Jerusalem';
-const VERSION = 4;
+const VERSION = 5;
 
 const beaches = JSON.parse(fs.readFileSync(path.join(DATA, 'beaches.json'), 'utf8'));
 const speciesCfg = JSON.parse(fs.readFileSync(path.join(DATA, 'species.json'), 'utf8'));
@@ -211,6 +212,18 @@ async function main() {
     }
   } catch { salinity = null; }
 
+  // Independent named wave models: no source averaging and no use as observations.
+  const cpWaves = readFreshCache(fs, path.join(DATA,'copernicus-waves.json'));
+  const cross = {};
+  for (const model of ['ecmwf_wam','ncep_gfswave025']) {
+    try {
+      const response=await fetchJson(apiUrl('https://marine-api.open-meteo.com/v1/marine', {
+        latitude:lats,longitude:lons,hourly:'wave_height',models:model,timezone:TZ,forecast_days:7
+      }),model);
+      cross[model]=Array.isArray(response)?response:[response];
+    } catch(e) { console.error(`Comparison ${model} unavailable: ${e.message}`); cross[model]=[]; }
+  }
+
   const outBeaches = [];
   const staleBeaches = [];
   let freshBeaches = 0;
@@ -229,6 +242,14 @@ async function main() {
       return;
     }
 
+    const fallback=omSeries(m);
+    const cp=cpWaves?.beaches?.[b.id]||null;
+    const primary=choosePrimary(cp,fallback,issueDate);
+    const cpByTime=new Map((cp?.hourly||[]).map(r=>[r.time,r]));
+    const modelSeries={};
+    if(cp) modelSeries.copernicus_med=cp;
+    for(const id of ['ecmwf_wam','ncep_gfswave025']) modelSeries[id]=omSeries(cross[id]?.[i]);
+    if(primary.id!=='copernicus_med') modelSeries.open_meteo_best_match=fallback;
     const n = m.hourly.time.length;
     const byDate = {};
     for (let h = 0; h < n; h++) {
@@ -237,9 +258,9 @@ async function main() {
       const hour = +t.slice(11, 13);
       (byDate[date] ||= []).push({
         hour,
-        wave_height: m.hourly.wave_height?.[h] ?? null,
-        wave_direction: m.hourly.wave_direction?.[h] ?? null,
-        wave_period: m.hourly.wave_period?.[h] ?? null,
+        wave_height: primary.id==='copernicus_med' ? cpByTime.get(t)?.height??null : m.hourly.wave_height?.[h]??null,
+        wave_direction: primary.id==='copernicus_med' ? cpByTime.get(t)?.direction??null : m.hourly.wave_direction?.[h]??null,
+        wave_period: primary.id==='copernicus_med' ? cpByTime.get(t)?.period_tm02??null : m.hourly.wave_period?.[h]??null,
         swell_wave_height: m.hourly.swell_wave_height?.[h] ?? null,
         swell_wave_period: m.hourly.swell_wave_period?.[h] ?? null,
         wind_wave_height: m.hourly.wind_wave_height?.[h] ?? null,
@@ -340,7 +361,9 @@ async function main() {
         moon_illumination_pct: moon.pct,
         moon_waxing: moon.waxing,
         wind_max_kmh: peakWind==null?null:round(peakWind),
-        wave_max: maxWave || null,
+        wave_max: dayWaves.length ? maxWave : null,
+        wave_source: primary.id,
+        wave_comparison: modelSummary(modelSeries,date),
         wave_hourly: hours.map(h=>({hour:h.hour,height:h.wave_height})),
         wave_min: minWave,
         high_wave_warning: maxWave > 1.8,
@@ -358,7 +381,17 @@ async function main() {
       };
     });
 
-    outBeaches.push({ id: b.id, salinity_dist_km: salinity?.beaches?.[b.id]?.dist_km ?? null, days });
+    outBeaches.push({ id: b.id,
+      wave_primary: primary.id,
+      wave_provenance: {primary:primary.id, primary_label:MODEL_LABELS[primary.id],
+        retrieved_at:primary.id==='copernicus_med'?cpWaves.generated_at:nowUtc.toISOString(),
+        cell_lat:primary.series.cell_lat,cell_lon:primary.series.cell_lon,dist_km:primary.series.dist_km??null,
+        copernicus_source:cp?cpWaves.source:null,
+        comparison_retrieved_at:nowUtc.toISOString(),
+        model_series:modelSeries,
+        field_sources:{wave_height:primary.id,wave_direction:primary.id,wave_period:primary.id==='copernicus_med'?'Copernicus VTM02 (Tm02)':'Open-Meteo mean period',swell:'Open-Meteo Marine best match',water_temperature:'Open-Meteo Marine best match',current:'Open-Meteo Marine best match',wind:'Open-Meteo Forecast',salinity:'Copernicus MEDSEA PHY'},
+        note:'No averaging, shoreline calibration or independent-error assumption. Model cells may differ; missing values retained.'},
+      salinity_dist_km: salinity?.beaches?.[b.id]?.dist_km ?? null, days });
     freshBeaches++;
   });
 
@@ -433,7 +466,12 @@ async function main() {
       valid_from: outBeaches.find(b => b.days)?.days?.[0]?.date ?? null,
       valid_to: outBeaches.find(b => b.days)?.days?.slice(-1)[0]?.date ?? null,
       refresh_policy_he: 'רענון יומי בערב בסביבות 20:00 שעון ישראל; התחזית מכסה 7 ימים קלנדריים כולל יום הרענון; הפקות קודמות נשמרות בארכיון ללא שינוי',
+      wave_policy: {primary:'Copernicus MED-WAV if current first-day coverage passes availability gate, otherwise explicitly labeled Open-Meteo best match',
+        comparison:['ecmwf_wam','ncep_gfswave025'],
+        spread:'largest simultaneous hourly spread, never a calibrated confidence interval',
+        copernicus_retrieved_at:cpWaves?.generated_at??null},
       sources: [
+        {name:'Copernicus Mediterranean Waves (MED-WAV WAM Cycle 6)',url:'https://data.marine.copernicus.eu/product/MEDSEA_ANALYSISFORECAST_WAV_006_017/description',doi:'10.48670/mds-00373',license:'Copernicus Marine Service licence'},
         { name: 'Open-Meteo Marine API', url: 'https://open-meteo.com/en/docs/marine-weather-api', license: 'CC BY 4.0' },
         { name: 'Open-Meteo Forecast API', url: 'https://open-meteo.com/en/docs', license: 'CC BY 4.0' },
         { name: 'Météo-France MFWAM/SMOC (Copernicus Marine Service)', url: 'https://doi.org/10.48670/moi-00017', license: 'Copernicus' },
@@ -441,7 +479,7 @@ async function main() {
         { name: 'NOAA NCEP GFS Wave', url: 'https://www.ncei.noaa.gov', license: 'public domain' },
         { name: 'DWD EWAM/GWAM', url: 'https://www.dwd.de', license: 'CC BY 4.0' }
       ],
-      attribution_he: 'נתוני ים ומזג אוויר דרך Open-Meteo (CC BY 4.0), המשלב מודלים של Météo-France/Copernicus Marine Service (MFWAM, SMOC), ECMWF WAM, NOAA NCEP GFS Wave ו-DWD. גובה פני ים ממודל בלבד, דיוק מוגבל בחוף. מלוא ירח ואור ראשון/אחרון מחושבים.',
+      attribution_he: 'גלים עיקריים: Copernicus MED-WAV כשזמין, אחרת Open-Meteo מסומן כגיבוי. השוואת גלים: ECMWF WAM ו-GFS Wave דרך Open-Meteo. יתר נתוני ים ומזג אוויר דרך Open-Meteo (CC BY 4.0), המשלב מודלים של Météo-France/Copernicus Marine Service (MFWAM, SMOC), ECMWF WAM, NOAA NCEP GFS Wave ו-DWD. גובה פני ים ממודל בלבד, דיוק מוגבל בחוף. מלוא ירח ואור ראשון/אחרון מחושבים.',
       data_availability: DATA_AVAILABILITY,
       scoring_note_he: 'כרטיסי הדגים איכותניים בלבד, בהיקף דיג ז\'ירז\'ור מהחוף - ללא ציון התאמה מספרי: אין מקור מאומת לספי עונה/שעות/גלים/רוח/טמפרטורה למין. צבע הגלים וצבע הרוח המתמשכת מוצגים בנפרד, לפי השיא היומי או בטווח השעות. עמודת התנאים מחזירה את ציון ההשוואה הניסיוני המקורי 0–100, המחושב מממוצעי החלון ומשבים, בנפרד מסולם הצבעים של המדידות. הסולם מקומי וניסיוני, לא תחזית תפיסה ולא דירוג בטיחות.',
       stale_beaches: staleBeaches

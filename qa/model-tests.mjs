@@ -1,0 +1,14 @@
+import assert from 'node:assert/strict';
+import {modelSummary,choosePrimary,readFreshCache} from '../pipeline/multi-model.mjs';
+const date='2026-11-19';
+const s=(heights)=>({hourly:heights.map((height,i)=>({time:`${date}T${String(i).padStart(2,'0')}:00`,height}))});
+assert.equal(modelSummary({a:s([1,null]),b:s([2,9])},date).max_spread,1);
+assert.equal(modelSummary({a:s([1,null]),b:s([null,9])},date).max_spread,null);
+assert.equal(modelSummary({a:s([0]),b:s([0])},date).max_spread,0);
+assert.equal(choosePrimary(s(Array(24).fill(0)),s([4]),date).id,'copernicus_med');
+assert.equal(choosePrimary(s(Array(24).fill(null)),s([4]),date).id,'open_meteo_best_match');
+const fakeFS={readFileSync:()=>JSON.stringify({generated_at:'2026-11-19T00:00Z',beaches:{}})};
+assert.ok(readFreshCache(fakeFS,'x',Date.parse('2026-11-19T02:59Z')));
+assert.equal(readFreshCache(fakeFS,'x',Date.parse('2026-11-19T03:00Z')),null);
+assert.equal(readFreshCache(fakeFS,'x',Date.parse('2026-11-18T23:59Z')),null);
+console.log('model comparisons, zero/null handling, alignment, fallback and cache tests passed');

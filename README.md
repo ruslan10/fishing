@@ -26,7 +26,7 @@ Static Hebrew site + daily data pipeline for Israeli Mediterranean shore fishing
 node pipeline/fetch-data.mjs
 ```
 
-Fetches Open-Meteo marine + forecast for all beaches (2 batched API calls), computes window condition scores and factor-level species suitability, writes a new issue file. Behavior contract:
+Fetches Open-Meteo marine + atmospheric forecast and two named wave cross-checks for all beaches (4 batched requests; multi-location quota accounting applies), consumes fresh Copernicus caches, computes experimental wave/wind scores, and writes a new immutable issue. Species cards remain qualitative, without numeric suitability. Behavior contract:
 - Total fetch failure: exits non-zero, previous files untouched (last good data preserved).
 - Per-beach failure: that beach carries forward previous data, marked `stale` with the original issue time.
 - Issue files are immutable and uniquely timestamped (random suffix, `wx` exclusive write); same-day reruns add new files. `latest.json` is the only mutable file and is promoted atomically (tmp + rename).
@@ -38,7 +38,7 @@ Fetches Open-Meteo marine + forecast for all beaches (2 batched API calls), comp
 
 ## Daily refresh
 
-`.github/workflows/daily-refresh.yml` runs the pipeline every day at 03:30 UTC (05:30/06:30 Israel) via GitHub Actions and commits the new issue + updated latest/archive index using the automatic `GITHUB_TOKEN`. No secrets needed. It can also be triggered manually (`workflow_dispatch`).
+`.github/workflows/daily-refresh.yml` has 17:00/18:00 UTC candidates gated to 20:xx Asia/Jerusalem, once per evening cycle. Copernicus stages use repository secrets COPERNICUS_USERNAME and COPERNICUS_PASSWORD; other sources require no keys. It commits new issue/latest/index/IMS snapshot using GITHUB_TOKEN and explicitly requests a Pages build. Manual workflow_dispatch bypasses the time gate.
 
 ## Run QA locally
 
@@ -70,3 +70,43 @@ QA asserts: no page/console errors, no horizontal overflow at 390px and 1280px, 
 - Currents near shore are small and their fishing usefulness is unverified (shown with caveat).
 - Responsive layout: mobile-first, with deliberate tablet (640px+) and desktop (900px+) grids (4-up hero, 3-up species cards, 7-up week strip).
 - No tide times validated for shore level, chlorophyll/turbidity, dissolved oxygen, salinity, pH, or baitfish data - listed explicitly in the site's availability section.
+
+## Integrated free wave forecast (schema v5, 19 Nov 2026)
+
+- IMS coastal ranges stay separate and are used in the hourly table only for fully
+  covered, current official intervals. The official graph is never extended with
+  numerical-model values. No map viewer.
+- Primary weekly significant wave height: Copernicus Mediterranean MED-WAV,
+  `cmems_mod_med_wav_anfc_4.2km_PT1H-i` / `MEDSEA_ANALYSISFORECAST_WAV_006_017`,
+  WAM Cycle 6, hourly output, 1/24 degree grid. Nearest sea cell with >=90% valid
+  fetched heights, selected by great-circle distance. Not breaking-wave height,
+  a beach observation, or a shoreline-calibrated prediction.
+- `VHM0` is spectral significant height in metres, `VMDR` is direction FROM,
+  `VTM02` is mean period Tm02, not peak period. Open-Meteo still supplies wind,
+  atmospheric weather, sea temperature, currents and swell. Salinity remains
+  Copernicus MEDSEA PHY. Field provenance is frozen in each new issue.
+- Two separately queried named height cross-checks via Open-Meteo:
+  `ecmwf_wam` and `ncep_gfswave025`. Per-day ranges are temporal hourly extrema.
+  The displayed difference is the largest simultaneous hourly height spread
+  among at least two available models. It is NOT an uncertainty interval,
+  accuracy estimate, probability or independent ensemble. Model cells differ.
+- No cross-model averaging or hidden calibration. A missing comparison is
+  displayed as missing. If the fresh Copernicus cache/first-day coverage is not
+  usable, the whole beach's primary is explicitly Open-Meteo best-match fallback;
+  missing later Copernicus hours are NOT silently filled from another source.
+- `fetch-waves.py` writes the cache atomically. The issue builder accepts it only
+  within 3h of retrieval. A model initialization time is not inferred from retrieval
+  time. All selected cells, hourly model comparisons, coverage, primary/fallback,
+  retrieval timestamps and product identity are frozen in the immutable issue.
+- Evening workflow uses existing Copernicus repository secrets. Its existing
+  fetch-salinity.py entry point runs the independent wave fetch first, then salinity,
+  then the workflow builds the Open-Meteo/IMS issue. No workflow permission change. A soft wave failure does not falsely
+  present stale Copernicus as current. Only new issue files may be added.
+- Free usage is for this noncommercial site with no ads/subscriptions. Open-Meteo
+  has service limits; browser views use the published cache, not API calls.
+  Copernicus credit and DOI 10.48670/mds-00373 (waves) and 10.48670/mds-00359
+  (salinity) remain visible. No Stormglass dependency or paid service.
+
+Sources: https://data.marine.copernicus.eu/product/MEDSEA_ANALYSISFORECAST_WAV_006_017/description
+and https://marine.copernicus.eu/user-corner/service-commitments-and-licence ;
+https://open-meteo.com/en/docs/marine-weather-api and https://open-meteo.com/en/terms .
