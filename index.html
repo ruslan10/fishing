@@ -293,7 +293,6 @@ function modelComparison(bd,day){
     </header>
     <div class="tabs">${beachesCfg.regions.map(r=>`<div class="tab ${r.id===curRegion?'on':''}" data-region="${r.id}">${r.name_he}</div>`).join('')}</div>
     <select class="beachsel" aria-label="בחירת חוף">${regionBeaches.map(b=>`<option value="${b.id}" ${b.id===curBeach?'selected':''}>${b.name_he}</option>`).join('')}</select>
-    ${imsCard(curRegion)}
       <h3 class="sec">בחירת יום · מגמות והשוואה לשבוע</h3>
       <div class="card"><div class="days">${bd.days.map((d,i)=>{
         const wd = HEB_DAYS[new Date(d.date+'T12:00:00').getDay()];
@@ -306,6 +305,7 @@ function modelComparison(bd,day){
           ${latest.meta.version>=5?'':mini(waveC,waveRangeCm(d.wave_min,d.wave_max)||'חסר','מודל גלים · ס״מ')}
           ${mini(windC,vl==null?'חסר':`<bdi>${Math.round(maxWind)}</bdi>`,'מודל רוח · קמ״ש')}</div>`;
       }).join('')}</div></div>
+    ${imsCard(curRegion)}
     ${weeklyWaveChart(bd)}
     ${modelComparison(bd,bd?.days?.[Math.min(curDay,(bd?.days?.length||1)-1)])}
 `;
