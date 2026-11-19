@@ -115,9 +115,16 @@ function windAdj(deg){
 const ICON_UMB = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M23 12a11.05 11.05 0 0 0-22 0z"/><path d="M18 19a3 3 0 0 1-6 0v-7"/></svg>';
 const ICON_DROP = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#67e8f9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>';
 const ICON_THERM = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fb923c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/></svg>';
-function wxLine(w){
+function windowDaylight(w,day){
+  if(!day?.sunrise||!day?.sunset)return w.is_day;
+  const mins=t=>{const[h,m]=t.split(':').map(Number);return h*60+m;};
+  const start=mins(w.from),end0=mins(w.to),end=end0<=start?end0+1440:end0;
+  const daylight=Math.max(0,Math.min(end,mins(day.sunset))-Math.max(start,mins(day.sunrise)));
+  return daylight>=(end-start)/2?1:0;
+}
+function wxLine(w,day){
   const items = [];
-  const ic = wxIcon(w.wx_code, w.is_day);
+  const ic = wxIcon(w.wx_code, windowDaylight(w,day));
   if(ic) items.push(`<span class="wxi" title="מצב שמיים">${ic}</span>`);
   if(w.air_temp!=null) items.push(`<span class="wxi">${ICON_THERM}<bdi class="ltr">${Math.round(w.air_temp)}°</bdi></span>`);
   if(w.precip!=null) items.push(`<span class="wxi">${ICON_UMB}<bdi class="ltr">${w.precip} מ״מ</bdi></span>`);
@@ -285,7 +292,7 @@ function imsCard(region){
         <td>${(()=>{ const t=windRangeKmh(w); return t?`<div class="condition-cell">${stateChip(windCat(w.wind_max_kmh??w.wind_kmh))}<div>${t} קמ״ש</div>${w.wind_dir?`<div>מ${w.wind_dir}</div>`:''}</div>`:'חסר'; })()}</td>
         <td>${w.current_vel!=null&&w.current_vel>0.01?w.current_vel+' קמ״ש '+(w.current_dir?'ל'+w.current_dir:''):'—'}</td>
         <td style="vertical-align:middle">${(()=>{const score=windowScore(w.wave_height,w.wind_kmh,w.gust_kmh);return `<div title="ציון ניסיוני לגלים ורוח, לא הסתברות תפיסה ולא דירוג בטיחות" style="display:flex;align-items:center;justify-content:center;gap:6px"><bdi class="ltr" style="font-size:13px;font-weight:800;color:${scoreColor(score)}">${score==null?'—':score}</bdi><span class="bar" style="display:inline-block;min-width:0;width:38px;flex:0 0 38px"><i style="width:${score??0}%;background:${scoreColor(score)}"></i></span></div>`})()}</td></tr>
-        <tr class="wxsub ${isPast?'past':''}"><td colspan="5">${wxLine(w)}</td></tr>`;}).join('')}
+        <tr class="wxsub ${isPast?'past':''}"><td colspan="5">${wxLine(w,day)}</td></tr>`;}).join('')}
       </table>`}</div>
 
       <h3 class="sec">דגי טורפים · ז'ירז'ור מהחוף</h3>
