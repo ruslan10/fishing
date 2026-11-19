@@ -295,7 +295,7 @@ function modelComparison(bd,day){
     <select class="beachsel" aria-label="בחירת חוף">${regionBeaches.map(b=>`<option value="${b.id}" ${b.id===curBeach?'selected':''}>${b.name_he}</option>`).join('')}</select>
     ${imsCard(curRegion)}
       <h3 class="sec">בחירת יום · מגמות והשוואה לשבוע</h3>
-      <div class="card"><div style="font-size:10px;opacity:.65;margin-bottom:6px">מעבר לכיסוי IMS אין כאן תחזית גובה מאומתת בחוף</div><div class="days">${bd.days.map((d,i)=>{
+      <div class="card"><div class="days">${bd.days.map((d,i)=>{
         const wd = HEB_DAYS[new Date(d.date+'T12:00:00').getDay()];
         const maxWind=d.wind_max_kmh??Math.max(...d.windows.map(w=>w.wind_max_kmh??w.wind_kmh).filter(x=>x!=null));
         const wl=waveLevel(d.wave_max), vl=Number.isFinite(maxWind)?windLevel(maxWind):null;
