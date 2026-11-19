@@ -135,3 +135,15 @@ table.win tr:not(.wxsub) > td { vertical-align:top; }
 /* Keep official state labels compact rather than stretching into vertical pills. */
 table.win .stchip { white-space:nowrap; font-size:9px; padding:2px 5px; }
 table.win .condition-cell > bdi { font-size:11px; }
+@media (max-width:400px) {
+  .winwrap { padding-left:5px; padding-right:5px; }
+  table.win { min-width:0; table-layout:fixed; font-size:11px; }
+  table.win th, table.win td { padding-left:2px; padding-right:2px; overflow-wrap:break-word; }
+  table.win th:nth-child(1) { width:27%; }
+  table.win th:nth-child(2) { width:18%; }
+  table.win th:nth-child(3) { width:22%; }
+  table.win th:nth-child(4) { width:19%; }
+  table.win th:nth-child(5) { width:14% !important; }
+  table.win td:last-child > div { flex-direction:column; gap:4px !important; }
+  table.win td:last-child .bar { flex:0 0 6px !important; width:28px !important; min-width:0; }
+}
