@@ -311,6 +311,11 @@ async function main() {
         const wv = cells.map(x => x.wave_height).filter(x => x != null);
         win.wave_min = wv.length ? round(Math.min(...wv), 2) : null;
         win.wave_max = wv.length ? round(Math.max(...wv), 2) : null;
+        // Sustained-wind min/max from the window's hourly values, same honest-range approach.
+        // Gusts stay separate (gust_kmh) and are never folded into this sustained range.
+        const wn = cells.map(x => x.wind_kmh).filter(x => x != null);
+        win.wind_min_kmh = wn.length ? round(Math.min(...wn)) : null;
+        win.wind_max_kmh = wn.length ? round(Math.max(...wn)) : null;
         // For the issue day, windows that already ended are marked past and excluded from recommendations.
         win.past = (date === issueDate) && (start + 2 <= issueHour);
         windows.push(win);

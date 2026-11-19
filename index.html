@@ -27,6 +27,13 @@ function waveRangeCm(lo, hi){
   const loCm = Math.round(lo*100), hiCm = Math.round(hi*100);
   return loCm===hiCm ? `<bdi class="ltr">${hiCm}</bdi>` : `<bdi class="ltr">${loCm}–${hiCm}</bdi>`;
 }
+// Sustained-wind range inside a window (km/h), same honest-range approach as waves; gusts stay separate.
+function windRangeKmh(w){
+  const lo = w.wind_min_kmh ?? w.wind_kmh, hi = w.wind_max_kmh ?? w.wind_kmh;
+  if(lo==null||hi==null) return null;
+  const a = Math.round(lo), b = Math.round(hi);
+  return a===b ? `<bdi class="ltr">${b}</bdi>` : `<bdi class="ltr">${a}–${b}</bdi>`;
+}
 // Sea state with official IMS Hebrew terms (CodesForIMSWebSite, matching Douglas degrees),
 // classified by the displayed rounded cm so label and number always agree.
 function seaStateCm(cm){
@@ -244,7 +251,7 @@ function imsCard(region){
             return `<div class="hg"><div class="k">גלים (טווח היום)</div><div class="v">${r?r+' ס״מ '+stateChip(seaStateCm(Math.round(hi*100))):'חסר'}</div></div>`; })()}
           ${(()=>{ if(!repWind||repWind.wind_kmh==null) return `<div class="hg"><div class="k">רוח (בוקר)</div><div class="v">חסר</div></div>`;
             const adj = windAdj(repWind.wind_deg);
-            return `<div class="hg"><div class="k">רוח (בוקר)</div><div class="v" style="display:flex;align-items:center;gap:6px">${windIcon(repWind.wind_deg)}<span>${Math.round(repWind.wind_kmh)} קמ״ש</span>${stateChip(windCat(repWind.wind_kmh))}</div><div style="font-size:11px;font-weight:400;opacity:.75;margin-top:2px">${adj?'רוח '+adj:''}</div></div>`; })()}
+            return `<div class="hg"><div class="k">רוח (בוקר)</div><div class="v" style="display:flex;align-items:center;gap:6px">${windIcon(repWind.wind_deg)}<span>${windRangeKmh(repWind)} קמ״ש</span>${stateChip(windCat(repWind.wind_max_kmh??repWind.wind_kmh))}</div><div style="font-size:11px;font-weight:400;opacity:.75;margin-top:2px">${adj?'רוח '+adj:''}</div></div>`; })()}
           <div class="hg"><div class="k">מי ים</div><div class="v">${day.sst_avg!=null?day.sst_avg.toFixed(1)+'°':'חסר'}</div></div>
           <div class="hg"><div class="k">ירח</div><div class="v" style="display:flex;flex-direction:column;align-items:flex-start;gap:2px">${moonIcon(day.moon_illumination_pct, day.moon_waxing)}<span style="font-size:11px;font-weight:400;opacity:.75">${day.moon_illumination_pct}% מואר</span></div></div>
         </div>
@@ -264,7 +271,7 @@ function imsCard(region){
       <tr><th>שעות</th><th>גלים</th><th>רוח</th><th>זרם</th><th style="width:64px">תנאים</th></tr>
       ${((!issueParam&&day.date===today)?day.windows.filter(w=>w.fromHour+2>nowIL().hour):day.windows).map(w=>{ const nw = nowIL(); const isPast = w.past || day.date<nw.date || (day.date===nw.date && w.fromHour+2<=nw.hour);
         return `<tr class="${isPast?'past':''}"><td><span dir="ltr">${w.from}–${w.to}</span></td><td>${(()=>{ const lo=w.wave_min??w.wave_height, hi=w.wave_max??w.wave_height; const r=waveRangeCm(lo,hi); return r?`<span style="font-weight:700">${r}</span> ס״מ ${stateChip(seaStateCm(Math.round(hi*100)))}`:na(null); })()}</td>
-        <td>${w.wind_kmh!=null?Math.round(w.wind_kmh)+' קמ״ש '+(w.wind_dir?'מ'+w.wind_dir:'')+' '+stateChip(windCat(w.wind_kmh)):'חסר'}</td>
+        <td>${(()=>{ const t=windRangeKmh(w); return t?t+' קמ״ש '+(w.wind_dir?'מ'+w.wind_dir:'')+' '+stateChip(windCat(w.wind_max_kmh??w.wind_kmh)):'חסר'; })()}</td>
         <td>${w.current_vel!=null&&w.current_vel>0.01?w.current_vel+' קמ״ש '+(w.current_dir?'ל'+w.current_dir:''):'—'}</td>
         <td><div style="display:flex;flex-direction:column;align-items:stretch;gap:3px"><span style="font-size:11px;font-weight:700;color:${scoreColor(w.score)};text-align:center">${condWord(w.score)}</span>
         <span class="bar" style="min-width:0"><i style="width:${w.score||0}%;background:${scoreColor(w.score)}"></i></span></div></td></tr>
