@@ -333,6 +333,7 @@ async function main() {
       const dayBand = dayScore == null ? 'insufficient' : dayScore >= 70 ? 'high' : dayScore >= 45 ? 'medium' : 'low';
       const daySst = avg(hours.map(x => x.sst));
       const dayAir = hours.map(x => x.air_temp).filter(x => x != null);
+      const dayPres = hours.map(x => x.pressure).filter(x => x != null);
       const dayWaves = hours.map(x => x.wave_height).filter(x => x != null);
       const maxWave = dayWaves.length ? Math.max(...dayWaves) : 0;
       const minWave = dayWaves.length ? Math.min(...dayWaves) : null;
@@ -354,6 +355,8 @@ async function main() {
         sst_avg: daySst,
         air_temp_min: dayAir.length ? round(Math.min(...dayAir)) : null,
         air_temp_max: dayAir.length ? round(Math.max(...dayAir)) : null,
+        pressure_min: dayPres.length ? round(Math.min(...dayPres)) : null,
+        pressure_max: dayPres.length ? round(Math.max(...dayPres)) : null,
         windows,
         species
       };
