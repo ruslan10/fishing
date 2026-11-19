@@ -222,7 +222,7 @@ function imsCard(region){
           <div class="bdg ${bcls}" style="font-size:9px;margin-top:3px">${BAND_SHORT[d.day_band]||'?'}</div></div>`;
       }).join('')}</div></div>
     <div class="tabs">${beachesCfg.regions.map(r=>`<div class="tab ${r.id===curRegion?'on':''}" data-region="${r.id}">${r.name_he}</div>`).join('')}</div>
-    <div class="chips">${regionBeaches.map(b=>`<span class="chip ${b.id===curBeach?'on':''}" data-beach="${b.id}">${b.name_he}</span>`).join('')}</div>`;
+    <select class="beachsel" aria-label="בחירת חוף">${regionBeaches.map(b=>`<option value="${b.id}" ${b.id===curBeach?'selected':''}>${b.name_he}</option>`).join('')}</select>`;
 
     if(!bd || bd.missing){
       html += `<div class="card hero"><h2>${bc?bc.name_he:''}</h2><div class="stale-strip">${bd?bd.missing_note_he:'אין נתונים לחוף זה בהפקה הנוכחית'}</div></div>`;
@@ -300,7 +300,7 @@ function imsCard(region){
 
     app.innerHTML = html;
     app.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{curRegion=t.dataset.region;curBeach=null;curDay=-1;render();});
-    app.querySelectorAll('.chip').forEach(c=>c.onclick=()=>{curBeach=c.dataset.beach;curDay=-1;render();});
+    app.querySelector('.beachsel').onchange=e=>{curBeach=e.target.value;curDay=-1;render();};
     app.querySelectorAll('.day').forEach(d=>d.onclick=()=>{curDay=+d.dataset.day;curDate=bd.days[curDay]?bd.days[curDay].date:null;render();});
   }
   try { render(); } catch(e){ app.innerHTML = 'שגיאה בטעינת הנתונים: '+e.message; }
