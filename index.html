@@ -245,7 +245,6 @@ function imsCard(region){
       html += `<div class="card hero">
         <h2>${bc.name_he} · ${day.date===today?'היום':day.date} <span style="font-weight:400;font-size:11px;opacity:.6">${bc.terrain_he}</span></h2>
         ${bd.stale?`<div class="stale-strip">${bd.stale_note_he} (${bd.original_issued_at||''})</div>`:''}
-        ${bc.caution_he?`<div class="warn-strip" style="background:var(--warn-bg);color:var(--warn-fg)">⚠ ${bc.caution_he}</div>`:''}
         <div class="hero-grid">
           ${(()=>{ const lo=day.wave_min??wmin, hi=day.wave_max??wmax; const r=waveRangeCm(lo,hi);
             return `<div class="hg"><div class="k">גלים (טווח היום)</div><div class="v">${r?r+' ס״מ '+stateChip(seaStateCm(Math.round(hi*100))):'חסר'}</div></div>`; })()}
