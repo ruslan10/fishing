@@ -125,3 +125,7 @@ tr.wxsub td { padding: 0 8px 7px; border-top: none; }
 .imsslot .imst { font-weight: 700; margin-left: 6px; }
 .imsattr { font-size: 10px; opacity: .65; margin-top: 6px; line-height: 1.6; }
 .imsfoot { font-size: 11.5px; opacity: .85; line-height: 1.7; }
+
+.condition-cell { display:flex; flex-direction:column; align-items:flex-start; gap:4px; }
+
+table.win tr:not(.wxsub) > td { vertical-align:top; }

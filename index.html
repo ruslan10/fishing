@@ -279,8 +279,8 @@ function imsCard(region){
       <div class="card winwrap">${!day.windows?.length?'<div style="padding:14px;font-size:12.5px;opacity:.75">אין נתוני חלונות ליום זה בהפקה הנוכחית.</div>':`<table class="win">
       <tr><th>שעות</th><th>גלים</th><th>רוח</th><th>זרם</th></tr>
       ${((!issueParam&&day.date===today)?day.windows.filter(w=>w.fromHour+((+w.to.slice(0,2))-w.fromHour+24)%24>nowIL().hour):day.windows).map(w=>{ const nw = nowIL(); const spanH = ((+w.to.slice(0,2))-w.fromHour+24)%24; const isPast = w.past || day.date<nw.date || (day.date===nw.date && w.fromHour+spanH<=nw.hour);
-        return `<tr class="${isPast?'past':''}"><td><span dir="ltr">${w.from}–${w.to}</span></td><td>${(()=>{ const lo=w.wave_min??w.wave_height, hi=w.wave_max??w.wave_height; const r=waveRangeCm(lo,hi); return r?`<span style="font-weight:700">${r}</span> ס״מ ${stateChip(seaStateCm(Math.round(hi*100)))}`:na(null); })()}</td>
-        <td>${(()=>{ const t=windRangeKmh(w); return t?t+' קמ״ש '+(w.wind_dir?'מ'+w.wind_dir:'')+' '+stateChip(windCat(w.wind_max_kmh??w.wind_kmh)):'חסר'; })()}</td>
+        return `<tr class="${isPast?'past':''}"><td><span dir="ltr">${w.from}–${w.to}</span></td><td>${(()=>{ const lo=w.wave_min??w.wave_height, hi=w.wave_max??w.wave_height; const r=waveRangeCm(lo,hi); return r?`<div class="condition-cell">${stateChip(seaStateCm(Math.round(hi*100)))}<div><span style="font-weight:700">${r}</span> ס״מ</div></div>`:na(null); })()}</td>
+        <td>${(()=>{ const t=windRangeKmh(w); return t?`<div class="condition-cell">${stateChip(windCat(w.wind_max_kmh??w.wind_kmh))}<div>${t} קמ״ש</div>${w.wind_dir?`<div>מ${w.wind_dir}</div>`:''}</div>`:'חסר'; })()}</td>
         <td>${w.current_vel!=null&&w.current_vel>0.01?w.current_vel+' קמ״ש '+(w.current_dir?'ל'+w.current_dir:''):'—'}</td>
         </tr>
         <tr class="wxsub ${isPast?'past':''}"><td colspan="4">${wxLine(w)}</td></tr>`;}).join('')}
