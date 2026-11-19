@@ -119,3 +119,10 @@ numbers and model-based condition scores are withheld in schema-v5 views; beyond
 IMS coverage the hourly wave cell directs readers to the comparison rather than
 pretending to have a validated coastal forecast. Raw source provenance and dated
 issue files remain unchanged. GoSurf is not ingested or republished.
+
+### Hourly wave values restored, 19 Nov 2026
+Beyond official IMS coverage, each hourly-table row now directly lists the actual
+Copernicus, ECMWF and GFS height range over that row's hours, source by source.
+This avoids both an empty wave column and a falsely chosen shore-height answer.
+Partial-hour coverage is shown; no values are averaged across models. Official
+fully covered IMS rows keep their official ranges. Conditions scores stay withheld.
