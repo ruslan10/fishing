@@ -460,6 +460,7 @@ function modelComparison(bd,day){
       <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a> · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a> · נתונים עובדו לטווחים ולתצוגה${latest.meta.version>=5?' · מודלי גלים: ECMWF WAM, NOAA GFS Wave':''}${latest.meta.version>=5?`<br>גלי הים התיכון: Generated using E.U. Copernicus Marine Service Information · <a href="https://doi.org/10.48670/mds-00373" target="_blank" rel="noopener">DOI 10.48670/mds-00373</a>`:''}${latest.ims?.available?` · תחזית חופים רשמית: השירות המטאורולוגי הישראלי (שמ״ט), ims.gov.il - אינו נושא באחריות למידע או לשימוש בו, ואינו צד לפרסומו`:''}${latest.beaches?.some(b=>b.days?.some(d=>d.salinity_min!=null))?`<br>מליחות: Generated using E.U. Copernicus Marine Service Information · <a href="https://doi.org/10.48670/mds-00359" target="_blank" rel="noopener">DOI 10.48670/mds-00359</a>`:''}<br>
       תחזית ניסיונית לתכנון בלבד - לא אחוז תפיסה ולא הבטחה לבטיחות; בדקו תקנות דיג לפני היציאה.<br>
       הופק ${latest.meta.issued_at_local.replace('T',' · ')} · רענון נתונים מתוכנן כל 3 שעות
+      <br><span style="display:inline-block;margin-top:10px">© 2026 <bdi>Ruslan Medov</bdi> · כל הזכויות שמורות לעיצוב האתר ולקוד המקורי.<br>נתוני צד שלישי כפופים לרישיונות המקור.</span>
     </footer>`;
 
     if(bd?.days?.length){

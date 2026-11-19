@@ -1,0 +1,29 @@
+Copyright (c) 2026 Ruslan Medov. All rights reserved.
+
+This notice applies only to the original project source code and original site
+layout, to the extent that copyright or other rights in them are held by Ruslan Medov.
+
+No general permission is granted to copy, modify, redistribute, sublicense, sell,
+or otherwise reuse those original materials. Permission must be obtained from
+the rights holder unless the use is permitted by applicable law or by rights
+already granted under the hosting platform's terms. This is a reserved-rights
+notice, not an open-source license.
+
+Third-party exclusions
+
+This notice does not claim ownership of, restrict rights in, or replace the
+licenses and terms for third-party materials, including:
+
+- Forecast, environmental and reference data, including Open-Meteo, Copernicus
+  Marine Service, IMS and other identified upstream sources.
+- Bundled dependencies and their license notices, including Playwright and its
+  dependencies. Existing LICENSE, NOTICE and third-party notice files remain
+  applicable to those materials.
+- Externally served fonts and other third-party assets.
+
+The generated share illustration is not covered by any assertion in this notice
+of exclusive copyright ownership. No warranty of exclusive rights in generated
+material is made.
+
+Existing data attribution, source acknowledgements and third-party terms remain
+in force. Nothing in this notice limits rights or exceptions provided by law.

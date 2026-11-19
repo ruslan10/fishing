@@ -126,3 +126,14 @@ Copernicus, ECMWF and GFS height range over that row's hours, source by source.
 This avoids both an empty wave column and a falsely chosen shore-height answer.
 Partial-hour coverage is shown; no values are averaged across models. Official
 fully covered IMS rows keep their official ranges. Conditions scores stay withheld.
+
+## Rights and third-party materials
+
+Copyright (c) 2026 Ruslan Medov. All rights reserved in the original project code
+and site layout, to the extent rights are held by Ruslan Medov. No general reuse
+permission is granted. See [LICENSE](LICENSE) for the reserved-rights notice and
+its exclusions. This project is not offered under an open-source license.
+
+Third-party data, dependencies, fonts and assets retain their own terms. Existing
+source credits and bundled license/notice files remain applicable. The generated
+share illustration is not covered by an assertion of exclusive copyright.
