@@ -17,3 +17,23 @@ function assessment({day,series={},official=[],stale=false}){
 }
 
 export function fishingAssessment(input){return assessment(input).replace(/[0-9][0-9:–.,]*/g,n=>"\u2066"+n+"\u2069");}
+
+// Low-confidence local heuristic, not a turbidity sensor or validated clarity model.
+// Conservative screening thresholds are disclosed in the popup, not biological rules.
+export function clarityAssessment({day,history,retrievedAt,official=[]}){
+ const rows=history?.hourly||[];
+ // Resolve Israel's offset from the source issue date using Intl, including DST.
+ const probe=new Date(day.date+'T06:00:00Z');const parts=Object.fromEntries(new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Jerusalem',hour:'2-digit',hourCycle:'h23'}).formatToParts(probe).map(x=>[x.type,x.value]));
+ const offset=Number(parts.hour)-6;const cutoff=Date.parse(day.date+'T06:00:00Z')-offset*3600000;
+ const selected=rows.filter(r=>Date.parse(r.time)>=cutoff-48*3600000&&Date.parse(r.time)<cutoff);
+ if(selected.length!==48||selected.some(r=>![r.wave,r.wind,r.rain].every(Number.isFinite)))return 'צלילות המים: אין די נתוני גלים, רוח וגשם ל־48 השעות שלפני הבוקר שנבחר.';
+ const wave=Math.max(...selected.map(r=>r.wave)),wind=Math.max(...selected.map(r=>r.wind)),rain=selected.reduce((a,r)=>a+r.rain,0);const future=selected.some(r=>Date.parse(r.time)>Date.parse(retrievedAt));
+ const context=future?'כולל שעות שעדיין חזויות':'לפי מודל העבר הקרוב';
+ const slots=official.filter(s=>s.valid_from<day.date+' 09:00:00'&&s.valid_to>day.date+' 06:00:00');
+ const regionalWind=slots.length?Math.max(...slots.map(s=>s.wind_speed_to).filter(Number.isFinite)):null;
+ const regionalWave=slots.length?Math.max(...slots.map(s=>s.wave_to_cm).filter(Number.isFinite))/100:null;
+ if((Number.isFinite(regionalWind)&&regionalWind>15)||(Number.isFinite(regionalWave)&&regionalWave>.75))return `הערכת צלילות: לא חד־משמעית. תחזית IMS האזורית כוללת רוח או גלים שעשויים להגביר ערבול, גם אם המודל הנקודתי מתון יותר; לא כדאי לבנות על מים צלולים. זו הערכה בביטחון נמוך, ללא מדידת עכירות.`;
+ if(wave<=.75&&wind<=15&&rain<1)return `הערכת צלילות: אפשרות למים צלולים יחסית, בביטחון נמוך. המודל מצביע על ים ורוח מתונים ומעט גשם ב־48 השעות שלפני הבוקר (${context}); חול מקומי, זרמים או אצות עלולים לשנות זאת.`;
+ if(rain>=1)return `הערכת צלילות: לא חד־משמעית. יש גשם במודל ב־48 השעות שלפני הבוקר (${context}), ולכן נגר עשוי להביא סחף, בעיקר ליד מוצאי נחלים. בלי נתוני אגן הניקוז וזרמים אין בסיס לקבוע שהמים יהיו עכורים.`;
+ return `הערכת צלילות: לא חד־משמעית. הגלים או הרוח אינם מתונים לאורך כל 48 השעות שלפני הבוקר (${context}), ולכן ייתכן ערבול משקע; הקרקעית והזרמים קובעים את ההשפעה בפועל. אין בסיס לקבוע שהמים יהיו עכורים.`;
+}
