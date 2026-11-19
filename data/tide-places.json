@@ -75,5 +75,77 @@
   "lat": 31.66926,
   "lon": 34.57149,
   "reference_distance_km": 2.3
+ },
+ "achziv": {
+  "source_url": "https://www.thetidechart.com/il/northern-district/gesher-haziv",
+  "source_place": "Gesher HaZiv",
+  "lat": 33.03995,
+  "lon": 35.11189,
+  "reference_distance_km": 1.9,
+  "proxy": true,
+  "source_area_he": "גשר הזיו"
+ },
+ "haifa-batgalim": {
+  "source_url": "https://www.thetidechart.com/il/haifa/haifa",
+  "source_place": "Haifa",
+  "lat": 32.81303,
+  "lon": 34.99928,
+  "reference_distance_km": 3.1,
+  "proxy": true,
+  "source_area_he": "חיפה"
+ },
+ "olga": {
+  "source_url": "https://www.thetidechart.com/il/haifa/hadera",
+  "source_place": "Hadera",
+  "lat": 32.44192,
+  "lon": 34.9039,
+  "reference_distance_km": 2.5,
+  "proxy": true,
+  "source_area_he": "חדרה"
+ },
+ "telaviv-frishman": {
+  "source_url": "https://www.thetidechart.com/il/tel-aviv/tel-aviv",
+  "source_place": "Tel Aviv",
+  "lat": 32.08088,
+  "lon": 34.78057,
+  "reference_distance_km": 1.5,
+  "proxy": true,
+  "source_area_he": "תל אביב"
+ },
+ "jaffa": {
+  "source_url": "https://www.thetidechart.com/il/tel-aviv/bat-yam",
+  "source_place": "Bat Yam",
+  "lat": 32.02379,
+  "lon": 34.75185,
+  "reference_distance_km": 2.6,
+  "proxy": true,
+  "source_area_he": "בת ים"
+ },
+ "palmachim": {
+  "source_url": "https://www.thetidechart.com/il/central-district/yavne",
+  "source_place": "Yavne",
+  "lat": 31.87808,
+  "lon": 34.73983,
+  "reference_distance_km": 6.5,
+  "proxy": true,
+  "source_area_he": "יבנה"
+ },
+ "nitzanim": {
+  "source_url": "https://www.thetidechart.com/il/southern-district/ashdod",
+  "source_place": "Ashdod",
+  "lat": 31.79213,
+  "lon": 34.64966,
+  "reference_distance_km": 7.0,
+  "proxy": true,
+  "source_area_he": "אשדוד"
+ },
+ "zikim": {
+  "source_url": "https://www.thetidechart.com/il/southern-district/ashkelon",
+  "source_place": "Ashkelon",
+  "lat": 31.66926,
+  "lon": 34.57149,
+  "reference_distance_km": 8.9,
+  "proxy": true,
+  "source_area_he": "אשקלון"
  }
 }

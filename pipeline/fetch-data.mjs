@@ -36,7 +36,7 @@ const DATA_AVAILABILITY = {
   available_he: [
     'גובה גלים', 'טמפרטורת מי הים',
     'מהירות וכיוון זרם (ערכים קטנים ליד החוף; שימושיות לדיג לא אומתה)',
-    'זמני גאות ושפל אסטרונומיים: 11 יישובים תואמים; תחזית לאזור, לא מדידה בנקודת החוף. בשאר החופים חסר',
+    'זמני גאות ושפל אסטרונומיים: תחזית לאזור, לא מדידה בנקודת החוף. באין יישוב תואם נעשה שימוש באזור סמוך המסומן בתצוגה',
     'רוח וכיוון רוח',
     'מזג אוויר: טמפרטורת אוויר, לחות, משקעים ומצב שמיים לכל חלון',
     'זריחה/שקיעה ואור ראשון/אחרון (מחושב)', 'מלוא ירח (מחושב)'
@@ -486,7 +486,7 @@ async function main() {
         comparison:['ecmwf_wam','ncep_gfswave025'],
         spread:'largest simultaneous hourly spread, never a calibrated confidence interval',
         copernicus_retrieved_at:cpWaves?.generated_at??null},
-      tide_policy: {source:'The Tide Chart',model:'FES2022',acquisition:'monthly cached quotation; original retrieval time preserved',coverage:'matched named localities only, not exact shoreline measurements',missing_beaches:outBeaches.filter(b=>!b.days?.some(d=>d.tides?.available)).map(b=>b.id)},
+      tide_policy: {source:'The Tide Chart',model:'FES2022',acquisition:'monthly cached quotation; original retrieval time preserved',coverage:'11 matched named localities plus 8 explicitly labeled nearest-locality proxies, not exact shoreline measurements',missing_beaches:outBeaches.filter(b=>!b.days?.some(d=>d.tides?.available)).map(b=>b.id)},
       sources: [
         {name:'The Tide Chart tide predictions',url:'https://www.thetidechart.com/terms',license:'Prediction quotation with source-page backlink'},
         {name:'Copernicus Mediterranean Waves (MED-WAV WAM Cycle 6)',url:'https://data.marine.copernicus.eu/product/MEDSEA_ANALYSISFORECAST_WAV_006_017/description',doi:'10.48670/mds-00373',license:'Copernicus Marine Service licence'},

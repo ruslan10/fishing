@@ -15,7 +15,7 @@ export function loadTides(root){
    if(c.timezone!=='Asia/Jerusalem'||c.source_url!==place.source_url||!Object.hasOwn(c.days,date))throw Error('date or source mismatch');
    const events=c.days[date];
    if(!Array.isArray(events)||events.some(e=>!['high','low'].includes(e.type)||!/^(?:[01]\d|2[0-3]):[0-5]\d$/.test(e.time)))throw Error('invalid events');
-   return {available:true,events,timezone:c.timezone,source_url:c.source_url,source_place:c.source_place,source_lat:c.lat,source_lon:c.lon,reference_distance_km:c.reference_distance_km,model:c.model,kind:c.kind,retrieved_at:c.retrieved_at,coverage_note_he:'תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף'};
+   return {available:true,events,proxy:!!place.proxy,source_area_he:place.source_area_he??null,timezone:c.timezone,source_url:c.source_url,source_place:c.source_place,source_lat:c.lat,source_lon:c.lon,reference_distance_km:c.reference_distance_km,model:c.model,kind:c.kind,retrieved_at:c.retrieved_at,coverage_note_he:'תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף'};
   }catch{return {available:false,reason:'source_date_unavailable'};}
  };
 }

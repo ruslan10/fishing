@@ -16,6 +16,14 @@ for beach,place in config.items():
   file=CACHE/(beach+'-'+month+'.json')
   if file.exists():continue
   url=place['source_url']
+  # Several beaches can quote one locality. Reuse that locality/month cache.
+  shared=None
+  for candidate in CACHE.glob('*-'+month+'.json'):
+   cached=json.loads(candidate.read_text())
+   if cached.get('source_url')==url:
+    shared={**cached,**place};break
+  if shared is not None:
+   file.write_text(json.dumps(shared,ensure_ascii=False,indent=1)+'\n');continue
   try:
    # The ordinary page contains its current month. The public month selector
    # uses the same source URL plus /month/YYYY-MM?v=3 for adjacent months.

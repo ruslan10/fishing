@@ -41,7 +41,7 @@
 
 <script id="release-check">
 (()=>{
- const current='0d89c7bd25988dadc0ad';let checking=false;
+ const current='20295cd6d0810df4aa60';let checking=false;
  async function check(){
   if(checking||document.hidden||document.querySelector('dialog[open]')||!navigator.onLine)return;
   checking=true;
@@ -464,6 +464,7 @@ function modelComparison(bd,day){
         </div>
         <div class="tide-strip" style="display:grid;grid-template-columns:1fr 1fr;gap:8px;background:var(--inset-bg);border-radius:12px;padding:12px;margin-top:8px">
           ${['high','low'].map(kind=>`<div><div style="font-size:11px;opacity:.72">${kind==='high'?'גאות':'שפל'}</div><div style="font-size:16px;font-weight:600;margin-top:3px" dir="ltr">${day.tides?.available?day.tides.events.filter(e=>e.type===kind).map(e=>e.time).join(' · ')||'אין ביום זה':'חסר'}</div></div>`).join('')}
+          ${day.tides?.proxy?`<div style="grid-column:1/-1;font-size:10px;opacity:.65">לפי אזור ${day.tides.source_area_he}</div>`:''}
         </div>
         ${latest.meta.version<5&&day.high_wave_warning?`<div class="warn-strip">⚠ גלים גבוהים (עד ${day.wave_max.toFixed(1)} מ׳) - זהירות מוגברת בחוף</div>`:''}
       </div>
