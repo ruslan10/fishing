@@ -8,6 +8,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="theme.css?v=ae2db27991f1">
 <style>
+.day-wind-arrow svg {background:#0b1825;border-radius:50%;padding:2px;width:22px;height:22px;box-sizing:border-box}
+.day.sel .day-wind-arrow svg {background:#102131;box-shadow:0 0 0 1px #334e68}
 .wind-help {display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;padding:5px;margin-inline-start:4px;border:1px solid var(--border);border-radius:50%;background:var(--inset-bg);color:var(--accent);cursor:pointer;vertical-align:middle}
 .wind-help:focus-visible {outline:2px solid var(--accent);outline-offset:3px}
 .wind-dialog {position:fixed;inset:0;margin:auto;max-height:calc(100dvh - 36px);overflow-y:auto;width:min(360px,calc(100vw - 36px));box-sizing:border-box;border:1px solid var(--border);border-radius:18px;padding:22px;background:var(--card-bg,#102131);color:var(--fg,#e2e8f0);font:14px/1.8 Heebo,sans-serif;text-align:right}
