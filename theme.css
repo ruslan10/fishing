@@ -153,3 +153,42 @@ table.win th, table.win td { text-align:center; }
 table.win tr:not(.wxsub) > td { vertical-align:top; }
 table.win .condition-cell { align-items:center; text-align:center; }
 table.win .window-model-heights { text-align:center; }
+
+/* Dark is the default. Light applies only after an explicit saved choice. */
+:root { color-scheme:dark; --border:var(--card-border); }
+:root[data-theme="light"] {
+ color-scheme:light;
+ --bg:#f2f6fa;--fg:#172e42;--card-bg:#ffffff;--card-border:#c9d8e5;--accent:#007394;--accent-fg:#fff;--accent-2:#b76400;--accent-2-fg:#fff;
+ --chip-bg:#e6eef5;--chip-fg:#36536b;--chip-border:#c9d8e5;--inset-bg:#edf3f8;--row-border:#d3dfe9;--bar-bg:#d3dfe9;
+ --ok-bg:#d6f4e6;--ok-fg:#08613d;--warn-bg:#fff0cb;--warn-fg:#775000;--off-bg:#ffe4df;--off-fg:#973121;--best-bg:#d6f4e6;--best-fg:#08613d;--sample-bg:#fff0cb;--sample-fg:#775000;
+}
+html[data-theme="light"] body {background:var(--bg)}
+.theme-toggle{border:1px solid var(--card-border);background:var(--inset-bg);color:var(--fg);border-radius:10px;font-size:21px;line-height:1;min-width:44px;min-height:44px;cursor:pointer}
+html[data-theme="light"] .wxline{color:var(--fg)}
+html[data-theme="light"] .imstitle{color:#006684}
+html[data-theme="light"] .day-wind-arrow svg,html[data-theme="light"] .day.sel .day-wind-arrow svg{background:#1b334a}
+html[data-theme="light"] .wind-dialog button{color:white}
+html[data-theme="light"] .weekly-wavechart svg text{fill:#36536b}
+html[data-theme="light"] .ims-wave-band rect{stroke:#08734f;fill:#08734f}
+html[data-theme="light"] .weekly-wavechart [style*="color:#a7f3d0"]{color:#08734f!important}
+html[data-theme="light"] .window-model-heights>span{color:#51677a!important}
+html[data-theme="light"] svg[stroke="#67e8f9"],html[data-theme="light"] svg[stroke="#60a5fa"]{stroke:#007394}
+html[data-theme="light"] .weekly-wavechart path[stroke="#38bdf8"]{stroke:#007394}
+html[data-theme="light"] .weekly-wavechart [stroke="#38c5ef"]{stroke:#007b9e}
+html[data-theme="light"] .weekly-wavechart [stroke="#e4b45a"]{stroke:#956000}
+html[data-theme="light"] .weekly-wavechart [stroke="#c69af5"]{stroke:#8c46b8}
+html[data-theme="light"] .weekly-wavechart [style*="color:#38c5ef"]{color:#007b9e!important}
+html[data-theme="light"] .weekly-wavechart [style*="color:#e4b45a"]{color:#956000!important}
+html[data-theme="light"] .weekly-wavechart [style*="color:#c69af5"]{color:#8c46b8!important}
+html[data-theme="light"] .beachsel{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath d='M5 7.5L10 12.5L15 7.5' fill='none' stroke='%2336536b' stroke-width='2'/%3E%3C/svg%3E")}
+/* Light weekly selector: pastel strengths, no orange selected-day fill. */
+html[data-theme="light"] .day.sel{background:#e8f3f7;color:var(--fg);outline:2px solid #007394;outline-offset:0}
+html[data-theme="light"] .day.sel .dd{opacity:.8}
+html[data-theme="light"] .day-condition.level-green{background:#d8eee3!important;color:#17583d!important}
+html[data-theme="light"] .day-condition.level-yellow{background:#f7edc5!important;color:#665000!important}
+html[data-theme="light"] .day-condition.level-orange{background:#f8dfc7!important;color:#804011!important}
+html[data-theme="light"] .day-condition.level-red{background:#f3d7d7!important;color:#8b2929!important}
+html[data-theme="light"] .day-condition.level-black{background:#354555!important;color:#fff!important}
+html[data-theme="light"] .day-wind-arrow svg,html[data-theme="light"] .day.sel .day-wind-arrow svg{background:#e0eaf2;box-shadow:none}
+html[data-theme="light"] .day-wind-arrow svg g{stroke:#345c7a}
+html[data-theme="light"] .day-wind-arrow svg circle{stroke:#a9bdcd}

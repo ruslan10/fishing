@@ -1,10 +1,13 @@
 {
-  "version": "20295cd6d0810df4aa60",
+  "version": "3102459455f13602de0a",
   "assets": {
     "assets/fishing-share-v2.jpg": "static/fishing-share-v2.a6583fd38decea44.jpg",
+    "assets/pwa-icon-180-v1.png": "static/pwa-icon-180-v1.fcd392416866f67b.png",
     "condition-scale.mjs": "static/condition-scale.f2eb3f77e82970ce.mjs",
     "experimental-score.mjs": "static/experimental-score.2f87b4cdcf8e20cd.mjs",
     "fishing-assessment.mjs": "static/fishing-assessment.529e4fa7330b49a7.mjs",
-    "theme.css": "static/theme.e219e76aa162eea1.css"
+    "pwa.js": "static/pwa.2d1c043042ea02d7.js",
+    "theme-toggle.js": "static/theme-toggle.d5478dcea227d57d.js",
+    "theme.css": "static/theme.ee79bd23c0c8dde0.css"
   }
 }

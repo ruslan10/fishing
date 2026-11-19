@@ -2,7 +2,14 @@
 <html lang="he" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#071827">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="תחזית דייג">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="apple-touch-icon" href="./static/pwa-icon-180-v1.fcd392416866f67b.png">
+<script src="./static/pwa.2d1c043042ea02d7.js" defer></script>
 <title>תחזית דייג - תחזית דיג לחופי ישראל</title>
 <meta name="description" content="תחזית דייג לחופי ישראל: גלים, רוח ותנאי הים לפי חוף ויום.">
 <meta property="og:type" content="website">
@@ -25,8 +32,11 @@
 
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎣</text></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./static/theme.e219e76aa162eea1.css">
+<script src="./static/theme-toggle.d5478dcea227d57d.js"></script>
+<link rel="stylesheet" href="./static/theme.ee79bd23c0c8dde0.css">
 <style>
+.pwa-install{font:600 12px Heebo,sans-serif;border:1px solid var(--border);border-radius:10px;background:var(--inset-bg);color:var(--fg);padding:10px 12px;min-height:44px;cursor:pointer}.pwa-install[hidden]{display:none}#pwa-offline{position:sticky;top:0;z-index:1000;padding:10px 16px;background:#443518;color:#fff0cc;text-align:center;font:13px/1.5 Heebo,sans-serif}@media(display-mode:standalone){body{padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}.pwa-install{display:none}}
+
 .day-wind-arrow svg {background:#0b1825;border-radius:50%;padding:2px;width:22px;height:22px;box-sizing:border-box}
 .day.sel .day-wind-arrow svg {background:#102131;box-shadow:0 0 0 1px #334e68}
 .wind-help {display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;padding:5px;margin-inline-start:4px;border:1px solid var(--border);border-radius:50%;background:var(--inset-bg);color:var(--accent);cursor:pointer;vertical-align:middle}
@@ -41,7 +51,7 @@
 
 <script id="release-check">
 (()=>{
- const current='20295cd6d0810df4aa60';let checking=false;
+ const current='3102459455f13602de0a';let checking=false;
  async function check(){
   if(checking||document.hidden||document.querySelector('dialog[open]')||!navigator.onLine)return;
   checking=true;
@@ -232,6 +242,7 @@ async function loadJson(p){
     loadJson('data/beaches.json'), loadJson('data/species.json'),
     loadJson(issueParam ? 'data/issues/'+encodeURIComponent(issueParam)+'.json' : 'data/latest.json')
   ]);
+  appEl.dataset.issueId=latest.meta.issue_id;
   let change48=latest.change48||{days:{}};
   let officialIMS=latest.ims;
   if(!issueParam){ try { officialIMS=await loadJson('data/ims-latest.json'); } catch(e){ officialIMS=latest.ims; } }
@@ -386,7 +397,7 @@ function modelComparison(bd,day){
     const today = new Date().toLocaleDateString('sv-SE',{timeZone:latest.meta.timezone});
 
     let html = `<header>
-      <h1>תחזית דייג</h1>
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px"><h1>תחזית דייג</h1><div style="display:flex;gap:6px;align-items:center"><button type="button" class="theme-toggle" aria-label="מעבר למצב בהיר">☀</button><button type="button" class="pwa-install" aria-label="התקנה למסך הבית">התקנה <span aria-hidden="true">＋</span></button></div></div>
       ${issueParam?`<div class="issued">מוצגת הפקה מהארכיון (${latest.meta.issued_at_local.replace('T',' · ')}) - משמרת את הפרסום כפי שהיה; הערות חוקיות והמלצות עלולות להתיישן ואין לראות בהן היתר דיג עדכני</div>`:''}
       ${!issueParam&&(age.old||(latest.meta.valid_to&&latest.meta.valid_to<nowIL().date))?`<div class="issued"><span style="color:var(--warn-fg)">${age.old?`התחזית בת ${age.hours} שעות - ייתכן שהרענון היומי נכשל`:''}${age.old&&latest.meta.valid_to&&latest.meta.valid_to<nowIL().date?' · ':''}${latest.meta.valid_to&&latest.meta.valid_to<nowIL().date?`תוקף התחזית הסתיים ב-${latest.meta.valid_to} - כל ההמלצות היסטוריות`:''}</span></div>`:''}
     </header>
@@ -402,7 +413,7 @@ function modelComparison(bd,day){
         const morningMax=morningWindow?.wind_max_kmh??morningWindow?.wind_kmh;
         const wl=waveLevel(d.wave_max), vl=Number.isFinite(morningMax)?windLevel(morningMax):null;
         const waveC=wl==null?null:LEVELS[wl],windC=vl==null?null:LEVELS[vl];
-        const mini=(c,value,label)=>`<div style="margin-top:4px;padding:4px 1px;border-radius:7px;font-size:10px;font-weight:800;${c?`background:${c.color};color:${c.ink};${c.id==='black'?'outline:1px solid #94a3b8;':''}`:''}"><div style="font-size:8px;font-weight:400">${label}</div>${value}</div>`;
+        const mini=(c,value,label)=>`<div class="day-condition ${c?'level-'+c.id:''}" style="margin-top:4px;padding:4px 1px;border-radius:7px;font-size:10px;font-weight:800;${c?`background:${c.color};color:${c.ink};${c.id==='black'?'outline:1px solid #94a3b8;':''}`:''}"><div style="font-size:8px;font-weight:400">${label}</div>${value}</div>`;
         return `<div class="day ${d.date===today?'today':''} ${i===curDay?'sel':''}" data-day="${i}" data-date="${d.date}">
           <div class="dd">${wd}</div><div class="dt">${d.date.slice(8,10)}.${d.date.slice(5,7)}</div>
           ${latest.meta.version>=5?'':mini(waveC,waveRangeCm(d.wave_min,d.wave_max)||'חסר','מודל גלים · ס״מ')}
