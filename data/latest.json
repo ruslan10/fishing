@@ -491,7 +491,7 @@
   ]
  },
  "environment_history": {
-  "retrieved_at": "2026-11-19T21:08:47.742075+02:00",
+  "retrieved_at": "2026-11-19T21:17:39.915387+02:00",
   "date": "2026-11-19",
   "cutoff": "2026-11-19T00:00:00+02:00",
   "source_kind": "modeled_recent_past_not_observations",
@@ -28854,9 +28854,9 @@
    "wave_cm": "<50;50..100;>100..<200;200..300;>300",
    "wind_kmh": "<12;12..<20;20..<29;29..<50;>=50"
   },
-  "issue_id": "2026-11-19T21-08-50-77864a",
-  "issued_at_local": "2026-11-19T21:08:50",
-  "issued_at_utc": "2026-11-19T19:08:50.143Z",
+  "issue_id": "2026-11-19T21-17-42-69161f",
+  "issued_at_local": "2026-11-19T21:17:42",
+  "issued_at_utc": "2026-11-19T19:17:42.381Z",
   "timezone": "Asia/Jerusalem",
   "valid_from": "2026-11-19",
   "valid_to": "2026-11-25",
@@ -28868,9 +28868,30 @@
     "ncep_gfswave025"
    ],
    "spread": "largest simultaneous hourly spread, never a calibrated confidence interval",
-   "copernicus_retrieved_at": "2026-11-19T21:08:07+02:00"
+   "copernicus_retrieved_at": "2026-11-19T20:50:58+02:00"
+  },
+  "tide_policy": {
+   "source": "The Tide Chart",
+   "model": "FES2022",
+   "acquisition": "monthly cached quotation; original retrieval time preserved",
+   "coverage": "matched named localities only, not exact shoreline measurements",
+   "missing_beaches": [
+    "achziv",
+    "haifa-batgalim",
+    "olga",
+    "telaviv-frishman",
+    "jaffa",
+    "palmachim",
+    "nitzanim",
+    "zikim"
+   ]
   },
   "sources": [
+   {
+    "name": "The Tide Chart tide predictions",
+    "url": "https://www.thetidechart.com/terms",
+    "license": "Prediction quotation with source-page backlink"
+   },
    {
     "name": "Copernicus Mediterranean Waves (MED-WAV WAM Cycle 6)",
     "url": "https://data.marine.copernicus.eu/product/MEDSEA_ANALYSISFORECAST_WAV_006_017/description",
@@ -28939,7 +28960,7 @@
   },
   "scoring_note_he": "כרטיסי הדגים איכותניים בלבד, בהיקף דיג ז'ירז'ור מהחוף - ללא ציון התאמה מספרי: אין מקור מאומת לספי עונה/שעות/גלים/רוח/טמפרטורה למין. צבע הגלים וצבע הרוח המתמשכת מוצגים בנפרד, לפי השיא היומי או בטווח השעות. עמודת התנאים מחזירה את ציון ההשוואה הניסיוני המקורי 0–100, המחושב מממוצעי החלון ומשבים, בנפרד מסולם הצבעים של המדידות. הסולם מקומי וניסיוני, לא תחזית תפיסה ולא דירוג בטיחות.",
   "stale_beaches": [],
-  "issue_file": "issues/2026-11-19T21-08-50-77864a.json"
+  "issue_file": "issues/2026-11-19T21-17-42-69161f.json"
  },
  "beaches": [
   {
@@ -28948,7 +28969,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T21:08:07+02:00",
+    "retrieved_at": "2026-11-19T20:50:58+02:00",
     "cell_lat": 33.0625,
     "cell_lon": 35.083336,
     "dist_km": 1.9,
@@ -28965,7 +28986,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T19:08:50.143Z",
+    "comparison_retrieved_at": "2026-11-19T19:17:42.381Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 33.0625,
@@ -31808,7 +31829,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     },
     {
      "date": "2026-11-20",
@@ -32265,7 +32290,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     },
     {
      "date": "2026-11-21",
@@ -32722,7 +32751,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     },
     {
      "date": "2026-11-22",
@@ -33179,7 +33212,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     },
     {
      "date": "2026-11-23",
@@ -33636,7 +33673,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     },
     {
      "date": "2026-11-24",
@@ -34093,7 +34134,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     },
     {
      "date": "2026-11-25",
@@ -34550,7 +34595,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     }
    ]
   },
@@ -34560,7 +34609,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T21:08:07+02:00",
+    "retrieved_at": "2026-11-19T20:50:58+02:00",
     "cell_lat": 33.020832,
     "cell_lon": 35.083336,
     "dist_km": 1.9,
@@ -34577,7 +34626,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T19:08:50.143Z",
+    "comparison_retrieved_at": "2026-11-19T19:17:42.381Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 33.020832,
@@ -37420,7 +37469,34 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "high",
+        "time": "05:48"
+       },
+       {
+        "type": "low",
+        "time": "12:06"
+       },
+       {
+        "type": "high",
+        "time": "18:34"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/northern-district/nahariyya",
+      "source_place": "Nahariyya",
+      "source_lat": 33.00892,
+      "source_lon": 35.09814,
+      "reference_distance_km": 0.9,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:13:54.774071+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-20",
@@ -37877,7 +37953,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "00:45"
+       },
+       {
+        "type": "high",
+        "time": "06:46"
+       },
+       {
+        "type": "low",
+        "time": "12:51"
+       },
+       {
+        "type": "high",
+        "time": "19:11"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/northern-district/nahariyya",
+      "source_place": "Nahariyya",
+      "source_lat": 33.00892,
+      "source_lon": 35.09814,
+      "reference_distance_km": 0.9,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:13:54.774071+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-21",
@@ -38334,7 +38441,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "01:30"
+       },
+       {
+        "type": "high",
+        "time": "07:32"
+       },
+       {
+        "type": "low",
+        "time": "13:30"
+       },
+       {
+        "type": "high",
+        "time": "19:46"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/northern-district/nahariyya",
+      "source_place": "Nahariyya",
+      "source_lat": 33.00892,
+      "source_lon": 35.09814,
+      "reference_distance_km": 0.9,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:13:54.774071+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-22",
@@ -38791,7 +38929,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "02:11"
+       },
+       {
+        "type": "high",
+        "time": "08:14"
+       },
+       {
+        "type": "low",
+        "time": "14:08"
+       },
+       {
+        "type": "high",
+        "time": "20:21"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/northern-district/nahariyya",
+      "source_place": "Nahariyya",
+      "source_lat": 33.00892,
+      "source_lon": 35.09814,
+      "reference_distance_km": 0.9,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:13:54.774071+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-23",
@@ -39248,7 +39417,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "02:51"
+       },
+       {
+        "type": "high",
+        "time": "08:54"
+       },
+       {
+        "type": "low",
+        "time": "14:45"
+       },
+       {
+        "type": "high",
+        "time": "20:57"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/northern-district/nahariyya",
+      "source_place": "Nahariyya",
+      "source_lat": 33.00892,
+      "source_lon": 35.09814,
+      "reference_distance_km": 0.9,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:13:54.774071+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-24",
@@ -39705,7 +39905,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "03:31"
+       },
+       {
+        "type": "high",
+        "time": "09:35"
+       },
+       {
+        "type": "low",
+        "time": "15:23"
+       },
+       {
+        "type": "high",
+        "time": "21:35"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/northern-district/nahariyya",
+      "source_place": "Nahariyya",
+      "source_lat": 33.00892,
+      "source_lon": 35.09814,
+      "reference_distance_km": 0.9,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:13:54.774071+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-25",
@@ -40162,7 +40393,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "04:14"
+       },
+       {
+        "type": "high",
+        "time": "10:17"
+       },
+       {
+        "type": "low",
+        "time": "16:02"
+       },
+       {
+        "type": "high",
+        "time": "22:15"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/northern-district/nahariyya",
+      "source_place": "Nahariyya",
+      "source_lat": 33.00892,
+      "source_lon": 35.09814,
+      "reference_distance_km": 0.9,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:13:54.774071+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     }
    ]
   },
@@ -40172,7 +40434,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T21:08:07+02:00",
+    "retrieved_at": "2026-11-19T20:50:58+02:00",
     "cell_lat": 32.9375,
     "cell_lon": 35.041668,
     "dist_km": 4.2,
@@ -40189,7 +40451,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T19:08:50.143Z",
+    "comparison_retrieved_at": "2026-11-19T19:17:42.381Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 32.9375,
@@ -43032,7 +43294,34 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "high",
+        "time": "05:48"
+       },
+       {
+        "type": "low",
+        "time": "12:06"
+       },
+       {
+        "type": "high",
+        "time": "18:34"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/northern-district/acre",
+      "source_place": "Acre",
+      "source_lat": 32.92814,
+      "source_lon": 35.07647,
+      "reference_distance_km": 1.3,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:13:56.318087+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-20",
@@ -43489,7 +43778,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "00:45"
+       },
+       {
+        "type": "high",
+        "time": "06:46"
+       },
+       {
+        "type": "low",
+        "time": "12:51"
+       },
+       {
+        "type": "high",
+        "time": "19:11"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/northern-district/acre",
+      "source_place": "Acre",
+      "source_lat": 32.92814,
+      "source_lon": 35.07647,
+      "reference_distance_km": 1.3,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:13:56.318087+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-21",
@@ -43946,7 +44266,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "01:30"
+       },
+       {
+        "type": "high",
+        "time": "07:32"
+       },
+       {
+        "type": "low",
+        "time": "13:30"
+       },
+       {
+        "type": "high",
+        "time": "19:46"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/northern-district/acre",
+      "source_place": "Acre",
+      "source_lat": 32.92814,
+      "source_lon": 35.07647,
+      "reference_distance_km": 1.3,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:13:56.318087+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-22",
@@ -44403,7 +44754,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "02:11"
+       },
+       {
+        "type": "high",
+        "time": "08:14"
+       },
+       {
+        "type": "low",
+        "time": "14:08"
+       },
+       {
+        "type": "high",
+        "time": "20:21"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/northern-district/acre",
+      "source_place": "Acre",
+      "source_lat": 32.92814,
+      "source_lon": 35.07647,
+      "reference_distance_km": 1.3,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:13:56.318087+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-23",
@@ -44860,7 +45242,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "02:51"
+       },
+       {
+        "type": "high",
+        "time": "08:55"
+       },
+       {
+        "type": "low",
+        "time": "14:45"
+       },
+       {
+        "type": "high",
+        "time": "20:57"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/northern-district/acre",
+      "source_place": "Acre",
+      "source_lat": 32.92814,
+      "source_lon": 35.07647,
+      "reference_distance_km": 1.3,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:13:56.318087+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-24",
@@ -45317,7 +45730,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "03:31"
+       },
+       {
+        "type": "high",
+        "time": "09:35"
+       },
+       {
+        "type": "low",
+        "time": "15:23"
+       },
+       {
+        "type": "high",
+        "time": "21:35"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/northern-district/acre",
+      "source_place": "Acre",
+      "source_lat": 32.92814,
+      "source_lon": 35.07647,
+      "reference_distance_km": 1.3,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:13:56.318087+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-25",
@@ -45774,7 +46218,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "04:13"
+       },
+       {
+        "type": "high",
+        "time": "10:17"
+       },
+       {
+        "type": "low",
+        "time": "16:02"
+       },
+       {
+        "type": "high",
+        "time": "22:15"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/northern-district/acre",
+      "source_place": "Acre",
+      "source_lat": 32.92814,
+      "source_lon": 35.07647,
+      "reference_distance_km": 1.3,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:13:56.318087+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     }
    ]
   },
@@ -45784,7 +46259,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T21:08:07+02:00",
+    "retrieved_at": "2026-11-19T20:50:58+02:00",
     "cell_lat": 32.854168,
     "cell_lon": 34.958336,
     "dist_km": 3.2,
@@ -45801,7 +46276,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T19:08:50.143Z",
+    "comparison_retrieved_at": "2026-11-19T19:17:42.381Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 32.854168,
@@ -48644,7 +49119,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     },
     {
      "date": "2026-11-20",
@@ -49101,7 +49580,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     },
     {
      "date": "2026-11-21",
@@ -49558,7 +50041,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     },
     {
      "date": "2026-11-22",
@@ -50015,7 +50502,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     },
     {
      "date": "2026-11-23",
@@ -50472,7 +50963,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     },
     {
      "date": "2026-11-24",
@@ -50929,7 +51424,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     },
     {
      "date": "2026-11-25",
@@ -51386,7 +51885,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     }
    ]
   },
@@ -51396,7 +51899,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T21:08:07+02:00",
+    "retrieved_at": "2026-11-19T20:50:58+02:00",
     "cell_lat": 32.729168,
     "cell_lon": 34.916668,
     "dist_km": 3,
@@ -51413,7 +51916,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T19:08:50.143Z",
+    "comparison_retrieved_at": "2026-11-19T19:17:42.381Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 32.729168,
@@ -54256,7 +54759,34 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "high",
+        "time": "05:48"
+       },
+       {
+        "type": "low",
+        "time": "12:06"
+       },
+       {
+        "type": "high",
+        "time": "18:34"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/haifa/atlit",
+      "source_place": "Atlit",
+      "source_lat": 32.68889,
+      "source_lon": 34.94236,
+      "reference_distance_km": 2.1,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:13:57.849638+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-20",
@@ -54713,7 +55243,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "00:45"
+       },
+       {
+        "type": "high",
+        "time": "06:45"
+       },
+       {
+        "type": "low",
+        "time": "12:51"
+       },
+       {
+        "type": "high",
+        "time": "19:11"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/haifa/atlit",
+      "source_place": "Atlit",
+      "source_lat": 32.68889,
+      "source_lon": 34.94236,
+      "reference_distance_km": 2.1,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:13:57.849638+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-21",
@@ -55170,7 +55731,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "01:30"
+       },
+       {
+        "type": "high",
+        "time": "07:32"
+       },
+       {
+        "type": "low",
+        "time": "13:30"
+       },
+       {
+        "type": "high",
+        "time": "19:46"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/haifa/atlit",
+      "source_place": "Atlit",
+      "source_lat": 32.68889,
+      "source_lon": 34.94236,
+      "reference_distance_km": 2.1,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:13:57.849638+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-22",
@@ -55627,7 +56219,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "02:10"
+       },
+       {
+        "type": "high",
+        "time": "08:14"
+       },
+       {
+        "type": "low",
+        "time": "14:08"
+       },
+       {
+        "type": "high",
+        "time": "20:21"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/haifa/atlit",
+      "source_place": "Atlit",
+      "source_lat": 32.68889,
+      "source_lon": 34.94236,
+      "reference_distance_km": 2.1,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:13:57.849638+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-23",
@@ -56084,7 +56707,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "02:50"
+       },
+       {
+        "type": "high",
+        "time": "08:54"
+       },
+       {
+        "type": "low",
+        "time": "14:45"
+       },
+       {
+        "type": "high",
+        "time": "20:57"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/haifa/atlit",
+      "source_place": "Atlit",
+      "source_lat": 32.68889,
+      "source_lon": 34.94236,
+      "reference_distance_km": 2.1,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:13:57.849638+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-24",
@@ -56541,7 +57195,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "03:31"
+       },
+       {
+        "type": "high",
+        "time": "09:35"
+       },
+       {
+        "type": "low",
+        "time": "15:23"
+       },
+       {
+        "type": "high",
+        "time": "21:35"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/haifa/atlit",
+      "source_place": "Atlit",
+      "source_lat": 32.68889,
+      "source_lon": 34.94236,
+      "reference_distance_km": 2.1,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:13:57.849638+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-25",
@@ -56998,7 +57683,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "04:13"
+       },
+       {
+        "type": "high",
+        "time": "10:17"
+       },
+       {
+        "type": "low",
+        "time": "16:03"
+       },
+       {
+        "type": "high",
+        "time": "22:15"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/haifa/atlit",
+      "source_place": "Atlit",
+      "source_lat": 32.68889,
+      "source_lon": 34.94236,
+      "reference_distance_km": 2.1,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:13:57.849638+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     }
    ]
   },
@@ -57008,7 +57724,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T21:08:07+02:00",
+    "retrieved_at": "2026-11-19T20:50:58+02:00",
     "cell_lat": 32.604168,
     "cell_lon": 34.875,
     "dist_km": 4,
@@ -57025,7 +57741,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T19:08:50.143Z",
+    "comparison_retrieved_at": "2026-11-19T19:17:42.381Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 32.604168,
@@ -59868,7 +60584,34 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "high",
+        "time": "05:48"
+       },
+       {
+        "type": "low",
+        "time": "12:06"
+       },
+       {
+        "type": "high",
+        "time": "18:33"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/haifa/dor",
+      "source_place": "Dor",
+      "source_lat": 32.60735,
+      "source_lon": 34.92337,
+      "reference_distance_km": 1,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:13:59.415031+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-20",
@@ -60325,7 +61068,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "00:44"
+       },
+       {
+        "type": "high",
+        "time": "06:46"
+       },
+       {
+        "type": "low",
+        "time": "12:51"
+       },
+       {
+        "type": "high",
+        "time": "19:11"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/haifa/dor",
+      "source_place": "Dor",
+      "source_lat": 32.60735,
+      "source_lon": 34.92337,
+      "reference_distance_km": 1,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:13:59.415031+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-21",
@@ -60782,7 +61556,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "01:29"
+       },
+       {
+        "type": "high",
+        "time": "07:32"
+       },
+       {
+        "type": "low",
+        "time": "13:30"
+       },
+       {
+        "type": "high",
+        "time": "19:46"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/haifa/dor",
+      "source_place": "Dor",
+      "source_lat": 32.60735,
+      "source_lon": 34.92337,
+      "reference_distance_km": 1,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:13:59.415031+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-22",
@@ -61239,7 +62044,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "02:10"
+       },
+       {
+        "type": "high",
+        "time": "08:14"
+       },
+       {
+        "type": "low",
+        "time": "14:08"
+       },
+       {
+        "type": "high",
+        "time": "20:21"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/haifa/dor",
+      "source_place": "Dor",
+      "source_lat": 32.60735,
+      "source_lon": 34.92337,
+      "reference_distance_km": 1,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:13:59.415031+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-23",
@@ -61696,7 +62532,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "02:50"
+       },
+       {
+        "type": "high",
+        "time": "08:55"
+       },
+       {
+        "type": "low",
+        "time": "14:46"
+       },
+       {
+        "type": "high",
+        "time": "20:57"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/haifa/dor",
+      "source_place": "Dor",
+      "source_lat": 32.60735,
+      "source_lon": 34.92337,
+      "reference_distance_km": 1,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:13:59.415031+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-24",
@@ -62153,7 +63020,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "03:31"
+       },
+       {
+        "type": "high",
+        "time": "09:35"
+       },
+       {
+        "type": "low",
+        "time": "15:24"
+       },
+       {
+        "type": "high",
+        "time": "21:35"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/haifa/dor",
+      "source_place": "Dor",
+      "source_lat": 32.60735,
+      "source_lon": 34.92337,
+      "reference_distance_km": 1,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:13:59.415031+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-25",
@@ -62610,7 +63508,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "04:13"
+       },
+       {
+        "type": "high",
+        "time": "10:17"
+       },
+       {
+        "type": "low",
+        "time": "16:03"
+       },
+       {
+        "type": "high",
+        "time": "22:15"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/haifa/dor",
+      "source_place": "Dor",
+      "source_lat": 32.60735,
+      "source_lon": 34.92337,
+      "reference_distance_km": 1,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:13:59.415031+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     }
    ]
   },
@@ -62620,7 +63549,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T21:08:07+02:00",
+    "retrieved_at": "2026-11-19T20:50:58+02:00",
     "cell_lat": 32.520832,
     "cell_lon": 34.875,
     "dist_km": 2.9,
@@ -62637,7 +63566,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T19:08:50.143Z",
+    "comparison_retrieved_at": "2026-11-19T19:17:42.381Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 32.520832,
@@ -65480,7 +66409,34 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "high",
+        "time": "05:48"
+       },
+       {
+        "type": "low",
+        "time": "12:06"
+       },
+       {
+        "type": "high",
+        "time": "18:33"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/haifa/caesarea",
+      "source_place": "Caesarea",
+      "source_lat": 32.51888,
+      "source_lon": 34.90459,
+      "reference_distance_km": 2.7,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:14:00.975267+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-20",
@@ -65937,7 +66893,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "00:44"
+       },
+       {
+        "type": "high",
+        "time": "06:46"
+       },
+       {
+        "type": "low",
+        "time": "12:51"
+       },
+       {
+        "type": "high",
+        "time": "19:11"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/haifa/caesarea",
+      "source_place": "Caesarea",
+      "source_lat": 32.51888,
+      "source_lon": 34.90459,
+      "reference_distance_km": 2.7,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:14:00.975267+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-21",
@@ -66394,7 +67381,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "01:29"
+       },
+       {
+        "type": "high",
+        "time": "07:32"
+       },
+       {
+        "type": "low",
+        "time": "13:31"
+       },
+       {
+        "type": "high",
+        "time": "19:46"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/haifa/caesarea",
+      "source_place": "Caesarea",
+      "source_lat": 32.51888,
+      "source_lon": 34.90459,
+      "reference_distance_km": 2.7,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:14:00.975267+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-22",
@@ -66851,7 +67869,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "02:10"
+       },
+       {
+        "type": "high",
+        "time": "08:14"
+       },
+       {
+        "type": "low",
+        "time": "14:08"
+       },
+       {
+        "type": "high",
+        "time": "20:21"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/haifa/caesarea",
+      "source_place": "Caesarea",
+      "source_lat": 32.51888,
+      "source_lon": 34.90459,
+      "reference_distance_km": 2.7,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:14:00.975267+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-23",
@@ -67308,7 +68357,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "02:50"
+       },
+       {
+        "type": "high",
+        "time": "08:55"
+       },
+       {
+        "type": "low",
+        "time": "14:46"
+       },
+       {
+        "type": "high",
+        "time": "20:57"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/haifa/caesarea",
+      "source_place": "Caesarea",
+      "source_lat": 32.51888,
+      "source_lon": 34.90459,
+      "reference_distance_km": 2.7,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:14:00.975267+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-24",
@@ -67765,7 +68845,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "03:31"
+       },
+       {
+        "type": "high",
+        "time": "09:35"
+       },
+       {
+        "type": "low",
+        "time": "15:24"
+       },
+       {
+        "type": "high",
+        "time": "21:35"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/haifa/caesarea",
+      "source_place": "Caesarea",
+      "source_lat": 32.51888,
+      "source_lon": 34.90459,
+      "reference_distance_km": 2.7,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:14:00.975267+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-25",
@@ -68222,7 +69333,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "04:13"
+       },
+       {
+        "type": "high",
+        "time": "10:17"
+       },
+       {
+        "type": "low",
+        "time": "16:03"
+       },
+       {
+        "type": "high",
+        "time": "22:15"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/haifa/caesarea",
+      "source_place": "Caesarea",
+      "source_lat": 32.51888,
+      "source_lon": 34.90459,
+      "reference_distance_km": 2.7,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:14:00.975267+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     }
    ]
   },
@@ -68232,7 +69374,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T21:08:07+02:00",
+    "retrieved_at": "2026-11-19T20:50:58+02:00",
     "cell_lat": 32.4375,
     "cell_lon": 34.833336,
     "dist_km": 4.2,
@@ -68249,7 +69391,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T19:08:50.143Z",
+    "comparison_retrieved_at": "2026-11-19T19:17:42.381Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 32.4375,
@@ -71092,7 +72234,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     },
     {
      "date": "2026-11-20",
@@ -71549,7 +72695,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     },
     {
      "date": "2026-11-21",
@@ -72006,7 +73156,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     },
     {
      "date": "2026-11-22",
@@ -72463,7 +73617,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     },
     {
      "date": "2026-11-23",
@@ -72920,7 +74078,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     },
     {
      "date": "2026-11-24",
@@ -73377,7 +74539,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     },
     {
      "date": "2026-11-25",
@@ -73834,7 +75000,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     }
    ]
   },
@@ -73844,7 +75014,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T21:08:07+02:00",
+    "retrieved_at": "2026-11-19T20:50:58+02:00",
     "cell_lat": 32.395832,
     "cell_lon": 34.833336,
     "dist_km": 3.8,
@@ -73861,7 +75031,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T19:08:50.143Z",
+    "comparison_retrieved_at": "2026-11-19T19:17:42.381Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 32.395832,
@@ -76704,7 +77874,34 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "high",
+        "time": "05:48"
+       },
+       {
+        "type": "low",
+        "time": "12:06"
+       },
+       {
+        "type": "high",
+        "time": "18:33"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/central-district/mikhmoret",
+      "source_place": "Mikhmoret",
+      "source_lat": 32.40535,
+      "source_lon": 34.87091,
+      "reference_distance_km": 0.2,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:14:02.481862+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-20",
@@ -77161,7 +78358,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "00:44"
+       },
+       {
+        "type": "high",
+        "time": "06:46"
+       },
+       {
+        "type": "low",
+        "time": "12:51"
+       },
+       {
+        "type": "high",
+        "time": "19:11"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/central-district/mikhmoret",
+      "source_place": "Mikhmoret",
+      "source_lat": 32.40535,
+      "source_lon": 34.87091,
+      "reference_distance_km": 0.2,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:14:02.481862+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-21",
@@ -77618,7 +78846,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "01:29"
+       },
+       {
+        "type": "high",
+        "time": "07:32"
+       },
+       {
+        "type": "low",
+        "time": "13:31"
+       },
+       {
+        "type": "high",
+        "time": "19:46"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/central-district/mikhmoret",
+      "source_place": "Mikhmoret",
+      "source_lat": 32.40535,
+      "source_lon": 34.87091,
+      "reference_distance_km": 0.2,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:14:02.481862+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-22",
@@ -78075,7 +79334,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "02:10"
+       },
+       {
+        "type": "high",
+        "time": "08:14"
+       },
+       {
+        "type": "low",
+        "time": "14:09"
+       },
+       {
+        "type": "high",
+        "time": "20:21"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/central-district/mikhmoret",
+      "source_place": "Mikhmoret",
+      "source_lat": 32.40535,
+      "source_lon": 34.87091,
+      "reference_distance_km": 0.2,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:14:02.481862+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-23",
@@ -78532,7 +79822,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "02:50"
+       },
+       {
+        "type": "high",
+        "time": "08:55"
+       },
+       {
+        "type": "low",
+        "time": "14:46"
+       },
+       {
+        "type": "high",
+        "time": "20:58"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/central-district/mikhmoret",
+      "source_place": "Mikhmoret",
+      "source_lat": 32.40535,
+      "source_lon": 34.87091,
+      "reference_distance_km": 0.2,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:14:02.481862+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-24",
@@ -78989,7 +80310,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "03:31"
+       },
+       {
+        "type": "high",
+        "time": "09:36"
+       },
+       {
+        "type": "low",
+        "time": "15:25"
+       },
+       {
+        "type": "high",
+        "time": "21:35"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/central-district/mikhmoret",
+      "source_place": "Mikhmoret",
+      "source_lat": 32.40535,
+      "source_lon": 34.87091,
+      "reference_distance_km": 0.2,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:14:02.481862+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-25",
@@ -79446,7 +80798,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "04:13"
+       },
+       {
+        "type": "high",
+        "time": "10:17"
+       },
+       {
+        "type": "low",
+        "time": "16:04"
+       },
+       {
+        "type": "high",
+        "time": "22:15"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/central-district/mikhmoret",
+      "source_place": "Mikhmoret",
+      "source_lat": 32.40535,
+      "source_lon": 34.87091,
+      "reference_distance_km": 0.2,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:14:02.481862+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     }
    ]
   },
@@ -79456,7 +80839,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T21:08:07+02:00",
+    "retrieved_at": "2026-11-19T20:50:58+02:00",
     "cell_lat": 32.354168,
     "cell_lon": 34.833336,
     "dist_km": 4.1,
@@ -79473,7 +80856,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T19:08:50.143Z",
+    "comparison_retrieved_at": "2026-11-19T19:17:42.381Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 32.354168,
@@ -82316,7 +83699,34 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "high",
+        "time": "05:49"
+       },
+       {
+        "type": "low",
+        "time": "12:06"
+       },
+       {
+        "type": "high",
+        "time": "18:33"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/central-district/netanya",
+      "source_place": "Netanya",
+      "source_lat": 32.33291,
+      "source_lon": 34.85992,
+      "reference_distance_km": 1.7,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:14:04.085062+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-20",
@@ -82773,7 +84183,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "00:45"
+       },
+       {
+        "type": "high",
+        "time": "06:47"
+       },
+       {
+        "type": "low",
+        "time": "12:52"
+       },
+       {
+        "type": "high",
+        "time": "19:11"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/central-district/netanya",
+      "source_place": "Netanya",
+      "source_lat": 32.33291,
+      "source_lon": 34.85992,
+      "reference_distance_km": 1.7,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:14:04.085062+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-21",
@@ -83230,7 +84671,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "01:30"
+       },
+       {
+        "type": "high",
+        "time": "07:33"
+       },
+       {
+        "type": "low",
+        "time": "13:31"
+       },
+       {
+        "type": "high",
+        "time": "19:46"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/central-district/netanya",
+      "source_place": "Netanya",
+      "source_lat": 32.33291,
+      "source_lon": 34.85992,
+      "reference_distance_km": 1.7,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:14:04.085062+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-22",
@@ -83687,7 +85159,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "02:10"
+       },
+       {
+        "type": "high",
+        "time": "08:15"
+       },
+       {
+        "type": "low",
+        "time": "14:09"
+       },
+       {
+        "type": "high",
+        "time": "20:21"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/central-district/netanya",
+      "source_place": "Netanya",
+      "source_lat": 32.33291,
+      "source_lon": 34.85992,
+      "reference_distance_km": 1.7,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:14:04.085062+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-23",
@@ -84144,7 +85647,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "02:50"
+       },
+       {
+        "type": "high",
+        "time": "08:55"
+       },
+       {
+        "type": "low",
+        "time": "14:47"
+       },
+       {
+        "type": "high",
+        "time": "20:58"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/central-district/netanya",
+      "source_place": "Netanya",
+      "source_lat": 32.33291,
+      "source_lon": 34.85992,
+      "reference_distance_km": 1.7,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:14:04.085062+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-24",
@@ -84601,7 +86135,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "03:31"
+       },
+       {
+        "type": "high",
+        "time": "09:36"
+       },
+       {
+        "type": "low",
+        "time": "15:25"
+       },
+       {
+        "type": "high",
+        "time": "21:36"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/central-district/netanya",
+      "source_place": "Netanya",
+      "source_lat": 32.33291,
+      "source_lon": 34.85992,
+      "reference_distance_km": 1.7,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:14:04.085062+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-25",
@@ -85058,7 +86623,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "04:13"
+       },
+       {
+        "type": "high",
+        "time": "10:18"
+       },
+       {
+        "type": "low",
+        "time": "16:04"
+       },
+       {
+        "type": "high",
+        "time": "22:15"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/central-district/netanya",
+      "source_place": "Netanya",
+      "source_lat": 32.33291,
+      "source_lon": 34.85992,
+      "reference_distance_km": 1.7,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:14:04.085062+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     }
    ]
   },
@@ -85068,7 +86664,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T21:08:07+02:00",
+    "retrieved_at": "2026-11-19T20:50:58+02:00",
     "cell_lat": 32.1875,
     "cell_lon": 34.791668,
     "dist_km": 2.5,
@@ -85085,7 +86681,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T19:08:50.143Z",
+    "comparison_retrieved_at": "2026-11-19T19:17:42.381Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 32.1875,
@@ -87928,7 +89524,34 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "high",
+        "time": "05:50"
+       },
+       {
+        "type": "low",
+        "time": "12:07"
+       },
+       {
+        "type": "high",
+        "time": "18:33"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/tel-aviv/herzliya",
+      "source_place": "Herzliya",
+      "source_lat": 32.16627,
+      "source_lon": 34.82536,
+      "reference_distance_km": 2.9,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:14:05.565268+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-20",
@@ -88385,7 +90008,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "00:45"
+       },
+       {
+        "type": "high",
+        "time": "06:47"
+       },
+       {
+        "type": "low",
+        "time": "12:52"
+       },
+       {
+        "type": "high",
+        "time": "19:11"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/tel-aviv/herzliya",
+      "source_place": "Herzliya",
+      "source_lat": 32.16627,
+      "source_lon": 34.82536,
+      "reference_distance_km": 2.9,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:14:05.565268+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-21",
@@ -88842,7 +90496,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "01:30"
+       },
+       {
+        "type": "high",
+        "time": "07:33"
+       },
+       {
+        "type": "low",
+        "time": "13:32"
+       },
+       {
+        "type": "high",
+        "time": "19:46"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/tel-aviv/herzliya",
+      "source_place": "Herzliya",
+      "source_lat": 32.16627,
+      "source_lon": 34.82536,
+      "reference_distance_km": 2.9,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:14:05.565268+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-22",
@@ -89299,7 +90984,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "02:11"
+       },
+       {
+        "type": "high",
+        "time": "08:15"
+       },
+       {
+        "type": "low",
+        "time": "14:10"
+       },
+       {
+        "type": "high",
+        "time": "20:22"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/tel-aviv/herzliya",
+      "source_place": "Herzliya",
+      "source_lat": 32.16627,
+      "source_lon": 34.82536,
+      "reference_distance_km": 2.9,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:14:05.565268+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-23",
@@ -89756,7 +91472,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "02:51"
+       },
+       {
+        "type": "high",
+        "time": "08:56"
+       },
+       {
+        "type": "low",
+        "time": "14:47"
+       },
+       {
+        "type": "high",
+        "time": "20:58"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/tel-aviv/herzliya",
+      "source_place": "Herzliya",
+      "source_lat": 32.16627,
+      "source_lon": 34.82536,
+      "reference_distance_km": 2.9,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:14:05.565268+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-24",
@@ -90213,7 +91960,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "03:31"
+       },
+       {
+        "type": "high",
+        "time": "09:37"
+       },
+       {
+        "type": "low",
+        "time": "15:26"
+       },
+       {
+        "type": "high",
+        "time": "21:36"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/tel-aviv/herzliya",
+      "source_place": "Herzliya",
+      "source_lat": 32.16627,
+      "source_lon": 34.82536,
+      "reference_distance_km": 2.9,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:14:05.565268+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-25",
@@ -90670,7 +92448,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "04:13"
+       },
+       {
+        "type": "high",
+        "time": "10:18"
+       },
+       {
+        "type": "low",
+        "time": "16:05"
+       },
+       {
+        "type": "high",
+        "time": "22:16"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/tel-aviv/herzliya",
+      "source_place": "Herzliya",
+      "source_lat": 32.16627,
+      "source_lon": 34.82536,
+      "reference_distance_km": 2.9,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:14:05.565268+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     }
    ]
   },
@@ -90680,7 +92489,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T21:08:07+02:00",
+    "retrieved_at": "2026-11-19T20:50:58+02:00",
     "cell_lat": 32.0625,
     "cell_lon": 34.75,
     "dist_km": 2.4,
@@ -90697,7 +92506,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T19:08:50.143Z",
+    "comparison_retrieved_at": "2026-11-19T19:17:42.381Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 32.0625,
@@ -93540,7 +95349,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     },
     {
      "date": "2026-11-20",
@@ -93997,7 +95810,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     },
     {
      "date": "2026-11-21",
@@ -94454,7 +96271,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     },
     {
      "date": "2026-11-22",
@@ -94911,7 +96732,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     },
     {
      "date": "2026-11-23",
@@ -95368,7 +97193,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     },
     {
      "date": "2026-11-24",
@@ -95825,7 +97654,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     },
     {
      "date": "2026-11-25",
@@ -96282,7 +98115,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     }
    ]
   },
@@ -96292,7 +98129,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T21:08:07+02:00",
+    "retrieved_at": "2026-11-19T20:50:58+02:00",
     "cell_lat": 32.0625,
     "cell_lon": 34.75,
     "dist_km": 2.2,
@@ -96309,7 +98146,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T19:08:50.143Z",
+    "comparison_retrieved_at": "2026-11-19T19:17:42.381Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 32.0625,
@@ -99152,7 +100989,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     },
     {
      "date": "2026-11-20",
@@ -99609,7 +101450,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     },
     {
      "date": "2026-11-21",
@@ -100066,7 +101911,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     },
     {
      "date": "2026-11-22",
@@ -100523,7 +102372,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     },
     {
      "date": "2026-11-23",
@@ -100980,7 +102833,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     },
     {
      "date": "2026-11-24",
@@ -101437,7 +103294,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     },
     {
      "date": "2026-11-25",
@@ -101894,7 +103755,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     }
    ]
   },
@@ -101904,7 +103769,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T21:08:07+02:00",
+    "retrieved_at": "2026-11-19T20:50:58+02:00",
     "cell_lat": 31.979166,
     "cell_lon": 34.708336,
     "dist_km": 1.5,
@@ -101921,7 +103786,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T19:08:50.143Z",
+    "comparison_retrieved_at": "2026-11-19T19:17:42.381Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 31.979166,
@@ -104764,7 +106629,34 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "high",
+        "time": "05:51"
+       },
+       {
+        "type": "low",
+        "time": "12:08"
+       },
+       {
+        "type": "high",
+        "time": "18:34"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/central-district/rishon-letsiyon",
+      "source_place": "Rishon Letsiyon",
+      "source_lat": 31.97102,
+      "source_lon": 34.78939,
+      "reference_distance_km": 6.5,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:14:07.182808+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-20",
@@ -105221,7 +107113,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "00:46"
+       },
+       {
+        "type": "high",
+        "time": "06:48"
+       },
+       {
+        "type": "low",
+        "time": "12:53"
+       },
+       {
+        "type": "high",
+        "time": "19:12"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/central-district/rishon-letsiyon",
+      "source_place": "Rishon Letsiyon",
+      "source_lat": 31.97102,
+      "source_lon": 34.78939,
+      "reference_distance_km": 6.5,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:14:07.182808+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-21",
@@ -105678,7 +107601,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "01:30"
+       },
+       {
+        "type": "high",
+        "time": "07:34"
+       },
+       {
+        "type": "low",
+        "time": "13:33"
+       },
+       {
+        "type": "high",
+        "time": "19:47"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/central-district/rishon-letsiyon",
+      "source_place": "Rishon Letsiyon",
+      "source_lat": 31.97102,
+      "source_lon": 34.78939,
+      "reference_distance_km": 6.5,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:14:07.182808+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-22",
@@ -106135,7 +108089,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "02:11"
+       },
+       {
+        "type": "high",
+        "time": "08:16"
+       },
+       {
+        "type": "low",
+        "time": "14:11"
+       },
+       {
+        "type": "high",
+        "time": "20:22"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/central-district/rishon-letsiyon",
+      "source_place": "Rishon Letsiyon",
+      "source_lat": 31.97102,
+      "source_lon": 34.78939,
+      "reference_distance_km": 6.5,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:14:07.182808+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-23",
@@ -106592,7 +108577,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "02:51"
+       },
+       {
+        "type": "high",
+        "time": "08:56"
+       },
+       {
+        "type": "low",
+        "time": "14:48"
+       },
+       {
+        "type": "high",
+        "time": "20:59"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/central-district/rishon-letsiyon",
+      "source_place": "Rishon Letsiyon",
+      "source_lat": 31.97102,
+      "source_lon": 34.78939,
+      "reference_distance_km": 6.5,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:14:07.182808+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-24",
@@ -107049,7 +109065,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "03:32"
+       },
+       {
+        "type": "high",
+        "time": "09:37"
+       },
+       {
+        "type": "low",
+        "time": "15:27"
+       },
+       {
+        "type": "high",
+        "time": "21:37"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/central-district/rishon-letsiyon",
+      "source_place": "Rishon Letsiyon",
+      "source_lat": 31.97102,
+      "source_lon": 34.78939,
+      "reference_distance_km": 6.5,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:14:07.182808+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-25",
@@ -107506,7 +109553,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "04:14"
+       },
+       {
+        "type": "high",
+        "time": "10:19"
+       },
+       {
+        "type": "low",
+        "time": "16:06"
+       },
+       {
+        "type": "high",
+        "time": "22:16"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/central-district/rishon-letsiyon",
+      "source_place": "Rishon Letsiyon",
+      "source_lat": 31.97102,
+      "source_lon": 34.78939,
+      "reference_distance_km": 6.5,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:14:07.182808+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     }
    ]
   },
@@ -107516,7 +109594,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T21:08:07+02:00",
+    "retrieved_at": "2026-11-19T20:50:58+02:00",
     "cell_lat": 31.9375,
     "cell_lon": 34.666668,
     "dist_km": 3.4,
@@ -107533,7 +109611,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T19:08:50.143Z",
+    "comparison_retrieved_at": "2026-11-19T19:17:42.381Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 31.9375,
@@ -110376,7 +112454,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     },
     {
      "date": "2026-11-20",
@@ -110833,7 +112915,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     },
     {
      "date": "2026-11-21",
@@ -111290,7 +113376,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     },
     {
      "date": "2026-11-22",
@@ -111747,7 +113837,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     },
     {
      "date": "2026-11-23",
@@ -112204,7 +114298,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     },
     {
      "date": "2026-11-24",
@@ -112661,7 +114759,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     },
     {
      "date": "2026-11-25",
@@ -113118,7 +115220,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     }
    ]
   },
@@ -113128,7 +115234,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T21:08:07+02:00",
+    "retrieved_at": "2026-11-19T20:50:58+02:00",
     "cell_lat": 31.8125,
     "cell_lon": 34.625,
     "dist_km": 1.6,
@@ -113145,7 +115251,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T19:08:50.143Z",
+    "comparison_retrieved_at": "2026-11-19T19:17:42.381Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 31.8125,
@@ -115988,7 +118094,34 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "high",
+        "time": "05:52"
+       },
+       {
+        "type": "low",
+        "time": "12:09"
+       },
+       {
+        "type": "high",
+        "time": "18:35"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/southern-district/ashdod",
+      "source_place": "Ashdod",
+      "source_lat": 31.79213,
+      "source_lon": 34.64966,
+      "reference_distance_km": 3.2,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:14:08.718527+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-20",
@@ -116445,7 +118578,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "00:47"
+       },
+       {
+        "type": "high",
+        "time": "06:49"
+       },
+       {
+        "type": "low",
+        "time": "12:54"
+       },
+       {
+        "type": "high",
+        "time": "19:12"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/southern-district/ashdod",
+      "source_place": "Ashdod",
+      "source_lat": 31.79213,
+      "source_lon": 34.64966,
+      "reference_distance_km": 3.2,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:14:08.718527+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-21",
@@ -116902,7 +119066,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "01:31"
+       },
+       {
+        "type": "high",
+        "time": "07:35"
+       },
+       {
+        "type": "low",
+        "time": "13:34"
+       },
+       {
+        "type": "high",
+        "time": "19:48"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/southern-district/ashdod",
+      "source_place": "Ashdod",
+      "source_lat": 31.79213,
+      "source_lon": 34.64966,
+      "reference_distance_km": 3.2,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:14:08.718527+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-22",
@@ -117359,7 +119554,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "02:12"
+       },
+       {
+        "type": "high",
+        "time": "08:17"
+       },
+       {
+        "type": "low",
+        "time": "14:12"
+       },
+       {
+        "type": "high",
+        "time": "20:23"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/southern-district/ashdod",
+      "source_place": "Ashdod",
+      "source_lat": 31.79213,
+      "source_lon": 34.64966,
+      "reference_distance_km": 3.2,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:14:08.718527+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-23",
@@ -117816,7 +120042,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "02:52"
+       },
+       {
+        "type": "high",
+        "time": "08:57"
+       },
+       {
+        "type": "low",
+        "time": "14:49"
+       },
+       {
+        "type": "high",
+        "time": "20:59"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/southern-district/ashdod",
+      "source_place": "Ashdod",
+      "source_lat": 31.79213,
+      "source_lon": 34.64966,
+      "reference_distance_km": 3.2,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:14:08.718527+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-24",
@@ -118273,7 +120530,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "03:32"
+       },
+       {
+        "type": "high",
+        "time": "09:38"
+       },
+       {
+        "type": "low",
+        "time": "15:28"
+       },
+       {
+        "type": "high",
+        "time": "21:37"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/southern-district/ashdod",
+      "source_place": "Ashdod",
+      "source_lat": 31.79213,
+      "source_lon": 34.64966,
+      "reference_distance_km": 3.2,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:14:08.718527+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-25",
@@ -118730,7 +121018,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "04:15"
+       },
+       {
+        "type": "high",
+        "time": "10:20"
+       },
+       {
+        "type": "low",
+        "time": "16:07"
+       },
+       {
+        "type": "high",
+        "time": "22:17"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/southern-district/ashdod",
+      "source_place": "Ashdod",
+      "source_lat": 31.79213,
+      "source_lon": 34.64966,
+      "reference_distance_km": 3.2,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:14:08.718527+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     }
    ]
   },
@@ -118740,7 +121059,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T21:08:07+02:00",
+    "retrieved_at": "2026-11-19T20:50:58+02:00",
     "cell_lat": 31.729166,
     "cell_lon": 34.583336,
     "dist_km": 2.4,
@@ -118757,7 +121076,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T19:08:50.143Z",
+    "comparison_retrieved_at": "2026-11-19T19:17:42.381Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 31.729166,
@@ -121600,7 +123919,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     },
     {
      "date": "2026-11-20",
@@ -122057,7 +124380,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     },
     {
      "date": "2026-11-21",
@@ -122514,7 +124841,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     },
     {
      "date": "2026-11-22",
@@ -122971,7 +125302,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     },
     {
      "date": "2026-11-23",
@@ -123428,7 +125763,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     },
     {
      "date": "2026-11-24",
@@ -123885,7 +126224,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     },
     {
      "date": "2026-11-25",
@@ -124342,7 +126685,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     }
    ]
   },
@@ -124352,7 +126699,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T21:08:07+02:00",
+    "retrieved_at": "2026-11-19T20:50:58+02:00",
     "cell_lat": 31.6875,
     "cell_lon": 34.541668,
     "dist_km": 3.2,
@@ -124369,7 +126716,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T19:08:50.143Z",
+    "comparison_retrieved_at": "2026-11-19T19:17:42.381Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 31.6875,
@@ -127212,7 +129559,34 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "high",
+        "time": "05:53"
+       },
+       {
+        "type": "low",
+        "time": "12:09"
+       },
+       {
+        "type": "high",
+        "time": "18:35"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/southern-district/ashkelon",
+      "source_place": "Ashkelon",
+      "source_lat": 31.66926,
+      "source_lon": 34.57149,
+      "reference_distance_km": 2.3,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:14:10.214163+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-20",
@@ -127669,7 +130043,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "00:47"
+       },
+       {
+        "type": "high",
+        "time": "06:50"
+       },
+       {
+        "type": "low",
+        "time": "12:55"
+       },
+       {
+        "type": "high",
+        "time": "19:13"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/southern-district/ashkelon",
+      "source_place": "Ashkelon",
+      "source_lat": 31.66926,
+      "source_lon": 34.57149,
+      "reference_distance_km": 2.3,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:14:10.214163+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-21",
@@ -128126,7 +130531,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "01:32"
+       },
+       {
+        "type": "high",
+        "time": "07:36"
+       },
+       {
+        "type": "low",
+        "time": "13:34"
+       },
+       {
+        "type": "high",
+        "time": "19:48"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/southern-district/ashkelon",
+      "source_place": "Ashkelon",
+      "source_lat": 31.66926,
+      "source_lon": 34.57149,
+      "reference_distance_km": 2.3,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:14:10.214163+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-22",
@@ -128583,7 +131019,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "02:12"
+       },
+       {
+        "type": "high",
+        "time": "08:17"
+       },
+       {
+        "type": "low",
+        "time": "14:12"
+       },
+       {
+        "type": "high",
+        "time": "20:23"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/southern-district/ashkelon",
+      "source_place": "Ashkelon",
+      "source_lat": 31.66926,
+      "source_lon": 34.57149,
+      "reference_distance_km": 2.3,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:14:10.214163+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-23",
@@ -129040,7 +131507,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "02:52"
+       },
+       {
+        "type": "high",
+        "time": "08:58"
+       },
+       {
+        "type": "low",
+        "time": "14:50"
+       },
+       {
+        "type": "high",
+        "time": "21:00"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/southern-district/ashkelon",
+      "source_place": "Ashkelon",
+      "source_lat": 31.66926,
+      "source_lon": 34.57149,
+      "reference_distance_km": 2.3,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:14:10.214163+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-24",
@@ -129497,7 +131995,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "03:33"
+       },
+       {
+        "type": "high",
+        "time": "09:39"
+       },
+       {
+        "type": "low",
+        "time": "15:29"
+       },
+       {
+        "type": "high",
+        "time": "21:38"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/southern-district/ashkelon",
+      "source_place": "Ashkelon",
+      "source_lat": 31.66926,
+      "source_lon": 34.57149,
+      "reference_distance_km": 2.3,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:14:10.214163+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     },
     {
      "date": "2026-11-25",
@@ -129954,7 +132483,38 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": true,
+      "events": [
+       {
+        "type": "low",
+        "time": "04:15"
+       },
+       {
+        "type": "high",
+        "time": "10:21"
+       },
+       {
+        "type": "low",
+        "time": "16:08"
+       },
+       {
+        "type": "high",
+        "time": "22:18"
+       }
+      ],
+      "timezone": "Asia/Jerusalem",
+      "source_url": "https://www.thetidechart.com/il/southern-district/ashkelon",
+      "source_place": "Ashkelon",
+      "source_lat": 31.66926,
+      "source_lon": 34.57149,
+      "reference_distance_km": 2.3,
+      "model": "FES2022",
+      "kind": "astronomical_prediction",
+      "retrieved_at": "2026-11-19T19:14:10.214163+00:00",
+      "coverage_note_he": "תחזית אסטרונומית לאזור היישוב, לא מדידה בנקודת החוף"
+     }
     }
    ]
   },
@@ -129964,7 +132524,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-19T21:08:07+02:00",
+    "retrieved_at": "2026-11-19T20:50:58+02:00",
     "cell_lat": 31.645834,
     "cell_lon": 34.5,
     "dist_km": 3.7,
@@ -129981,7 +132541,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-19T19:08:50.143Z",
+    "comparison_retrieved_at": "2026-11-19T19:17:42.381Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 31.645834,
@@ -132824,7 +135384,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     },
     {
      "date": "2026-11-20",
@@ -133281,7 +135845,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     },
     {
      "date": "2026-11-21",
@@ -133738,7 +136306,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     },
     {
      "date": "2026-11-22",
@@ -134195,7 +136767,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     },
     {
      "date": "2026-11-23",
@@ -134652,7 +137228,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     },
     {
      "date": "2026-11-24",
@@ -135109,7 +137689,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     },
     {
      "date": "2026-11-25",
@@ -135566,7 +138150,11 @@
        "id": "grouper",
        "status_only": true
       }
-     ]
+     ],
+     "tides": {
+      "available": false,
+      "reason": "no_matching_locality"
+     }
     }
    ]
   }

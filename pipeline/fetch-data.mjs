@@ -11,6 +11,7 @@
  * On per-beach failure, that beach carries forward its last good data, marked stale.
  */
 import fs from 'node:fs';
+import {loadTides} from './tides.mjs';
 import {spawnSync} from 'node:child_process';
 import {MODEL_LABELS,readFreshCache,modelSummary,omSeries,choosePrimary} from './multi-model.mjs';
 import {windowScore} from '../experimental-score.mjs';
@@ -35,6 +36,7 @@ const DATA_AVAILABILITY = {
   available_he: [
     'גובה גלים', 'טמפרטורת מי הים',
     'מהירות וכיוון זרם (ערכים קטנים ליד החוף; שימושיות לדיג לא אומתה)',
+    'זמני גאות ושפל אסטרונומיים: 11 יישובים תואמים; תחזית לאזור, לא מדידה בנקודת החוף. בשאר החופים חסר',
     'רוח וכיוון רוח',
     'מזג אוויר: טמפרטורת אוויר, לחות, משקעים ומצב שמיים לכל חלון',
     'זריחה/שקיעה ואור ראשון/אחרון (מחושב)', 'מלוא ירח (מחושב)'
@@ -453,6 +455,9 @@ async function main() {
     }
   }
 
+  const tideFor=loadTides(ROOT);
+  for(const beach of outBeaches)for(const day of beach.days||[])day.tides=tideFor(beach.id,day.date);
+
   const issue = {
     // Frozen config snapshot: archived issues render from this, so historical views never mutate
     // when the live species/beach config changes later.
@@ -481,7 +486,9 @@ async function main() {
         comparison:['ecmwf_wam','ncep_gfswave025'],
         spread:'largest simultaneous hourly spread, never a calibrated confidence interval',
         copernicus_retrieved_at:cpWaves?.generated_at??null},
+      tide_policy: {source:'The Tide Chart',model:'FES2022',acquisition:'monthly cached quotation; original retrieval time preserved',coverage:'matched named localities only, not exact shoreline measurements',missing_beaches:outBeaches.filter(b=>!b.days?.some(d=>d.tides?.available)).map(b=>b.id)},
       sources: [
+        {name:'The Tide Chart tide predictions',url:'https://www.thetidechart.com/terms',license:'Prediction quotation with source-page backlink'},
         {name:'Copernicus Mediterranean Waves (MED-WAV WAM Cycle 6)',url:'https://data.marine.copernicus.eu/product/MEDSEA_ANALYSISFORECAST_WAV_006_017/description',doi:'10.48670/mds-00373',license:'Copernicus Marine Service licence'},
         { name: 'Open-Meteo Marine API', url: 'https://open-meteo.com/en/docs/marine-weather-api', license: 'CC BY 4.0' },
         { name: 'Open-Meteo Forecast API', url: 'https://open-meteo.com/en/docs', license: 'CC BY 4.0' },

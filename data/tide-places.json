@@ -1,0 +1,79 @@
+{
+ "nahariya": {
+  "source_url": "https://www.thetidechart.com/il/northern-district/nahariyya",
+  "source_place": "Nahariyya",
+  "lat": 33.00892,
+  "lon": 35.09814,
+  "reference_distance_km": 0.9
+ },
+ "akko-argaman": {
+  "source_url": "https://www.thetidechart.com/il/northern-district/acre",
+  "source_place": "Acre",
+  "lat": 32.92814,
+  "lon": 35.07647,
+  "reference_distance_km": 1.3
+ },
+ "atlit": {
+  "source_url": "https://www.thetidechart.com/il/haifa/atlit",
+  "source_place": "Atlit",
+  "lat": 32.68889,
+  "lon": 34.94236,
+  "reference_distance_km": 2.1
+ },
+ "dor": {
+  "source_url": "https://www.thetidechart.com/il/haifa/dor",
+  "source_place": "Dor",
+  "lat": 32.60735,
+  "lon": 34.92337,
+  "reference_distance_km": 1.0
+ },
+ "caesarea": {
+  "source_url": "https://www.thetidechart.com/il/haifa/caesarea",
+  "source_place": "Caesarea",
+  "lat": 32.51888,
+  "lon": 34.90459,
+  "reference_distance_km": 2.7
+ },
+ "michmoret": {
+  "source_url": "https://www.thetidechart.com/il/central-district/mikhmoret",
+  "source_place": "Mikhmoret",
+  "lat": 32.40535,
+  "lon": 34.87091,
+  "reference_distance_km": 0.2
+ },
+ "netanya": {
+  "source_url": "https://www.thetidechart.com/il/central-district/netanya",
+  "source_place": "Netanya",
+  "lat": 32.33291,
+  "lon": 34.85992,
+  "reference_distance_km": 1.7
+ },
+ "herzliya": {
+  "source_url": "https://www.thetidechart.com/il/tel-aviv/herzliya",
+  "source_place": "Herzliya",
+  "lat": 32.16627,
+  "lon": 34.82536,
+  "reference_distance_km": 2.9
+ },
+ "rishon-lezion": {
+  "source_url": "https://www.thetidechart.com/il/central-district/rishon-letsiyon",
+  "source_place": "Rishon Letsiyon",
+  "lat": 31.97102,
+  "lon": 34.78939,
+  "reference_distance_km": 6.5
+ },
+ "ashdod": {
+  "source_url": "https://www.thetidechart.com/il/southern-district/ashdod",
+  "source_place": "Ashdod",
+  "lat": 31.79213,
+  "lon": 34.64966,
+  "reference_distance_km": 3.2
+ },
+ "ashkelon": {
+  "source_url": "https://www.thetidechart.com/il/southern-district/ashkelon",
+  "source_place": "Ashkelon",
+  "lat": 31.66926,
+  "lon": 34.57149,
+  "reference_distance_km": 2.3
+ }
+}

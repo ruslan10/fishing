@@ -41,7 +41,7 @@
 
 <script id="release-check">
 (()=>{
- const current='633d0e0d0accb2ee0333';let checking=false;
+ const current='0d89c7bd25988dadc0ad';let checking=false;
  async function check(){
   if(checking||document.hidden||document.querySelector('dialog[open]')||!navigator.onLine)return;
   checking=true;
@@ -462,6 +462,9 @@ function modelComparison(bd,day){
           ${sunItem('שקיעה', day.sunset, 'sunset')}
           ${sunItem('אור אחרון', day.last_light, 'dusk')}
         </div>
+        <div class="tide-strip" style="display:grid;grid-template-columns:1fr 1fr;gap:8px;background:var(--inset-bg);border-radius:12px;padding:12px;margin-top:8px">
+          ${['high','low'].map(kind=>`<div><div style="font-size:11px;opacity:.72">${kind==='high'?'גאות':'שפל'}</div><div style="font-size:16px;font-weight:600;margin-top:3px" dir="ltr">${day.tides?.available?day.tides.events.filter(e=>e.type===kind).map(e=>e.time).join(' · ')||'אין ביום זה':'חסר'}</div></div>`).join('')}
+        </div>
         ${latest.meta.version<5&&day.high_wave_warning?`<div class="warn-strip">⚠ גלים גבוהים (עד ${day.wave_max.toFixed(1)} מ׳) - זהירות מוגברת בחוף</div>`:''}
       </div>
 
@@ -487,6 +490,7 @@ function modelComparison(bd,day){
 
     html += `
     <footer>
+      ${(()=>{const t=bd?.days?.[Math.min(curDay,(bd?.days?.length||1)-1)]?.tides;return t?.available?`גאות ושפל: <a href="${t.source_url}" target="_blank" rel="noopener">The Tide Chart</a> · תחזית אסטרונומית ממודל, לא מדידה בחוף<br>`:'';})()}
       <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a> · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a> · נתונים עובדו לטווחים ולתצוגה${latest.meta.version>=5?' · מודלי גלים: ECMWF WAM, NOAA GFS Wave':''}${latest.meta.version>=5?`<br>גלי הים התיכון: Generated using E.U. Copernicus Marine Service Information · <a href="https://doi.org/10.48670/mds-00373" target="_blank" rel="noopener">DOI 10.48670/mds-00373</a>`:''}${latest.ims?.available?` · תחזית חופים רשמית: השירות המטאורולוגי הישראלי (שמ״ט), ims.gov.il - אינו נושא באחריות למידע או לשימוש בו, ואינו צד לפרסומו`:''}${latest.beaches?.some(b=>b.days?.some(d=>d.salinity_min!=null))?`<br>מליחות: Generated using E.U. Copernicus Marine Service Information · <a href="https://doi.org/10.48670/mds-00359" target="_blank" rel="noopener">DOI 10.48670/mds-00359</a>`:''}<br>
       תחזית ניסיונית לתכנון בלבד - לא אחוז תפיסה ולא הבטחה לבטיחות; בדקו תקנות דיג לפני היציאה.<br>
       הופק ${latest.meta.issued_at_local.replace('T',' · ')} · רענון נתונים מתוכנן כל 3 שעות
