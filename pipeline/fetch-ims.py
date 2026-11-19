@@ -16,11 +16,3 @@ if len(regions)!=3:raise RuntimeError('IMS incomplete, previous snapshot retaine
 content={'available':True,'issued_at':max(issued),'checked_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'source_url':'https://ims.gov.il/he/coasts','regions':regions}
 p=ROOT/'data/ims-latest.json';tmp=p.with_suffix('.tmp');tmp.write_text(json.dumps(content,ensure_ascii=False,indent=1)+'\n');tmp.replace(p)
 print('IMS updated:',content['issued_at'],len(regions),'regions')
-# Separate map manifest: retained independently if a coastal refresh later replaces its file.
-m=get('https://ims.gov.il/he/model_maps/S');runs=m['model_map']['waves'];run=max(runs)
-frames=runs[run]['dom1']['Waves Height & Direction']['totalHgt']['Z-2']
-legend=get('https://ims.gov.il/he/color_bars/1')['totalHgt']
-if not frames:raise RuntimeError('IMS maps missing, prior map snapshot retained')
-mapdata={'available':True,'checked_at':content['checked_at'],'run_utc':run,'source_url':'https://ims.gov.il/he/SeaModelMaps','model':'IFS - ECMWF','domain_he':m['areas']['dom1'],'legend':sorted([{'mark':float(v['mark']),'color':v['color']} for v in legend['items'].values()],key=lambda v:v['mark']),'frames':[{'valid_utc':t,'url':'https://ims.gov.il'+u} for t,u in sorted(frames.items())]}
-p=ROOT/'data/ims-maps.json';tmp=p.with_suffix('.tmp');tmp.write_text(json.dumps(mapdata,ensure_ascii=False,indent=1)+'\n');tmp.replace(p)
-print('IMS maps updated:',run,len(frames),'frames through',max(frames),'UTC')
