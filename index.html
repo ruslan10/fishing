@@ -31,6 +31,10 @@
 <script type="module">
 import {LEVELS,waveLevel,windLevel} from "./condition-scale.mjs?v=f2eb3f77e829";
 import {windowScore,modelWindowScore} from "./experimental-score.mjs?v=2f87b4cdcf8e";
+function summaryDatumIcon(kind){
+ const paths={sea:'<path d="M3 17c3-3 6 3 9 0s6 3 9 0M3 21c3-3 6 3 9 0s6 3 9 0M10 3v7a4 4 0 1 0 4 0V3a2 2 0 0 0-4 0Z"/>',salt:'<path d="m12 2 7 9a8 8 0 1 1-14 0Z"/><path d="M8 15h.01M15 13h.01M13 18h.01"/>',air:'<path d="M9 4a3 3 0 0 1 6 0v10a5 5 0 1 1-6 0Z"/><path d="M12 7v11M18 5h3M18 9h2"/>',pressure:'<path d="M4 18a9 9 0 1 1 16 0M12 4v3M5 8l2 2M19 8l-2 2M3 14h3M21 14h-3M12 14l4-4"/><circle cx="12" cy="14" r="2"/>',moon:'<path d="M20 15A9 9 0 0 1 9 4a9 9 0 1 0 11 11Z"/>'};
+ return `<span class="summary-datum-icon" aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;padding:5px;margin-inline-start:4px;border:1px solid var(--border);border-radius:50%;color:var(--accent);vertical-align:middle;box-sizing:border-box"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${paths[kind]}</svg></span>`;
+}
 function scoreColor(s){return s==null?'var(--fg)':s>=70?'var(--ok-fg)':s>=45?'var(--warn-fg)':'var(--off-fg)';}
 const HEB_DAYS = ['ראשון','שני','שלישי','רביעי','חמישי','שישי','שבת'];
 function nowIL(){ const p = new Intl.DateTimeFormat('sv-SE',{timeZone:'Asia/Jerusalem',dateStyle:'short',timeStyle:'short'}).format(new Date());
@@ -426,6 +430,8 @@ function modelComparison(bd,day){
       if(hw) html+=`<dialog class="wind-dialog" aria-labelledby="wind-help-title"><h2 id="wind-help-title">רוח בוקר</h2><p>ביום שנבחר, בין <bdi>${hw.from}–${hw.to}</bdi> לפי שעון ישראל.</p><p>המספרים הם המהירות הנמוכה והגבוהה בתחזיות השעתיות בטווח הזה, מעוגלות לקמ״ש. זה לא ממוצע יומי ולא משבי רוח.</p><p>הכיוון הוא הכיוון שממנו הרוח נושבת, לפי ממוצע מעגלי של הכיוונים באותן שעות.</p><p>הנתון בכרטיס הוא תחזית ממודל מזג אוויר בגובה 10 מטר, לא מדידה ולא התחזית הרשמית של IMS. בטבלה, בשעות המכוסות בתחזית הרשמית, מוצגים נתוני IMS.</p><p>בבחירת הימים למעלה, החץ מציג את כיוון רוח הבוקר של אותו יום, כמו בכרטיס הזה. המספרים הצבעוניים מעל החץ הם טווח המהירויות באותו בוקר, כמו בכרטיס הזה. הצבע נקבע לפי המהירות הגבוהה בטווח הבוקר, לא לפי שיא הרוח היומי. החץ מצביע אל הכיוון שממנו נושבת הרוח.</p><form method="dialog"><button>סגירה</button></form></dialog>`;
     }
     app.innerHTML = html;
+    const summaryKinds={'מי ים':'sea','מליחות':'salt','אוויר (טווח היום)':'air','לחץ ברומטרי':'pressure','ירח':'moon'};
+    app.querySelectorAll('.hero-grid .hg .k').forEach(label=>{const kind=summaryKinds[label.textContent.trim()];if(kind)label.insertAdjacentHTML('beforeend',summaryDatumIcon(kind));});
     const helpButton=app.querySelector('.wind-help'), helpDialog=app.querySelector('.wind-dialog:not(.score-dialog)');
     if(helpButton&&helpDialog){helpButton.onclick=()=>helpDialog.showModal();helpDialog.onclick=e=>{if(e.target===helpDialog){const r=helpDialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)helpDialog.close();}};}
 
