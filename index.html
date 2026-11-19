@@ -188,6 +188,25 @@ function imsCard(region){
   </div>`;
 }
 
+// Daily wave maxima only. Straight segments connect daily samples, not hourly forecasts.
+function weeklyWaveChart(bd){
+  const days=(bd.days||[]).slice(0,7), W=350, H=232, base=211, top=105, step=46;
+  const values=days.map(d=>Number.isFinite(d.wave_max)?Math.round(d.wave_max*100):null);
+  const ceiling=Math.max(100,Math.ceil(Math.max(0,...values.filter(v=>v!=null))/50)*50);
+  const x=i=>W-37-i*step, y=v=>base-(v/ceiling)*(base-top);
+  const points=values.map((v,i)=>v==null?null:[x(i),y(v)]);
+  let segments=[],current=[];
+  for(const pt of [...points,null]){if(pt)current.push(pt);else if(current.length){segments.push(current);current=[];}}
+  const areas=segments.map(ps=>`<path d="M${ps[0][0]},${base} L${ps.map(p=>p.join(',')).join(' L')} L${ps.at(-1)[0]},${base} Z" fill="#2299d6" fill-opacity=".7"/><path d="M${ps.map(p=>p.join(',')).join(' L')}" fill="none" stroke="#38bdf8" stroke-width="2.5"/>`).join('');
+  const labels=days.map((d,i)=>{
+    const strongest=(d.windows||[]).filter(w=>Number.isFinite(w.wind_max_kmh??w.wind_kmh)).reduce((a,w)=>!a||(w.wind_max_kmh??w.wind_kmh)>(a.wind_max_kmh??a.wind_kmh)?w:a,null);
+    const deg=strongest?.wind_deg;
+    const arrow=Number.isFinite(deg)?`<g transform="translate(${x(i)} 65) rotate(${deg})"><path d="M0,-9 L5,3 L1.5,1 L1.5,9 L-1.5,9 L-1.5,1 L-5,3 Z" fill="#cbd5e1"/></g>`:`<text x="${x(i)}" y="69">—</text>`;
+    return `<g data-date="${d.date}" data-wave-cm="${values[i]??''}"><title>${d.date}: ${values[i]==null?'חסר':values[i]+' ס״מ'}; מקור הרוח בחלון החזק: ${strongest?.wind_dir||'חסר'}</title><text x="${x(i)}" y="18">${['א׳','ב׳','ג׳','ד׳','ה׳','ו׳','ש׳'][new Date(d.date+'T12:00:00').getDay()]}</text><text x="${x(i)}" y="36" fill="#94a3b8">${d.date.slice(8,10)}/${d.date.slice(5,7)}</text>${arrow}${values[i]==null?`<text x="${x(i)}" y="151">חסר</text>`:`<text class="wave-value" x="${x(i)}" y="${y(values[i])-12}">${values[i]}</text><circle cx="${x(i)}" cy="${y(values[i])}" r="3.5" fill="#e0f2fe" stroke="#0f172a" stroke-width="1.5"/>`}</g>`;
+  }).join('');
+  return `<div class="card wavechart"><div class="wavechart-title" style="font-size:13px;font-weight:700">גובה הגלים · שיא יומי בס״מ</div><div class="wavechart-key" style="font-size:10px;color:#94a3b8;margin-top:3px">חצים: מאין הרוח בחלון החזק ביום</div><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="גרף שיא גובה הגלים היומי וחצי מקור הרוח לשבוע" style="display:block;width:100%;direction:ltr;font:11px Heebo,sans-serif;text-anchor:middle;fill:#e2e8f0"><line x1="14" y1="${base}" x2="336" y2="${base}" stroke="#334155"/>${areas}${labels}<text x="336" y="227" fill="#94a3b8" font-size="9">0</text></svg></div>`;
+}
+
   let archive = null;
   try { archive = await loadJson('data/archive-index.json'); } catch(e){}
 
@@ -239,6 +258,7 @@ function imsCard(region){
           ${mini(waveC,waveRangeCm(d.wave_min,d.wave_max)||'חסר','גלים · ס״מ')}
           ${mini(windC,vl==null?'חסר':`<bdi>${Math.round(maxWind)}</bdi>`,'רוח שיא · קמ״ש')}</div>`;
       }).join('')}</div></div>
+    ${weeklyWaveChart(bd)}
     <div class="tabs">${beachesCfg.regions.map(r=>`<div class="tab ${r.id===curRegion?'on':''}" data-region="${r.id}">${r.name_he}</div>`).join('')}</div>
     <select class="beachsel" aria-label="בחירת חוף">${regionBeaches.map(b=>`<option value="${b.id}" ${b.id===curBeach?'selected':''}>${b.name_he}</option>`).join('')}</select>`;
 
