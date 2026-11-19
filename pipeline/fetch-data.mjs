@@ -11,6 +11,7 @@
  * On per-beach failure, that beach carries forward its last good data, marked stale.
  */
 import fs from 'node:fs';
+import {spawnSync} from 'node:child_process';
 import {MODEL_LABELS,readFreshCache,modelSummary,omSeries,choosePrimary} from './multi-model.mjs';
 import {windowScore} from '../experimental-score.mjs';
 import crypto from 'node:crypto';
@@ -162,6 +163,8 @@ function beachDataValid(m, w, issueDate) {
 }
 
 async function main() {
+  const historyRun=spawnSync('python3',[path.join(ROOT,'pipeline/fetch-change48.py')],{stdio:'inherit'});
+  if(historyRun.status!==0) console.error('Daily48h unavailable; existing snapshot retained if present.');
   const lats = beaches.beaches.map(b => b.lat).join(',');
   const lons = beaches.beaches.map(b => b.lon).join(',');
   const marineUrl = apiUrl('https://marine-api.open-meteo.com/v1/marine', {
@@ -455,6 +458,7 @@ async function main() {
       species_sources: speciesCfg.sources,
       beaches: beaches.beaches.map(b => ({ id: b.id, name_he: b.name_he, region: b.region, terrain_he: b.terrain_he, caution_he: b.caution_he || null, lat: b.lat, lon: b.lon }))
     },
+    change48: (()=>{try{return JSON.parse(fs.readFileSync(path.join(DATA,'change48-latest.json'),'utf8'));}catch(e){return {days:{}};}})(),
     ims: imsBlock,
     meta: {
       version: VERSION,

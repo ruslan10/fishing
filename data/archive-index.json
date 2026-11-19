@@ -1,6 +1,20 @@
 {
  "issues": [
   {
+   "issue_id": "2026-11-19T16-47-53-4bd7ce",
+   "file": "issues/2026-11-19T16-47-53-4bd7ce.json",
+   "issued_at_local": "2026-11-19T16:47:53",
+   "valid_from": "2026-11-19",
+   "valid_to": "2026-11-25"
+  },
+  {
+   "issue_id": "2026-11-19T16-45-50-407e2e",
+   "file": "issues/2026-11-19T16-45-50-407e2e.json",
+   "issued_at_local": "2026-11-19T16:45:50",
+   "valid_from": "2026-11-19",
+   "valid_to": "2026-11-25"
+  },
+  {
    "issue_id": "2026-11-19T13-56-39-6084d5",
    "file": "issues/2026-11-19T13-56-39-6084d5.json",
    "issued_at_local": "2026-11-19T13:56:39",

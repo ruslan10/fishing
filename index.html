@@ -17,6 +17,7 @@
 .wind-dialog h2 {font-size:18px;margin:0 0 12px}
 .wind-dialog p {margin:8px 0}
 .wind-dialog button {font:600 14px Heebo;padding:8px 20px;border:0;border-radius:9px;background:var(--accent);color:#06202b;cursor:pointer;margin-top:12px}
+@media(max-width:767px){.hero-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-grid .hg{min-width:0}.hero-grid .v[style*="display:flex"]{flex-wrap:wrap}}
 </style>
 </head>
 <body><div class="wrap" id="app">טוען נתונים...</div>
@@ -41,7 +42,7 @@ function summaryHelp(kind){
  sea:{title:'טמפרטורת מי הים',what:'הממוצע היומי של תחזיות טמפרטורת פני הים הזמינות, במעלות צלזיוס. זה נתון ממודל ימי, לא מדחום בחוף, ולא בהכרח הטמפרטורה בעומק שבו הדג נמצא.',effect:'טמפרטורת המים היא חלק מבית הגידול ומשפיעה על תפוצת דגים וטרפם. התגובה תלויה במין ובמקום. אין כאן טווח טמפרטורה שמוכיח שדג טורף יתקוף דמוי בחוף הזה.',links:[[habitat,'NOAA · טמפרטורה ובית גידול'],['https://open-meteo.com/en/docs/marine-weather-api','הגדרת נתון פני הים']]},
  salt:{title:'מליחות',what:'ריכוז המלחים במי הים, מוצג בסולם המליחות המעשי PSU. הכרטיס מציג את הטווח היומי הזמין ממודל Copernicus ברזולוציה של כ־4 ק״מ, בתא ים סמוך. זו אינה מדידה בשפת המים.',effect:'מליחות היא חלק מבית הגידול ומשפיעה על התפוצה של מינים שונים. לא כל הדגים מגיבים באותו אופן. אין לנו סף מליחות מאומת לזירז׳ור בחופי ישראל, ולכן הנתון אינו מתורגם כאן להמלצת דיג.',links:[[habitat,'NOAA · מליחות ובית גידול'],['https://data.marine.copernicus.eu/product/MEDSEA_ANALYSISFORECAST_PHY_006_013/description','Copernicus · המודל והרזולוציה']]},
  air:{title:'טמפרטורת האוויר',what:'הטמפרטורה הנמוכה והגבוהה בתחזית לאורך היום שנבחר, מעוגלות למעלות. תחזית האוויר מתייחסת לגובה של 2 מטר מעל הקרקע; זו אינה טמפרטורת המים.',effect:'שימושי בעיקר לתכנון הלבוש והשהייה בחוף. אין להסיק שטמפרטורת האוויר היא טמפרטורת בית הגידול של הדג. מחקרי תפיסות במינים ובאזורים אחרים אינם נותנים כאן כלל מקומי של חם = טוב או קר = רע.',links:[['https://open-meteo.com/en/docs','הגדרת נתוני מזג האוויר'],['https://link.springer.com/article/10.1007/s42452-023-05379-8','מחקר · השפעות תלויות מין ואזור']]},
- pressure:{title:'לחץ ברומטרי',what:'לחץ האוויר המתוקן לגובה פני הים, ביחידות hPa. בכרטיס מוצג המינימום והמקסימום החזויים ביום שנבחר. טווח יומי אינו מציג את סדר השינוי, ולכן לא מוכיח שהלחץ עולה או יורד.',effect:'לחץ ומערכות מזג אוויר קשורים זה לזה, אבל מהמספר הזה לבדו אין בסיס לקבוע שעת אכילה של דגים. אין אצלנו כלל מאומת לזירז׳ור בחוף שמתרגם לחץ מסוים לציון תפיסה. כדאי לקרוא אותו יחד עם התחזית עצמה, לא כהבטחה לפעילות דגים.',links:[['https://www.weather.gov/lmk/basic-fronts','NOAA/NWS · לחץ ומערכות מזג אוויר'],['https://open-meteo.com/en/docs','הגדרת לחץ מתוקן לפני הים']]},
+ pressure:{title:'לחץ ברומטרי ושינויי 48 שעות',what:'הטווח הגדול בכרטיס הוא לחץ האוויר החזוי ביום שנבחר, מתוקן לפני הים, ביחידות hPa. מתחתיו נתון יומי קבוע: השינוי הגדול ביותר בערך מוחלט בין שתי שעות המרוחקות 24 שעות, מתוך 48 השעות שלפני 00:00 בתחילת היום שנבחר, בשעון ישראל. הסימן מראה את כיוון אותו שינוי, לא בהכרח את המגמה עכשיו. טמפרטורה כאן היא טמפרטורת פני הים. שינוי חריג מוגדר מעל האחוזון ה־95 של אותו חישוב ב־30 חלונות קודמים, המסתיימים לפחות 48 שעות לפני החיתוך. החלונות חופפים ואינם ניסויים עצמאיים. זה סף סטטיסטי מקומי, לא סף ביולוגי. נדרשות 48 שעות מלאות לחישוב ו־30 חלונות מלאים לסיווג; אחרת מוצג חוסר נתונים. הנתון מחושב ברענון הראשון לאחר תחילת היום ואז נשמר ללא שינוי. יום עתידי אינו מקבל נתון עבר לפני שהגיע. הנתונים הם מודלים של העבר הקרוב, לא מדידות בחוף ולא תחזית שידוע שהייתה זמינה בזמן עבר.',effect:'לחץ ומערכות מזג אוויר קשורים זה לזה, אבל מהמספר הזה לבדו אין בסיס לקבוע שעת אכילה של דגים. זה תיאור שינוי בתנאים, לא הסתברות תפיסה ולא מדד בטיחות. הוא אינו משנה את ציון התנאים הקיים.',links:[['https://open-meteo.com/en/docs','לחץ מתוקן לפני הים ונתוני עבר קרוב'],['https://open-meteo.com/en/docs/marine-weather-api','טמפרטורת פני הים ממודל']]},
  moon:{title:'ירח',what:'אחוז הדסקה המוארת של הירח והאם הוא מתמלא או מתמעט, בחישוב יומי מקורב. זה לא אחוזי תפיסה, לא אחוז הארה בחוף ולא תחזית גאות. אור בפועל תלוי גם בשעת זריחת הירח, בעננות ובסביבה, שאינן נלמדות מהאחוז לבדו.',effect:'במחקרים מסוימים נמצא קשר בין מחזור הירח לתפיסות, ובאחרים לא נמצא קשר. ההשפעה תלויה במין ובמקום. המחקרים המקושרים הם על דגי מים מתוקים בצפון אמריקה, לא אימות לזירז׳ור בחופי ישראל; לכן לא מוצגות כאן שעות אכילה או הבטחת תפיסה לפי הירח.',links:[['https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0098046','מחקר · קשר בחלק מתפיסות מוסקי'],['https://link.springer.com/article/10.1007/s42452-023-05379-8','מחקר · ללא קשר בתפיסות פורל']]}
  };
  const e=entries[kind];return `<dialog class="wind-dialog datum-dialog" aria-label="${e.title}"><h2>${e.title}</h2><p><b>מה מוצג?</b><br>${e.what}</p><p><b>מה זה אומר לדיג?</b><br>${e.effect}</p><p style="font-size:11px;opacity:.8">הסבר כללי בלבד. אין כאן חיזוי תפיסה או קביעה שהים בטוח. למעט רוח, הנתונים האלה אינם נכנסים למדד התנאים הניסיוני שבטבלה.</p><details style="font-size:12px"><summary>מקורות</summary>${e.links.map(([url,label])=>`<p><a href="${url}" target="_blank" rel="noopener" style="color:var(--accent)">${label}</a></p>`).join('')}</details><form method="dialog"><button>סגירה</button></form></dialog>`;
@@ -190,6 +191,7 @@ async function loadJson(p){
     loadJson('data/beaches.json'), loadJson('data/species.json'),
     loadJson(issueParam ? 'data/issues/'+encodeURIComponent(issueParam)+'.json' : 'data/latest.json')
   ]);
+  let change48=latest.change48||{days:{}};
   let officialIMS=latest.ims;
   if(!issueParam){ try { officialIMS=await loadJson('data/ims-latest.json'); } catch(e){ officialIMS=latest.ims; } }
   // Render config: archived issues carry a frozen snapshot so historical views never mutate.
@@ -397,7 +399,12 @@ function modelComparison(bd,day){
             if(lo==null||hi==null){ const ps=day.windows.map(w=>w.pressure).filter(x=>x!=null); if(ps.length){ lo=Math.min(...ps); hi=Math.max(...ps); } }
             if(lo==null) return `<div class="hg"><div class="k">לחץ ברומטרי</div><div class="v">חסר</div></div>`;
             const a=Math.round(lo), b=Math.round(hi);
-            return `<div class="hg"><div class="k">לחץ ברומטרי</div><div class="v">${a===b?`<bdi class="ltr">${b}</bdi>`:`<bdi class="ltr">${a}–${b}</bdi>`} hPa</div></div>`; })()}
+            const rec=change48.days?.[day.date], st=rec?.beaches?.[bd.id];
+            const value=(v,unit)=>v?.available?`<bdi class="ltr">${v.signed_change_24h>0?'+':''}${v.signed_change_24h.toFixed(1)} ${unit}</bdi>`:'חסר';
+            const classified=st?.pressure?.unusual_relative_to_month!=null&&st?.sst?.unusual_relative_to_month!=null;
+            const flag=st?.pressure?.unusual_relative_to_month||st?.sst?.unusual_relative_to_month;
+            const ch=day.date>nowIL().date?'טרם זמינים ליום זה':!st?'נתוני עבר חסרים':`<div>לחץ ${value(st.pressure,'hPa')}</div><div>מי ים ${value(st.sst,'°C')}</div><div style="font-size:11px;opacity:.75">${classified?(flag?'שינוי חריג יחסית':'ללא שינוי חריג יחסית'):'אין די נתונים לסיווג'}</div><div style="font-size:10px;opacity:.6">עד <bdi>${day.date.slice(8,10)}.${day.date.slice(5,7)} · 00:00</bdi></div>`;
+            return `<div class="hg"><div class="k">לחץ ברומטרי</div><div class="v">${a===b?`<bdi class="ltr">${b}</bdi>`:`<bdi class="ltr">${a}–${b}</bdi>`} hPa</div><div class="change48" style="margin-top:7px;font-size:12px;line-height:1.8"><b>שינויים ב־48 שעות</b><div>${ch}</div></div></div>`; })()}
         </div>
         <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;background:var(--inset-bg);border-radius:12px;padding:10px 6px;margin-top:8px">
           ${sunItem('אור ראשון', day.first_light, 'dawn')}
