@@ -41,7 +41,7 @@
 
 <script id="release-check">
 (()=>{
- const current='633d0e0d0accb2ee0333';let checking=false;
+ const current='7f72c664455e845bdd49';let checking=false;
  async function check(){
   if(checking||document.hidden||document.querySelector('dialog[open]')||!navigator.onLine)return;
   checking=true;
@@ -457,11 +457,12 @@ function modelComparison(bd,day){
             return `<div class="hg"><div class="k">לחץ ברומטרי</div><div class="v">${a===b?`<bdi class="ltr">${b}</bdi>`:`<bdi class="ltr">${a}–${b}</bdi>`} hPa</div><div class="change48" style="margin-top:7px;font-size:12px;line-height:1.8"><b>שינויים ב־48 שעות</b><div>${ch}</div></div></div>`; })()}
         </div>
         <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;background:var(--inset-bg);border-radius:12px;padding:10px 6px;margin-top:8px">
-          ${sunItem('אור ראשון', day.first_light, 'dawn')}
+          ${sunItem(day.first_light_adjustment_minutes===-20?'אור ראשון*':'אור ראשון', day.first_light, 'dawn')}
           ${sunItem('זריחה', day.sunrise, 'sunrise')}
           ${sunItem('שקיעה', day.sunset, 'sunset')}
           ${sunItem('אור אחרון', day.last_light, 'dusk')}
         </div>
+        ${day.first_light_adjustment_minutes===-20?'<div style="font-size:10px;opacity:.6;margin-top:4px">* הוקדם ב־20 דקות מהשחר האזרחי המחושב</div>':''}
         ${latest.meta.version<5&&day.high_wave_warning?`<div class="warn-strip">⚠ גלים גבוהים (עד ${day.wave_max.toFixed(1)} מ׳) - זהירות מוגברת בחוף</div>`:''}
       </div>
 

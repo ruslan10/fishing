@@ -345,6 +345,7 @@ async function main() {
       const di = w.daily?.time?.indexOf(date);
       const sunrise = di >= 0 ? w.daily.sunrise[di].slice(11, 16) : null;
       const sunset = di >= 0 ? w.daily.sunset[di].slice(11, 16) : null;
+      const civilDawn = civilTwilight(date, b.lat, b.lon, sunrise, sunset, true);
       const dateUtc = new Date(date + 'T12:00:00Z');
       const moon = moonPhase(dateUtc);
       const dayPeakWind=hours.map(x=>x.wind_kmh).filter(x=>x!=null);
@@ -361,7 +362,10 @@ async function main() {
       return {
         date,
         sunrise, sunset,
-        first_light: civilTwilight(date, b.lat, b.lon, sunrise, sunset, true),
+        first_light: civilDawn==null?null:minToHhmm(hhmmToMin(civilDawn)-20),
+        civil_dawn: civilDawn,
+        first_light_adjustment_minutes: -20,
+        first_light_definition: 'user-adjusted planning time: 20 minutes before computed civil dawn, not astronomical dawn',
         last_light: civilTwilight(date, b.lat, b.lon, sunrise, sunset, false),
         moon_illumination_pct: moon.pct,
         moon_waxing: moon.waxing,
