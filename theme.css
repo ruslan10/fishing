@@ -38,7 +38,7 @@ header .issued { font-size:11px; opacity:.6; margin-top:6px; }
 h3.sec { font-size:14px; font-weight:800; margin:16px 0 8px; opacity:.9; }
 .days { display:grid; grid-template-columns:repeat(7,minmax(0,1fr)); gap:5px; }
 .day { text-align:center; padding:7px 2px; border-radius:10px; background:var(--inset-bg); cursor:pointer; }
-.day.today { outline:2px solid var(--accent); }
+.day.sel { outline:2px solid var(--accent); }
 .day.sel { background:var(--accent-2); color:var(--accent-2-fg); }
 .day.sel .dd, .day.sel .wv { opacity:.75; }
 .day .dd { font-size:10px; opacity:.65; }
