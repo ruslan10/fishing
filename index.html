@@ -284,11 +284,7 @@ function imsCard(region){
         <td>${w.current_vel!=null&&w.current_vel>0.01?w.current_vel+' קמ״ש '+(w.current_dir?'ל'+w.current_dir:''):'—'}</td>
         </tr>
         <tr class="wxsub ${isPast?'past':''}"><td colspan="4">${wxLine(w)}</td></tr>`;}).join('')}
-      </table><div style="font-size:10.5px;opacity:.6;margin-top:6px">צבע הגלים וצבע הרוח נפרדים, לפי השיא בכל יום או טווח שעות. סולם מקומי, לא דירוג בטיחות ולא הסתברות תפיסה. משבים מוצגים בנפרד ואינם נכללים בצבע.${day.date<today?' שורות אפורות כבר עברו.':''} כיוון רוח וגלים הוא הכיוון <b>שממנו</b> הם באים; כיוון זרם הוא הכיוון <b>שאליו</b> הוא זורם.</div>
-      <div style="font-size:10.5px;opacity:.75;margin-top:4px;line-height:2">${LEVELS.map(c=>stateChip([c.name,c.color])).join(' ')}<br>
-      גלים בס״מ: ירוק מתחת ל־50 · צהוב 50–100 כולל · כתום מעל 100 ומתחת ל־200 · אדום 200–300 כולל · שחור מעל 300.<br>
-      רוח מתמשכת בקמ״ש: ירוק מתחת ל־12 · צהוב 12 עד פחות מ־20 · כתום 20 עד פחות מ־29 · אדום 29 עד פחות מ־50 · שחור מ־50.<br>
-      הסיווג לפי הערכים המעוגלים המוצגים. טווח הגלים הוא המינימום והמקסימום השעתיים; שמות מצב הים לפי מונחי שמ״ט, הצבעים לפי הסולם המקומי.</div>`}</div>
+      </table>`}</div>
 
       <h3 class="sec">דגי טורפים · ז'ירז'ור מהחוף</h3>
       <div class="sp-grid">${day.species.map(sp=>{
