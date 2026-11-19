@@ -11,6 +11,7 @@
  * On per-beach failure, that beach carries forward its last good data, marked stale.
  */
 import fs from 'node:fs';
+import {windowScore} from '../experimental-score.mjs';
 import crypto from 'node:crypto';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -299,7 +300,7 @@ async function main() {
             return { wx_code: worst ? worst.wx_code : null, is_day: worst ? (worst.is_day ?? null) : null };
           })()
         };
-        // Score assigned below from the true maxima, never window averages.
+        win.score = windowScore(win.wave_height,win.wind_kmh,win.gust_kmh);
         // Hourly wave min/max inside the window, for an honest range display (not an uncertainty band).
         const wv = cells.map(x => x.wave_height).filter(x => x != null);
         win.wave_min = wv.length ? round(Math.min(...wv), 2) : null;
@@ -441,7 +442,7 @@ async function main() {
       ],
       attribution_he: 'נתוני ים ומזג אוויר דרך Open-Meteo (CC BY 4.0), המשלב מודלים של Météo-France/Copernicus Marine Service (MFWAM, SMOC), ECMWF WAM, NOAA NCEP GFS Wave ו-DWD. גובה פני ים ממודל בלבד, דיוק מוגבל בחוף. מלוא ירח ואור ראשון/אחרון מחושבים.',
       data_availability: DATA_AVAILABILITY,
-      scoring_note_he: 'כרטיסי הדגים איכותניים בלבד, בהיקף דיג ז\'ירז\'ור מהחוף - ללא ציון התאמה מספרי: אין מקור מאומת לספי עונה/שעות/גלים/רוח/טמפרטורה למין. צבע הגלים וצבע הרוח המתמשכת מוצגים בנפרד, לפי השיא היומי או בטווח השעות. אין מדד משולב ואין ציון מספרי. הסולם מקומי וניסיוני, לא תחזית תפיסה ולא דירוג בטיחות.',
+      scoring_note_he: 'כרטיסי הדגים איכותניים בלבד, בהיקף דיג ז\'ירז\'ור מהחוף - ללא ציון התאמה מספרי: אין מקור מאומת לספי עונה/שעות/גלים/רוח/טמפרטורה למין. צבע הגלים וצבע הרוח המתמשכת מוצגים בנפרד, לפי השיא היומי או בטווח השעות. עמודת התנאים מחזירה את ציון ההשוואה הניסיוני המקורי 0–100, המחושב מממוצעי החלון ומשבים, בנפרד מסולם הצבעים של המדידות. הסולם מקומי וניסיוני, לא תחזית תפיסה ולא דירוג בטיחות.',
       stale_beaches: staleBeaches
     },
     beaches: outBeaches
