@@ -219,13 +219,13 @@ function imsCard(region){
       ${!issueParam&&(age.old||(latest.meta.valid_to&&latest.meta.valid_to<nowIL().date))?`<div class="issued"><span style="color:var(--warn-fg)">${age.old?`התחזית בת ${age.hours} שעות - ייתכן שהרענון היומי נכשל`:''}${age.old&&latest.meta.valid_to&&latest.meta.valid_to<nowIL().date?' · ':''}${latest.meta.valid_to&&latest.meta.valid_to<nowIL().date?`תוקף התחזית הסתיים ב-${latest.meta.valid_to} - כל ההמלצות היסטוריות`:''}</span></div>`:''}
     </header>
       <h3 class="sec">תחזית גלים ורוח - 7 הימים הבאים</h3>
-      <div class="card"><div class="days">${bd.days.map((d,i)=>{
+      <div class="card"><div style="font-size:10px;opacity:.65;margin-bottom:6px">מדד גלים ורוח · השעות הטובות ביום</div><div class="days">${bd.days.map((d,i)=>{
         const wd = HEB_DAYS[new Date(d.date+'T12:00:00').getDay()];
         const [bcls, btxt] = BAND[d.day_band]||BAND.insufficient;
         return `<div class="day ${d.date===today?'today':''} ${i===curDay?'sel':''}" data-day="${i}">
           <div class="dd">${wd}</div><div class="dt">${d.date.slice(8,10)}.${d.date.slice(5,7)}</div>
           <div class="wv" style="font-size:10.5px;font-weight:800;white-space:nowrap;line-height:1.25">${waveRangeCm(d.wave_min,d.wave_max)?waveRangeCm(d.wave_min,d.wave_max)+'<div style="font-size:8px;font-weight:400;opacity:.6">ס״מ</div>':(d.wave_max!=null?d.wave_max.toFixed(1)+' מ׳':'')}</div>
-          <div class="bdg ${bcls}" style="font-size:9px;margin-top:3px">${BAND_SHORT[d.day_band]||'?'}</div></div>`;
+          <div class="bdg ${bcls}" title="מדד ניסיוני לגלים ורוח בשעות הטובות ביום, לא אחוז תפיסה" style="font-size:11px;margin-top:3px">${d.day_score==null?'חסר':`<bdi>${d.day_score}</bdi>`}</div></div>`;
       }).join('')}</div></div>
     <div class="tabs">${beachesCfg.regions.map(r=>`<div class="tab ${r.id===curRegion?'on':''}" data-region="${r.id}">${r.name_he}</div>`).join('')}</div>
     <select class="beachsel" aria-label="בחירת חוף">${regionBeaches.map(b=>`<option value="${b.id}" ${b.id===curBeach?'selected':''}>${b.name_he}</option>`).join('')}</select>`;
