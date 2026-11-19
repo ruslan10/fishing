@@ -110,3 +110,12 @@ QA asserts: no page/console errors, no horizontal overflow at 390px and 1280px, 
 Sources: https://data.marine.copernicus.eu/product/MEDSEA_ANALYSISFORECAST_WAV_006_017/description
 and https://marine.copernicus.eu/user-corner/service-commitments-and-licence ;
 https://open-meteo.com/en/docs/marine-weather-api and https://open-meteo.com/en/terms .
+
+### Presentation correction, 19 Nov 2026
+IMS official range graph/card leads. Offshore models are equal-status trends and
+comparison, not a chosen shore-height answer. The weekly graph plots Copernicus,
+ECMWF WAM and GFS separately, without averaging. Model-only wave headline/day-tile
+numbers and model-based condition scores are withheld in schema-v5 views; beyond
+IMS coverage the hourly wave cell directs readers to the comparison rather than
+pretending to have a validated coastal forecast. Raw source provenance and dated
+issue files remain unchanged. GoSurf is not ingested or republished.
