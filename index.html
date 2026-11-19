@@ -228,14 +228,14 @@ function officialWindow(region,day,w){
 
 function waveSourceLabel(bd){
   if(bd?.wave_primary==='copernicus_med') return 'Copernicus MED-WAV';
-  if(bd?.wave_primary) return 'Open-Meteo · גיבוי';
-  return 'Open-Meteo';
+  if(bd?.wave_primary) return 'מודל גיבוי';
+  return 'מודל משולב';
 }
 function weeklyWaveChart(bd){
   const all=bd?.wave_provenance?.model_series;
   if(!all) return '';
   const colors={copernicus_med:'#38c5ef',ecmwf_wam:'#e4b45a',ncep_gfswave025:'#c69af5',open_meteo_best_match:'#8dd4ae'};
-  const labels={copernicus_med:'Copernicus',ecmwf_wam:'ECMWF',ncep_gfswave025:'GFS',open_meteo_best_match:'Open-Meteo'};
+  const labels={copernicus_med:'Copernicus',ecmwf_wam:'ECMWF',ncep_gfswave025:'GFS',open_meteo_best_match:'מודל משולב'};
   const days=bd.days.map(d=>d.date);
   const times=days.flatMap(date=>Array.from({length:24},(_,h)=>`${date}T${String(h).padStart(2,'0')}:00`));
   const series=Object.entries(all).map(([id,s])=>{const map=new Map(s.hourly.map(r=>[r.time,r.height]));return {id,values:times.map(t=>map.get(t)??null)};});
@@ -252,7 +252,7 @@ function weeklyWaveChart(bd){
 }
 
 function windowModelHeights(bd,day,w){
-  const labels={copernicus_med:'Copernicus',ecmwf_wam:'ECMWF',ncep_gfswave025:'GFS',open_meteo_best_match:'Open-Meteo'};
+  const labels={copernicus_med:'Copernicus',ecmwf_wam:'ECMWF',ncep_gfswave025:'GFS',open_meteo_best_match:'מודל משולב'};
   const span=((+w.to.slice(0,2))-w.fromHour+24)%24;
   const rows=Object.entries(bd.wave_provenance?.model_series||{}).map(([id,s])=>{
     const values=s.hourly.filter(r=>r.time.slice(0,10)===day.date && +r.time.slice(11,13)>=w.fromHour && +r.time.slice(11,13)<w.fromHour+span && Number.isFinite(r.height)).map(r=>r.height);
@@ -264,8 +264,8 @@ function windowModelHeights(bd,day,w){
 function modelComparison(bd,day){
   const c=day?.wave_comparison;
   if(!c) return '';
-  const rows=c.models.map(m=>`<div style="display:flex;justify-content:space-between;gap:8px;align-items:baseline;padding:6px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px"><bdi>${m.label}</bdi></span><span style="font-size:12px;white-space:nowrap">${m.hours_valid?`${waveRangeCm(m.min,m.max)} ס״מ`:'חסר'}<span style="font-size:10px;opacity:.65"> · <bdi>${m.hours_valid}/24</bdi> ש׳</span></span></div>`).join('');
-  const cells=c.models.filter(m=>m.cell_lat!=null).map(m=>`<div><bdi>${m.label}: ${m.cell_lat}, ${m.cell_lon}</bdi>${m.dist_km!=null?` · ~${m.dist_km} ק״מ מהחוף`:''}</div>`).join('');
+  const rows=c.models.map(m=>`<div style="display:flex;justify-content:space-between;gap:8px;align-items:baseline;padding:6px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px"><bdi>${m.label.replace(/Open-Meteo/g,'מודל משולב')}</bdi></span><span style="font-size:12px;white-space:nowrap">${m.hours_valid?`${waveRangeCm(m.min,m.max)} ס״מ`:'חסר'}<span style="font-size:10px;opacity:.65"> · <bdi>${m.hours_valid}/24</bdi> ש׳</span></span></div>`).join('');
+  const cells=c.models.filter(m=>m.cell_lat!=null).map(m=>`<div><bdi>${m.label.replace(/Open-Meteo/g,'מודל משולב')}: ${m.cell_lat}, ${m.cell_lon}</bdi>${m.dist_km!=null?` · ~${m.dist_km} ק״מ מהחוף`:''}</div>`).join('');
   const cpTime=bd.wave_provenance?.retrieved_at;
   return `<div class="card model-compare" style="padding:13px 15px"><div style="font-size:13px;font-weight:700">השוואת מודלי גלים · ${day.date.slice(8,10)}.${day.date.slice(5,7)}</div><div style="font-size:10px;opacity:.65;margin-top:3px">טווח השינוי היומי בים · לא גובה שבירה בחוף</div>${rows}<div style="font-size:12px;margin-top:9px;color:var(--warn-fg)">${c.max_spread==null?'אין מספיק שעות משותפות להשוואה':`פער בין מודלים עד <bdi>${Math.round(c.max_spread*100)}</bdi> ס״מ באותה שעה`}</div><details style="font-size:10px;line-height:1.7;opacity:.7;margin-top:5px"><summary>כיסוי ומקורות</summary>${c.matched_hours} שעות בהשוואה של שני מודלים לפחות. הפער אינו טווח ביטחון או מדד דיוק; התאים והמודלים שונים, ואינם עצמאיים לחלוטין.${cells}${cpTime?`<div>משיכת Copernicus: <bdi>${new Intl.DateTimeFormat('sv-SE',{timeZone:latest.meta.timezone,dateStyle:'short',timeStyle:'short'}).format(new Date(cpTime))}</bdi> · שעון ישראל</div>`:''}<div>גלים: גובה משמעותי ממודל. ללא ממוצע בין המודלים וללא כיול לחוף.</div></details></div>`;
 }
@@ -328,10 +328,10 @@ function modelComparison(bd,day){
           ${(()=>{ const lo=day.wave_min??wmin, hi=day.wave_max??wmax; const r=waveRangeCm(lo,hi);
             if(latest.meta.version>=5)return '';
             return `<div class="hg"><div class="k">גלים · <bdi>${bd.wave_primary==='copernicus_med'?'Copernicus':waveSourceLabel(bd)}</bdi></div><div class="v">${r?r+' ס״מ '+stateChip(seaStateCm(Math.round(hi*100))):'חסר'}</div></div>`; })()}
-          ${(()=>{ if(!repWind||repWind.wind_kmh==null) return `<div class="hg"><div class="k">Open-Meteo · רוח בוקר</div><div class="v">חסר</div></div>`;
+          ${(()=>{ if(!repWind||repWind.wind_kmh==null) return `<div class="hg"><div class="k">רוח בוקר</div><div class="v">חסר</div></div>`;
             const adj = windAdj(repWind.wind_deg);
-            return `<div class="hg"><div class="k">Open-Meteo · רוח בוקר</div><div class="v" style="display:flex;align-items:center;gap:6px">${windIcon(repWind.wind_deg)}<span style="white-space:nowrap">${windRangeKmh(repWind)} קמ״ש</span>${stateChip(windCat(repWind.wind_max_kmh??repWind.wind_kmh))}</div><div style="font-size:11px;font-weight:400;opacity:.75;margin-top:2px">${adj?'רוח '+adj:''}</div></div>`; })()}
-          <div class="hg"><div class="k">מי ים · Open-Meteo</div><div class="v">${day.sst_avg!=null?day.sst_avg.toFixed(1)+'°':'חסר'}</div></div>
+            return `<div class="hg"><div class="k">רוח בוקר</div><div class="v" style="display:flex;align-items:center;gap:6px">${windIcon(repWind.wind_deg)}<span style="white-space:nowrap">${windRangeKmh(repWind)} קמ״ש</span>${stateChip(windCat(repWind.wind_max_kmh??repWind.wind_kmh))}</div><div style="font-size:11px;font-weight:400;opacity:.75;margin-top:2px">${adj?'רוח '+adj:''}</div></div>`; })()}
+          <div class="hg"><div class="k">מי ים</div><div class="v">${day.sst_avg!=null?day.sst_avg.toFixed(1)+'°':'חסר'}</div></div>
           ${(()=>{ const lo=day.salinity_min, hi=day.salinity_max;
             if(lo==null||hi==null) return `<div class="hg"><div class="k">מליחות</div><div class="v">חסר</div></div>`;
             const a=lo.toFixed(1), bb=hi.toFixed(1);
@@ -359,14 +359,14 @@ function modelComparison(bd,day){
 
 
 
-      <div style="font-size:10px;color:#94a3b8">גלים ורוח מ־IMS בטווח התוקף. מעבר לו: גובה ממודלים נפרדים בס״מ, לא תחזית חוף רשמית. כל טווח הוא שינוי בשעות השורה, לא טווח ביטחון. רוח וזרם: Open-Meteo.</div>
+      <div style="font-size:10px;color:#94a3b8">גלים ורוח מ־IMS בטווח התוקף. מעבר לו: גובה ממודלים נפרדים בס״מ, לא תחזית חוף רשמית. כל טווח הוא שינוי בשעות השורה, לא טווח ביטחון.</div>
       <h3 class="sec">תנאי ים לפי שעות · ${day.date===today?'היום':day.date}</h3>
       <div class="card winwrap">${!day.windows?.length?'<div style="padding:14px;font-size:12.5px;opacity:.75">אין נתוני חלונות ליום זה בהפקה הנוכחית.</div>':`<table class="win">
       <tr><th>שעות</th><th>גלים</th><th>רוח</th><th>זרם</th><th style="width:64px" title="ציון ניסיוני לגלים ורוח, לא הסתברות תפיסה ולא דירוג בטיחות">תנאים</th></tr>
       ${((!issueParam&&day.date===today)?day.windows.filter(w=>w.fromHour+((+w.to.slice(0,2))-w.fromHour+24)%24>nowIL().hour):day.windows).map(w=>{ const nw = nowIL(); const spanH = ((+w.to.slice(0,2))-w.fromHour+24)%24; const isPast = w.past || day.date<nw.date || (day.date===nw.date && w.fromHour+spanH<=nw.hour);
         const off=officialWindow(curRegion,day,w);
-        return `<tr class="${isPast?'past':''}"><td class="hours-cell"><span dir="ltr">${w.from}–${w.to}</span>${wxLine(w,day)}</td><td>${off?`<div class="condition-cell">${stateChip([(off.sea_state_he||'מצב ים').replace(' עד ','–'),seaStateCm(off.wave_to_cm)[1]])}${off.parts?off.parts.map(p=>`<span style="font-size:10px"><bdi class="ltr">${p.overlap_from.slice(11,16)}–${p.overlap_to.slice(11,16)}</bdi><br><bdi class="ltr">${p.wave_from_cm}–${p.wave_to_cm} ס״מ</bdi></span>`).join(''):`<bdi class="ltr">${off.wave_from_cm}–${off.wave_to_cm} ס״מ</bdi>`}</div>`:(()=>{ const lo=w.wave_min??w.wave_height, hi=w.wave_max??w.wave_height; const r=waveRangeCm(lo,hi); if(latest.meta.version>=5)return windowModelHeights(bd,day,w); return r?`<div class="condition-cell"><span style="font-size:9px;color:#94a3b8">${bd.wave_primary==='copernicus_med'?'Copernicus':'Open-Meteo'}</span>${stateChip(seaStateCm(Math.round(hi*100)))}<div><span style="font-weight:700">${r}</span> ס״מ</div></div>`:na(null); })()}</td>
-        <td>${off?`<div class="condition-cell">${stateChip(windCat(off.wind_speed_to))}${(off.parts||[off]).map(p=>`<span style="font-size:10px">${p.overlap_from?`<bdi class="ltr">${p.overlap_from.slice(11,16)}–${p.overlap_to.slice(11,16)}</bdi><br>`:''}<bdi class="ltr">${p.wind_speed_from}–${p.wind_speed_to} קמ״ש</bdi><br>מ${compassHe(p.wind_dir_from)}${p.wind_dir_to!==p.wind_dir_from?' עד '+compassHe(p.wind_dir_to):''}</span>`).join('')}</div>`:(()=>{ const t=windRangeKmh(w); return t?`<div class="condition-cell"><span style="font-size:9px;color:#94a3b8">Open-Meteo</span>${stateChip(windCat(w.wind_max_kmh??w.wind_kmh))}<div>${t} קמ״ש</div>${w.wind_dir?`<div>מ${w.wind_dir}</div>`:''}</div>`:'חסר'; })()}</td>
+        return `<tr class="${isPast?'past':''}"><td class="hours-cell"><span dir="ltr">${w.from}–${w.to}</span>${wxLine(w,day)}</td><td>${off?`<div class="condition-cell">${stateChip([(off.sea_state_he||'מצב ים').replace(' עד ','–'),seaStateCm(off.wave_to_cm)[1]])}${off.parts?off.parts.map(p=>`<span style="font-size:10px"><bdi class="ltr">${p.overlap_from.slice(11,16)}–${p.overlap_to.slice(11,16)}</bdi><br><bdi class="ltr">${p.wave_from_cm}–${p.wave_to_cm} ס״מ</bdi></span>`).join(''):`<bdi class="ltr">${off.wave_from_cm}–${off.wave_to_cm} ס״מ</bdi>`}</div>`:(()=>{ const lo=w.wave_min??w.wave_height, hi=w.wave_max??w.wave_height; const r=waveRangeCm(lo,hi); if(latest.meta.version>=5)return windowModelHeights(bd,day,w); return r?`<div class="condition-cell"><span style="font-size:9px;color:#94a3b8">${bd.wave_primary==='copernicus_med'?'Copernicus':'מודל משולב'}</span>${stateChip(seaStateCm(Math.round(hi*100)))}<div><span style="font-weight:700">${r}</span> ס״מ</div></div>`:na(null); })()}</td>
+        <td>${off?`<div class="condition-cell">${stateChip(windCat(off.wind_speed_to))}${(off.parts||[off]).map(p=>`<span style="font-size:10px">${p.overlap_from?`<bdi class="ltr">${p.overlap_from.slice(11,16)}–${p.overlap_to.slice(11,16)}</bdi><br>`:''}<bdi class="ltr">${p.wind_speed_from}–${p.wind_speed_to} קמ״ש</bdi><br>מ${compassHe(p.wind_dir_from)}${p.wind_dir_to!==p.wind_dir_from?' עד '+compassHe(p.wind_dir_to):''}</span>`).join('')}</div>`:(()=>{ const t=windRangeKmh(w); return t?`<div class="condition-cell">${stateChip(windCat(w.wind_max_kmh??w.wind_kmh))}<div>${t} קמ״ש</div>${w.wind_dir?`<div>מ${w.wind_dir}</div>`:''}</div>`:'חסר'; })()}</td>
         <td>${w.current_vel!=null&&w.current_vel>0.01?w.current_vel+' קמ״ש '+(w.current_dir?'ל'+w.current_dir:''):'—'}</td>
         <td style="vertical-align:middle">${(()=>{const score=(off||latest.meta.version>=5)?null:windowScore(w.wave_height,w.wind_kmh,w.gust_kmh);return `<div title="ציון ניסיוני לגלים ורוח, לא הסתברות תפיסה ולא דירוג בטיחות" style="display:flex;align-items:center;justify-content:center;gap:6px"><bdi class="ltr" style="font-size:13px;font-weight:800;color:${scoreColor(score)}">${score==null?'—':score}</bdi><span class="bar" style="display:inline-block;min-width:0;width:38px;flex:0 0 38px"><i style="width:${score??0}%;background:${scoreColor(score)}"></i></span></div>`})()}</td></tr>`;}).join('')}
       </table>`}</div>
@@ -391,7 +391,7 @@ function modelComparison(bd,day){
 
     html += `
     <footer>
-      ${latest.meta.version>=5?'מזג אוויר, מי ים וזרם: Open-Meteo (CC BY 4.0) · השוואת גלים: ECMWF WAM, NOAA GFS Wave דרך Open-Meteo':'מזג אוויר וים: Open-Meteo (CC BY 4.0)'}${latest.meta.version>=5?`<br>גלי הים התיכון: Generated using E.U. Copernicus Marine Service Information · <a href="https://doi.org/10.48670/mds-00373" target="_blank" rel="noopener">DOI 10.48670/mds-00373</a>`:''}${latest.ims?.available?` · תחזית חופים רשמית: השירות המטאורולוגי הישראלי (שמ״ט), ims.gov.il - אינו נושא באחריות למידע או לשימוש בו, ואינו צד לפרסומו`:''}${latest.beaches?.some(b=>b.days?.some(d=>d.salinity_min!=null))?`<br>מליחות: Generated using E.U. Copernicus Marine Service Information · <a href="https://doi.org/10.48670/mds-00359" target="_blank" rel="noopener">DOI 10.48670/mds-00359</a>`:''}<br>
+      <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a> · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a> · נתונים עובדו לטווחים ולתצוגה${latest.meta.version>=5?' · מודלי גלים: ECMWF WAM, NOAA GFS Wave':''}${latest.meta.version>=5?`<br>גלי הים התיכון: Generated using E.U. Copernicus Marine Service Information · <a href="https://doi.org/10.48670/mds-00373" target="_blank" rel="noopener">DOI 10.48670/mds-00373</a>`:''}${latest.ims?.available?` · תחזית חופים רשמית: השירות המטאורולוגי הישראלי (שמ״ט), ims.gov.il - אינו נושא באחריות למידע או לשימוש בו, ואינו צד לפרסומו`:''}${latest.beaches?.some(b=>b.days?.some(d=>d.salinity_min!=null))?`<br>מליחות: Generated using E.U. Copernicus Marine Service Information · <a href="https://doi.org/10.48670/mds-00359" target="_blank" rel="noopener">DOI 10.48670/mds-00359</a>`:''}<br>
       תחזית ניסיונית לתכנון בלבד - לא אחוז תפיסה ולא הבטחה לבטיחות; בדקו תקנות דיג לפני היציאה.<br>
       הופק ${latest.meta.issued_at_local.replace('T',' · ')} · מתעדכן מדי ערב בסביבות 20:00
     </footer>`;
