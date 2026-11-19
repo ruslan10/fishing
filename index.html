@@ -6,7 +6,7 @@
 <title>תחזית דייג - תחזית דיג לחופי ישראל</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎣</text></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="theme.css?v=ae2db27991f1">
+<link rel="stylesheet" href="theme.css?v=2b0220196807">
 </head>
 <body><div class="wrap" id="app">טוען נתונים...</div>
 <script type="module">
@@ -158,6 +158,8 @@ async function loadJson(p){
   ]);
   let officialIMS=latest.ims;
   if(!issueParam){ try { officialIMS=await loadJson('data/ims-latest.json'); } catch(e){ officialIMS=latest.ims; } }
+  let imsMaps=null,mapIndex=null;
+  if(!issueParam){try{imsMaps=await loadJson('data/ims-maps.json');}catch(e){}}
   // Render config: archived issues carry a frozen snapshot so historical views never mutate.
   const snap = latest.snapshot || {};
   const spCfg = { species: snap.species || speciesCfg.species, coverage_note_he: snap.coverage_note_he || speciesCfg.coverage_note_he, data_quality_he: snap.data_quality_he || speciesCfg.data_quality_he, provenance_note_he: snap.provenance_note_he || speciesCfg.provenance_note_he, sources: snap.species_sources || speciesCfg.sources };
@@ -206,6 +208,17 @@ function officialWindow(region,day,w){
   if(parts.length===1) return parts[0];
   if(parts.some((p,i)=>i&&parts[i-1].valid_to<p.valid_from)) return null;
   return {...parts[0],parts:parts.map(p=>({...p,overlap_from:p.valid_from>start?p.valid_from:start,overlap_to:p.valid_to<end?p.valid_to:end})),wave_to_cm:Math.max(...parts.map(p=>p.wave_to_cm)),wind_speed_to:Math.max(...parts.map(p=>p.wind_speed_to))};
+}
+function officialMaps(){
+  if(issueParam)return '';
+  const m=imsMaps,frames=m?.frames||[];
+  if(!frames.length)return '<div class="card">מפות IMS אינן זמינות כרגע</div>';
+  const dt=t=>new Date(t.replace(' ','T')+'Z');
+  const il=t=>dt(t).toLocaleString('he-IL',{timeZone:'Asia/Jerusalem',day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'});
+  const end=dt(frames.at(-1).valid_utc),expired=end<new Date();
+  if(mapIndex==null)mapIndex=Math.max(0,frames.findIndex(f=>dt(f.valid_utc)>=new Date()));
+  mapIndex=Math.max(0,Math.min(mapIndex,frames.length-1));const f=frames[mapIndex];
+  return `<section class="card imsmaps"><div class="imstitle">מפות גלים · IMS · לבנט</div><div class="imsattr">IFS–ECMWF · ריצה ${il(m.run_utc)} · שעון ישראל</div>${expired?'<div style="color:var(--warn-fg);font-size:12px">תוקף הריצה הסתיים · מפות היסטוריות</div>':''}<div class="map-controls"><button id="mapPrev" ${mapIndex===0?'disabled':''}>הקודם</button><select id="mapFrame" aria-label="מועד מפת גלים">${frames.map((v,i)=>`<option value="${i}" ${i===mapIndex?'selected':''}>${il(v.valid_utc)}</option>`).join('')}</select><button id="mapNext" ${mapIndex===frames.length-1?'disabled':''}>הבא</button></div><div class="map-valid">בתוקף ל־${il(f.valid_utc)} · שעון ישראל</div><a href="${f.url}" target="_blank" rel="noopener" aria-label="פתיחת מפת גלים בגודל מלא"><img class="ims-map-image" src="${f.url}" alt="מפת IMS לגובה וכיוון גל סיגניפיקנטי בלבנט, ${il(f.valid_utc)} שעון ישראל"></a><div class="imsattr">גובה גל במטרים · לחיצה על המפה להגדלה</div><div class="map-legend" aria-label="מקרא גובה גלים במטרים">${m.legend.map(v=>`<span><i style="background:${v.color}"></i><bdi>${v.mark}</bdi></span>`).join('')}</div><div class="imsattr">עד ${il(frames.at(-1).valid_utc)} · מפה אזורית, לא ערך נקודתי לחוף</div><a class="map-source" href="${m.source_url}" target="_blank" rel="noopener">מקור: השירות המטאורולוגי · מפות הים</a></section>`;
 }
 function officialWaveChart(region){
   const now=nowIL().date+' '+String(nowIL().hour).padStart(2,'0')+':00:00';
@@ -278,6 +291,7 @@ function officialWaveChart(region){
       }).join('')}</div></div>
     ${officialWaveChart(curRegion)}
     ${imsCard(curRegion)}
+    ${officialMaps()}
 `;
 
     if(!bd || bd.missing){
@@ -366,6 +380,9 @@ function officialWaveChart(region){
     </footer>`;
 
     app.innerHTML = html;
+    const chooseMap=i=>{mapIndex=i;const y=scrollY;render();scrollTo(0,y);};
+    if(app.querySelector('#mapFrame')){app.querySelector('#mapFrame').onchange=e=>chooseMap(+e.target.value);app.querySelector('#mapPrev').onclick=()=>chooseMap(mapIndex-1);app.querySelector('#mapNext').onclick=()=>chooseMap(mapIndex+1);app.querySelector('.ims-map-image').onerror=e=>{e.target.alt='המפה אינה זמינה כרגע · אפשר לפתוח את מקור IMS';};}
+
     app.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{curRegion=t.dataset.region;curBeach=null;curDay=-1;render();rememberBeach();});
     app.querySelector('.beachsel').onchange=e=>{curBeach=e.target.value;curDay=-1;render();rememberBeach();};
     app.querySelectorAll('.day').forEach(d=>d.onclick=()=>{curDay=+d.dataset.day;curDate=bd.days[curDay]?bd.days[curDay].date:null;render();});
@@ -373,7 +390,7 @@ function officialWaveChart(region){
   try { render(); } catch(e){ app.innerHTML = 'שגיאה בטעינת הנתונים: '+e.message; }
   // Live re-render: past windows, best-window recommendation and issue-age warning are computed
   // at render time, so an open page stays truthful as time passes.
-  if(!issueParam) setInterval(async()=>{try{officialIMS=await loadJson('data/ims-latest.json');const y=scrollY;render();scrollTo(0,y);}catch(e){}},3600000);
+  if(!issueParam) setInterval(async()=>{try{officialIMS=await loadJson('data/ims-latest.json');try{imsMaps=await loadJson('data/ims-maps.json');mapIndex=null;}catch(e){}const y=scrollY;render();scrollTo(0,y);}catch(e){}},3600000);
   let lastSig = '';
   setInterval(()=>{ const nw = nowIL(); const age = issueAgeInfo(); const sig = nw.date+'|'+nw.hour+'|'+age.old;
     if(sig!==lastSig){ lastSig=sig; const y=window.scrollY; try{ render(); }catch(e){} window.scrollTo(0,y); } }, 60000);
