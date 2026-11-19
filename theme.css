@@ -131,3 +131,7 @@ tr.past td { opacity:.55; }
 .condition-cell { display:flex; flex-direction:column; align-items:flex-start; gap:4px; }
 
 table.win tr:not(.wxsub) > td { vertical-align:top; }
+
+/* Keep official state labels compact rather than stretching into vertical pills. */
+table.win .stchip { white-space:nowrap; font-size:9px; padding:2px 5px; }
+table.win .condition-cell > bdi { font-size:11px; }
