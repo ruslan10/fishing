@@ -341,6 +341,7 @@ async function main() {
         moon_waxing: moon.waxing,
         wind_max_kmh: peakWind==null?null:round(peakWind),
         wave_max: maxWave || null,
+        wave_hourly: hours.map(h=>({hour:h.hour,height:h.wave_height})),
         wave_min: minWave,
         high_wave_warning: maxWave > 1.8,
         sst_avg: daySst,
