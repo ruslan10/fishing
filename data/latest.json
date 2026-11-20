@@ -491,7 +491,7 @@
   ]
  },
  "environment_history": {
-  "retrieved_at": "2026-11-20T15:13:05.858061+02:00",
+  "retrieved_at": "2026-11-20T18:13:54.493205+02:00",
   "date": "2026-11-20",
   "cutoff": "2026-11-20T00:00:00+02:00",
   "source_kind": "modeled_recent_past_not_observations",
@@ -1687,55 +1687,55 @@
      {
       "time": "2026-11-25T04:00+00:00",
       "wave": 0.64,
-      "wind": 8.7,
+      "wind": 8.6,
       "rain": 0.2
      },
      {
       "time": "2026-11-25T05:00+00:00",
       "wave": 0.7,
-      "wind": 7,
+      "wind": 6.9,
       "rain": 0.2
      },
      {
       "time": "2026-11-25T06:00+00:00",
       "wave": 0.78,
-      "wind": 6,
+      "wind": 6.2,
       "rain": 0.2
      },
      {
       "time": "2026-11-25T07:00+00:00",
       "wave": 0.82,
-      "wind": 5.7,
+      "wind": 2.2,
       "rain": 0
      },
      {
       "time": "2026-11-25T08:00+00:00",
       "wave": 0.86,
-      "wind": 6.6,
+      "wind": 8.6,
       "rain": 0
      },
      {
       "time": "2026-11-25T09:00+00:00",
       "wave": 0.9,
-      "wind": 8.3,
+      "wind": 15,
       "rain": 0
      },
      {
       "time": "2026-11-25T10:00+00:00",
       "wave": 0.94,
-      "wind": 8.7,
+      "wind": 15.5,
       "rain": 0
      },
      {
       "time": "2026-11-25T11:00+00:00",
       "wave": 0.96,
-      "wind": 9.8,
+      "wind": 14.1,
       "rain": 0
      },
      {
       "time": "2026-11-25T12:00+00:00",
       "wave": 1,
-      "wind": 11.5,
+      "wind": 13.3,
       "rain": 0
      },
      {
@@ -3141,55 +3141,55 @@
      {
       "time": "2026-11-25T04:00+00:00",
       "wave": 0.64,
-      "wind": 7.5,
-      "rain": 0.13
+      "wind": 7.1,
+      "rain": 0.1
      },
      {
       "time": "2026-11-25T05:00+00:00",
       "wave": 0.7,
-      "wind": 6.2,
-      "rain": 0.15
+      "wind": 5.4,
+      "rain": 0.1
      },
      {
       "time": "2026-11-25T06:00+00:00",
       "wave": 0.78,
-      "wind": 5.6,
-      "rain": 0.18
+      "wind": 4.5,
+      "rain": 0.1
      },
      {
       "time": "2026-11-25T07:00+00:00",
       "wave": 0.82,
-      "wind": 5.7,
+      "wind": 1.5,
       "rain": 0
      },
      {
       "time": "2026-11-25T08:00+00:00",
       "wave": 0.86,
-      "wind": 6.6,
+      "wind": 7.8,
       "rain": 0
      },
      {
       "time": "2026-11-25T09:00+00:00",
       "wave": 0.9,
-      "wind": 8.3,
+      "wind": 14.3,
       "rain": 0
      },
      {
       "time": "2026-11-25T10:00+00:00",
       "wave": 0.94,
-      "wind": 8.7,
+      "wind": 14.7,
       "rain": 0
      },
      {
       "time": "2026-11-25T11:00+00:00",
       "wave": 0.96,
-      "wind": 9.8,
+      "wind": 13.7,
       "rain": 0
      },
      {
       "time": "2026-11-25T12:00+00:00",
       "wave": 1,
-      "wind": 11.5,
+      "wind": 13,
       "rain": 0
      },
      {
@@ -4595,55 +4595,55 @@
      {
       "time": "2026-11-25T04:00+00:00",
       "wave": 0.6,
-      "wind": 7,
-      "rain": 0.05
+      "wind": 6.4,
+      "rain": 0
      },
      {
       "time": "2026-11-25T05:00+00:00",
       "wave": 0.68,
-      "wind": 6.2,
-      "rain": 0.1
+      "wind": 5.3,
+      "rain": 0
      },
      {
       "time": "2026-11-25T06:00+00:00",
       "wave": 0.76,
-      "wind": 5.6,
-      "rain": 0.15
+      "wind": 4.6,
+      "rain": 0
      },
      {
       "time": "2026-11-25T07:00+00:00",
       "wave": 0.8,
-      "wind": 5.7,
+      "wind": 0.7,
       "rain": 0
      },
      {
       "time": "2026-11-25T08:00+00:00",
       "wave": 0.84,
-      "wind": 6.6,
+      "wind": 8.1,
       "rain": 0
      },
      {
       "time": "2026-11-25T09:00+00:00",
       "wave": 0.88,
-      "wind": 8.3,
+      "wind": 14.5,
       "rain": 0
      },
      {
       "time": "2026-11-25T10:00+00:00",
       "wave": 0.92,
-      "wind": 8.7,
+      "wind": 14.9,
       "rain": 0
      },
      {
       "time": "2026-11-25T11:00+00:00",
       "wave": 0.94,
-      "wind": 9.8,
+      "wind": 13.3,
       "rain": 0
      },
      {
       "time": "2026-11-25T12:00+00:00",
       "wave": 0.98,
-      "wind": 11.5,
+      "wind": 12.8,
       "rain": 0
      },
      {
@@ -6049,55 +6049,55 @@
      {
       "time": "2026-11-25T04:00+00:00",
       "wave": 0.62,
-      "wind": 4.9,
-      "rain": 0.03
+      "wind": 5.1,
+      "rain": 0
      },
      {
       "time": "2026-11-25T05:00+00:00",
       "wave": 0.7,
-      "wind": 3.5,
-      "rain": 0.05
+      "wind": 3.8,
+      "rain": 0
      },
      {
       "time": "2026-11-25T06:00+00:00",
       "wave": 0.78,
       "wind": 2.9,
-      "rain": 0.08
+      "rain": 0
      },
      {
       "time": "2026-11-25T07:00+00:00",
       "wave": 0.82,
-      "wind": 4.7,
-      "rain": 0
+      "wind": 7.4,
+      "rain": 0.1
      },
      {
       "time": "2026-11-25T08:00+00:00",
       "wave": 0.88,
-      "wind": 7,
-      "rain": 0
+      "wind": 12.9,
+      "rain": 0.1
      },
      {
       "time": "2026-11-25T09:00+00:00",
       "wave": 0.92,
-      "wind": 8.5,
-      "rain": 0
+      "wind": 17.2,
+      "rain": 0.1
      },
      {
       "time": "2026-11-25T10:00+00:00",
       "wave": 0.94,
-      "wind": 8.4,
+      "wind": 16.4,
       "rain": 0
      },
      {
       "time": "2026-11-25T11:00+00:00",
       "wave": 0.98,
-      "wind": 9.6,
+      "wind": 14.6,
       "rain": 0
      },
      {
       "time": "2026-11-25T12:00+00:00",
       "wave": 1,
-      "wind": 11.2,
+      "wind": 13.5,
       "rain": 0
      },
      {
@@ -7503,55 +7503,55 @@
      {
       "time": "2026-11-25T04:00+00:00",
       "wave": 0.6,
-      "wind": 7.4,
-      "rain": 0.25
+      "wind": 8.4,
+      "rain": 0.3
      },
      {
       "time": "2026-11-25T05:00+00:00",
       "wave": 0.68,
-      "wind": 5.6,
-      "rain": 0.2
+      "wind": 7.9,
+      "rain": 0.3
      },
      {
       "time": "2026-11-25T06:00+00:00",
       "wave": 0.76,
-      "wind": 4.1,
-      "rain": 0.15
+      "wind": 7.7,
+      "rain": 0.3
      },
      {
       "time": "2026-11-25T07:00+00:00",
       "wave": 0.82,
-      "wind": 4.7,
+      "wind": 1.8,
       "rain": 0
      },
      {
       "time": "2026-11-25T08:00+00:00",
       "wave": 0.86,
-      "wind": 7,
+      "wind": 8.4,
       "rain": 0
      },
      {
       "time": "2026-11-25T09:00+00:00",
       "wave": 0.92,
-      "wind": 8.5,
+      "wind": 13.5,
       "rain": 0
      },
      {
       "time": "2026-11-25T10:00+00:00",
       "wave": 0.96,
-      "wind": 8.4,
+      "wind": 14,
       "rain": 0
      },
      {
       "time": "2026-11-25T11:00+00:00",
       "wave": 0.98,
-      "wind": 9.6,
+      "wind": 13,
       "rain": 0
      },
      {
       "time": "2026-11-25T12:00+00:00",
       "wave": 1.02,
-      "wind": 11.2,
+      "wind": 12.7,
       "rain": 0
      },
      {
@@ -8957,25 +8957,25 @@
      {
       "time": "2026-11-25T04:00+00:00",
       "wave": 0.58,
-      "wind": 6.2,
-      "rain": 0.03
+      "wind": 6.6,
+      "rain": 0
      },
      {
       "time": "2026-11-25T05:00+00:00",
       "wave": 0.66,
-      "wind": 5.3,
-      "rain": 0.05
+      "wind": 6.6,
+      "rain": 0
      },
      {
       "time": "2026-11-25T06:00+00:00",
       "wave": 0.72,
-      "wind": 4,
-      "rain": 0.08
+      "wind": 7,
+      "rain": 0
      },
      {
       "time": "2026-11-25T07:00+00:00",
       "wave": 0.78,
-      "wind": 4.3,
+      "wind": 1.1,
       "rain": 0
      },
      {
@@ -8987,25 +8987,25 @@
      {
       "time": "2026-11-25T09:00+00:00",
       "wave": 0.9,
-      "wind": 8.8,
+      "wind": 12.5,
       "rain": 0
      },
      {
       "time": "2026-11-25T10:00+00:00",
       "wave": 0.94,
-      "wind": 8.5,
+      "wind": 13.3,
       "rain": 0
      },
      {
       "time": "2026-11-25T11:00+00:00",
       "wave": 0.96,
-      "wind": 9.1,
+      "wind": 12.4,
       "rain": 0
      },
      {
       "time": "2026-11-25T12:00+00:00",
       "wave": 1,
-      "wind": 10.2,
+      "wind": 11.7,
       "rain": 0
      },
      {
@@ -10411,7 +10411,7 @@
      {
       "time": "2026-11-25T04:00+00:00",
       "wave": 0.56,
-      "wind": 4.9,
+      "wind": 4.8,
       "rain": 0
      },
      {
@@ -10423,43 +10423,43 @@
      {
       "time": "2026-11-25T06:00+00:00",
       "wave": 0.7,
-      "wind": 3.7,
+      "wind": 4.1,
       "rain": 0
      },
      {
       "time": "2026-11-25T07:00+00:00",
       "wave": 0.76,
-      "wind": 3.6,
-      "rain": 0
+      "wind": 1.8,
+      "rain": 0.1
      },
      {
       "time": "2026-11-25T08:00+00:00",
       "wave": 0.82,
-      "wind": 6.4,
-      "rain": 0
+      "wind": 3.1,
+      "rain": 0.1
      },
      {
       "time": "2026-11-25T09:00+00:00",
       "wave": 0.88,
-      "wind": 9.2,
-      "rain": 0
+      "wind": 7.5,
+      "rain": 0.1
      },
      {
       "time": "2026-11-25T10:00+00:00",
       "wave": 0.92,
-      "wind": 9.5,
+      "wind": 10.2,
       "rain": 0
      },
      {
       "time": "2026-11-25T11:00+00:00",
       "wave": 0.94,
-      "wind": 9.6,
+      "wind": 11.2,
       "rain": 0
      },
      {
       "time": "2026-11-25T12:00+00:00",
       "wave": 0.98,
-      "wind": 10.2,
+      "wind": 11.2,
       "rain": 0
      },
      {
@@ -11865,7 +11865,7 @@
      {
       "time": "2026-11-25T04:00+00:00",
       "wave": 0.58,
-      "wind": 4.9,
+      "wind": 4.8,
       "rain": 0
      },
      {
@@ -11877,43 +11877,43 @@
      {
       "time": "2026-11-25T06:00+00:00",
       "wave": 0.72,
-      "wind": 3.7,
+      "wind": 4.1,
       "rain": 0
      },
      {
       "time": "2026-11-25T07:00+00:00",
       "wave": 0.78,
-      "wind": 3.6,
-      "rain": 0
+      "wind": 3.1,
+      "rain": 0.1
      },
      {
       "time": "2026-11-25T08:00+00:00",
       "wave": 0.84,
-      "wind": 6.4,
-      "rain": 0
+      "wind": 3.6,
+      "rain": 0.1
      },
      {
       "time": "2026-11-25T09:00+00:00",
       "wave": 0.9,
-      "wind": 9.2,
-      "rain": 0
+      "wind": 6.9,
+      "rain": 0.1
      },
      {
       "time": "2026-11-25T10:00+00:00",
       "wave": 0.94,
-      "wind": 9.5,
+      "wind": 9.9,
       "rain": 0
      },
      {
       "time": "2026-11-25T11:00+00:00",
       "wave": 0.96,
-      "wind": 9.6,
+      "wind": 11.4,
       "rain": 0
      },
      {
       "time": "2026-11-25T12:00+00:00",
       "wave": 1,
-      "wind": 10.2,
+      "wind": 11.5,
       "rain": 0
      },
      {
@@ -13319,55 +13319,55 @@
      {
       "time": "2026-11-25T04:00+00:00",
       "wave": 0.56,
-      "wind": 4.1,
+      "wind": 3.8,
       "rain": 0
      },
      {
       "time": "2026-11-25T05:00+00:00",
       "wave": 0.62,
-      "wind": 3.5,
+      "wind": 2.8,
       "rain": 0
      },
      {
       "time": "2026-11-25T06:00+00:00",
       "wave": 0.68,
-      "wind": 3.3,
+      "wind": 2.3,
       "rain": 0
      },
      {
       "time": "2026-11-25T07:00+00:00",
       "wave": 0.76,
-      "wind": 3.6,
-      "rain": 0
+      "wind": 5.1,
+      "rain": 0.1
      },
      {
       "time": "2026-11-25T08:00+00:00",
       "wave": 0.82,
-      "wind": 6.4,
-      "rain": 0
+      "wind": 6.6,
+      "rain": 0.1
      },
      {
       "time": "2026-11-25T09:00+00:00",
       "wave": 0.9,
-      "wind": 9.2,
-      "rain": 0
+      "wind": 9,
+      "rain": 0.1
      },
      {
       "time": "2026-11-25T10:00+00:00",
       "wave": 0.92,
-      "wind": 9.5,
+      "wind": 10.9,
       "rain": 0
      },
      {
       "time": "2026-11-25T11:00+00:00",
       "wave": 0.96,
-      "wind": 9.6,
+      "wind": 11.7,
       "rain": 0
      },
      {
       "time": "2026-11-25T12:00+00:00",
       "wave": 0.98,
-      "wind": 10.2,
+      "wind": 11.4,
       "rain": 0
      },
      {
@@ -14773,55 +14773,55 @@
      {
       "time": "2026-11-25T04:00+00:00",
       "wave": 0.54,
-      "wind": 7.4,
+      "wind": 7,
       "rain": 0
      },
      {
       "time": "2026-11-25T05:00+00:00",
       "wave": 0.6,
-      "wind": 7.9,
+      "wind": 7.1,
       "rain": 0
      },
      {
       "time": "2026-11-25T06:00+00:00",
       "wave": 0.66,
-      "wind": 8.2,
+      "wind": 7,
       "rain": 0
      },
      {
       "time": "2026-11-25T07:00+00:00",
       "wave": 0.74,
-      "wind": 10.2,
-      "rain": 0
+      "wind": 6.9,
+      "rain": 0.1
      },
      {
       "time": "2026-11-25T08:00+00:00",
       "wave": 0.8,
-      "wind": 10.2,
-      "rain": 0
+      "wind": 6.7,
+      "rain": 0.1
      },
      {
       "time": "2026-11-25T09:00+00:00",
       "wave": 0.88,
-      "wind": 10.5,
-      "rain": 0
+      "wind": 8,
+      "rain": 0.1
      },
      {
       "time": "2026-11-25T10:00+00:00",
       "wave": 0.92,
-      "wind": 9.4,
+      "wind": 10,
       "rain": 0
      },
      {
       "time": "2026-11-25T11:00+00:00",
       "wave": 0.94,
-      "wind": 8.9,
+      "wind": 10.7,
       "rain": 0
      },
      {
       "time": "2026-11-25T12:00+00:00",
       "wave": 0.98,
-      "wind": 9.7,
+      "wind": 10.9,
       "rain": 0
      },
      {
@@ -16227,38 +16227,38 @@
      {
       "time": "2026-11-25T04:00+00:00",
       "wave": 0.52,
-      "wind": 5.2,
+      "wind": 5.5,
       "rain": 0
      },
      {
       "time": "2026-11-25T05:00+00:00",
       "wave": 0.56,
-      "wind": 4.9,
+      "wind": 5.2,
       "rain": 0
      },
      {
       "time": "2026-11-25T06:00+00:00",
       "wave": 0.62,
-      "wind": 4.7,
+      "wind": 5,
       "rain": 0
      },
      {
       "time": "2026-11-25T07:00+00:00",
       "wave": 0.7,
-      "wind": 4.7,
-      "rain": 0
+      "wind": 7.9,
+      "rain": 0.1
      },
      {
       "time": "2026-11-25T08:00+00:00",
       "wave": 0.76,
-      "wind": 5.9,
-      "rain": 0
+      "wind": 7.1,
+      "rain": 0.1
      },
      {
       "time": "2026-11-25T09:00+00:00",
       "wave": 0.84,
-      "wind": 7.7,
-      "rain": 0
+      "wind": 6.6,
+      "rain": 0.1
      },
      {
       "time": "2026-11-25T10:00+00:00",
@@ -16269,13 +16269,13 @@
      {
       "time": "2026-11-25T11:00+00:00",
       "wave": 0.92,
-      "wind": 8.8,
+      "wind": 10.6,
       "rain": 0
      },
      {
       "time": "2026-11-25T12:00+00:00",
       "wave": 0.96,
-      "wind": 8.9,
+      "wind": 10.6,
       "rain": 0
      },
      {
@@ -17681,55 +17681,55 @@
      {
       "time": "2026-11-25T04:00+00:00",
       "wave": 0.5,
-      "wind": 4.3,
+      "wind": 4.2,
       "rain": 0
      },
      {
       "time": "2026-11-25T05:00+00:00",
       "wave": 0.56,
-      "wind": 4.3,
+      "wind": 3.9,
       "rain": 0
      },
      {
       "time": "2026-11-25T06:00+00:00",
       "wave": 0.6,
-      "wind": 4.3,
+      "wind": 3.6,
       "rain": 0
      },
      {
       "time": "2026-11-25T07:00+00:00",
       "wave": 0.68,
-      "wind": 4.7,
-      "rain": 0
+      "wind": 5.4,
+      "rain": 0.1
      },
      {
       "time": "2026-11-25T08:00+00:00",
       "wave": 0.74,
-      "wind": 5.9,
-      "rain": 0
+      "wind": 5.1,
+      "rain": 0.1
      },
      {
       "time": "2026-11-25T09:00+00:00",
       "wave": 0.82,
-      "wind": 7.7,
-      "rain": 0
+      "wind": 5.2,
+      "rain": 0.1
      },
      {
       "time": "2026-11-25T10:00+00:00",
       "wave": 0.86,
-      "wind": 8.4,
+      "wind": 7,
       "rain": 0
      },
      {
       "time": "2026-11-25T11:00+00:00",
       "wave": 0.9,
-      "wind": 8.8,
+      "wind": 8.7,
       "rain": 0
      },
      {
       "time": "2026-11-25T12:00+00:00",
       "wave": 0.94,
-      "wind": 8.9,
+      "wind": 9.3,
       "rain": 0
      },
      {
@@ -19141,49 +19141,49 @@
      {
       "time": "2026-11-25T05:00+00:00",
       "wave": 0.56,
-      "wind": 5.4,
+      "wind": 5.5,
       "rain": 0
      },
      {
       "time": "2026-11-25T06:00+00:00",
       "wave": 0.6,
-      "wind": 5.4,
+      "wind": 5.5,
       "rain": 0
      },
      {
       "time": "2026-11-25T07:00+00:00",
       "wave": 0.68,
-      "wind": 4.7,
+      "wind": 8.6,
       "rain": 0
      },
      {
       "time": "2026-11-25T08:00+00:00",
       "wave": 0.74,
-      "wind": 5.9,
+      "wind": 7.4,
       "rain": 0
      },
      {
       "time": "2026-11-25T09:00+00:00",
       "wave": 0.82,
-      "wind": 7.9,
+      "wind": 7.1,
       "rain": 0
      },
      {
       "time": "2026-11-25T10:00+00:00",
       "wave": 0.86,
-      "wind": 9.1,
+      "wind": 8.6,
       "rain": 0
      },
      {
       "time": "2026-11-25T11:00+00:00",
       "wave": 0.9,
-      "wind": 9.4,
+      "wind": 10.4,
       "rain": 0
      },
      {
       "time": "2026-11-25T12:00+00:00",
       "wave": 0.94,
-      "wind": 9.7,
+      "wind": 10.7,
       "rain": 0
      },
      {
@@ -20589,55 +20589,55 @@
      {
       "time": "2026-11-25T04:00+00:00",
       "wave": 0.5,
-      "wind": 5.9,
+      "wind": 6.1,
       "rain": 0
      },
      {
       "time": "2026-11-25T05:00+00:00",
       "wave": 0.56,
-      "wind": 5.8,
+      "wind": 6.2,
       "rain": 0
      },
      {
       "time": "2026-11-25T06:00+00:00",
       "wave": 0.6,
-      "wind": 5.6,
+      "wind": 6.2,
       "rain": 0
      },
      {
       "time": "2026-11-25T07:00+00:00",
       "wave": 0.68,
-      "wind": 4.7,
+      "wind": 8.6,
       "rain": 0
      },
      {
       "time": "2026-11-25T08:00+00:00",
       "wave": 0.74,
-      "wind": 5.9,
+      "wind": 7.4,
       "rain": 0
      },
      {
       "time": "2026-11-25T09:00+00:00",
       "wave": 0.82,
-      "wind": 7.9,
+      "wind": 7.1,
       "rain": 0
      },
      {
       "time": "2026-11-25T10:00+00:00",
       "wave": 0.86,
-      "wind": 9.1,
+      "wind": 8.6,
       "rain": 0
      },
      {
       "time": "2026-11-25T11:00+00:00",
       "wave": 0.9,
-      "wind": 9.4,
+      "wind": 10.4,
       "rain": 0
      },
      {
       "time": "2026-11-25T12:00+00:00",
       "wave": 0.94,
-      "wind": 9.7,
+      "wind": 10.7,
       "rain": 0
      },
      {
@@ -22043,55 +22043,55 @@
      {
       "time": "2026-11-25T04:00+00:00",
       "wave": 0.48,
-      "wind": 7.6,
+      "wind": 8.5,
       "rain": 0
      },
      {
       "time": "2026-11-25T05:00+00:00",
       "wave": 0.52,
-      "wind": 6.5,
+      "wind": 8.4,
       "rain": 0
      },
      {
       "time": "2026-11-25T06:00+00:00",
       "wave": 0.58,
-      "wind": 5.1,
+      "wind": 8,
       "rain": 0
      },
      {
       "time": "2026-11-25T07:00+00:00",
       "wave": 0.66,
-      "wind": 2.5,
-      "rain": 0
+      "wind": 11.1,
+      "rain": 0.1
      },
      {
       "time": "2026-11-25T08:00+00:00",
       "wave": 0.72,
-      "wind": 4.6,
-      "rain": 0
+      "wind": 11.5,
+      "rain": 0.1
      },
      {
       "time": "2026-11-25T09:00+00:00",
       "wave": 0.8,
-      "wind": 7.6,
-      "rain": 0
+      "wind": 11.1,
+      "rain": 0.1
      },
      {
       "time": "2026-11-25T10:00+00:00",
       "wave": 0.84,
-      "wind": 9.5,
+      "wind": 9.9,
       "rain": 0
      },
      {
       "time": "2026-11-25T11:00+00:00",
       "wave": 0.88,
-      "wind": 10.6,
+      "wind": 10.9,
       "rain": 0
      },
      {
       "time": "2026-11-25T12:00+00:00",
       "wave": 0.92,
-      "wind": 10.9,
+      "wind": 11.6,
       "rain": 0
      },
      {
@@ -23497,55 +23497,55 @@
      {
       "time": "2026-11-25T04:00+00:00",
       "wave": 0.4,
-      "wind": 5.7,
+      "wind": 6,
       "rain": 0
      },
      {
       "time": "2026-11-25T05:00+00:00",
       "wave": 0.44,
-      "wind": 5.3,
+      "wind": 6,
       "rain": 0
      },
      {
       "time": "2026-11-25T06:00+00:00",
       "wave": 0.46,
-      "wind": 4.5,
+      "wind": 5.8,
       "rain": 0
      },
      {
       "time": "2026-11-25T07:00+00:00",
       "wave": 0.52,
-      "wind": 2.5,
+      "wind": 9.5,
       "rain": 0
      },
      {
       "time": "2026-11-25T08:00+00:00",
       "wave": 0.6,
-      "wind": 4.6,
+      "wind": 10.5,
       "rain": 0
      },
      {
       "time": "2026-11-25T09:00+00:00",
       "wave": 0.66,
-      "wind": 7.6,
+      "wind": 11,
       "rain": 0
      },
      {
       "time": "2026-11-25T10:00+00:00",
       "wave": 0.7,
-      "wind": 9.5,
+      "wind": 10.2,
       "rain": 0
      },
      {
       "time": "2026-11-25T11:00+00:00",
       "wave": 0.76,
-      "wind": 10.6,
+      "wind": 11,
       "rain": 0
      },
      {
       "time": "2026-11-25T12:00+00:00",
       "wave": 0.8,
-      "wind": 10.9,
+      "wind": 11.6,
       "rain": 0
      },
      {
@@ -24957,50 +24957,50 @@
      {
       "time": "2026-11-25T05:00+00:00",
       "wave": 0.44,
-      "wind": 5.8,
+      "wind": 6.3,
       "rain": 0
      },
      {
       "time": "2026-11-25T06:00+00:00",
       "wave": 0.46,
-      "wind": 5.5,
+      "wind": 6.1,
       "rain": 0
      },
      {
       "time": "2026-11-25T07:00+00:00",
       "wave": 0.52,
-      "wind": 4,
-      "rain": 0
+      "wind": 11.8,
+      "rain": 0.1
      },
      {
       "time": "2026-11-25T08:00+00:00",
       "wave": 0.6,
-      "wind": 4.8,
-      "rain": 0
+      "wind": 12.8,
+      "rain": 0.1
      },
      {
       "time": "2026-11-25T09:00+00:00",
       "wave": 0.66,
-      "wind": 7.2,
-      "rain": 0
+      "wind": 12.5,
+      "rain": 0.1
      },
      {
       "time": "2026-11-25T10:00+00:00",
       "wave": 0.7,
-      "wind": 8.9,
-      "rain": 0
+      "wind": 10.4,
+      "rain": 0.08
      },
      {
       "time": "2026-11-25T11:00+00:00",
       "wave": 0.76,
-      "wind": 10,
-      "rain": 0
+      "wind": 10.7,
+      "rain": 0.05
      },
      {
       "time": "2026-11-25T12:00+00:00",
       "wave": 0.8,
-      "wind": 11,
-      "rain": 0
+      "wind": 11.9,
+      "rain": 0.03
      },
      {
       "time": "2026-11-25T13:00+00:00",
@@ -26405,55 +26405,55 @@
      {
       "time": "2026-11-25T04:00+00:00",
       "wave": 0.44,
-      "wind": 5.6,
+      "wind": 5.7,
       "rain": 0
      },
      {
       "time": "2026-11-25T05:00+00:00",
       "wave": 0.46,
-      "wind": 5.6,
+      "wind": 6,
       "rain": 0
      },
      {
       "time": "2026-11-25T06:00+00:00",
       "wave": 0.5,
-      "wind": 5.3,
+      "wind": 6,
       "rain": 0
      },
      {
       "time": "2026-11-25T07:00+00:00",
       "wave": 0.58,
-      "wind": 4,
-      "rain": 0
+      "wind": 13.1,
+      "rain": 0.1
      },
      {
       "time": "2026-11-25T08:00+00:00",
       "wave": 0.64,
-      "wind": 4.2,
-      "rain": 0
+      "wind": 14.2,
+      "rain": 0.1
      },
      {
       "time": "2026-11-25T09:00+00:00",
       "wave": 0.72,
-      "wind": 6.5,
-      "rain": 0
+      "wind": 13.6,
+      "rain": 0.1
      },
      {
       "time": "2026-11-25T10:00+00:00",
       "wave": 0.76,
-      "wind": 8.4,
+      "wind": 10.2,
       "rain": 0
      },
      {
       "time": "2026-11-25T11:00+00:00",
       "wave": 0.8,
-      "wind": 10.3,
+      "wind": 10.6,
       "rain": 0
      },
      {
       "time": "2026-11-25T12:00+00:00",
       "wave": 0.84,
-      "wind": 11.5,
+      "wind": 12.1,
       "rain": 0
      },
      {
@@ -27859,55 +27859,55 @@
      {
       "time": "2026-11-25T04:00+00:00",
       "wave": 0.42,
-      "wind": 5.9,
+      "wind": 6.1,
       "rain": 0
      },
      {
       "time": "2026-11-25T05:00+00:00",
       "wave": 0.46,
-      "wind": 5.8,
+      "wind": 6.5,
       "rain": 0
      },
      {
       "time": "2026-11-25T06:00+00:00",
       "wave": 0.48,
-      "wind": 5.4,
+      "wind": 6.7,
       "rain": 0
      },
      {
       "time": "2026-11-25T07:00+00:00",
       "wave": 0.56,
-      "wind": 4,
+      "wind": 11.9,
       "rain": 0
      },
      {
       "time": "2026-11-25T08:00+00:00",
       "wave": 0.62,
-      "wind": 4.2,
+      "wind": 12.6,
       "rain": 0
      },
      {
       "time": "2026-11-25T09:00+00:00",
       "wave": 0.7,
-      "wind": 6.5,
+      "wind": 11.7,
       "rain": 0
      },
      {
       "time": "2026-11-25T10:00+00:00",
       "wave": 0.74,
-      "wind": 8.4,
+      "wind": 8.6,
       "rain": 0
      },
      {
       "time": "2026-11-25T11:00+00:00",
       "wave": 0.8,
-      "wind": 10.3,
+      "wind": 10,
       "rain": 0
      },
      {
       "time": "2026-11-25T12:00+00:00",
       "wave": 0.84,
-      "wind": 11.5,
+      "wind": 12.1,
       "rain": 0
      },
      {
@@ -29377,23 +29377,11 @@
  },
  "ims": {
   "available": true,
-  "issued_at": "2026-11-20 00:01:00",
+  "issued_at": "2026-11-20 16:20:00",
   "regions": {
    "north": {
     "name_he": "חוף צפון",
     "slots": [
-     {
-      "valid_from": "2026-11-20 08:00:00",
-      "valid_to": "2026-11-20 20:00:00",
-      "sea_temp": 24,
-      "wind_dir_from": 225,
-      "wind_dir_to": 315,
-      "wind_speed_from": 15,
-      "wind_speed_to": 25,
-      "wave_from_cm": 50,
-      "wave_to_cm": 110,
-      "sea_state_he": "נוח עד גלי"
-     },
      {
       "valid_from": "2026-11-20 20:00:00",
       "valid_to": "2026-11-21 08:00:00",
@@ -29402,9 +29390,21 @@
       "wind_dir_to": 135,
       "wind_speed_from": 10,
       "wind_speed_to": 20,
-      "wave_from_cm": 50,
+      "wave_from_cm": 80,
+      "wave_to_cm": 110,
+      "sea_state_he": "גלי"
+     },
+     {
+      "valid_from": "2026-11-21 08:00:00",
+      "valid_to": "2026-11-21 20:00:00",
+      "sea_temp": 24,
+      "wind_dir_from": 225,
+      "wind_dir_to": 270,
+      "wind_speed_from": 10,
+      "wind_speed_to": 20,
+      "wave_from_cm": 70,
       "wave_to_cm": 100,
-      "sea_state_he": "נוח עד גלי"
+      "sea_state_he": "גלי"
      }
     ]
    },
@@ -29412,28 +29412,28 @@
     "name_he": "חוף מרכז",
     "slots": [
      {
-      "valid_from": "2026-11-20 08:00:00",
-      "valid_to": "2026-11-20 20:00:00",
-      "sea_temp": 24,
-      "wind_dir_from": 225,
-      "wind_dir_to": 315,
-      "wind_speed_from": 15,
-      "wind_speed_to": 25,
-      "wave_from_cm": 50,
-      "wave_to_cm": 110,
-      "sea_state_he": "נוח עד גלי"
-     },
-     {
       "valid_from": "2026-11-20 20:00:00",
       "valid_to": "2026-11-21 08:00:00",
       "sea_temp": 24,
       "wind_dir_from": 45,
       "wind_dir_to": 135,
       "wind_speed_from": 10,
-      "wind_speed_to": 20,
-      "wave_from_cm": 50,
+      "wind_speed_to": 15,
+      "wave_from_cm": 80,
+      "wave_to_cm": 110,
+      "sea_state_he": "גלי"
+     },
+     {
+      "valid_from": "2026-11-21 08:00:00",
+      "valid_to": "2026-11-21 20:00:00",
+      "sea_temp": 24,
+      "wind_dir_from": 225,
+      "wind_dir_to": 315,
+      "wind_speed_from": 15,
+      "wind_speed_to": 25,
+      "wave_from_cm": 70,
       "wave_to_cm": 100,
-      "sea_state_he": "נוח עד גלי"
+      "sea_state_he": "גלי"
      }
     ]
    },
@@ -29441,18 +29441,6 @@
     "name_he": "חוף דרום",
     "slots": [
      {
-      "valid_from": "2026-11-20 08:00:00",
-      "valid_to": "2026-11-20 20:00:00",
-      "sea_temp": 24,
-      "wind_dir_from": 225,
-      "wind_dir_to": 315,
-      "wind_speed_from": 10,
-      "wind_speed_to": 25,
-      "wave_from_cm": 50,
-      "wave_to_cm": 110,
-      "sea_state_he": "נוח עד גלי"
-     },
-     {
       "valid_from": "2026-11-20 20:00:00",
       "valid_to": "2026-11-21 08:00:00",
       "sea_temp": 24,
@@ -29460,9 +29448,21 @@
       "wind_dir_to": 135,
       "wind_speed_from": 10,
       "wind_speed_to": 20,
-      "wave_from_cm": 50,
+      "wave_from_cm": 80,
+      "wave_to_cm": 110,
+      "sea_state_he": "גלי"
+     },
+     {
+      "valid_from": "2026-11-21 08:00:00",
+      "valid_to": "2026-11-21 20:00:00",
+      "sea_temp": 24,
+      "wind_dir_from": 225,
+      "wind_dir_to": 315,
+      "wind_speed_from": 15,
+      "wind_speed_to": 25,
+      "wave_from_cm": 70,
       "wave_to_cm": 100,
-      "sea_state_he": "נוח עד גלי"
+      "sea_state_he": "גלי"
      }
     ]
    }
@@ -29477,9 +29477,9 @@
    "wave_cm": "<50;50..100;>100..<200;200..300;>300",
    "wind_kmh": "<12;12..<20;20..<29;29..<50;>=50"
   },
-  "issue_id": "2026-11-20T15-13-08-cde7b4",
-  "issued_at_local": "2026-11-20T15:13:08",
-  "issued_at_utc": "2026-11-20T13:13:08.187Z",
+  "issue_id": "2026-11-20T18-13-57-7bf4ab",
+  "issued_at_local": "2026-11-20T18:13:57",
+  "issued_at_utc": "2026-11-20T16:13:57.004Z",
   "timezone": "Asia/Jerusalem",
   "valid_from": "2026-11-20",
   "valid_to": "2026-11-26",
@@ -29491,7 +29491,7 @@
     "ncep_gfswave025"
    ],
    "spread": "largest simultaneous hourly spread, never a calibrated confidence interval",
-   "copernicus_retrieved_at": "2026-11-20T15:12:25+02:00"
+   "copernicus_retrieved_at": "2026-11-20T18:13:13+02:00"
   },
   "tide_policy": {
    "source": "The Tide Chart",
@@ -29575,7 +29575,7 @@
   },
   "scoring_note_he": "כרטיסי הדגים איכותניים בלבד, בהיקף דיג ז'ירז'ור מהחוף - ללא ציון התאמה מספרי: אין מקור מאומת לספי עונה/שעות/גלים/רוח/טמפרטורה למין. צבע הגלים וצבע הרוח המתמשכת מוצגים בנפרד, לפי השיא היומי או בטווח השעות. עמודת התנאים מחזירה את ציון ההשוואה הניסיוני המקורי 0–100, המחושב מממוצעי החלון ומשבים, בנפרד מסולם הצבעים של המדידות. הסולם מקומי וניסיוני, לא תחזית תפיסה ולא דירוג בטיחות.",
   "stale_beaches": [],
-  "issue_file": "issues/2026-11-20T15-13-08-cde7b4.json"
+  "issue_file": "issues/2026-11-20T18-13-57-7bf4ab.json"
  },
  "beaches": [
   {
@@ -29584,7 +29584,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-20T15:12:25+02:00",
+    "retrieved_at": "2026-11-20T18:13:13+02:00",
     "cell_lat": 33.0625,
     "cell_lon": 35.083336,
     "dist_km": 1.9,
@@ -29601,7 +29601,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-20T13:13:08.187Z",
+    "comparison_retrieved_at": "2026-11-20T16:13:57.004Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 33.0625,
@@ -32328,7 +32328,7 @@
        "wave_max": 0.8,
        "wind_min_kmh": 2.8,
        "wind_max_kmh": 7.9,
-       "past": false
+       "past": true
       },
       {
        "from": "18:00",
@@ -34450,7 +34450,7 @@
      "last_light": "17:00",
      "moon_illumination_pct": 99,
      "moon_waxing": false,
-     "wind_max_kmh": 11.5,
+     "wind_max_kmh": 15.5,
      "wave_max": 1.518,
      "wave_source": "copernicus_med",
      "wave_comparison": {
@@ -34592,9 +34592,9 @@
      "high_wave_warning": false,
      "sst_avg": 23.77916666666668,
      "air_temp_min": 15.6,
-     "air_temp_max": 22,
+     "air_temp_max": 22.1,
      "pressure_min": 1020.1,
-     "pressure_max": 1021.7,
+     "pressure_max": 1021.5,
      "salinity_min": 39.57,
      "salinity_max": 39.57,
      "salinity_hours_valid": 24,
@@ -34675,19 +34675,19 @@
        "current_dir": "מזרח",
        "wind_kmh": 7.2,
        "wind_dir": "דרום-מזרח",
-       "wind_deg": 126,
-       "gust_kmh": 11.2,
-       "air_temp": 17.9,
+       "wind_deg": 141,
+       "gust_kmh": 11.9,
+       "air_temp": 18.2,
        "pressure": 1021,
-       "humidity": 87,
+       "humidity": 85.3,
        "precip": 0.6,
        "wx_code": 80,
        "is_day": 0,
        "score": 98,
        "wave_min": 0.58,
        "wave_max": 0.83,
-       "wind_min_kmh": 6,
-       "wind_max_kmh": 8.7,
+       "wind_min_kmh": 6.2,
+       "wind_max_kmh": 8.6,
        "past": false
       },
       {
@@ -34703,21 +34703,21 @@
        "sea_level": -0.21,
        "current_vel": 0.33,
        "current_dir": "מזרח",
-       "wind_kmh": 6.9,
-       "wind_dir": "דרום-מערב",
-       "wind_deg": 203,
-       "gust_kmh": 14,
-       "air_temp": 20.5,
-       "pressure": 1021.7,
-       "humidity": 75,
+       "wind_kmh": 8.6,
+       "wind_dir": "מערב",
+       "wind_deg": 260,
+       "gust_kmh": 25.9,
+       "air_temp": 21.1,
+       "pressure": 1021.3,
+       "humidity": 65.7,
        "precip": 0,
        "wx_code": 2,
        "is_day": 1,
-       "score": 98,
+       "score": 93,
        "wave_min": 0.96,
        "wave_max": 1.13,
-       "wind_min_kmh": 5.7,
-       "wind_max_kmh": 8.3,
+       "wind_min_kmh": 2.2,
+       "wind_max_kmh": 15,
        "past": false
       },
       {
@@ -34733,21 +34733,21 @@
        "sea_level": -0.35,
        "current_vel": 0.4,
        "current_dir": "צפון-מזרח",
-       "wind_kmh": 10,
-       "wind_dir": "מערב",
-       "wind_deg": 289,
-       "gust_kmh": 20.2,
-       "air_temp": 21.9,
+       "wind_kmh": 14.3,
+       "wind_dir": "צפון-מערב",
+       "wind_deg": 296,
+       "gust_kmh": 25.9,
+       "air_temp": 22.1,
        "pressure": 1020.7,
-       "humidity": 71,
+       "humidity": 63,
        "precip": 0,
-       "wx_code": 2,
+       "wx_code": 1,
        "is_day": 1,
-       "score": 71,
+       "score": 62,
        "wave_min": 1.19,
        "wave_max": 1.32,
-       "wind_min_kmh": 8.7,
-       "wind_max_kmh": 11.5,
+       "wind_min_kmh": 13.3,
+       "wind_max_kmh": 15.5,
        "past": false
       },
       {
@@ -35427,7 +35427,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-20T15:12:25+02:00",
+    "retrieved_at": "2026-11-20T18:13:13+02:00",
     "cell_lat": 33.020832,
     "cell_lon": 35.083336,
     "dist_km": 1.9,
@@ -35444,7 +35444,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-20T13:13:08.187Z",
+    "comparison_retrieved_at": "2026-11-20T16:13:57.004Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 33.020832,
@@ -38171,7 +38171,7 @@
        "wave_max": 0.78,
        "wind_min_kmh": 1.8,
        "wind_max_kmh": 8.6,
-       "past": false
+       "past": true
       },
       {
        "from": "18:00",
@@ -40293,7 +40293,7 @@
      "last_light": "17:00",
      "moon_illumination_pct": 99,
      "moon_waxing": false,
-     "wind_max_kmh": 11.5,
+     "wind_max_kmh": 14.7,
      "wave_max": 1.498,
      "wave_source": "copernicus_med",
      "wave_comparison": {
@@ -40435,9 +40435,9 @@
      "high_wave_warning": false,
      "sst_avg": 23.77916666666668,
      "air_temp_min": 15.5,
-     "air_temp_max": 22,
+     "air_temp_max": 22.3,
      "pressure_min": 1020.1,
-     "pressure_max": 1021.7,
+     "pressure_max": 1021.5,
      "salinity_min": 39.59,
      "salinity_max": 39.6,
      "salinity_hours_valid": 24,
@@ -40516,21 +40516,21 @@
        "sea_level": -0.34,
        "current_vel": 0.2,
        "current_dir": "מזרח",
-       "wind_kmh": 6.4,
+       "wind_kmh": 5.7,
        "wind_dir": "דרום-מזרח",
-       "wind_deg": 121,
-       "gust_kmh": 10.1,
-       "air_temp": 17.6,
+       "wind_deg": 132,
+       "gust_kmh": 9.7,
+       "air_temp": 17.5,
        "pressure": 1021,
-       "humidity": 86,
-       "precip": 0.5,
+       "humidity": 84,
+       "precip": 0.3,
        "wx_code": 80,
        "is_day": 0,
        "score": 98,
        "wave_min": 0.55,
        "wave_max": 0.79,
-       "wind_min_kmh": 5.6,
-       "wind_max_kmh": 7.5,
+       "wind_min_kmh": 4.5,
+       "wind_max_kmh": 7.1,
        "past": false
       },
       {
@@ -40546,21 +40546,21 @@
        "sea_level": -0.21,
        "current_vel": 0.33,
        "current_dir": "מזרח",
-       "wind_kmh": 6.9,
-       "wind_dir": "דרום-מערב",
-       "wind_deg": 203,
-       "gust_kmh": 14,
-       "air_temp": 20.4,
-       "pressure": 1021.7,
-       "humidity": 75,
+       "wind_kmh": 7.9,
+       "wind_dir": "מערב",
+       "wind_deg": 264,
+       "gust_kmh": 23.2,
+       "air_temp": 21.1,
+       "pressure": 1021.2,
+       "humidity": 64.3,
        "precip": 0,
        "wx_code": 2,
        "is_day": 1,
        "score": 98,
        "wave_min": 0.92,
        "wave_max": 1.1,
-       "wind_min_kmh": 5.7,
-       "wind_max_kmh": 8.3,
+       "wind_min_kmh": 1.5,
+       "wind_max_kmh": 14.3,
        "past": false
       },
       {
@@ -40576,21 +40576,21 @@
        "sea_level": -0.35,
        "current_vel": 0.4,
        "current_dir": "צפון-מזרח",
-       "wind_kmh": 10,
-       "wind_dir": "מערב",
-       "wind_deg": 289,
-       "gust_kmh": 20.2,
-       "air_temp": 21.9,
+       "wind_kmh": 13.8,
+       "wind_dir": "צפון-מערב",
+       "wind_deg": 296,
+       "gust_kmh": 24.9,
+       "air_temp": 22.2,
        "pressure": 1020.7,
-       "humidity": 71,
+       "humidity": 61.3,
        "precip": 0,
        "wx_code": 2,
        "is_day": 1,
        "score": 71,
        "wave_min": 1.17,
        "wave_max": 1.29,
-       "wind_min_kmh": 8.7,
-       "wind_max_kmh": 11.5,
+       "wind_min_kmh": 13,
+       "wind_max_kmh": 14.7,
        "past": false
       },
       {
@@ -41270,7 +41270,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-20T15:12:25+02:00",
+    "retrieved_at": "2026-11-20T18:13:13+02:00",
     "cell_lat": 32.9375,
     "cell_lon": 35.041668,
     "dist_km": 4.2,
@@ -41287,7 +41287,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-20T13:13:08.187Z",
+    "comparison_retrieved_at": "2026-11-20T16:13:57.004Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 32.9375,
@@ -44014,7 +44014,7 @@
        "wave_max": 0.79,
        "wind_min_kmh": 3.4,
        "wind_max_kmh": 10.5,
-       "past": false
+       "past": true
       },
       {
        "from": "18:00",
@@ -46136,7 +46136,7 @@
      "last_light": "17:00",
      "moon_illumination_pct": 99,
      "moon_waxing": false,
-     "wind_max_kmh": 11.5,
+     "wind_max_kmh": 14.9,
      "wave_max": 1.492,
      "wave_source": "copernicus_med",
      "wave_comparison": {
@@ -46278,9 +46278,9 @@
      "high_wave_warning": false,
      "sst_avg": 23.845833333333328,
      "air_temp_min": 14.8,
-     "air_temp_max": 22,
+     "air_temp_max": 22.4,
      "pressure_min": 1020.2,
-     "pressure_max": 1021.7,
+     "pressure_max": 1021.5,
      "salinity_min": 39.62,
      "salinity_max": 39.64,
      "salinity_hours_valid": 24,
@@ -46359,21 +46359,21 @@
        "sea_level": -0.34,
        "current_vel": 0.33,
        "current_dir": "מזרח",
-       "wind_kmh": 6.3,
+       "wind_kmh": 5.4,
        "wind_dir": "דרום-מזרח",
-       "wind_deg": 115,
-       "gust_kmh": 10.3,
-       "air_temp": 17.3,
+       "wind_deg": 118,
+       "gust_kmh": 10.1,
+       "air_temp": 16.9,
        "pressure": 1021.1,
-       "humidity": 88,
-       "precip": 0.3,
+       "humidity": 87.3,
+       "precip": 0,
        "wx_code": 2,
        "is_day": 0,
        "score": 98,
        "wave_min": 0.55,
        "wave_max": 0.77,
-       "wind_min_kmh": 5.6,
-       "wind_max_kmh": 7,
+       "wind_min_kmh": 4.6,
+       "wind_max_kmh": 6.4,
        "past": false
       },
       {
@@ -46389,21 +46389,21 @@
        "sea_level": -0.21,
        "current_vel": 0.4,
        "current_dir": "מזרח",
-       "wind_kmh": 6.9,
-       "wind_dir": "דרום-מערב",
-       "wind_deg": 203,
-       "gust_kmh": 14,
-       "air_temp": 20.5,
-       "pressure": 1021.7,
-       "humidity": 75,
+       "wind_kmh": 7.8,
+       "wind_dir": "צפון-מערב",
+       "wind_deg": 325,
+       "gust_kmh": 23.4,
+       "air_temp": 21.1,
+       "pressure": 1021.2,
+       "humidity": 65.7,
        "precip": 0,
        "wx_code": 2,
        "is_day": 1,
        "score": 98,
        "wave_min": 0.91,
        "wave_max": 1.09,
-       "wind_min_kmh": 5.7,
-       "wind_max_kmh": 8.3,
+       "wind_min_kmh": 0.7,
+       "wind_max_kmh": 14.5,
        "past": false
       },
       {
@@ -46419,21 +46419,21 @@
        "sea_level": -0.35,
        "current_vel": 0.4,
        "current_dir": "מזרח",
-       "wind_kmh": 10,
-       "wind_dir": "מערב",
-       "wind_deg": 289,
-       "gust_kmh": 20.2,
-       "air_temp": 21.9,
-       "pressure": 1020.7,
-       "humidity": 71,
+       "wind_kmh": 13.7,
+       "wind_dir": "צפון-מערב",
+       "wind_deg": 298,
+       "gust_kmh": 25,
+       "air_temp": 22.3,
+       "pressure": 1020.6,
+       "humidity": 61.7,
        "precip": 0,
-       "wx_code": 2,
+       "wx_code": 1,
        "is_day": 1,
        "score": 71,
        "wave_min": 1.15,
        "wave_max": 1.29,
-       "wind_min_kmh": 8.7,
-       "wind_max_kmh": 11.5,
+       "wind_min_kmh": 12.8,
+       "wind_max_kmh": 14.9,
        "past": false
       },
       {
@@ -47113,7 +47113,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-20T15:12:25+02:00",
+    "retrieved_at": "2026-11-20T18:13:13+02:00",
     "cell_lat": 32.854168,
     "cell_lon": 34.958336,
     "dist_km": 3.2,
@@ -47130,7 +47130,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-20T13:13:08.187Z",
+    "comparison_retrieved_at": "2026-11-20T16:13:57.004Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 32.854168,
@@ -49857,7 +49857,7 @@
        "wave_max": 0.78,
        "wind_min_kmh": 4,
        "wind_max_kmh": 9,
-       "past": false
+       "past": true
       },
       {
        "from": "18:00",
@@ -51979,7 +51979,7 @@
      "last_light": "17:01",
      "moon_illumination_pct": 99,
      "moon_waxing": false,
-     "wind_max_kmh": 11.8,
+     "wind_max_kmh": 17.2,
      "wave_max": 1.528,
      "wave_source": "copernicus_med",
      "wave_comparison": {
@@ -52123,7 +52123,7 @@
      "air_temp_min": 15.3,
      "air_temp_max": 21.4,
      "pressure_min": 1020.1,
-     "pressure_max": 1022,
+     "pressure_max": 1021.5,
      "salinity_min": 39.55,
      "salinity_max": 39.57,
      "salinity_hours_valid": 24,
@@ -52202,21 +52202,21 @@
        "sea_level": -0.34,
        "current_vel": 0.07,
        "current_dir": "מזרח",
-       "wind_kmh": 3.8,
+       "wind_kmh": 3.9,
        "wind_dir": "דרום",
-       "wind_deg": 183,
-       "gust_kmh": 13,
-       "air_temp": 16.7,
-       "pressure": 1021.2,
-       "humidity": 86,
-       "precip": 0.2,
+       "wind_deg": 198,
+       "gust_kmh": 12.6,
+       "air_temp": 16.9,
+       "pressure": 1021,
+       "humidity": 84.3,
+       "precip": 0,
        "wx_code": 2,
        "is_day": 0,
        "score": 98,
        "wave_min": 0.56,
        "wave_max": 0.79,
        "wind_min_kmh": 2.9,
-       "wind_max_kmh": 4.9,
+       "wind_max_kmh": 5.1,
        "past": false
       },
       {
@@ -52232,21 +52232,21 @@
        "sea_level": -0.21,
        "current_vel": 0.27,
        "current_dir": "דרום-מזרח",
-       "wind_kmh": 6.7,
-       "wind_dir": "דרום-מערב",
-       "wind_deg": 211,
-       "gust_kmh": 18,
-       "air_temp": 19.2,
-       "pressure": 1021.9,
-       "humidity": 74.7,
-       "precip": 0,
-       "wx_code": 3,
+       "wind_kmh": 12.5,
+       "wind_dir": "צפון-מערב",
+       "wind_deg": 296,
+       "gust_kmh": 23.4,
+       "air_temp": 20.8,
+       "pressure": 1021.2,
+       "humidity": 64.3,
+       "precip": 0.3,
+       "wx_code": 2,
        "is_day": 1,
-       "score": 98,
+       "score": 93,
        "wave_min": 0.94,
        "wave_max": 1.11,
-       "wind_min_kmh": 4.7,
-       "wind_max_kmh": 8.5,
+       "wind_min_kmh": 7.4,
+       "wind_max_kmh": 17.2,
        "past": false
       },
       {
@@ -52262,21 +52262,21 @@
        "sea_level": -0.35,
        "current_vel": 0.3,
        "current_dir": "דרום-מזרח",
-       "wind_kmh": 9.7,
-       "wind_dir": "מערב",
-       "wind_deg": 287,
-       "gust_kmh": 21.2,
-       "air_temp": 21.3,
+       "wind_kmh": 14.8,
+       "wind_dir": "צפון-מערב",
+       "wind_deg": 298,
+       "gust_kmh": 27.5,
+       "air_temp": 21.4,
        "pressure": 1020.7,
-       "humidity": 69.7,
+       "humidity": 63.3,
        "precip": 0,
        "wx_code": 2,
        "is_day": 1,
-       "score": 71,
+       "score": 62,
        "wave_min": 1.17,
        "wave_max": 1.32,
-       "wind_min_kmh": 8.4,
-       "wind_max_kmh": 11.2,
+       "wind_min_kmh": 13.5,
+       "wind_max_kmh": 16.4,
        "past": false
       },
       {
@@ -52956,7 +52956,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-20T15:12:25+02:00",
+    "retrieved_at": "2026-11-20T18:13:13+02:00",
     "cell_lat": 32.729168,
     "cell_lon": 34.916668,
     "dist_km": 3,
@@ -52973,7 +52973,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-20T13:13:08.187Z",
+    "comparison_retrieved_at": "2026-11-20T16:13:57.004Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 32.729168,
@@ -55700,7 +55700,7 @@
        "wave_max": 0.78,
        "wind_min_kmh": 1.8,
        "wind_max_kmh": 6.9,
-       "past": false
+       "past": true
       },
       {
        "from": "18:00",
@@ -57822,7 +57822,7 @@
      "last_light": "17:02",
      "moon_illumination_pct": 99,
      "moon_waxing": false,
-     "wind_max_kmh": 11.8,
+     "wind_max_kmh": 14,
      "wave_max": 1.561,
      "wave_source": "copernicus_med",
      "wave_comparison": {
@@ -57964,9 +57964,9 @@
      "high_wave_warning": false,
      "sst_avg": 23.845833333333328,
      "air_temp_min": 16.7,
-     "air_temp_max": 22.4,
+     "air_temp_max": 22.5,
      "pressure_min": 1020.2,
-     "pressure_max": 1022,
+     "pressure_max": 1021.6,
      "salinity_min": 39.57,
      "salinity_max": 39.59,
      "salinity_hours_valid": 24,
@@ -58045,21 +58045,21 @@
        "sea_level": -0.34,
        "current_vel": 0,
        "current_dir": "מזרח",
-       "wind_kmh": 5.7,
+       "wind_kmh": 8,
        "wind_dir": "דרום-מזרח",
-       "wind_deg": 155,
-       "gust_kmh": 14.6,
-       "air_temp": 18.1,
-       "pressure": 1021.2,
-       "humidity": 83.7,
-       "precip": 0.6,
+       "wind_deg": 140,
+       "gust_kmh": 15.8,
+       "air_temp": 18.6,
+       "pressure": 1021.1,
+       "humidity": 79.3,
+       "precip": 0.9,
        "wx_code": 80,
        "is_day": 0,
-       "score": 98,
+       "score": 93,
        "wave_min": 0.53,
        "wave_max": 0.75,
-       "wind_min_kmh": 4.1,
-       "wind_max_kmh": 7.4,
+       "wind_min_kmh": 7.7,
+       "wind_max_kmh": 8.4,
        "past": false
       },
       {
@@ -58075,21 +58075,21 @@
        "sea_level": -0.21,
        "current_vel": 0.2,
        "current_dir": "דרום",
-       "wind_kmh": 6.7,
-       "wind_dir": "דרום-מערב",
-       "wind_deg": 211,
-       "gust_kmh": 18,
-       "air_temp": 20.2,
-       "pressure": 1021.9,
-       "humidity": 74.7,
+       "wind_kmh": 7.9,
+       "wind_dir": "מערב",
+       "wind_deg": 292,
+       "gust_kmh": 20.4,
+       "air_temp": 21.3,
+       "pressure": 1021.3,
+       "humidity": 68.3,
        "precip": 0,
-       "wx_code": 3,
+       "wx_code": 2,
        "is_day": 1,
        "score": 98,
        "wave_min": 0.91,
        "wave_max": 1.1,
-       "wind_min_kmh": 4.7,
-       "wind_max_kmh": 8.5,
+       "wind_min_kmh": 1.8,
+       "wind_max_kmh": 13.5,
        "past": false
       },
       {
@@ -58105,21 +58105,21 @@
        "sea_level": -0.35,
        "current_vel": 0.2,
        "current_dir": "דרום",
-       "wind_kmh": 9.7,
-       "wind_dir": "מערב",
-       "wind_deg": 287,
-       "gust_kmh": 21.2,
-       "air_temp": 22.3,
+       "wind_kmh": 13.2,
+       "wind_dir": "צפון-מערב",
+       "wind_deg": 298,
+       "gust_kmh": 24.5,
+       "air_temp": 22.5,
        "pressure": 1020.7,
-       "humidity": 69.7,
+       "humidity": 62.7,
        "precip": 0,
        "wx_code": 2,
        "is_day": 1,
        "score": 71,
        "wave_min": 1.16,
        "wave_max": 1.31,
-       "wind_min_kmh": 8.4,
-       "wind_max_kmh": 11.2,
+       "wind_min_kmh": 12.7,
+       "wind_max_kmh": 14,
        "past": false
       },
       {
@@ -58799,7 +58799,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-20T15:12:25+02:00",
+    "retrieved_at": "2026-11-20T18:13:13+02:00",
     "cell_lat": 32.604168,
     "cell_lon": 34.875,
     "dist_km": 4,
@@ -58816,7 +58816,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-20T13:13:08.187Z",
+    "comparison_retrieved_at": "2026-11-20T16:13:57.004Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 32.604168,
@@ -61543,7 +61543,7 @@
        "wave_max": 0.79,
        "wind_min_kmh": 2.8,
        "wind_max_kmh": 9.1,
-       "past": false
+       "past": true
       },
       {
        "from": "18:00",
@@ -63665,7 +63665,7 @@
      "last_light": "17:02",
      "moon_illumination_pct": 99,
      "moon_waxing": false,
-     "wind_max_kmh": 10.8,
+     "wind_max_kmh": 13.3,
      "wave_max": 1.565,
      "wave_source": "copernicus_med",
      "wave_comparison": {
@@ -63807,9 +63807,9 @@
      "high_wave_warning": false,
      "sst_avg": 24,
      "air_temp_min": 16.4,
-     "air_temp_max": 21.9,
+     "air_temp_max": 22.4,
      "pressure_min": 1020.2,
-     "pressure_max": 1021.8,
+     "pressure_max": 1021.6,
      "salinity_min": 39.58,
      "salinity_max": 39.59,
      "salinity_hours_valid": 24,
@@ -63888,21 +63888,21 @@
        "sea_level": -0.34,
        "current_vel": 0.07,
        "current_dir": "מזרח",
-       "wind_kmh": 5.2,
+       "wind_kmh": 6.7,
        "wind_dir": "דרום-מזרח",
-       "wind_deg": 149,
-       "gust_kmh": 10.4,
-       "air_temp": 17.9,
+       "wind_deg": 148,
+       "gust_kmh": 12.2,
+       "air_temp": 17.8,
        "pressure": 1021.2,
-       "humidity": 82.7,
-       "precip": 0.2,
+       "humidity": 81,
+       "precip": 0,
        "wx_code": 2,
        "is_day": 0,
        "score": 98,
        "wave_min": 0.53,
        "wave_max": 0.71,
-       "wind_min_kmh": 4,
-       "wind_max_kmh": 6.2,
+       "wind_min_kmh": 6.6,
+       "wind_max_kmh": 7,
        "past": false
       },
       {
@@ -63918,21 +63918,21 @@
        "sea_level": -0.21,
        "current_vel": 0.3,
        "current_dir": "דרום-מזרח",
-       "wind_kmh": 6.6,
-       "wind_dir": "דרום-מערב",
-       "wind_deg": 209,
-       "gust_kmh": 15.1,
-       "air_temp": 20.3,
-       "pressure": 1021.7,
-       "humidity": 74.3,
+       "wind_kmh": 6.8,
+       "wind_dir": "צפון-מערב",
+       "wind_deg": 330,
+       "gust_kmh": 18.1,
+       "air_temp": 21,
+       "pressure": 1021.3,
+       "humidity": 69,
        "precip": 0,
-       "wx_code": 3,
+       "wx_code": 2,
        "is_day": 1,
        "score": 98,
        "wave_min": 0.87,
        "wave_max": 1.08,
-       "wind_min_kmh": 4.3,
-       "wind_max_kmh": 8.8,
+       "wind_min_kmh": 1.1,
+       "wind_max_kmh": 12.5,
        "past": false
       },
       {
@@ -63948,21 +63948,21 @@
        "sea_level": -0.35,
        "current_vel": 0.27,
        "current_dir": "דרום-מזרח",
-       "wind_kmh": 9.3,
-       "wind_dir": "מערב",
-       "wind_deg": 285,
-       "gust_kmh": 18,
-       "air_temp": 21.8,
+       "wind_kmh": 12.5,
+       "wind_dir": "צפון-מערב",
+       "wind_deg": 297,
+       "gust_kmh": 21.5,
+       "air_temp": 22.3,
        "pressure": 1020.7,
-       "humidity": 73,
+       "humidity": 64,
        "precip": 0,
-       "wx_code": 2,
+       "wx_code": 1,
        "is_day": 1,
        "score": 71,
        "wave_min": 1.15,
        "wave_max": 1.3,
-       "wind_min_kmh": 8.5,
-       "wind_max_kmh": 10.2,
+       "wind_min_kmh": 11.7,
+       "wind_max_kmh": 13.3,
        "past": false
       },
       {
@@ -64642,7 +64642,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-20T15:12:25+02:00",
+    "retrieved_at": "2026-11-20T18:13:13+02:00",
     "cell_lat": 32.520832,
     "cell_lon": 34.875,
     "dist_km": 2.9,
@@ -64659,7 +64659,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-20T13:13:08.187Z",
+    "comparison_retrieved_at": "2026-11-20T16:13:57.004Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 32.520832,
@@ -67386,7 +67386,7 @@
        "wave_max": 0.75,
        "wind_min_kmh": 3.8,
        "wind_max_kmh": 9,
-       "past": false
+       "past": true
       },
       {
        "from": "18:00",
@@ -69508,7 +69508,7 @@
      "last_light": "17:02",
      "moon_illumination_pct": 99,
      "moon_waxing": false,
-     "wind_max_kmh": 10.2,
+     "wind_max_kmh": 11.2,
      "wave_max": 1.518,
      "wave_source": "copernicus_med",
      "wave_comparison": {
@@ -69650,9 +69650,9 @@
      "high_wave_warning": false,
      "sst_avg": 23.95,
      "air_temp_min": 14,
-     "air_temp_max": 22.9,
+     "air_temp_max": 22.6,
      "pressure_min": 1020,
-     "pressure_max": 1021.8,
+     "pressure_max": 1021.6,
      "salinity_min": 39.58,
      "salinity_max": 39.59,
      "salinity_hours_valid": 24,
@@ -69731,21 +69731,21 @@
        "sea_level": -0.34,
        "current_vel": 0,
        "current_dir": "מזרח",
-       "wind_kmh": 4.3,
+       "wind_kmh": 4.4,
        "wind_dir": "דרום-מזרח",
-       "wind_deg": 136,
-       "gust_kmh": 8.5,
-       "air_temp": 16.4,
+       "wind_deg": 153,
+       "gust_kmh": 7.6,
+       "air_temp": 16.6,
        "pressure": 1021.2,
-       "humidity": 87.7,
+       "humidity": 86.3,
        "precip": 0,
        "wx_code": 3,
        "is_day": 0,
        "score": 98,
        "wave_min": 0.49,
        "wave_max": 0.64,
-       "wind_min_kmh": 3.7,
-       "wind_max_kmh": 4.9,
+       "wind_min_kmh": 4.1,
+       "wind_max_kmh": 4.8,
        "past": false
       },
       {
@@ -69761,21 +69761,21 @@
        "sea_level": -0.21,
        "current_vel": 0,
        "current_dir": "מזרח",
-       "wind_kmh": 6.4,
-       "wind_dir": "דרום-מערב",
-       "wind_deg": 213,
-       "gust_kmh": 17.3,
-       "air_temp": 20.6,
-       "pressure": 1021.7,
-       "humidity": 72.7,
-       "precip": 0,
-       "wx_code": 3,
+       "wind_kmh": 4.1,
+       "wind_dir": "צפון-מערב",
+       "wind_deg": 304,
+       "gust_kmh": 11.7,
+       "air_temp": 20.3,
+       "pressure": 1021.4,
+       "humidity": 82,
+       "precip": 0.3,
+       "wx_code": 2,
        "is_day": 1,
        "score": 98,
        "wave_min": 0.78,
        "wave_max": 1.03,
-       "wind_min_kmh": 3.6,
-       "wind_max_kmh": 9.2,
+       "wind_min_kmh": 1.8,
+       "wind_max_kmh": 7.5,
        "past": false
       },
       {
@@ -69791,21 +69791,21 @@
        "sea_level": -0.35,
        "current_vel": 0.2,
        "current_dir": "מזרח",
-       "wind_kmh": 9.8,
-       "wind_dir": "מערב",
-       "wind_deg": 281,
-       "gust_kmh": 18.7,
-       "air_temp": 22.8,
-       "pressure": 1020.5,
-       "humidity": 67.3,
+       "wind_kmh": 10.9,
+       "wind_dir": "צפון-מערב",
+       "wind_deg": 296,
+       "gust_kmh": 20.8,
+       "air_temp": 22.5,
+       "pressure": 1020.6,
+       "humidity": 65.7,
        "precip": 0,
        "wx_code": 2,
        "is_day": 1,
        "score": 93,
        "wave_min": 1.09,
        "wave_max": 1.24,
-       "wind_min_kmh": 9.5,
-       "wind_max_kmh": 10.2,
+       "wind_min_kmh": 10.2,
+       "wind_max_kmh": 11.2,
        "past": false
       },
       {
@@ -70485,7 +70485,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-20T15:12:25+02:00",
+    "retrieved_at": "2026-11-20T18:13:13+02:00",
     "cell_lat": 32.4375,
     "cell_lon": 34.833336,
     "dist_km": 4.2,
@@ -70502,7 +70502,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-20T13:13:08.187Z",
+    "comparison_retrieved_at": "2026-11-20T16:13:57.004Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 32.4375,
@@ -73229,7 +73229,7 @@
        "wave_max": 0.74,
        "wind_min_kmh": 3.8,
        "wind_max_kmh": 9,
-       "past": false
+       "past": true
       },
       {
        "from": "18:00",
@@ -75351,7 +75351,7 @@
      "last_light": "17:02",
      "moon_illumination_pct": 99,
      "moon_waxing": false,
-     "wind_max_kmh": 10.2,
+     "wind_max_kmh": 11.5,
      "wave_max": 1.518,
      "wave_source": "copernicus_med",
      "wave_comparison": {
@@ -75493,9 +75493,9 @@
      "high_wave_warning": false,
      "sst_avg": 23.95,
      "air_temp_min": 14,
-     "air_temp_max": 22.9,
+     "air_temp_max": 22.7,
      "pressure_min": 1020,
-     "pressure_max": 1021.8,
+     "pressure_max": 1021.6,
      "salinity_min": 39.56,
      "salinity_max": 39.56,
      "salinity_hours_valid": 24,
@@ -75574,21 +75574,21 @@
        "sea_level": -0.34,
        "current_vel": 0,
        "current_dir": "מזרח",
-       "wind_kmh": 4.3,
+       "wind_kmh": 4.4,
        "wind_dir": "דרום-מזרח",
-       "wind_deg": 136,
-       "gust_kmh": 8.5,
-       "air_temp": 16.4,
+       "wind_deg": 153,
+       "gust_kmh": 7.6,
+       "air_temp": 16.6,
        "pressure": 1021.2,
-       "humidity": 87.7,
+       "humidity": 86.3,
        "precip": 0,
        "wx_code": 3,
        "is_day": 0,
        "score": 98,
        "wave_min": 0.51,
        "wave_max": 0.63,
-       "wind_min_kmh": 3.7,
-       "wind_max_kmh": 4.9,
+       "wind_min_kmh": 4.1,
+       "wind_max_kmh": 4.8,
        "past": false
       },
       {
@@ -75604,21 +75604,21 @@
        "sea_level": -0.21,
        "current_vel": 0,
        "current_dir": "מזרח",
-       "wind_kmh": 6.4,
-       "wind_dir": "דרום-מערב",
-       "wind_deg": 213,
-       "gust_kmh": 17.3,
-       "air_temp": 20.6,
-       "pressure": 1021.7,
-       "humidity": 72.7,
-       "precip": 0,
-       "wx_code": 3,
+       "wind_kmh": 4.5,
+       "wind_dir": "מערב",
+       "wind_deg": 261,
+       "gust_kmh": 11.4,
+       "air_temp": 20.8,
+       "pressure": 1021.4,
+       "humidity": 80,
+       "precip": 0.3,
+       "wx_code": 2,
        "is_day": 1,
        "score": 98,
        "wave_min": 0.77,
        "wave_max": 1.01,
-       "wind_min_kmh": 3.6,
-       "wind_max_kmh": 9.2,
+       "wind_min_kmh": 3.1,
+       "wind_max_kmh": 6.9,
        "past": false
       },
       {
@@ -75634,21 +75634,21 @@
        "sea_level": -0.35,
        "current_vel": 0.2,
        "current_dir": "מזרח",
-       "wind_kmh": 9.8,
-       "wind_dir": "מערב",
-       "wind_deg": 281,
-       "gust_kmh": 18.7,
-       "air_temp": 22.8,
-       "pressure": 1020.5,
-       "humidity": 67.3,
+       "wind_kmh": 10.9,
+       "wind_dir": "צפון-מערב",
+       "wind_deg": 294,
+       "gust_kmh": 20.5,
+       "air_temp": 22.6,
+       "pressure": 1020.6,
+       "humidity": 65.3,
        "precip": 0,
        "wx_code": 2,
        "is_day": 1,
        "score": 93,
        "wave_min": 1.08,
        "wave_max": 1.22,
-       "wind_min_kmh": 9.5,
-       "wind_max_kmh": 10.2,
+       "wind_min_kmh": 9.9,
+       "wind_max_kmh": 11.5,
        "past": false
       },
       {
@@ -76328,7 +76328,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-20T15:12:25+02:00",
+    "retrieved_at": "2026-11-20T18:13:13+02:00",
     "cell_lat": 32.395832,
     "cell_lon": 34.833336,
     "dist_km": 3.8,
@@ -76345,7 +76345,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-20T13:13:08.187Z",
+    "comparison_retrieved_at": "2026-11-20T16:13:57.004Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 32.395832,
@@ -79072,7 +79072,7 @@
        "wave_max": 0.73,
        "wind_min_kmh": 3.1,
        "wind_max_kmh": 8.6,
-       "past": false
+       "past": true
       },
       {
        "from": "18:00",
@@ -81194,7 +81194,7 @@
      "last_light": "17:02",
      "moon_illumination_pct": 99,
      "moon_waxing": false,
-     "wind_max_kmh": 10.2,
+     "wind_max_kmh": 11.7,
      "wave_max": 1.5,
      "wave_source": "copernicus_med",
      "wave_comparison": {
@@ -81336,9 +81336,9 @@
      "high_wave_warning": false,
      "sst_avg": 23.97916666666666,
      "air_temp_min": 13.9,
-     "air_temp_max": 22.8,
+     "air_temp_max": 22.7,
      "pressure_min": 1020,
-     "pressure_max": 1021.8,
+     "pressure_max": 1021.6,
      "salinity_min": 39.56,
      "salinity_max": 39.57,
      "salinity_hours_valid": 24,
@@ -81417,21 +81417,21 @@
        "sea_level": -0.34,
        "current_vel": 0.2,
        "current_dir": "צפון",
-       "wind_kmh": 3.6,
+       "wind_kmh": 3,
        "wind_dir": "דרום-מזרח",
-       "wind_deg": 132,
-       "gust_kmh": 7.9,
-       "air_temp": 16.3,
+       "wind_deg": 140,
+       "gust_kmh": 6.5,
+       "air_temp": 16.4,
        "pressure": 1021.2,
-       "humidity": 87.3,
+       "humidity": 86.3,
        "precip": 0,
        "wx_code": 2,
        "is_day": 0,
        "score": 98,
        "wave_min": 0.49,
        "wave_max": 0.6,
-       "wind_min_kmh": 3.3,
-       "wind_max_kmh": 4.1,
+       "wind_min_kmh": 2.3,
+       "wind_max_kmh": 3.8,
        "past": false
       },
       {
@@ -81447,21 +81447,21 @@
        "sea_level": -0.21,
        "current_vel": 0.3,
        "current_dir": "צפון-מזרח",
-       "wind_kmh": 6.4,
-       "wind_dir": "דרום-מערב",
-       "wind_deg": 213,
-       "gust_kmh": 17.3,
-       "air_temp": 20.5,
-       "pressure": 1021.7,
-       "humidity": 72.7,
-       "precip": 0,
-       "wx_code": 3,
+       "wind_kmh": 6.9,
+       "wind_dir": "מערב",
+       "wind_deg": 287,
+       "gust_kmh": 15.3,
+       "air_temp": 21.5,
+       "pressure": 1021.4,
+       "humidity": 72,
+       "precip": 0.3,
+       "wx_code": 2,
        "is_day": 1,
        "score": 98,
        "wave_min": 0.72,
        "wave_max": 0.98,
-       "wind_min_kmh": 3.6,
-       "wind_max_kmh": 9.2,
+       "wind_min_kmh": 5.1,
+       "wind_max_kmh": 9,
        "past": false
       },
       {
@@ -81477,21 +81477,21 @@
        "sea_level": -0.35,
        "current_vel": 0.2,
        "current_dir": "מזרח",
-       "wind_kmh": 9.8,
-       "wind_dir": "מערב",
-       "wind_deg": 281,
-       "gust_kmh": 18.7,
-       "air_temp": 22.7,
-       "pressure": 1020.5,
-       "humidity": 67.3,
+       "wind_kmh": 11.3,
+       "wind_dir": "צפון-מערב",
+       "wind_deg": 297,
+       "gust_kmh": 20.4,
+       "air_temp": 22.6,
+       "pressure": 1020.6,
+       "humidity": 63,
        "precip": 0,
        "wx_code": 2,
        "is_day": 1,
        "score": 93,
        "wave_min": 1.05,
        "wave_max": 1.19,
-       "wind_min_kmh": 9.5,
-       "wind_max_kmh": 10.2,
+       "wind_min_kmh": 10.9,
+       "wind_max_kmh": 11.7,
        "past": false
       },
       {
@@ -82171,7 +82171,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-20T15:12:25+02:00",
+    "retrieved_at": "2026-11-20T18:13:13+02:00",
     "cell_lat": 32.354168,
     "cell_lon": 34.833336,
     "dist_km": 4.1,
@@ -82188,7 +82188,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-20T13:13:08.187Z",
+    "comparison_retrieved_at": "2026-11-20T16:13:57.004Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 32.354168,
@@ -84915,7 +84915,7 @@
        "wave_max": 0.71,
        "wind_min_kmh": 3.9,
        "wind_max_kmh": 8.4,
-       "past": false
+       "past": true
       },
       {
        "from": "18:00",
@@ -87179,9 +87179,9 @@
      "high_wave_warning": false,
      "sst_avg": 23.97916666666666,
      "air_temp_min": 16.9,
-     "air_temp_max": 21.8,
+     "air_temp_max": 22.2,
      "pressure_min": 1020.1,
-     "pressure_max": 1021.8,
+     "pressure_max": 1021.6,
      "salinity_min": 39.58,
      "salinity_max": 39.58,
      "salinity_hours_valid": 24,
@@ -87260,11 +87260,11 @@
        "sea_level": -0.34,
        "current_vel": 0.2,
        "current_dir": "צפון",
-       "wind_kmh": 7.8,
+       "wind_kmh": 7,
        "wind_dir": "דרום",
-       "wind_deg": 170,
-       "gust_kmh": 13.1,
-       "air_temp": 18.1,
+       "wind_deg": 164,
+       "gust_kmh": 11.9,
+       "air_temp": 17.8,
        "pressure": 1021.2,
        "humidity": 80,
        "precip": 0,
@@ -87273,8 +87273,8 @@
        "score": 98,
        "wave_min": 0.47,
        "wave_max": 0.56,
-       "wind_min_kmh": 7.4,
-       "wind_max_kmh": 8.2,
+       "wind_min_kmh": 7,
+       "wind_max_kmh": 7.1,
        "past": false
       },
       {
@@ -87290,21 +87290,21 @@
        "sea_level": -0.21,
        "current_vel": 0.3,
        "current_dir": "צפון-מזרח",
-       "wind_kmh": 10.3,
-       "wind_dir": "דרום-מערב",
-       "wind_deg": 211,
-       "gust_kmh": 18,
-       "air_temp": 20.7,
-       "pressure": 1021.6,
-       "humidity": 71.7,
-       "precip": 0,
-       "wx_code": 3,
+       "wind_kmh": 7.2,
+       "wind_dir": "מערב",
+       "wind_deg": 252,
+       "gust_kmh": 16.6,
+       "air_temp": 20.9,
+       "pressure": 1021.5,
+       "humidity": 79,
+       "precip": 0.3,
+       "wx_code": 2,
        "is_day": 1,
-       "score": 93,
+       "score": 98,
        "wave_min": 0.68,
        "wave_max": 0.95,
-       "wind_min_kmh": 10.2,
-       "wind_max_kmh": 10.5,
+       "wind_min_kmh": 6.7,
+       "wind_max_kmh": 8,
        "past": false
       },
       {
@@ -87320,21 +87320,21 @@
        "sea_level": -0.35,
        "current_vel": 0.2,
        "current_dir": "מזרח",
-       "wind_kmh": 9.3,
+       "wind_kmh": 10.5,
        "wind_dir": "מערב",
-       "wind_deg": 282,
-       "gust_kmh": 16.6,
-       "air_temp": 21.8,
-       "pressure": 1020.5,
-       "humidity": 72.7,
+       "wind_deg": 291,
+       "gust_kmh": 19.8,
+       "air_temp": 22.1,
+       "pressure": 1020.7,
+       "humidity": 67.7,
        "precip": 0,
-       "wx_code": 2,
+       "wx_code": 3,
        "is_day": 1,
        "score": 93,
        "wave_min": 1.03,
        "wave_max": 1.16,
-       "wind_min_kmh": 8.9,
-       "wind_max_kmh": 9.7,
+       "wind_min_kmh": 10,
+       "wind_max_kmh": 10.9,
        "past": false
       },
       {
@@ -88014,7 +88014,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-20T15:12:25+02:00",
+    "retrieved_at": "2026-11-20T18:13:13+02:00",
     "cell_lat": 32.1875,
     "cell_lon": 34.791668,
     "dist_km": 2.5,
@@ -88031,7 +88031,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-20T13:13:08.187Z",
+    "comparison_retrieved_at": "2026-11-20T16:13:57.004Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 32.1875,
@@ -90758,7 +90758,7 @@
        "wave_max": 0.71,
        "wind_min_kmh": 4.2,
        "wind_max_kmh": 8.7,
-       "past": false
+       "past": true
       },
       {
        "from": "18:00",
@@ -92880,7 +92880,7 @@
      "last_light": "17:02",
      "moon_illumination_pct": 99,
      "moon_waxing": false,
-     "wind_max_kmh": 8.9,
+     "wind_max_kmh": 10.6,
      "wave_max": 1.46,
      "wave_source": "copernicus_med",
      "wave_comparison": {
@@ -93022,9 +93022,9 @@
      "high_wave_warning": false,
      "sst_avg": 23.745833333333337,
      "air_temp_min": 16,
-     "air_temp_max": 23.1,
+     "air_temp_max": 22.8,
      "pressure_min": 1020,
-     "pressure_max": 1021.9,
+     "pressure_max": 1021.7,
      "salinity_min": 39.66,
      "salinity_max": 39.67,
      "salinity_hours_valid": 24,
@@ -93103,21 +93103,21 @@
        "sea_level": -0.34,
        "current_vel": 0.2,
        "current_dir": "צפון",
-       "wind_kmh": 4.9,
+       "wind_kmh": 5.2,
        "wind_dir": "דרום-מזרח",
-       "wind_deg": 155,
+       "wind_deg": 154,
        "gust_kmh": 10.1,
        "air_temp": 17.3,
        "pressure": 1021.2,
-       "humidity": 81.7,
+       "humidity": 81.3,
        "precip": 0,
        "wx_code": 2,
        "is_day": 0,
        "score": 84,
        "wave_min": 0.46,
        "wave_max": 0.51,
-       "wind_min_kmh": 4.7,
-       "wind_max_kmh": 5.2,
+       "wind_min_kmh": 5,
+       "wind_max_kmh": 5.5,
        "past": false
       },
       {
@@ -93133,21 +93133,21 @@
        "sea_level": -0.21,
        "current_vel": 0.2,
        "current_dir": "צפון",
-       "wind_kmh": 6.1,
+       "wind_kmh": 7.2,
        "wind_dir": "דרום-מערב",
-       "wind_deg": 217,
-       "gust_kmh": 20.2,
-       "air_temp": 21,
+       "wind_deg": 232,
+       "gust_kmh": 16.9,
+       "air_temp": 20.5,
        "pressure": 1021.7,
-       "humidity": 65.3,
-       "precip": 0,
+       "humidity": 83.3,
+       "precip": 0.3,
        "wx_code": 3,
        "is_day": 1,
        "score": 98,
        "wave_min": 0.59,
        "wave_max": 0.86,
-       "wind_min_kmh": 4.7,
-       "wind_max_kmh": 7.7,
+       "wind_min_kmh": 6.6,
+       "wind_max_kmh": 7.9,
        "past": false
       },
       {
@@ -93163,13 +93163,13 @@
        "sea_level": -0.34,
        "current_vel": 0.2,
        "current_dir": "צפון",
-       "wind_kmh": 8.7,
+       "wind_kmh": 9.9,
        "wind_dir": "מערב",
-       "wind_deg": 279,
-       "gust_kmh": 23,
-       "air_temp": 23,
-       "pressure": 1020.5,
-       "humidity": 63.3,
+       "wind_deg": 286,
+       "gust_kmh": 23.1,
+       "air_temp": 22.5,
+       "pressure": 1020.7,
+       "humidity": 66,
        "precip": 0,
        "wx_code": 2,
        "is_day": 1,
@@ -93177,7 +93177,7 @@
        "wave_min": 0.96,
        "wave_max": 1.1,
        "wind_min_kmh": 8.4,
-       "wind_max_kmh": 8.9,
+       "wind_max_kmh": 10.6,
        "past": false
       },
       {
@@ -93857,7 +93857,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-20T15:12:25+02:00",
+    "retrieved_at": "2026-11-20T18:13:13+02:00",
     "cell_lat": 32.0625,
     "cell_lon": 34.75,
     "dist_km": 2.4,
@@ -93874,7 +93874,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-20T13:13:08.187Z",
+    "comparison_retrieved_at": "2026-11-20T16:13:57.004Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 32.0625,
@@ -96601,7 +96601,7 @@
        "wave_max": 0.74,
        "wind_min_kmh": 3.9,
        "wind_max_kmh": 8.5,
-       "past": false
+       "past": true
       },
       {
        "from": "18:00",
@@ -98723,7 +98723,7 @@
      "last_light": "17:02",
      "moon_illumination_pct": 99,
      "moon_waxing": false,
-     "wind_max_kmh": 8.9,
+     "wind_max_kmh": 9.3,
      "wave_max": 1.436,
      "wave_source": "copernicus_med",
      "wave_comparison": {
@@ -98865,7 +98865,7 @@
      "high_wave_warning": false,
      "sst_avg": 23.745833333333337,
      "air_temp_min": 15.7,
-     "air_temp_max": 23.1,
+     "air_temp_max": 23,
      "pressure_min": 1020,
      "pressure_max": 1021.9,
      "salinity_min": 39.72,
@@ -98946,11 +98946,11 @@
        "sea_level": -0.34,
        "current_vel": 0.2,
        "current_dir": "צפון",
-       "wind_kmh": 4.3,
+       "wind_kmh": 3.9,
        "wind_dir": "דרום-מזרח",
-       "wind_deg": 153,
-       "gust_kmh": 9.2,
-       "air_temp": 17.1,
+       "wind_deg": 146,
+       "gust_kmh": 8.3,
+       "air_temp": 16.9,
        "pressure": 1021.3,
        "humidity": 82.3,
        "precip": 0,
@@ -98959,8 +98959,8 @@
        "score": 84,
        "wave_min": 0.44,
        "wave_max": 0.47,
-       "wind_min_kmh": 4.3,
-       "wind_max_kmh": 4.3,
+       "wind_min_kmh": 3.6,
+       "wind_max_kmh": 4.2,
        "past": false
       },
       {
@@ -98976,21 +98976,21 @@
        "sea_level": -0.21,
        "current_vel": 0.2,
        "current_dir": "צפון",
-       "wind_kmh": 6.1,
+       "wind_kmh": 5.2,
        "wind_dir": "דרום-מערב",
-       "wind_deg": 217,
-       "gust_kmh": 20.2,
-       "air_temp": 21,
-       "pressure": 1021.7,
-       "humidity": 65.3,
-       "precip": 0,
+       "wind_deg": 234,
+       "gust_kmh": 18.5,
+       "air_temp": 20.4,
+       "pressure": 1021.8,
+       "humidity": 75.3,
+       "precip": 0.3,
        "wx_code": 3,
        "is_day": 1,
        "score": 98,
        "wave_min": 0.53,
        "wave_max": 0.79,
-       "wind_min_kmh": 4.7,
-       "wind_max_kmh": 7.7,
+       "wind_min_kmh": 5.1,
+       "wind_max_kmh": 5.4,
        "past": false
       },
       {
@@ -99006,21 +99006,21 @@
        "sea_level": -0.34,
        "current_vel": 0.2,
        "current_dir": "צפון",
-       "wind_kmh": 8.7,
+       "wind_kmh": 8.3,
        "wind_dir": "מערב",
-       "wind_deg": 279,
-       "gust_kmh": 23,
-       "air_temp": 23,
-       "pressure": 1020.5,
-       "humidity": 63.3,
+       "wind_deg": 287,
+       "gust_kmh": 25,
+       "air_temp": 22.8,
+       "pressure": 1020.7,
+       "humidity": 61.7,
        "precip": 0,
        "wx_code": 2,
        "is_day": 1,
        "score": 93,
        "wave_min": 0.91,
        "wave_max": 1.06,
-       "wind_min_kmh": 8.4,
-       "wind_max_kmh": 8.9,
+       "wind_min_kmh": 7,
+       "wind_max_kmh": 9.3,
        "past": false
       },
       {
@@ -99700,7 +99700,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-20T15:12:25+02:00",
+    "retrieved_at": "2026-11-20T18:13:13+02:00",
     "cell_lat": 32.0625,
     "cell_lon": 34.75,
     "dist_km": 2.2,
@@ -99717,7 +99717,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-20T13:13:08.187Z",
+    "comparison_retrieved_at": "2026-11-20T16:13:57.004Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 32.0625,
@@ -102444,7 +102444,7 @@
        "wave_max": 0.74,
        "wind_min_kmh": 5.7,
        "wind_max_kmh": 9.5,
-       "past": false
+       "past": true
       },
       {
        "from": "18:00",
@@ -104566,7 +104566,7 @@
      "last_light": "17:03",
      "moon_illumination_pct": 99,
      "moon_waxing": false,
-     "wind_max_kmh": 9.7,
+     "wind_max_kmh": 10.7,
      "wave_max": 1.436,
      "wave_source": "copernicus_med",
      "wave_comparison": {
@@ -104708,7 +104708,7 @@
      "high_wave_warning": false,
      "sst_avg": 24.07916666666667,
      "air_temp_min": 16.1,
-     "air_temp_max": 22.6,
+     "air_temp_max": 22.7,
      "pressure_min": 1020,
      "pressure_max": 1021.9,
      "salinity_min": 39.72,
@@ -104789,13 +104789,13 @@
        "sea_level": -0.33,
        "current_vel": 0.27,
        "current_dir": "צפון-מזרח",
-       "wind_kmh": 5.3,
+       "wind_kmh": 5.4,
        "wind_dir": "דרום-מזרח",
-       "wind_deg": 145,
-       "gust_kmh": 11.3,
-       "air_temp": 17.5,
+       "wind_deg": 147,
+       "gust_kmh": 11.5,
+       "air_temp": 17.4,
        "pressure": 1021.2,
-       "humidity": 81,
+       "humidity": 79.3,
        "precip": 0,
        "wx_code": 2,
        "is_day": 0,
@@ -104803,7 +104803,7 @@
        "wave_min": 0.44,
        "wave_max": 0.47,
        "wind_min_kmh": 5.2,
-       "wind_max_kmh": 5.4,
+       "wind_max_kmh": 5.5,
        "past": false
       },
       {
@@ -104819,21 +104819,21 @@
        "sea_level": -0.21,
        "current_vel": 0.3,
        "current_dir": "צפון-מזרח",
-       "wind_kmh": 6.2,
+       "wind_kmh": 7.7,
        "wind_dir": "דרום-מערב",
-       "wind_deg": 216,
-       "gust_kmh": 18.4,
-       "air_temp": 20.8,
-       "pressure": 1021.7,
-       "humidity": 68.3,
+       "wind_deg": 233,
+       "gust_kmh": 21.5,
+       "air_temp": 20.5,
+       "pressure": 1021.8,
+       "humidity": 75.7,
        "precip": 0,
-       "wx_code": 3,
+       "wx_code": 2,
        "is_day": 1,
        "score": 98,
        "wave_min": 0.53,
        "wave_max": 0.79,
-       "wind_min_kmh": 4.7,
-       "wind_max_kmh": 7.9,
+       "wind_min_kmh": 7.1,
+       "wind_max_kmh": 8.6,
        "past": false
       },
       {
@@ -104849,21 +104849,21 @@
        "sea_level": -0.34,
        "current_vel": 0.37,
        "current_dir": "צפון-מזרח",
-       "wind_kmh": 9.4,
+       "wind_kmh": 9.9,
        "wind_dir": "מערב",
-       "wind_deg": 277,
-       "gust_kmh": 21.6,
+       "wind_deg": 287,
+       "gust_kmh": 24.3,
        "air_temp": 22.5,
-       "pressure": 1020.5,
-       "humidity": 67.7,
+       "pressure": 1020.7,
+       "humidity": 64.7,
        "precip": 0,
        "wx_code": 2,
        "is_day": 1,
        "score": 93,
        "wave_min": 0.91,
        "wave_max": 1.06,
-       "wind_min_kmh": 9.1,
-       "wind_max_kmh": 9.7,
+       "wind_min_kmh": 8.6,
+       "wind_max_kmh": 10.7,
        "past": false
       },
       {
@@ -105543,7 +105543,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-20T15:12:25+02:00",
+    "retrieved_at": "2026-11-20T18:13:13+02:00",
     "cell_lat": 31.979166,
     "cell_lon": 34.708336,
     "dist_km": 1.5,
@@ -105560,7 +105560,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-20T13:13:08.187Z",
+    "comparison_retrieved_at": "2026-11-20T16:13:57.004Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 31.979166,
@@ -108287,7 +108287,7 @@
        "wave_max": 0.74,
        "wind_min_kmh": 6.6,
        "wind_max_kmh": 11.5,
-       "past": false
+       "past": true
       },
       {
        "from": "18:00",
@@ -110409,7 +110409,7 @@
      "last_light": "17:03",
      "moon_illumination_pct": 99,
      "moon_waxing": false,
-     "wind_max_kmh": 9.7,
+     "wind_max_kmh": 10.7,
      "wave_max": 1.429,
      "wave_source": "copernicus_med",
      "wave_comparison": {
@@ -110551,7 +110551,7 @@
      "high_wave_warning": false,
      "sst_avg": 24.075000000000006,
      "air_temp_min": 16.7,
-     "air_temp_max": 22.6,
+     "air_temp_max": 22.7,
      "pressure_min": 1020,
      "pressure_max": 1021.9,
      "salinity_min": 39.71,
@@ -110632,21 +110632,21 @@
        "sea_level": -0.33,
        "current_vel": 0.17,
        "current_dir": "צפון-מזרח",
-       "wind_kmh": 5.8,
+       "wind_kmh": 6.2,
        "wind_dir": "דרום-מזרח",
        "wind_deg": 143,
-       "gust_kmh": 10.6,
-       "air_temp": 17.7,
+       "gust_kmh": 10.1,
+       "air_temp": 17.8,
        "pressure": 1021.3,
-       "humidity": 81.7,
+       "humidity": 81,
        "precip": 0,
        "wx_code": 2,
        "is_day": 0,
        "score": 84,
        "wave_min": 0.43,
        "wave_max": 0.46,
-       "wind_min_kmh": 5.6,
-       "wind_max_kmh": 5.9,
+       "wind_min_kmh": 6.1,
+       "wind_max_kmh": 6.2,
        "past": false
       },
       {
@@ -110662,21 +110662,21 @@
        "sea_level": -0.2,
        "current_vel": 0.3,
        "current_dir": "צפון-מזרח",
-       "wind_kmh": 6.2,
+       "wind_kmh": 7.7,
        "wind_dir": "דרום-מערב",
-       "wind_deg": 216,
-       "gust_kmh": 18.4,
-       "air_temp": 20.8,
-       "pressure": 1021.7,
-       "humidity": 68.3,
+       "wind_deg": 233,
+       "gust_kmh": 21.5,
+       "air_temp": 20.5,
+       "pressure": 1021.8,
+       "humidity": 75.7,
        "precip": 0,
-       "wx_code": 3,
+       "wx_code": 2,
        "is_day": 1,
        "score": 98,
        "wave_min": 0.5,
        "wave_max": 0.74,
-       "wind_min_kmh": 4.7,
-       "wind_max_kmh": 7.9,
+       "wind_min_kmh": 7.1,
+       "wind_max_kmh": 8.6,
        "past": false
       },
       {
@@ -110692,21 +110692,21 @@
        "sea_level": -0.34,
        "current_vel": 0.4,
        "current_dir": "מזרח",
-       "wind_kmh": 9.4,
+       "wind_kmh": 9.9,
        "wind_dir": "מערב",
-       "wind_deg": 277,
-       "gust_kmh": 21.6,
+       "wind_deg": 287,
+       "gust_kmh": 24.3,
        "air_temp": 22.5,
-       "pressure": 1020.5,
-       "humidity": 67.7,
+       "pressure": 1020.7,
+       "humidity": 64.7,
        "precip": 0,
        "wx_code": 2,
        "is_day": 1,
        "score": 93,
        "wave_min": 0.87,
        "wave_max": 1.04,
-       "wind_min_kmh": 9.1,
-       "wind_max_kmh": 9.7,
+       "wind_min_kmh": 8.6,
+       "wind_max_kmh": 10.7,
        "past": false
       },
       {
@@ -111386,7 +111386,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-20T15:12:25+02:00",
+    "retrieved_at": "2026-11-20T18:13:13+02:00",
     "cell_lat": 31.9375,
     "cell_lon": 34.666668,
     "dist_km": 3.4,
@@ -111403,7 +111403,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-20T13:13:08.187Z",
+    "comparison_retrieved_at": "2026-11-20T16:13:57.004Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 31.9375,
@@ -114130,7 +114130,7 @@
        "wave_max": 0.74,
        "wind_min_kmh": 7.9,
        "wind_max_kmh": 10.5,
-       "past": false
+       "past": true
       },
       {
        "from": "18:00",
@@ -116252,7 +116252,7 @@
      "last_light": "17:03",
      "moon_illumination_pct": 99,
      "moon_waxing": false,
-     "wind_max_kmh": 10.9,
+     "wind_max_kmh": 11.6,
      "wave_max": 1.435,
      "wave_source": "copernicus_med",
      "wave_comparison": {
@@ -116394,7 +116394,7 @@
      "high_wave_warning": false,
      "sst_avg": 24.075000000000006,
      "air_temp_min": 16.3,
-     "air_temp_max": 23.3,
+     "air_temp_max": 22.9,
      "pressure_min": 1020,
      "pressure_max": 1021.9,
      "salinity_min": 39.71,
@@ -116475,21 +116475,21 @@
        "sea_level": -0.33,
        "current_vel": 0.17,
        "current_dir": "צפון-מזרח",
-       "wind_kmh": 6.4,
+       "wind_kmh": 8.3,
        "wind_dir": "דרום-מזרח",
-       "wind_deg": 145,
-       "gust_kmh": 10.6,
-       "air_temp": 17.2,
-       "pressure": 1021.3,
-       "humidity": 84,
+       "wind_deg": 153,
+       "gust_kmh": 13,
+       "air_temp": 18,
+       "pressure": 1021.2,
+       "humidity": 81,
        "precip": 0,
        "wx_code": 2,
        "is_day": 0,
-       "score": 84,
+       "score": 80,
        "wave_min": 0.43,
        "wave_max": 0.46,
-       "wind_min_kmh": 5.1,
-       "wind_max_kmh": 7.6,
+       "wind_min_kmh": 8,
+       "wind_max_kmh": 8.5,
        "past": false
       },
       {
@@ -116505,21 +116505,21 @@
        "sea_level": -0.2,
        "current_vel": 0.3,
        "current_dir": "צפון-מזרח",
-       "wind_kmh": 4.9,
+       "wind_kmh": 11.2,
        "wind_dir": "דרום-מערב",
-       "wind_deg": 236,
-       "gust_kmh": 14.8,
-       "air_temp": 20.6,
-       "pressure": 1021.7,
-       "humidity": 69,
-       "precip": 0,
+       "wind_deg": 225,
+       "gust_kmh": 22.8,
+       "air_temp": 20,
+       "pressure": 1021.9,
+       "humidity": 78.3,
+       "precip": 0.3,
        "wx_code": 3,
        "is_day": 1,
-       "score": 98,
+       "score": 93,
        "wave_min": 0.51,
        "wave_max": 0.74,
-       "wind_min_kmh": 2.5,
-       "wind_max_kmh": 7.6,
+       "wind_min_kmh": 11.1,
+       "wind_max_kmh": 11.5,
        "past": false
       },
       {
@@ -116535,21 +116535,21 @@
        "sea_level": -0.34,
        "current_vel": 0.4,
        "current_dir": "מזרח",
-       "wind_kmh": 10.3,
+       "wind_kmh": 10.8,
        "wind_dir": "מערב",
        "wind_deg": 288,
-       "gust_kmh": 19.8,
-       "air_temp": 23.2,
-       "pressure": 1020.5,
-       "humidity": 62.7,
+       "gust_kmh": 22.3,
+       "air_temp": 22.6,
+       "pressure": 1020.8,
+       "humidity": 63.3,
        "precip": 0,
        "wx_code": 2,
        "is_day": 1,
        "score": 93,
        "wave_min": 0.87,
        "wave_max": 1.04,
-       "wind_min_kmh": 9.5,
-       "wind_max_kmh": 10.9,
+       "wind_min_kmh": 9.9,
+       "wind_max_kmh": 11.6,
        "past": false
       },
       {
@@ -117229,7 +117229,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-20T15:12:25+02:00",
+    "retrieved_at": "2026-11-20T18:13:13+02:00",
     "cell_lat": 31.8125,
     "cell_lon": 34.625,
     "dist_km": 1.6,
@@ -117246,7 +117246,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-20T13:13:08.187Z",
+    "comparison_retrieved_at": "2026-11-20T16:13:57.004Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 31.8125,
@@ -119973,7 +119973,7 @@
        "wave_max": 0.67,
        "wind_min_kmh": 5.8,
        "wind_max_kmh": 10.9,
-       "past": false
+       "past": true
       },
       {
        "from": "18:00",
@@ -122095,7 +122095,7 @@
      "last_light": "17:04",
      "moon_illumination_pct": 99,
      "moon_waxing": false,
-     "wind_max_kmh": 10.9,
+     "wind_max_kmh": 11.6,
      "wave_max": 1.403,
      "wave_source": "copernicus_med",
      "wave_comparison": {
@@ -122237,7 +122237,7 @@
      "high_wave_warning": false,
      "sst_avg": 23.974999999999994,
      "air_temp_min": 14.9,
-     "air_temp_max": 23.3,
+     "air_temp_max": 23,
      "pressure_min": 1020,
      "pressure_max": 1021.9,
      "salinity_min": 39.76,
@@ -122318,21 +122318,21 @@
        "sea_level": -0.33,
        "current_vel": 0.23,
        "current_dir": "צפון",
-       "wind_kmh": 5.2,
+       "wind_kmh": 5.9,
        "wind_dir": "דרום-מזרח",
-       "wind_deg": 142,
-       "gust_kmh": 9.2,
-       "air_temp": 16.5,
+       "wind_deg": 148,
+       "gust_kmh": 10.1,
+       "air_temp": 16.7,
        "pressure": 1021.3,
-       "humidity": 85.7,
+       "humidity": 83.7,
        "precip": 0,
        "wx_code": 2,
        "is_day": 0,
        "score": 84,
        "wave_min": 0.41,
        "wave_max": 0.44,
-       "wind_min_kmh": 4.5,
-       "wind_max_kmh": 5.7,
+       "wind_min_kmh": 5.8,
+       "wind_max_kmh": 6,
        "past": false
       },
       {
@@ -122348,21 +122348,21 @@
        "sea_level": -0.2,
        "current_vel": 0.43,
        "current_dir": "צפון-מזרח",
-       "wind_kmh": 4.9,
+       "wind_kmh": 10.3,
        "wind_dir": "דרום-מערב",
-       "wind_deg": 236,
-       "gust_kmh": 14.8,
-       "air_temp": 20.7,
-       "pressure": 1021.7,
-       "humidity": 69,
+       "wind_deg": 228,
+       "gust_kmh": 22.3,
+       "air_temp": 20.1,
+       "pressure": 1021.9,
+       "humidity": 77.3,
        "precip": 0,
        "wx_code": 3,
        "is_day": 1,
-       "score": 98,
+       "score": 93,
        "wave_min": 0.47,
        "wave_max": 0.66,
-       "wind_min_kmh": 2.5,
-       "wind_max_kmh": 7.6,
+       "wind_min_kmh": 9.5,
+       "wind_max_kmh": 11,
        "past": false
       },
       {
@@ -122378,21 +122378,21 @@
        "sea_level": -0.33,
        "current_vel": 0.53,
        "current_dir": "מזרח",
-       "wind_kmh": 10.3,
+       "wind_kmh": 10.9,
        "wind_dir": "מערב",
-       "wind_deg": 288,
-       "gust_kmh": 19.8,
-       "air_temp": 23.2,
-       "pressure": 1020.5,
-       "humidity": 62.7,
+       "wind_deg": 291,
+       "gust_kmh": 22.9,
+       "air_temp": 22.7,
+       "pressure": 1020.8,
+       "humidity": 63.3,
        "precip": 0,
-       "wx_code": 2,
+       "wx_code": 1,
        "is_day": 1,
        "score": 93,
        "wave_min": 0.8,
        "wave_max": 0.99,
-       "wind_min_kmh": 9.5,
-       "wind_max_kmh": 10.9,
+       "wind_min_kmh": 10.2,
+       "wind_max_kmh": 11.6,
        "past": false
       },
       {
@@ -123072,7 +123072,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-20T15:12:25+02:00",
+    "retrieved_at": "2026-11-20T18:13:13+02:00",
     "cell_lat": 31.729166,
     "cell_lon": 34.583336,
     "dist_km": 2.4,
@@ -123089,7 +123089,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-20T13:13:08.187Z",
+    "comparison_retrieved_at": "2026-11-20T16:13:57.004Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 31.729166,
@@ -125816,7 +125816,7 @@
        "wave_max": 0.63,
        "wind_min_kmh": 5.4,
        "wind_max_kmh": 11.5,
-       "past": false
+       "past": true
       },
       {
        "from": "18:00",
@@ -127938,7 +127938,7 @@
      "last_light": "17:04",
      "moon_illumination_pct": 99,
      "moon_waxing": false,
-     "wind_max_kmh": 11,
+     "wind_max_kmh": 12.8,
      "wave_max": 1.379,
      "wave_source": "copernicus_med",
      "wave_comparison": {
@@ -128080,7 +128080,7 @@
      "high_wave_warning": false,
      "sst_avg": 23.974999999999994,
      "air_temp_min": 15.7,
-     "air_temp_max": 23.2,
+     "air_temp_max": 22.9,
      "pressure_min": 1020,
      "pressure_max": 1022,
      "salinity_min": 39.8,
@@ -128161,21 +128161,21 @@
        "sea_level": -0.33,
        "current_vel": 0.23,
        "current_dir": "צפון",
-       "wind_kmh": 5.8,
+       "wind_kmh": 6.1,
        "wind_dir": "דרום-מזרח",
-       "wind_deg": 155,
-       "gust_kmh": 9.9,
-       "air_temp": 16.8,
+       "wind_deg": 149,
+       "gust_kmh": 9.7,
+       "air_temp": 17,
        "pressure": 1021.3,
-       "humidity": 85.3,
+       "humidity": 84.3,
        "precip": 0,
        "wx_code": 2,
        "is_day": 0,
        "score": 84,
        "wave_min": 0.4,
        "wave_max": 0.43,
-       "wind_min_kmh": 5.5,
-       "wind_max_kmh": 6,
+       "wind_min_kmh": 6,
+       "wind_max_kmh": 6.3,
        "past": false
       },
       {
@@ -128191,21 +128191,21 @@
        "sea_level": -0.2,
        "current_vel": 0.43,
        "current_dir": "צפון-מזרח",
-       "wind_kmh": 5.3,
+       "wind_kmh": 12.4,
        "wind_dir": "דרום-מערב",
-       "wind_deg": 233,
-       "gust_kmh": 14.4,
-       "air_temp": 20.6,
-       "pressure": 1021.8,
-       "humidity": 69.7,
-       "precip": 0,
-       "wx_code": 1,
+       "wind_deg": 220,
+       "gust_kmh": 21.5,
+       "air_temp": 19.9,
+       "pressure": 1022,
+       "humidity": 79.7,
+       "precip": 0.3,
+       "wx_code": 3,
        "is_day": 1,
-       "score": 98,
+       "score": 93,
        "wave_min": 0.46,
        "wave_max": 0.62,
-       "wind_min_kmh": 4,
-       "wind_max_kmh": 7.2,
+       "wind_min_kmh": 11.8,
+       "wind_max_kmh": 12.8,
        "past": false
       },
       {
@@ -128221,21 +128221,21 @@
        "sea_level": -0.33,
        "current_vel": 0.53,
        "current_dir": "מזרח",
-       "wind_kmh": 10,
+       "wind_kmh": 11,
        "wind_dir": "צפון-מערב",
-       "wind_deg": 298,
-       "gust_kmh": 20.2,
-       "air_temp": 23.1,
-       "pressure": 1020.5,
-       "humidity": 63.3,
-       "precip": 0,
+       "wind_deg": 295,
+       "gust_kmh": 21.8,
+       "air_temp": 22.5,
+       "pressure": 1020.8,
+       "humidity": 65,
+       "precip": 0.2,
        "wx_code": 2,
        "is_day": 1,
        "score": 93,
        "wave_min": 0.76,
        "wave_max": 0.97,
-       "wind_min_kmh": 8.9,
-       "wind_max_kmh": 11,
+       "wind_min_kmh": 10.4,
+       "wind_max_kmh": 11.9,
        "past": false
       },
       {
@@ -128915,7 +128915,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-20T15:12:25+02:00",
+    "retrieved_at": "2026-11-20T18:13:13+02:00",
     "cell_lat": 31.6875,
     "cell_lon": 34.541668,
     "dist_km": 3.2,
@@ -128932,7 +128932,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-20T13:13:08.187Z",
+    "comparison_retrieved_at": "2026-11-20T16:13:57.004Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 31.6875,
@@ -131659,7 +131659,7 @@
        "wave_max": 0.62,
        "wind_min_kmh": 5.8,
        "wind_max_kmh": 11.3,
-       "past": false
+       "past": true
       },
       {
        "from": "18:00",
@@ -133781,7 +133781,7 @@
      "last_light": "17:04",
      "moon_illumination_pct": 99,
      "moon_waxing": false,
-     "wind_max_kmh": 11.5,
+     "wind_max_kmh": 14.2,
      "wave_max": 1.379,
      "wave_source": "copernicus_med",
      "wave_comparison": {
@@ -133923,7 +133923,7 @@
      "high_wave_warning": false,
      "sst_avg": 23.77500000000001,
      "air_temp_min": 15.6,
-     "air_temp_max": 23,
+     "air_temp_max": 22.6,
      "pressure_min": 1020,
      "pressure_max": 1022,
      "salinity_min": 39.81,
@@ -134004,21 +134004,21 @@
        "sea_level": -0.33,
        "current_vel": 0.2,
        "current_dir": "צפון",
-       "wind_kmh": 5.5,
+       "wind_kmh": 5.9,
        "wind_dir": "דרום-מזרח",
-       "wind_deg": 153,
-       "gust_kmh": 10.3,
-       "air_temp": 16.6,
+       "wind_deg": 154,
+       "gust_kmh": 10.4,
+       "air_temp": 17,
        "pressure": 1021.4,
-       "humidity": 87.7,
+       "humidity": 86,
        "precip": 0,
        "wx_code": 2,
        "is_day": 0,
        "score": 84,
        "wave_min": 0.41,
        "wave_max": 0.43,
-       "wind_min_kmh": 5.3,
-       "wind_max_kmh": 5.6,
+       "wind_min_kmh": 5.7,
+       "wind_max_kmh": 6,
        "past": false
       },
       {
@@ -134034,21 +134034,21 @@
        "sea_level": -0.2,
        "current_vel": 0.33,
        "current_dir": "צפון-מזרח",
-       "wind_kmh": 4.9,
+       "wind_kmh": 13.6,
        "wind_dir": "דרום-מערב",
-       "wind_deg": 231,
-       "gust_kmh": 13.7,
-       "air_temp": 20.5,
-       "pressure": 1021.8,
-       "humidity": 71,
-       "precip": 0,
-       "wx_code": 1,
+       "wind_deg": 216,
+       "gust_kmh": 24.6,
+       "air_temp": 19.6,
+       "pressure": 1022,
+       "humidity": 78.7,
+       "precip": 0.3,
+       "wx_code": 3,
        "is_day": 1,
-       "score": 98,
+       "score": 93,
        "wave_min": 0.46,
        "wave_max": 0.62,
-       "wind_min_kmh": 4,
-       "wind_max_kmh": 6.5,
+       "wind_min_kmh": 13.1,
+       "wind_max_kmh": 14.2,
        "past": false
       },
       {
@@ -134064,21 +134064,21 @@
        "sea_level": -0.33,
        "current_vel": 0.4,
        "current_dir": "צפון-מזרח",
-       "wind_kmh": 10.1,
+       "wind_kmh": 11,
        "wind_dir": "צפון-מערב",
-       "wind_deg": 304,
-       "gust_kmh": 20.5,
-       "air_temp": 22.9,
-       "pressure": 1020.5,
-       "humidity": 64.7,
+       "wind_deg": 296,
+       "gust_kmh": 22.9,
+       "air_temp": 22.2,
+       "pressure": 1020.8,
+       "humidity": 65.3,
        "precip": 0,
-       "wx_code": 1,
+       "wx_code": 2,
        "is_day": 1,
        "score": 93,
        "wave_min": 0.76,
        "wave_max": 0.97,
-       "wind_min_kmh": 8.4,
-       "wind_max_kmh": 11.5,
+       "wind_min_kmh": 10.2,
+       "wind_max_kmh": 12.1,
        "past": false
       },
       {
@@ -134758,7 +134758,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-20T15:12:25+02:00",
+    "retrieved_at": "2026-11-20T18:13:13+02:00",
     "cell_lat": 31.645834,
     "cell_lon": 34.5,
     "dist_km": 3.7,
@@ -134775,7 +134775,7 @@
      "time_note": "hourly valid times; retrieval time is not an asserted model initialization time",
      "attribution": "Generated using E.U. Copernicus Marine Service Information"
     },
-    "comparison_retrieved_at": "2026-11-20T13:13:08.187Z",
+    "comparison_retrieved_at": "2026-11-20T16:13:57.004Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 31.645834,
@@ -137502,7 +137502,7 @@
        "wave_max": 0.62,
        "wind_min_kmh": 5.8,
        "wind_max_kmh": 10.6,
-       "past": false
+       "past": true
       },
       {
        "from": "18:00",
@@ -139624,7 +139624,7 @@
      "last_light": "17:05",
      "moon_illumination_pct": 99,
      "moon_waxing": false,
-     "wind_max_kmh": 11.5,
+     "wind_max_kmh": 12.6,
      "wave_max": 1.388,
      "wave_source": "copernicus_med",
      "wave_comparison": {
@@ -139766,7 +139766,7 @@
      "high_wave_warning": false,
      "sst_avg": 23.724999999999998,
      "air_temp_min": 15.6,
-     "air_temp_max": 23.2,
+     "air_temp_max": 22.9,
      "pressure_min": 1020,
      "pressure_max": 1022,
      "salinity_min": 39.84,
@@ -139847,21 +139847,21 @@
        "sea_level": -0.33,
        "current_vel": 0.23,
        "current_dir": "צפון",
-       "wind_kmh": 5.7,
-       "wind_dir": "דרום-מזרח",
-       "wind_deg": 156,
-       "gust_kmh": 11,
-       "air_temp": 16.7,
+       "wind_kmh": 6.4,
+       "wind_dir": "דרום",
+       "wind_deg": 159,
+       "gust_kmh": 11.9,
+       "air_temp": 16.9,
        "pressure": 1021.4,
-       "humidity": 88,
+       "humidity": 86.3,
        "precip": 0,
        "wx_code": 1,
        "is_day": 0,
        "score": 84,
        "wave_min": 0.41,
        "wave_max": 0.43,
-       "wind_min_kmh": 5.4,
-       "wind_max_kmh": 5.9,
+       "wind_min_kmh": 6.1,
+       "wind_max_kmh": 6.7,
        "past": false
       },
       {
@@ -139877,21 +139877,21 @@
        "sea_level": -0.2,
        "current_vel": 0.33,
        "current_dir": "צפון-מזרח",
-       "wind_kmh": 4.9,
+       "wind_kmh": 12.1,
        "wind_dir": "דרום-מערב",
-       "wind_deg": 231,
-       "gust_kmh": 13.7,
-       "air_temp": 20.7,
-       "pressure": 1021.8,
-       "humidity": 71,
+       "wind_deg": 208,
+       "gust_kmh": 20.9,
+       "air_temp": 20.1,
+       "pressure": 1022,
+       "humidity": 73,
        "precip": 0,
-       "wx_code": 1,
+       "wx_code": 3,
        "is_day": 1,
-       "score": 98,
+       "score": 93,
        "wave_min": 0.46,
        "wave_max": 0.62,
-       "wind_min_kmh": 4,
-       "wind_max_kmh": 6.5,
+       "wind_min_kmh": 11.7,
+       "wind_max_kmh": 12.6,
        "past": false
       },
       {
@@ -139907,21 +139907,21 @@
        "sea_level": -0.33,
        "current_vel": 0.4,
        "current_dir": "מזרח",
-       "wind_kmh": 10.1,
+       "wind_kmh": 10.2,
        "wind_dir": "צפון-מערב",
-       "wind_deg": 304,
-       "gust_kmh": 20.5,
-       "air_temp": 23.1,
-       "pressure": 1020.5,
-       "humidity": 64.7,
+       "wind_deg": 296,
+       "gust_kmh": 22,
+       "air_temp": 22.7,
+       "pressure": 1020.8,
+       "humidity": 64,
        "precip": 0,
-       "wx_code": 1,
+       "wx_code": 2,
        "is_day": 1,
        "score": 93,
        "wave_min": 0.76,
        "wave_max": 0.98,
-       "wind_min_kmh": 8.4,
-       "wind_max_kmh": 11.5,
+       "wind_min_kmh": 8.6,
+       "wind_max_kmh": 12.1,
        "past": false
       },
       {
