@@ -11,6 +11,7 @@
  * On per-beach failure, that beach carries forward its last good data, marked stale.
  */
 import fs from 'node:fs';
+import {fetchJsonWithRetry as fetchJson} from './http-retry.mjs';
 import {loadTides} from './tides.mjs';
 import {spawnSync} from 'node:child_process';
 import {MODEL_LABELS,readFreshCache,modelSummary,omSeries,choosePrimary} from './multi-model.mjs';
@@ -62,11 +63,6 @@ function apiUrl(base, params) {
   return `${base}?${q}`;
 }
 
-async function fetchJson(url, label) {
-  const res = await fetch(url);
-  if (!res.ok) throw new Error(`${label}: HTTP ${res.status}`);
-  return res.json();
-}
 
 // Approximate moon phase for a UTC date: illuminated fraction (0-100) and waxing/waning.
 function moonPhase(dateUtc) {
