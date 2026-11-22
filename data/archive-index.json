@@ -1,6 +1,13 @@
 {
  "issues": [
   {
+   "issue_id": "2026-11-22T12-36-51-c42ae6",
+   "file": "issues/2026-11-22T12-36-51-c42ae6.json",
+   "issued_at_local": "2026-11-22T12:36:51",
+   "valid_from": "2026-11-22",
+   "valid_to": "2026-11-28"
+  },
+  {
    "issue_id": "2026-11-22T09-57-56-6097fc",
    "file": "issues/2026-11-22T09-57-56-6097fc.json",
    "issued_at_local": "2026-11-22T09:57:56",
