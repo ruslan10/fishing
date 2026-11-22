@@ -1,32 +1,34 @@
 {
  "available": true,
- "issued_at": "2026-11-22 00:04:00",
+ "issued_at": "2026-11-22 16:01:00",
+ "checked_at": "2026-11-22T14:43:11.341879+00:00",
+ "source_url": "https://ims.gov.il/he/coasts",
  "regions": {
   "north": {
    "name_he": "חוף צפון",
    "slots": [
     {
-     "valid_from": "2026-11-22 08:00:00",
-     "valid_to": "2026-11-22 20:00:00",
-     "sea_temp": 23,
-     "wind_dir_from": 225,
-     "wind_dir_to": 315,
-     "wind_speed_from": 10,
-     "wind_speed_to": 25,
-     "wave_from_cm": 30,
-     "wave_to_cm": 100,
-     "sea_state_he": "נוח עד גלי"
-    },
-    {
      "valid_from": "2026-11-22 20:00:00",
      "valid_to": "2026-11-23 08:00:00",
-     "sea_temp": 23,
-     "wind_dir_from": 45,
-     "wind_dir_to": 135,
-     "wind_speed_from": 10,
-     "wind_speed_to": 20,
-     "wave_from_cm": 80,
-     "wave_to_cm": 120,
+     "wave_from_cm": 90.0,
+     "wave_to_cm": 120.0,
+     "wind_speed_from": 5.0,
+     "wind_speed_to": 15.0,
+     "wind_dir_from": 135.0,
+     "wind_dir_to": 180.0,
+     "sea_temp": 23.0,
+     "sea_state_he": "גלי"
+    },
+    {
+     "valid_from": "2026-11-23 08:00:00",
+     "valid_to": "2026-11-23 20:00:00",
+     "wave_from_cm": 70.0,
+     "wave_to_cm": 120.0,
+     "wind_speed_from": 10.0,
+     "wind_speed_to": 25.0,
+     "wind_dir_from": 315.0,
+     "wind_dir_to": 360.0,
+     "sea_temp": 23.0,
      "sea_state_he": "גלי"
     }
    ]
@@ -35,27 +37,27 @@
    "name_he": "חוף מרכז",
    "slots": [
     {
-     "valid_from": "2026-11-22 08:00:00",
-     "valid_to": "2026-11-22 20:00:00",
-     "sea_temp": 23,
-     "wind_dir_from": 225,
-     "wind_dir_to": 315,
-     "wind_speed_from": 10,
-     "wind_speed_to": 25,
-     "wave_from_cm": 50,
-     "wave_to_cm": 110,
+     "valid_from": "2026-11-22 20:00:00",
+     "valid_to": "2026-11-23 08:00:00",
+     "wave_from_cm": 90.0,
+     "wave_to_cm": 120.0,
+     "wind_speed_from": 5.0,
+     "wind_speed_to": 15.0,
+     "wind_dir_from": 135.0,
+     "wind_dir_to": 180.0,
+     "sea_temp": 23.0,
      "sea_state_he": "גלי"
     },
     {
-     "valid_from": "2026-11-22 20:00:00",
-     "valid_to": "2026-11-23 08:00:00",
-     "sea_temp": 23,
-     "wind_dir_from": 135,
-     "wind_dir_to": 45,
-     "wind_speed_from": 10,
-     "wind_speed_to": 20,
-     "wave_from_cm": 80,
-     "wave_to_cm": 120,
+     "valid_from": "2026-11-23 08:00:00",
+     "valid_to": "2026-11-23 20:00:00",
+     "wave_from_cm": 70.0,
+     "wave_to_cm": 120.0,
+     "wind_speed_from": 10.0,
+     "wind_speed_to": 25.0,
+     "wind_dir_from": 315.0,
+     "wind_dir_to": 360.0,
+     "sea_temp": 23.0,
      "sea_state_he": "גלי"
     }
    ]
@@ -64,32 +66,30 @@
    "name_he": "חוף דרום",
    "slots": [
     {
-     "valid_from": "2026-11-22 08:00:00",
-     "valid_to": "2026-11-22 20:00:00",
-     "sea_temp": 24,
-     "wind_dir_from": 225,
-     "wind_dir_to": 315,
-     "wind_speed_from": 10,
-     "wind_speed_to": 25,
-     "wave_from_cm": 30,
-     "wave_to_cm": 100,
-     "sea_state_he": "נוח עד גלי"
-    },
-    {
      "valid_from": "2026-11-22 20:00:00",
      "valid_to": "2026-11-23 08:00:00",
-     "sea_temp": 24,
-     "wind_dir_from": 135,
-     "wind_dir_to": 225,
-     "wind_speed_from": 10,
-     "wind_speed_to": 20,
-     "wave_from_cm": 80,
-     "wave_to_cm": 120,
+     "wave_from_cm": 90.0,
+     "wave_to_cm": 120.0,
+     "wind_speed_from": 5.0,
+     "wind_speed_to": 15.0,
+     "wind_dir_from": 135.0,
+     "wind_dir_to": 180.0,
+     "sea_temp": 24.0,
+     "sea_state_he": "גלי"
+    },
+    {
+     "valid_from": "2026-11-23 08:00:00",
+     "valid_to": "2026-11-23 20:00:00",
+     "wave_from_cm": 70.0,
+     "wave_to_cm": 120.0,
+     "wind_speed_from": 10.0,
+     "wind_speed_to": 25.0,
+     "wind_dir_from": 315.0,
+     "wind_dir_to": 360.0,
+     "sea_temp": 24.0,
      "sea_state_he": "גלי"
     }
    ]
   }
- },
- "checked_at": "2026-11-22T13:27:43.754Z",
- "source_url": "https://ims.gov.il/he/coasts"
+ }
 }
