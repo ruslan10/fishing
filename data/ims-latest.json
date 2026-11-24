@@ -1,33 +1,33 @@
 {
  "available": true,
- "issued_at": "2026-11-24 16:11:00",
- "checked_at": "2026-11-24T21:33:51.322563+00:00",
+ "issued_at": "2026-11-25 00:06:00",
+ "checked_at": "2026-11-24T22:34:36.924222+00:00",
  "source_url": "https://ims.gov.il/he/coasts",
  "regions": {
   "north": {
    "name_he": "חוף צפון",
    "slots": [
     {
-     "valid_from": "2026-11-24 20:00:00",
-     "valid_to": "2026-11-25 08:00:00",
-     "wave_from_cm": 50.0,
-     "wave_to_cm": 120.0,
-     "wind_speed_from": 15.0,
-     "wind_speed_to": 20.0,
-     "wind_dir_from": 270.0,
-     "wind_dir_to": 180.0,
-     "sea_temp": 23.0,
-     "sea_state_he": "גלי"
-    },
-    {
      "valid_from": "2026-11-25 08:00:00",
      "valid_to": "2026-11-25 20:00:00",
-     "wave_from_cm": 110.0,
-     "wave_to_cm": 150.0,
+     "wave_from_cm": 100.0,
+     "wave_to_cm": 140.0,
      "wind_speed_from": 15.0,
      "wind_speed_to": 25.0,
      "wind_dir_from": 225.0,
      "wind_dir_to": 315.0,
+     "sea_temp": 23.0,
+     "sea_state_he": "גלי עד גבה גלים"
+    },
+    {
+     "valid_from": "2026-11-25 20:00:00",
+     "valid_to": "2026-11-26 08:00:00",
+     "wave_from_cm": 90.0,
+     "wave_to_cm": 140.0,
+     "wind_speed_from": 10.0,
+     "wind_speed_to": 25.0,
+     "wind_dir_from": 45.0,
+     "wind_dir_to": 135.0,
      "sea_temp": 23.0,
      "sea_state_he": "גלי עד גבה גלים"
     }
@@ -37,26 +37,26 @@
    "name_he": "חוף מרכז",
    "slots": [
     {
-     "valid_from": "2026-11-24 20:00:00",
-     "valid_to": "2026-11-25 08:00:00",
-     "wave_from_cm": 50.0,
-     "wave_to_cm": 120.0,
-     "wind_speed_from": 15.0,
-     "wind_speed_to": 20.0,
-     "wind_dir_from": 270.0,
-     "wind_dir_to": 180.0,
-     "sea_temp": 24.0,
-     "sea_state_he": "גלי"
-    },
-    {
      "valid_from": "2026-11-25 08:00:00",
      "valid_to": "2026-11-25 20:00:00",
-     "wave_from_cm": 110.0,
-     "wave_to_cm": 150.0,
+     "wave_from_cm": 90.0,
+     "wave_to_cm": 140.0,
      "wind_speed_from": 15.0,
      "wind_speed_to": 25.0,
      "wind_dir_from": 225.0,
      "wind_dir_to": 315.0,
+     "sea_temp": 24.0,
+     "sea_state_he": "גלי עד גבה גלים"
+    },
+    {
+     "valid_from": "2026-11-25 20:00:00",
+     "valid_to": "2026-11-26 08:00:00",
+     "wave_from_cm": 90.0,
+     "wave_to_cm": 140.0,
+     "wind_speed_from": 10.0,
+     "wind_speed_to": 25.0,
+     "wind_dir_from": 45.0,
+     "wind_dir_to": 135.0,
      "sea_temp": 24.0,
      "sea_state_he": "גלי עד גבה גלים"
     }
@@ -66,26 +66,26 @@
    "name_he": "חוף דרום",
    "slots": [
     {
-     "valid_from": "2026-11-24 20:00:00",
-     "valid_to": "2026-11-25 08:00:00",
-     "wave_from_cm": 50.0,
-     "wave_to_cm": 120.0,
-     "wind_speed_from": 15.0,
-     "wind_speed_to": 20.0,
-     "wind_dir_from": 270.0,
-     "wind_dir_to": 180.0,
-     "sea_temp": 24.0,
-     "sea_state_he": "גלי"
-    },
-    {
      "valid_from": "2026-11-25 08:00:00",
      "valid_to": "2026-11-25 20:00:00",
-     "wave_from_cm": 110.0,
-     "wave_to_cm": 150.0,
+     "wave_from_cm": 80.0,
+     "wave_to_cm": 140.0,
      "wind_speed_from": 15.0,
      "wind_speed_to": 25.0,
      "wind_dir_from": 225.0,
      "wind_dir_to": 315.0,
+     "sea_temp": 24.0,
+     "sea_state_he": "גלי עד גבה גלים"
+    },
+    {
+     "valid_from": "2026-11-25 20:00:00",
+     "valid_to": "2026-11-26 08:00:00",
+     "wave_from_cm": 90.0,
+     "wave_to_cm": 140.0,
+     "wind_speed_from": 10.0,
+     "wind_speed_to": 25.0,
+     "wind_dir_from": 45.0,
+     "wind_dir_to": 135.0,
      "sea_temp": 24.0,
      "sea_state_he": "גלי עד גבה גלים"
     }
