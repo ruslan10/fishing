@@ -1,0 +1,557 @@
+{
+ "source_url": "https://www.thetidechart.com/il/tel-aviv/herzliya",
+ "source_place": "Herzliya",
+ "lat": 32.16627,
+ "lon": 34.82536,
+ "reference_distance_km": 2.9,
+ "timezone": "Asia/Jerusalem",
+ "model": "FES2022",
+ "kind": "astronomical_prediction",
+ "retrieved_at": "2026-11-24T22:50:36.231262+00:00",
+ "acquisition_url": "https://www.thetidechart.com/il/tel-aviv/herzliya/month/2026-12?v=3",
+ "month": "2026-12",
+ "days": {
+  "2026-12-01": [
+   {
+    "type": "high",
+    "time": "03:09"
+   },
+   {
+    "type": "low",
+    "time": "09:57"
+   },
+   {
+    "type": "high",
+    "time": "16:37"
+   },
+   {
+    "type": "low",
+    "time": "22:35"
+   }
+  ],
+  "2026-12-02": [
+   {
+    "type": "high",
+    "time": "04:44"
+   },
+   {
+    "type": "low",
+    "time": "11:12"
+   },
+   {
+    "type": "high",
+    "time": "17:44"
+   }
+  ],
+  "2026-12-03": [
+   {
+    "type": "low",
+    "time": "00:00"
+   },
+   {
+    "type": "high",
+    "time": "06:04"
+   },
+   {
+    "type": "low",
+    "time": "12:12"
+   },
+   {
+    "type": "high",
+    "time": "18:35"
+   }
+  ],
+  "2026-12-04": [
+   {
+    "type": "low",
+    "time": "01:01"
+   },
+   {
+    "type": "high",
+    "time": "07:04"
+   },
+   {
+    "type": "low",
+    "time": "13:00"
+   },
+   {
+    "type": "high",
+    "time": "19:17"
+   }
+  ],
+  "2026-12-05": [
+   {
+    "type": "low",
+    "time": "01:47"
+   },
+   {
+    "type": "high",
+    "time": "07:51"
+   },
+   {
+    "type": "low",
+    "time": "13:41"
+   },
+   {
+    "type": "high",
+    "time": "19:54"
+   }
+  ],
+  "2026-12-06": [
+   {
+    "type": "low",
+    "time": "02:27"
+   },
+   {
+    "type": "high",
+    "time": "08:30"
+   },
+   {
+    "type": "low",
+    "time": "14:18"
+   },
+   {
+    "type": "high",
+    "time": "20:28"
+   }
+  ],
+  "2026-12-07": [
+   {
+    "type": "low",
+    "time": "03:02"
+   },
+   {
+    "type": "high",
+    "time": "09:05"
+   },
+   {
+    "type": "low",
+    "time": "14:51"
+   },
+   {
+    "type": "high",
+    "time": "21:00"
+   }
+  ],
+  "2026-12-08": [
+   {
+    "type": "low",
+    "time": "03:34"
+   },
+   {
+    "type": "high",
+    "time": "09:37"
+   },
+   {
+    "type": "low",
+    "time": "15:22"
+   },
+   {
+    "type": "high",
+    "time": "21:31"
+   }
+  ],
+  "2026-12-09": [
+   {
+    "type": "low",
+    "time": "04:05"
+   },
+   {
+    "type": "high",
+    "time": "10:07"
+   },
+   {
+    "type": "low",
+    "time": "15:52"
+   },
+   {
+    "type": "high",
+    "time": "22:01"
+   }
+  ],
+  "2026-12-10": [
+   {
+    "type": "low",
+    "time": "04:36"
+   },
+   {
+    "type": "high",
+    "time": "10:37"
+   },
+   {
+    "type": "low",
+    "time": "16:22"
+   },
+   {
+    "type": "high",
+    "time": "22:32"
+   }
+  ],
+  "2026-12-11": [
+   {
+    "type": "low",
+    "time": "05:07"
+   },
+   {
+    "type": "high",
+    "time": "11:07"
+   },
+   {
+    "type": "low",
+    "time": "16:52"
+   },
+   {
+    "type": "high",
+    "time": "23:03"
+   }
+  ],
+  "2026-12-12": [
+   {
+    "type": "low",
+    "time": "05:39"
+   },
+   {
+    "type": "high",
+    "time": "11:39"
+   },
+   {
+    "type": "low",
+    "time": "17:25"
+   },
+   {
+    "type": "high",
+    "time": "23:36"
+   }
+  ],
+  "2026-12-13": [
+   {
+    "type": "low",
+    "time": "06:12"
+   },
+   {
+    "type": "high",
+    "time": "12:14"
+   },
+   {
+    "type": "low",
+    "time": "18:00"
+   }
+  ],
+  "2026-12-14": [
+   {
+    "type": "high",
+    "time": "00:11"
+   },
+   {
+    "type": "low",
+    "time": "06:49"
+   },
+   {
+    "type": "high",
+    "time": "12:55"
+   },
+   {
+    "type": "low",
+    "time": "18:42"
+   }
+  ],
+  "2026-12-15": [
+   {
+    "type": "high",
+    "time": "00:52"
+   },
+   {
+    "type": "low",
+    "time": "07:31"
+   },
+   {
+    "type": "high",
+    "time": "13:45"
+   },
+   {
+    "type": "low",
+    "time": "19:35"
+   }
+  ],
+  "2026-12-16": [
+   {
+    "type": "high",
+    "time": "01:42"
+   },
+   {
+    "type": "low",
+    "time": "08:21"
+   },
+   {
+    "type": "high",
+    "time": "14:48"
+   },
+   {
+    "type": "low",
+    "time": "20:47"
+   }
+  ],
+  "2026-12-17": [
+   {
+    "type": "high",
+    "time": "02:50"
+   },
+   {
+    "type": "low",
+    "time": "09:23"
+   },
+   {
+    "type": "high",
+    "time": "16:03"
+   },
+   {
+    "type": "low",
+    "time": "22:19"
+   }
+  ],
+  "2026-12-18": [
+   {
+    "type": "high",
+    "time": "04:21"
+   },
+   {
+    "type": "low",
+    "time": "10:35"
+   },
+   {
+    "type": "high",
+    "time": "17:17"
+   },
+   {
+    "type": "low",
+    "time": "23:48"
+   }
+  ],
+  "2026-12-19": [
+   {
+    "type": "high",
+    "time": "05:51"
+   },
+   {
+    "type": "low",
+    "time": "11:47"
+   },
+   {
+    "type": "high",
+    "time": "18:20"
+   }
+  ],
+  "2026-12-20": [
+   {
+    "type": "low",
+    "time": "00:58"
+   },
+   {
+    "type": "high",
+    "time": "07:04"
+   },
+   {
+    "type": "low",
+    "time": "12:50"
+   },
+   {
+    "type": "high",
+    "time": "19:14"
+   }
+  ],
+  "2026-12-21": [
+   {
+    "type": "low",
+    "time": "01:55"
+   },
+   {
+    "type": "high",
+    "time": "08:02"
+   },
+   {
+    "type": "low",
+    "time": "13:46"
+   },
+   {
+    "type": "high",
+    "time": "20:03"
+   }
+  ],
+  "2026-12-22": [
+   {
+    "type": "low",
+    "time": "02:45"
+   },
+   {
+    "type": "high",
+    "time": "08:53"
+   },
+   {
+    "type": "low",
+    "time": "14:36"
+   },
+   {
+    "type": "high",
+    "time": "20:50"
+   }
+  ],
+  "2026-12-23": [
+   {
+    "type": "low",
+    "time": "03:33"
+   },
+   {
+    "type": "high",
+    "time": "09:41"
+   },
+   {
+    "type": "low",
+    "time": "15:24"
+   },
+   {
+    "type": "high",
+    "time": "21:36"
+   }
+  ],
+  "2026-12-24": [
+   {
+    "type": "low",
+    "time": "04:18"
+   },
+   {
+    "type": "high",
+    "time": "10:25"
+   },
+   {
+    "type": "low",
+    "time": "16:09"
+   },
+   {
+    "type": "high",
+    "time": "22:21"
+   }
+  ],
+  "2026-12-25": [
+   {
+    "type": "low",
+    "time": "05:02"
+   },
+   {
+    "type": "high",
+    "time": "11:09"
+   },
+   {
+    "type": "low",
+    "time": "16:54"
+   },
+   {
+    "type": "high",
+    "time": "23:05"
+   }
+  ],
+  "2026-12-26": [
+   {
+    "type": "low",
+    "time": "05:45"
+   },
+   {
+    "type": "high",
+    "time": "11:52"
+   },
+   {
+    "type": "low",
+    "time": "17:38"
+   },
+   {
+    "type": "high",
+    "time": "23:49"
+   }
+  ],
+  "2026-12-27": [
+   {
+    "type": "low",
+    "time": "06:27"
+   },
+   {
+    "type": "high",
+    "time": "12:35"
+   },
+   {
+    "type": "low",
+    "time": "18:22"
+   }
+  ],
+  "2026-12-28": [
+   {
+    "type": "high",
+    "time": "00:33"
+   },
+   {
+    "type": "low",
+    "time": "07:08"
+   },
+   {
+    "type": "high",
+    "time": "13:19"
+   },
+   {
+    "type": "low",
+    "time": "19:10"
+   }
+  ],
+  "2026-12-29": [
+   {
+    "type": "high",
+    "time": "01:19"
+   },
+   {
+    "type": "low",
+    "time": "07:50"
+   },
+   {
+    "type": "high",
+    "time": "14:07"
+   },
+   {
+    "type": "low",
+    "time": "20:04"
+   }
+  ],
+  "2026-12-30": [
+   {
+    "type": "high",
+    "time": "02:10"
+   },
+   {
+    "type": "low",
+    "time": "08:35"
+   },
+   {
+    "type": "high",
+    "time": "15:03"
+   },
+   {
+    "type": "low",
+    "time": "21:13"
+   }
+  ],
+  "2026-12-31": [
+   {
+    "type": "high",
+    "time": "03:16"
+   },
+   {
+    "type": "low",
+    "time": "09:31"
+   },
+   {
+    "type": "high",
+    "time": "16:12"
+   },
+   {
+    "type": "low",
+    "time": "22:47"
+   }
+  ]
+ }
+}

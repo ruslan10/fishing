@@ -1,0 +1,557 @@
+{
+ "source_url": "https://www.thetidechart.com/il/northern-district/acre",
+ "source_place": "Acre",
+ "lat": 32.92814,
+ "lon": 35.07647,
+ "reference_distance_km": 1.3,
+ "timezone": "Asia/Jerusalem",
+ "model": "FES2022",
+ "kind": "astronomical_prediction",
+ "retrieved_at": "2026-11-24T22:50:36.231262+00:00",
+ "acquisition_url": "https://www.thetidechart.com/il/northern-district/acre/month/2026-12?v=3",
+ "month": "2026-12",
+ "days": {
+  "2026-12-01": [
+   {
+    "type": "high",
+    "time": "03:07"
+   },
+   {
+    "type": "low",
+    "time": "09:57"
+   },
+   {
+    "type": "high",
+    "time": "16:37"
+   },
+   {
+    "type": "low",
+    "time": "22:34"
+   }
+  ],
+  "2026-12-02": [
+   {
+    "type": "high",
+    "time": "04:42"
+   },
+   {
+    "type": "low",
+    "time": "11:10"
+   },
+   {
+    "type": "high",
+    "time": "17:44"
+   }
+  ],
+  "2026-12-03": [
+   {
+    "type": "low",
+    "time": "00:00"
+   },
+   {
+    "type": "high",
+    "time": "06:02"
+   },
+   {
+    "type": "low",
+    "time": "12:10"
+   },
+   {
+    "type": "high",
+    "time": "18:35"
+   }
+  ],
+  "2026-12-04": [
+   {
+    "type": "low",
+    "time": "01:01"
+   },
+   {
+    "type": "high",
+    "time": "07:02"
+   },
+   {
+    "type": "low",
+    "time": "12:58"
+   },
+   {
+    "type": "high",
+    "time": "19:17"
+   }
+  ],
+  "2026-12-05": [
+   {
+    "type": "low",
+    "time": "01:48"
+   },
+   {
+    "type": "high",
+    "time": "07:49"
+   },
+   {
+    "type": "low",
+    "time": "13:39"
+   },
+   {
+    "type": "high",
+    "time": "19:54"
+   }
+  ],
+  "2026-12-06": [
+   {
+    "type": "low",
+    "time": "02:27"
+   },
+   {
+    "type": "high",
+    "time": "08:29"
+   },
+   {
+    "type": "low",
+    "time": "14:15"
+   },
+   {
+    "type": "high",
+    "time": "20:27"
+   }
+  ],
+  "2026-12-07": [
+   {
+    "type": "low",
+    "time": "03:02"
+   },
+   {
+    "type": "high",
+    "time": "09:04"
+   },
+   {
+    "type": "low",
+    "time": "14:48"
+   },
+   {
+    "type": "high",
+    "time": "20:59"
+   }
+  ],
+  "2026-12-08": [
+   {
+    "type": "low",
+    "time": "03:34"
+   },
+   {
+    "type": "high",
+    "time": "09:36"
+   },
+   {
+    "type": "low",
+    "time": "15:20"
+   },
+   {
+    "type": "high",
+    "time": "21:30"
+   }
+  ],
+  "2026-12-09": [
+   {
+    "type": "low",
+    "time": "04:06"
+   },
+   {
+    "type": "high",
+    "time": "10:06"
+   },
+   {
+    "type": "low",
+    "time": "15:50"
+   },
+   {
+    "type": "high",
+    "time": "22:00"
+   }
+  ],
+  "2026-12-10": [
+   {
+    "type": "low",
+    "time": "04:36"
+   },
+   {
+    "type": "high",
+    "time": "10:36"
+   },
+   {
+    "type": "low",
+    "time": "16:20"
+   },
+   {
+    "type": "high",
+    "time": "22:31"
+   }
+  ],
+  "2026-12-11": [
+   {
+    "type": "low",
+    "time": "05:07"
+   },
+   {
+    "type": "high",
+    "time": "11:06"
+   },
+   {
+    "type": "low",
+    "time": "16:50"
+   },
+   {
+    "type": "high",
+    "time": "23:02"
+   }
+  ],
+  "2026-12-12": [
+   {
+    "type": "low",
+    "time": "05:39"
+   },
+   {
+    "type": "high",
+    "time": "11:38"
+   },
+   {
+    "type": "low",
+    "time": "17:23"
+   },
+   {
+    "type": "high",
+    "time": "23:35"
+   }
+  ],
+  "2026-12-13": [
+   {
+    "type": "low",
+    "time": "06:13"
+   },
+   {
+    "type": "high",
+    "time": "12:14"
+   },
+   {
+    "type": "low",
+    "time": "17:58"
+   }
+  ],
+  "2026-12-14": [
+   {
+    "type": "high",
+    "time": "00:10"
+   },
+   {
+    "type": "low",
+    "time": "06:50"
+   },
+   {
+    "type": "high",
+    "time": "12:55"
+   },
+   {
+    "type": "low",
+    "time": "18:40"
+   }
+  ],
+  "2026-12-15": [
+   {
+    "type": "high",
+    "time": "00:51"
+   },
+   {
+    "type": "low",
+    "time": "07:31"
+   },
+   {
+    "type": "high",
+    "time": "13:45"
+   },
+   {
+    "type": "low",
+    "time": "19:34"
+   }
+  ],
+  "2026-12-16": [
+   {
+    "type": "high",
+    "time": "01:41"
+   },
+   {
+    "type": "low",
+    "time": "08:21"
+   },
+   {
+    "type": "high",
+    "time": "14:49"
+   },
+   {
+    "type": "low",
+    "time": "20:46"
+   }
+  ],
+  "2026-12-17": [
+   {
+    "type": "high",
+    "time": "02:48"
+   },
+   {
+    "type": "low",
+    "time": "09:22"
+   },
+   {
+    "type": "high",
+    "time": "16:04"
+   },
+   {
+    "type": "low",
+    "time": "22:19"
+   }
+  ],
+  "2026-12-18": [
+   {
+    "type": "high",
+    "time": "04:18"
+   },
+   {
+    "type": "low",
+    "time": "10:34"
+   },
+   {
+    "type": "high",
+    "time": "17:17"
+   },
+   {
+    "type": "low",
+    "time": "23:48"
+   }
+  ],
+  "2026-12-19": [
+   {
+    "type": "high",
+    "time": "05:49"
+   },
+   {
+    "type": "low",
+    "time": "11:45"
+   },
+   {
+    "type": "high",
+    "time": "18:19"
+   }
+  ],
+  "2026-12-20": [
+   {
+    "type": "low",
+    "time": "00:58"
+   },
+   {
+    "type": "high",
+    "time": "07:02"
+   },
+   {
+    "type": "low",
+    "time": "12:48"
+   },
+   {
+    "type": "high",
+    "time": "19:13"
+   }
+  ],
+  "2026-12-21": [
+   {
+    "type": "low",
+    "time": "01:55"
+   },
+   {
+    "type": "high",
+    "time": "08:01"
+   },
+   {
+    "type": "low",
+    "time": "13:43"
+   },
+   {
+    "type": "high",
+    "time": "20:02"
+   }
+  ],
+  "2026-12-22": [
+   {
+    "type": "low",
+    "time": "02:45"
+   },
+   {
+    "type": "high",
+    "time": "08:52"
+   },
+   {
+    "type": "low",
+    "time": "14:33"
+   },
+   {
+    "type": "high",
+    "time": "20:49"
+   }
+  ],
+  "2026-12-23": [
+   {
+    "type": "low",
+    "time": "03:33"
+   },
+   {
+    "type": "high",
+    "time": "09:39"
+   },
+   {
+    "type": "low",
+    "time": "15:21"
+   },
+   {
+    "type": "high",
+    "time": "21:35"
+   }
+  ],
+  "2026-12-24": [
+   {
+    "type": "low",
+    "time": "04:18"
+   },
+   {
+    "type": "high",
+    "time": "10:24"
+   },
+   {
+    "type": "low",
+    "time": "16:07"
+   },
+   {
+    "type": "high",
+    "time": "22:20"
+   }
+  ],
+  "2026-12-25": [
+   {
+    "type": "low",
+    "time": "05:02"
+   },
+   {
+    "type": "high",
+    "time": "11:08"
+   },
+   {
+    "type": "low",
+    "time": "16:51"
+   },
+   {
+    "type": "high",
+    "time": "23:04"
+   }
+  ],
+  "2026-12-26": [
+   {
+    "type": "low",
+    "time": "05:45"
+   },
+   {
+    "type": "high",
+    "time": "11:51"
+   },
+   {
+    "type": "low",
+    "time": "17:36"
+   },
+   {
+    "type": "high",
+    "time": "23:48"
+   }
+  ],
+  "2026-12-27": [
+   {
+    "type": "low",
+    "time": "06:27"
+   },
+   {
+    "type": "high",
+    "time": "12:34"
+   },
+   {
+    "type": "low",
+    "time": "18:21"
+   }
+  ],
+  "2026-12-28": [
+   {
+    "type": "high",
+    "time": "00:32"
+   },
+   {
+    "type": "low",
+    "time": "07:08"
+   },
+   {
+    "type": "high",
+    "time": "13:19"
+   },
+   {
+    "type": "low",
+    "time": "19:08"
+   }
+  ],
+  "2026-12-29": [
+   {
+    "type": "high",
+    "time": "01:18"
+   },
+   {
+    "type": "low",
+    "time": "07:50"
+   },
+   {
+    "type": "high",
+    "time": "14:07"
+   },
+   {
+    "type": "low",
+    "time": "20:03"
+   }
+  ],
+  "2026-12-30": [
+   {
+    "type": "high",
+    "time": "02:09"
+   },
+   {
+    "type": "low",
+    "time": "08:35"
+   },
+   {
+    "type": "high",
+    "time": "15:03"
+   },
+   {
+    "type": "low",
+    "time": "21:13"
+   }
+  ],
+  "2026-12-31": [
+   {
+    "type": "high",
+    "time": "03:14"
+   },
+   {
+    "type": "low",
+    "time": "09:30"
+   },
+   {
+    "type": "high",
+    "time": "16:13"
+   },
+   {
+    "type": "low",
+    "time": "22:47"
+   }
+  ]
+ }
+}

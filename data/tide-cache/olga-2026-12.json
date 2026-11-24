@@ -1,0 +1,559 @@
+{
+ "source_url": "https://www.thetidechart.com/il/haifa/hadera",
+ "source_place": "Hadera",
+ "lat": 32.44192,
+ "lon": 34.9039,
+ "reference_distance_km": 2.5,
+ "proxy": true,
+ "source_area_he": "חדרה",
+ "timezone": "Asia/Jerusalem",
+ "model": "FES2022",
+ "kind": "astronomical_prediction",
+ "retrieved_at": "2026-11-24T22:50:36.231262+00:00",
+ "acquisition_url": "https://www.thetidechart.com/il/haifa/hadera/month/2026-12?v=3",
+ "month": "2026-12",
+ "days": {
+  "2026-12-01": [
+   {
+    "type": "high",
+    "time": "03:07"
+   },
+   {
+    "type": "low",
+    "time": "09:56"
+   },
+   {
+    "type": "high",
+    "time": "16:36"
+   },
+   {
+    "type": "low",
+    "time": "22:33"
+   }
+  ],
+  "2026-12-02": [
+   {
+    "type": "high",
+    "time": "04:43"
+   },
+   {
+    "type": "low",
+    "time": "11:10"
+   },
+   {
+    "type": "high",
+    "time": "17:43"
+   }
+  ],
+  "2026-12-03": [
+   {
+    "type": "low",
+    "time": "00:00"
+   },
+   {
+    "type": "high",
+    "time": "06:02"
+   },
+   {
+    "type": "low",
+    "time": "12:11"
+   },
+   {
+    "type": "high",
+    "time": "18:35"
+   }
+  ],
+  "2026-12-04": [
+   {
+    "type": "low",
+    "time": "01:00"
+   },
+   {
+    "type": "high",
+    "time": "07:03"
+   },
+   {
+    "type": "low",
+    "time": "12:59"
+   },
+   {
+    "type": "high",
+    "time": "19:17"
+   }
+  ],
+  "2026-12-05": [
+   {
+    "type": "low",
+    "time": "01:47"
+   },
+   {
+    "type": "high",
+    "time": "07:50"
+   },
+   {
+    "type": "low",
+    "time": "13:40"
+   },
+   {
+    "type": "high",
+    "time": "19:54"
+   }
+  ],
+  "2026-12-06": [
+   {
+    "type": "low",
+    "time": "02:26"
+   },
+   {
+    "type": "high",
+    "time": "08:29"
+   },
+   {
+    "type": "low",
+    "time": "14:16"
+   },
+   {
+    "type": "high",
+    "time": "20:27"
+   }
+  ],
+  "2026-12-07": [
+   {
+    "type": "low",
+    "time": "03:01"
+   },
+   {
+    "type": "high",
+    "time": "09:04"
+   },
+   {
+    "type": "low",
+    "time": "14:49"
+   },
+   {
+    "type": "high",
+    "time": "20:59"
+   }
+  ],
+  "2026-12-08": [
+   {
+    "type": "low",
+    "time": "03:34"
+   },
+   {
+    "type": "high",
+    "time": "09:36"
+   },
+   {
+    "type": "low",
+    "time": "15:21"
+   },
+   {
+    "type": "high",
+    "time": "21:30"
+   }
+  ],
+  "2026-12-09": [
+   {
+    "type": "low",
+    "time": "04:05"
+   },
+   {
+    "type": "high",
+    "time": "10:06"
+   },
+   {
+    "type": "low",
+    "time": "15:51"
+   },
+   {
+    "type": "high",
+    "time": "22:00"
+   }
+  ],
+  "2026-12-10": [
+   {
+    "type": "low",
+    "time": "04:36"
+   },
+   {
+    "type": "high",
+    "time": "10:36"
+   },
+   {
+    "type": "low",
+    "time": "16:20"
+   },
+   {
+    "type": "high",
+    "time": "22:31"
+   }
+  ],
+  "2026-12-11": [
+   {
+    "type": "low",
+    "time": "05:06"
+   },
+   {
+    "type": "high",
+    "time": "11:06"
+   },
+   {
+    "type": "low",
+    "time": "16:51"
+   },
+   {
+    "type": "high",
+    "time": "23:02"
+   }
+  ],
+  "2026-12-12": [
+   {
+    "type": "low",
+    "time": "05:38"
+   },
+   {
+    "type": "high",
+    "time": "11:38"
+   },
+   {
+    "type": "low",
+    "time": "17:23"
+   },
+   {
+    "type": "high",
+    "time": "23:35"
+   }
+  ],
+  "2026-12-13": [
+   {
+    "type": "low",
+    "time": "06:12"
+   },
+   {
+    "type": "high",
+    "time": "12:13"
+   },
+   {
+    "type": "low",
+    "time": "17:59"
+   }
+  ],
+  "2026-12-14": [
+   {
+    "type": "high",
+    "time": "00:10"
+   },
+   {
+    "type": "low",
+    "time": "06:48"
+   },
+   {
+    "type": "high",
+    "time": "12:54"
+   },
+   {
+    "type": "low",
+    "time": "18:40"
+   }
+  ],
+  "2026-12-15": [
+   {
+    "type": "high",
+    "time": "00:50"
+   },
+   {
+    "type": "low",
+    "time": "07:30"
+   },
+   {
+    "type": "high",
+    "time": "13:43"
+   },
+   {
+    "type": "low",
+    "time": "19:33"
+   }
+  ],
+  "2026-12-16": [
+   {
+    "type": "high",
+    "time": "01:40"
+   },
+   {
+    "type": "low",
+    "time": "08:20"
+   },
+   {
+    "type": "high",
+    "time": "14:46"
+   },
+   {
+    "type": "low",
+    "time": "20:45"
+   }
+  ],
+  "2026-12-17": [
+   {
+    "type": "high",
+    "time": "02:48"
+   },
+   {
+    "type": "low",
+    "time": "09:21"
+   },
+   {
+    "type": "high",
+    "time": "16:02"
+   },
+   {
+    "type": "low",
+    "time": "22:17"
+   }
+  ],
+  "2026-12-18": [
+   {
+    "type": "high",
+    "time": "04:18"
+   },
+   {
+    "type": "low",
+    "time": "10:34"
+   },
+   {
+    "type": "high",
+    "time": "17:16"
+   },
+   {
+    "type": "low",
+    "time": "23:47"
+   }
+  ],
+  "2026-12-19": [
+   {
+    "type": "high",
+    "time": "05:49"
+   },
+   {
+    "type": "low",
+    "time": "11:46"
+   },
+   {
+    "type": "high",
+    "time": "18:19"
+   }
+  ],
+  "2026-12-20": [
+   {
+    "type": "low",
+    "time": "00:57"
+   },
+   {
+    "type": "high",
+    "time": "07:02"
+   },
+   {
+    "type": "low",
+    "time": "12:49"
+   },
+   {
+    "type": "high",
+    "time": "19:13"
+   }
+  ],
+  "2026-12-21": [
+   {
+    "type": "low",
+    "time": "01:54"
+   },
+   {
+    "type": "high",
+    "time": "08:01"
+   },
+   {
+    "type": "low",
+    "time": "13:44"
+   },
+   {
+    "type": "high",
+    "time": "20:02"
+   }
+  ],
+  "2026-12-22": [
+   {
+    "type": "low",
+    "time": "02:45"
+   },
+   {
+    "type": "high",
+    "time": "08:52"
+   },
+   {
+    "type": "low",
+    "time": "14:35"
+   },
+   {
+    "type": "high",
+    "time": "20:49"
+   }
+  ],
+  "2026-12-23": [
+   {
+    "type": "low",
+    "time": "03:32"
+   },
+   {
+    "type": "high",
+    "time": "09:40"
+   },
+   {
+    "type": "low",
+    "time": "15:22"
+   },
+   {
+    "type": "high",
+    "time": "21:35"
+   }
+  ],
+  "2026-12-24": [
+   {
+    "type": "low",
+    "time": "04:18"
+   },
+   {
+    "type": "high",
+    "time": "10:24"
+   },
+   {
+    "type": "low",
+    "time": "16:08"
+   },
+   {
+    "type": "high",
+    "time": "22:20"
+   }
+  ],
+  "2026-12-25": [
+   {
+    "type": "low",
+    "time": "05:02"
+   },
+   {
+    "type": "high",
+    "time": "11:08"
+   },
+   {
+    "type": "low",
+    "time": "16:52"
+   },
+   {
+    "type": "high",
+    "time": "23:04"
+   }
+  ],
+  "2026-12-26": [
+   {
+    "type": "low",
+    "time": "05:45"
+   },
+   {
+    "type": "high",
+    "time": "11:51"
+   },
+   {
+    "type": "low",
+    "time": "17:36"
+   },
+   {
+    "type": "high",
+    "time": "23:48"
+   }
+  ],
+  "2026-12-27": [
+   {
+    "type": "low",
+    "time": "06:26"
+   },
+   {
+    "type": "high",
+    "time": "12:34"
+   },
+   {
+    "type": "low",
+    "time": "18:21"
+   }
+  ],
+  "2026-12-28": [
+   {
+    "type": "high",
+    "time": "00:32"
+   },
+   {
+    "type": "low",
+    "time": "07:07"
+   },
+   {
+    "type": "high",
+    "time": "13:18"
+   },
+   {
+    "type": "low",
+    "time": "19:08"
+   }
+  ],
+  "2026-12-29": [
+   {
+    "type": "high",
+    "time": "01:17"
+   },
+   {
+    "type": "low",
+    "time": "07:49"
+   },
+   {
+    "type": "high",
+    "time": "14:06"
+   },
+   {
+    "type": "low",
+    "time": "20:03"
+   }
+  ],
+  "2026-12-30": [
+   {
+    "type": "high",
+    "time": "02:09"
+   },
+   {
+    "type": "low",
+    "time": "08:34"
+   },
+   {
+    "type": "high",
+    "time": "15:02"
+   },
+   {
+    "type": "low",
+    "time": "21:12"
+   }
+  ],
+  "2026-12-31": [
+   {
+    "type": "high",
+    "time": "03:14"
+   },
+   {
+    "type": "low",
+    "time": "09:29"
+   },
+   {
+    "type": "high",
+    "time": "16:11"
+   },
+   {
+    "type": "low",
+    "time": "22:46"
+   }
+  ]
+ }
+}
