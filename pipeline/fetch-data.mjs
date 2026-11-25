@@ -13,6 +13,7 @@
 import fs from 'node:fs';
 import {fetchJsonWithRetry as fetchJson} from './http-retry.mjs';
 import {loadTides} from './tides.mjs';
+import {loadHistory} from './environment-history-cache.mjs';
 import {spawnSync} from 'node:child_process';
 import {MODEL_LABELS,readFreshCache,modelSummary,omSeries,choosePrimary} from './multi-model.mjs';
 import {windowScore} from '../experimental-score.mjs';
@@ -465,7 +466,7 @@ async function main() {
       species_sources: speciesCfg.sources,
       beaches: beaches.beaches.map(b => ({ id: b.id, name_he: b.name_he, region: b.region, terrain_he: b.terrain_he, caution_he: b.caution_he || null, lat: b.lat, lon: b.lon }))
     },
-    environment_history: (()=>{try{const x=JSON.parse(fs.readFileSync(path.join(DATA,'environment-history.json'),'utf8'));return Date.now()-Date.parse(x.retrieved_at)<3*3600000?x:null;}catch(e){return null;}})(),
+    environment_history: loadHistory({dataDir:DATA,beaches:beaches.beaches,now:nowUtc.getTime(),freshFetch:environmentRun.status===0}),
     change48: (()=>{try{return JSON.parse(fs.readFileSync(path.join(DATA,'change48-latest.json'),'utf8'));}catch(e){return {days:{}};}})(),
     ims: imsBlock,
     meta: {
