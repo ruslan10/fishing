@@ -1,18 +1,11 @@
 {
- "generated_at": "2026-11-26T22:05:58+02:00",
+ "generated_at": "2026-11-27T01:06:59+02:00",
  "beaches": {
   "achziv": {
    "cell_lat": 33.062,
    "cell_lon": 35.083,
    "dist_km": 2.2,
    "days": {
-    "2026-11-26": {
-     "min": 39.42,
-     "max": 39.47,
-     "mean": 39.44,
-     "hours_valid": 24,
-     "hours_in_axis": 24
-    },
     "2026-11-27": {
      "min": 39.47,
      "max": 39.51,
@@ -54,6 +47,13 @@
      "mean": 39.33,
      "hours_valid": 24,
      "hours_in_axis": 24
+    },
+    "2026-12-03": {
+     "min": 39.28,
+     "max": 39.29,
+     "mean": 39.29,
+     "hours_valid": 14,
+     "hours_in_axis": 14
     }
    }
   },
@@ -62,13 +62,6 @@
    "cell_lon": 35.083,
    "dist_km": 1.9,
    "days": {
-    "2026-11-26": {
-     "min": 39.52,
-     "max": 39.53,
-     "mean": 39.52,
-     "hours_valid": 24,
-     "hours_in_axis": 24
-    },
     "2026-11-27": {
      "min": 39.54,
      "max": 39.55,
@@ -110,6 +103,13 @@
      "mean": 39.28,
      "hours_valid": 24,
      "hours_in_axis": 24
+    },
+    "2026-12-03": {
+     "min": 39.2,
+     "max": 39.2,
+     "mean": 39.2,
+     "hours_valid": 14,
+     "hours_in_axis": 14
     }
    }
   },
@@ -118,13 +118,6 @@
    "cell_lon": 35.042,
    "dist_km": 4.8,
    "days": {
-    "2026-11-26": {
-     "min": 39.55,
-     "max": 39.57,
-     "mean": 39.56,
-     "hours_valid": 24,
-     "hours_in_axis": 24
-    },
     "2026-11-27": {
      "min": 39.56,
      "max": 39.57,
@@ -166,6 +159,13 @@
      "mean": 39.35,
      "hours_valid": 24,
      "hours_in_axis": 24
+    },
+    "2026-12-03": {
+     "min": 39.3,
+     "max": 39.32,
+     "mean": 39.31,
+     "hours_valid": 14,
+     "hours_in_axis": 14
     }
    }
   },
@@ -174,13 +174,6 @@
    "cell_lon": 34.958,
    "dist_km": 3.3,
    "days": {
-    "2026-11-26": {
-     "min": 39.5,
-     "max": 39.52,
-     "mean": 39.51,
-     "hours_valid": 24,
-     "hours_in_axis": 24
-    },
     "2026-11-27": {
      "min": 39.51,
      "max": 39.52,
@@ -222,6 +215,13 @@
      "mean": 39.4,
      "hours_valid": 24,
      "hours_in_axis": 24
+    },
+    "2026-12-03": {
+     "min": 39.37,
+     "max": 39.41,
+     "mean": 39.39,
+     "hours_valid": 14,
+     "hours_in_axis": 14
     }
    }
   },
@@ -230,13 +230,6 @@
    "cell_lon": 34.917,
    "dist_km": 3.1,
    "days": {
-    "2026-11-26": {
-     "min": 39.52,
-     "max": 39.54,
-     "mean": 39.53,
-     "hours_valid": 24,
-     "hours_in_axis": 24
-    },
     "2026-11-27": {
      "min": 39.5,
      "max": 39.52,
@@ -278,6 +271,13 @@
      "mean": 39.45,
      "hours_valid": 24,
      "hours_in_axis": 24
+    },
+    "2026-12-03": {
+     "min": 39.43,
+     "max": 39.43,
+     "mean": 39.43,
+     "hours_valid": 14,
+     "hours_in_axis": 14
     }
    }
   },
@@ -286,13 +286,6 @@
    "cell_lon": 34.875,
    "dist_km": 4.7,
    "days": {
-    "2026-11-26": {
-     "min": 39.52,
-     "max": 39.53,
-     "mean": 39.52,
-     "hours_valid": 24,
-     "hours_in_axis": 24
-    },
     "2026-11-27": {
      "min": 39.53,
      "max": 39.53,
@@ -334,6 +327,13 @@
      "mean": 39.48,
      "hours_valid": 24,
      "hours_in_axis": 24
+    },
+    "2026-12-03": {
+     "min": 39.44,
+     "max": 39.46,
+     "mean": 39.45,
+     "hours_valid": 14,
+     "hours_in_axis": 14
     }
    }
   },
@@ -342,13 +342,6 @@
    "cell_lon": 34.875,
    "dist_km": 3.0,
    "days": {
-    "2026-11-26": {
-     "min": 39.55,
-     "max": 39.56,
-     "mean": 39.55,
-     "hours_valid": 24,
-     "hours_in_axis": 24
-    },
     "2026-11-27": {
      "min": 39.56,
      "max": 39.56,
@@ -390,6 +383,13 @@
      "mean": 39.47,
      "hours_valid": 24,
      "hours_in_axis": 24
+    },
+    "2026-12-03": {
+     "min": 39.42,
+     "max": 39.44,
+     "mean": 39.43,
+     "hours_valid": 14,
+     "hours_in_axis": 14
     }
    }
   },
@@ -398,13 +398,6 @@
    "cell_lon": 34.833,
    "dist_km": 5.0,
    "days": {
-    "2026-11-26": {
-     "min": 39.56,
-     "max": 39.57,
-     "mean": 39.56,
-     "hours_valid": 24,
-     "hours_in_axis": 24
-    },
     "2026-11-27": {
      "min": 39.57,
      "max": 39.58,
@@ -446,6 +439,13 @@
      "mean": 39.45,
      "hours_valid": 24,
      "hours_in_axis": 24
+    },
+    "2026-12-03": {
+     "min": 39.4,
+     "max": 39.42,
+     "mean": 39.41,
+     "hours_valid": 14,
+     "hours_in_axis": 14
     }
    }
   },
@@ -454,13 +454,6 @@
    "cell_lon": 34.833,
    "dist_km": 4.5,
    "days": {
-    "2026-11-26": {
-     "min": 39.57,
-     "max": 39.58,
-     "mean": 39.57,
-     "hours_valid": 24,
-     "hours_in_axis": 24
-    },
     "2026-11-27": {
      "min": 39.57,
      "max": 39.58,
@@ -502,6 +495,13 @@
      "mean": 39.45,
      "hours_valid": 24,
      "hours_in_axis": 24
+    },
+    "2026-12-03": {
+     "min": 39.39,
+     "max": 39.41,
+     "mean": 39.4,
+     "hours_valid": 14,
+     "hours_in_axis": 14
     }
    }
   },
@@ -510,13 +510,6 @@
    "cell_lon": 34.833,
    "dist_km": 4.2,
    "days": {
-    "2026-11-26": {
-     "min": 39.59,
-     "max": 39.6,
-     "mean": 39.59,
-     "hours_valid": 24,
-     "hours_in_axis": 24
-    },
     "2026-11-27": {
      "min": 39.6,
      "max": 39.6,
@@ -558,6 +551,13 @@
      "mean": 39.44,
      "hours_valid": 24,
      "hours_in_axis": 24
+    },
+    "2026-12-03": {
+     "min": 39.38,
+     "max": 39.4,
+     "mean": 39.39,
+     "hours_valid": 14,
+     "hours_in_axis": 14
     }
    }
   },
@@ -566,13 +566,6 @@
    "cell_lon": 34.792,
    "dist_km": 2.5,
    "days": {
-    "2026-11-26": {
-     "min": 39.6,
-     "max": 39.61,
-     "mean": 39.61,
-     "hours_valid": 24,
-     "hours_in_axis": 24
-    },
     "2026-11-27": {
      "min": 39.6,
      "max": 39.61,
@@ -614,6 +607,13 @@
      "mean": 39.36,
      "hours_valid": 24,
      "hours_in_axis": 24
+    },
+    "2026-12-03": {
+     "min": 39.32,
+     "max": 39.34,
+     "mean": 39.33,
+     "hours_valid": 14,
+     "hours_in_axis": 14
     }
    }
   },
@@ -622,13 +622,6 @@
    "cell_lon": 34.75,
    "dist_km": 2.6,
    "days": {
-    "2026-11-26": {
-     "min": 39.58,
-     "max": 39.59,
-     "mean": 39.59,
-     "hours_valid": 24,
-     "hours_in_axis": 24
-    },
     "2026-11-27": {
      "min": 39.59,
      "max": 39.59,
@@ -670,6 +663,13 @@
      "mean": 39.36,
      "hours_valid": 24,
      "hours_in_axis": 24
+    },
+    "2026-12-03": {
+     "min": 39.3,
+     "max": 39.32,
+     "mean": 39.31,
+     "hours_valid": 14,
+     "hours_in_axis": 14
     }
    }
   },
@@ -678,13 +678,6 @@
    "cell_lon": 34.75,
    "dist_km": 2.2,
    "days": {
-    "2026-11-26": {
-     "min": 39.58,
-     "max": 39.59,
-     "mean": 39.59,
-     "hours_valid": 24,
-     "hours_in_axis": 24
-    },
     "2026-11-27": {
      "min": 39.59,
      "max": 39.59,
@@ -726,6 +719,13 @@
      "mean": 39.36,
      "hours_valid": 24,
      "hours_in_axis": 24
+    },
+    "2026-12-03": {
+     "min": 39.3,
+     "max": 39.32,
+     "mean": 39.31,
+     "hours_valid": 14,
+     "hours_in_axis": 14
     }
    }
   },
@@ -734,13 +734,6 @@
    "cell_lon": 34.708,
    "dist_km": 1.6,
    "days": {
-    "2026-11-26": {
-     "min": 39.57,
-     "max": 39.6,
-     "mean": 39.59,
-     "hours_valid": 24,
-     "hours_in_axis": 24
-    },
     "2026-11-27": {
      "min": 39.55,
      "max": 39.57,
@@ -782,6 +775,13 @@
      "mean": 39.44,
      "hours_valid": 24,
      "hours_in_axis": 24
+    },
+    "2026-12-03": {
+     "min": 39.39,
+     "max": 39.4,
+     "mean": 39.39,
+     "hours_valid": 14,
+     "hours_in_axis": 14
     }
    }
   },
@@ -790,13 +790,6 @@
    "cell_lon": 34.667,
    "dist_km": 3.8,
    "days": {
-    "2026-11-26": {
-     "min": 39.61,
-     "max": 39.61,
-     "mean": 39.61,
-     "hours_valid": 24,
-     "hours_in_axis": 24
-    },
     "2026-11-27": {
      "min": 39.61,
      "max": 39.61,
@@ -838,6 +831,13 @@
      "mean": 39.48,
      "hours_valid": 24,
      "hours_in_axis": 24
+    },
+    "2026-12-03": {
+     "min": 39.45,
+     "max": 39.46,
+     "mean": 39.46,
+     "hours_valid": 14,
+     "hours_in_axis": 14
     }
    }
   },
@@ -846,13 +846,6 @@
    "cell_lon": 34.625,
    "dist_km": 1.9,
    "days": {
-    "2026-11-26": {
-     "min": 39.6,
-     "max": 39.61,
-     "mean": 39.6,
-     "hours_valid": 24,
-     "hours_in_axis": 24
-    },
     "2026-11-27": {
      "min": 39.6,
      "max": 39.61,
@@ -894,6 +887,13 @@
      "mean": 39.5,
      "hours_valid": 24,
      "hours_in_axis": 24
+    },
+    "2026-12-03": {
+     "min": 39.47,
+     "max": 39.48,
+     "mean": 39.47,
+     "hours_valid": 14,
+     "hours_in_axis": 14
     }
    }
   },
@@ -902,13 +902,6 @@
    "cell_lon": 34.583,
    "dist_km": 2.6,
    "days": {
-    "2026-11-26": {
-     "min": 39.6,
-     "max": 39.61,
-     "mean": 39.61,
-     "hours_valid": 24,
-     "hours_in_axis": 24
-    },
     "2026-11-27": {
      "min": 39.59,
      "max": 39.61,
@@ -950,6 +943,13 @@
      "mean": 39.47,
      "hours_valid": 24,
      "hours_in_axis": 24
+    },
+    "2026-12-03": {
+     "min": 39.46,
+     "max": 39.5,
+     "mean": 39.48,
+     "hours_valid": 14,
+     "hours_in_axis": 14
     }
    }
   },
@@ -958,13 +958,6 @@
    "cell_lon": 34.542,
    "dist_km": 3.2,
    "days": {
-    "2026-11-26": {
-     "min": 39.59,
-     "max": 39.6,
-     "mean": 39.59,
-     "hours_valid": 24,
-     "hours_in_axis": 24
-    },
     "2026-11-27": {
      "min": 39.57,
      "max": 39.59,
@@ -1006,6 +999,13 @@
      "mean": 39.54,
      "hours_valid": 24,
      "hours_in_axis": 24
+    },
+    "2026-12-03": {
+     "min": 39.53,
+     "max": 39.55,
+     "mean": 39.54,
+     "hours_valid": 14,
+     "hours_in_axis": 14
     }
    }
   },
@@ -1014,13 +1014,6 @@
    "cell_lon": 34.5,
    "dist_km": 3.7,
    "days": {
-    "2026-11-26": {
-     "min": 39.62,
-     "max": 39.62,
-     "mean": 39.62,
-     "hours_valid": 24,
-     "hours_in_axis": 24
-    },
     "2026-11-27": {
      "min": 39.62,
      "max": 39.62,
@@ -1062,6 +1055,13 @@
      "mean": 39.59,
      "hours_valid": 24,
      "hours_in_axis": 24
+    },
+    "2026-12-03": {
+     "min": 39.52,
+     "max": 39.57,
+     "mean": 39.54,
+     "hours_valid": 14,
+     "hours_in_axis": 14
     }
    }
   }
