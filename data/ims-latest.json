@@ -1,6 +1,8 @@
 {
  "available": true,
  "issued_at": "2026-11-26 00:01:00",
+ "checked_at": "2026-11-26T12:04:43.080102+00:00",
+ "source_url": "https://ims.gov.il/he/coasts",
  "regions": {
   "north": {
    "name_he": "חוף צפון",
@@ -8,25 +10,25 @@
     {
      "valid_from": "2026-11-26 08:00:00",
      "valid_to": "2026-11-26 20:00:00",
-     "sea_temp": 24,
-     "wind_dir_from": 45,
-     "wind_dir_to": 360,
-     "wind_speed_from": 15,
-     "wind_speed_to": 35,
-     "wave_from_cm": 80,
-     "wave_to_cm": 130,
+     "wave_from_cm": 80.0,
+     "wave_to_cm": 130.0,
+     "wind_speed_from": 15.0,
+     "wind_speed_to": 35.0,
+     "wind_dir_from": 45.0,
+     "wind_dir_to": 360.0,
+     "sea_temp": 24.0,
      "sea_state_he": "גלי עד גבה גלים"
     },
     {
      "valid_from": "2026-11-26 20:00:00",
      "valid_to": "2026-11-27 08:00:00",
-     "sea_temp": 24,
-     "wind_dir_from": 45,
-     "wind_dir_to": 135,
-     "wind_speed_from": 10,
-     "wind_speed_to": 30,
-     "wave_from_cm": 70,
-     "wave_to_cm": 130,
+     "wave_from_cm": 70.0,
+     "wave_to_cm": 130.0,
+     "wind_speed_from": 10.0,
+     "wind_speed_to": 30.0,
+     "wind_dir_from": 45.0,
+     "wind_dir_to": 135.0,
+     "sea_temp": 24.0,
      "sea_state_he": "גלי עד גבה גלים"
     }
    ]
@@ -37,25 +39,25 @@
     {
      "valid_from": "2026-11-26 08:00:00",
      "valid_to": "2026-11-26 20:00:00",
-     "sea_temp": 24,
-     "wind_dir_from": 45,
-     "wind_dir_to": 360,
-     "wind_speed_from": 15,
-     "wind_speed_to": 35,
-     "wave_from_cm": 80,
-     "wave_to_cm": 150,
+     "wave_from_cm": 80.0,
+     "wave_to_cm": 150.0,
+     "wind_speed_from": 15.0,
+     "wind_speed_to": 35.0,
+     "wind_dir_from": 45.0,
+     "wind_dir_to": 360.0,
+     "sea_temp": 24.0,
      "sea_state_he": "גלי עד גבה גלים"
     },
     {
      "valid_from": "2026-11-26 20:00:00",
      "valid_to": "2026-11-27 08:00:00",
-     "sea_temp": 24,
-     "wind_dir_from": 45,
-     "wind_dir_to": 135,
-     "wind_speed_from": 10,
-     "wind_speed_to": 30,
-     "wave_from_cm": 50,
-     "wave_to_cm": 130,
+     "wave_from_cm": 50.0,
+     "wave_to_cm": 130.0,
+     "wind_speed_from": 10.0,
+     "wind_speed_to": 30.0,
+     "wind_dir_from": 45.0,
+     "wind_dir_to": 135.0,
+     "sea_temp": 24.0,
      "sea_state_he": "גלי עד גבה גלים"
     }
    ]
@@ -66,30 +68,28 @@
     {
      "valid_from": "2026-11-26 08:00:00",
      "valid_to": "2026-11-26 20:00:00",
-     "sea_temp": 24,
-     "wind_dir_from": 45,
-     "wind_dir_to": 360,
-     "wind_speed_from": 15,
-     "wind_speed_to": 35,
-     "wave_from_cm": 80,
-     "wave_to_cm": 130,
+     "wave_from_cm": 80.0,
+     "wave_to_cm": 130.0,
+     "wind_speed_from": 15.0,
+     "wind_speed_to": 35.0,
+     "wind_dir_from": 45.0,
+     "wind_dir_to": 360.0,
+     "sea_temp": 24.0,
      "sea_state_he": "גלי עד גבה גלים"
     },
     {
      "valid_from": "2026-11-26 20:00:00",
      "valid_to": "2026-11-27 08:00:00",
-     "sea_temp": 24,
-     "wind_dir_from": 45,
-     "wind_dir_to": 135,
-     "wind_speed_from": 10,
-     "wind_speed_to": 30,
-     "wave_from_cm": 70,
-     "wave_to_cm": 130,
+     "wave_from_cm": 70.0,
+     "wave_to_cm": 130.0,
+     "wind_speed_from": 10.0,
+     "wind_speed_to": 30.0,
+     "wind_dir_from": 45.0,
+     "wind_dir_to": 135.0,
+     "sea_temp": 24.0,
      "sea_state_he": "גלי עד גבה גלים"
     }
    ]
   }
- },
- "checked_at": "2026-11-26T11:03:34.340Z",
- "source_url": "https://ims.gov.il/he/coasts"
+ }
 }
