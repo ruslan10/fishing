@@ -491,7 +491,7 @@
   ]
  },
  "environment_history": {
-  "retrieved_at": "2026-11-27T06:11:17.021233+02:00",
+  "retrieved_at": "2026-11-27T07:09:04.622185+02:00",
   "date": "2026-11-27",
   "cutoff": "2026-11-27T00:00:00+02:00",
   "source_kind": "modeled_recent_past_not_observations",
@@ -33838,9 +33838,9 @@
    "wave_cm": "<50;50..100;>100..<200;200..300;>300",
    "wind_kmh": "<12;12..<20;20..<29;29..<50;>=50"
   },
-  "issue_id": "2026-11-27T06-11-19-195a1d",
-  "issued_at_local": "2026-11-27T06:11:19",
-  "issued_at_utc": "2026-11-27T04:11:19.201Z",
+  "issue_id": "2026-11-27T07-09-06-315d53",
+  "issued_at_local": "2026-11-27T07:09:06",
+  "issued_at_utc": "2026-11-27T05:09:06.979Z",
   "timezone": "Asia/Jerusalem",
   "valid_from": "2026-11-27",
   "valid_to": "2026-12-03",
@@ -33852,10 +33852,10 @@
     "ncep_gfswave025"
    ],
    "spread": "largest simultaneous hourly spread, never a calibrated confidence interval",
-   "copernicus_retrieved_at": "2026-11-27T06:11:01+02:00",
+   "copernicus_retrieved_at": "2026-11-27T07:08:28+02:00",
    "copernicus_provider_status": {
     "state": "not_updating",
-    "checked_at": "2026-11-27T06:11:01+02:00",
+    "checked_at": "2026-11-27T07:08:28+02:00",
     "affected_after_utc": null,
     "provider_arco_updated_at": "2026-11-27T02:22:52.970Z",
     "source_url": "https://data.marine.copernicus.eu/product/MEDSEA_ANALYSISFORECAST_WAV_006_017/description",
@@ -33945,7 +33945,7 @@
   },
   "scoring_note_he": "כרטיסי הדגים איכותניים בלבד, בהיקף דיג ז'ירז'ור מהחוף - ללא ציון התאמה מספרי: אין מקור מאומת לספי עונה/שעות/גלים/רוח/טמפרטורה למין. צבע הגלים וצבע הרוח המתמשכת מוצגים בנפרד, לפי השיא היומי או בטווח השעות. עמודת התנאים מחזירה את ציון ההשוואה הניסיוני המקורי 0–100, המחושב מממוצעי החלון ומשבים, בנפרד מסולם הצבעים של המדידות. הסולם מקומי וניסיוני, לא תחזית תפיסה ולא דירוג בטיחות.",
   "stale_beaches": [],
-  "issue_file": "issues/2026-11-27T06-11-19-195a1d.json"
+  "issue_file": "issues/2026-11-27T07-09-06-315d53.json"
  },
  "beaches": [
   {
@@ -33954,7 +33954,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-27T06:11:01+02:00",
+    "retrieved_at": "2026-11-27T07:08:28+02:00",
     "cell_lat": 33.0625,
     "cell_lon": 35.083336,
     "dist_km": 1.9,
@@ -33972,7 +33972,7 @@
      "attribution": "Generated using E.U. Copernicus Marine Service Information",
      "provider_status": {
       "state": "not_updating",
-      "checked_at": "2026-11-27T06:11:01+02:00",
+      "checked_at": "2026-11-27T07:08:28+02:00",
       "affected_after_utc": null,
       "provider_arco_updated_at": "2026-11-27T02:22:52.970Z",
       "source_url": "https://data.marine.copernicus.eu/product/MEDSEA_ANALYSISFORECAST_WAV_006_017/description",
@@ -33982,14 +33982,14 @@
     },
     "copernicus_provider_status": {
      "state": "not_updating",
-     "checked_at": "2026-11-27T06:11:01+02:00",
+     "checked_at": "2026-11-27T07:08:28+02:00",
      "affected_after_utc": null,
      "provider_arco_updated_at": "2026-11-27T02:22:52.970Z",
      "source_url": "https://data.marine.copernicus.eu/product/MEDSEA_ANALYSISFORECAST_WAV_006_017/description",
      "evidence": "provider catalogue metadata used by normal open_dataset",
      "meaning": "Provider update status, not proof of wrong values or a new model run; retrieval time is not model initialization time."
     },
-    "comparison_retrieved_at": "2026-11-27T04:11:19.201Z",
+    "comparison_retrieved_at": "2026-11-27T05:09:06.979Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 33.0625,
@@ -39807,7 +39807,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-27T06:11:01+02:00",
+    "retrieved_at": "2026-11-27T07:08:28+02:00",
     "cell_lat": 33.020832,
     "cell_lon": 35.083336,
     "dist_km": 1.9,
@@ -39825,7 +39825,7 @@
      "attribution": "Generated using E.U. Copernicus Marine Service Information",
      "provider_status": {
       "state": "not_updating",
-      "checked_at": "2026-11-27T06:11:01+02:00",
+      "checked_at": "2026-11-27T07:08:28+02:00",
       "affected_after_utc": null,
       "provider_arco_updated_at": "2026-11-27T02:22:52.970Z",
       "source_url": "https://data.marine.copernicus.eu/product/MEDSEA_ANALYSISFORECAST_WAV_006_017/description",
@@ -39835,14 +39835,14 @@
     },
     "copernicus_provider_status": {
      "state": "not_updating",
-     "checked_at": "2026-11-27T06:11:01+02:00",
+     "checked_at": "2026-11-27T07:08:28+02:00",
      "affected_after_utc": null,
      "provider_arco_updated_at": "2026-11-27T02:22:52.970Z",
      "source_url": "https://data.marine.copernicus.eu/product/MEDSEA_ANALYSISFORECAST_WAV_006_017/description",
      "evidence": "provider catalogue metadata used by normal open_dataset",
      "meaning": "Provider update status, not proof of wrong values or a new model run; retrieval time is not model initialization time."
     },
-    "comparison_retrieved_at": "2026-11-27T04:11:19.201Z",
+    "comparison_retrieved_at": "2026-11-27T05:09:06.979Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 33.020832,
@@ -45660,7 +45660,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-27T06:11:01+02:00",
+    "retrieved_at": "2026-11-27T07:08:28+02:00",
     "cell_lat": 32.9375,
     "cell_lon": 35.041668,
     "dist_km": 4.2,
@@ -45678,7 +45678,7 @@
      "attribution": "Generated using E.U. Copernicus Marine Service Information",
      "provider_status": {
       "state": "not_updating",
-      "checked_at": "2026-11-27T06:11:01+02:00",
+      "checked_at": "2026-11-27T07:08:28+02:00",
       "affected_after_utc": null,
       "provider_arco_updated_at": "2026-11-27T02:22:52.970Z",
       "source_url": "https://data.marine.copernicus.eu/product/MEDSEA_ANALYSISFORECAST_WAV_006_017/description",
@@ -45688,14 +45688,14 @@
     },
     "copernicus_provider_status": {
      "state": "not_updating",
-     "checked_at": "2026-11-27T06:11:01+02:00",
+     "checked_at": "2026-11-27T07:08:28+02:00",
      "affected_after_utc": null,
      "provider_arco_updated_at": "2026-11-27T02:22:52.970Z",
      "source_url": "https://data.marine.copernicus.eu/product/MEDSEA_ANALYSISFORECAST_WAV_006_017/description",
      "evidence": "provider catalogue metadata used by normal open_dataset",
      "meaning": "Provider update status, not proof of wrong values or a new model run; retrieval time is not model initialization time."
     },
-    "comparison_retrieved_at": "2026-11-27T04:11:19.201Z",
+    "comparison_retrieved_at": "2026-11-27T05:09:06.979Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 32.9375,
@@ -51513,7 +51513,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-27T06:11:01+02:00",
+    "retrieved_at": "2026-11-27T07:08:28+02:00",
     "cell_lat": 32.854168,
     "cell_lon": 34.958336,
     "dist_km": 3.2,
@@ -51531,7 +51531,7 @@
      "attribution": "Generated using E.U. Copernicus Marine Service Information",
      "provider_status": {
       "state": "not_updating",
-      "checked_at": "2026-11-27T06:11:01+02:00",
+      "checked_at": "2026-11-27T07:08:28+02:00",
       "affected_after_utc": null,
       "provider_arco_updated_at": "2026-11-27T02:22:52.970Z",
       "source_url": "https://data.marine.copernicus.eu/product/MEDSEA_ANALYSISFORECAST_WAV_006_017/description",
@@ -51541,14 +51541,14 @@
     },
     "copernicus_provider_status": {
      "state": "not_updating",
-     "checked_at": "2026-11-27T06:11:01+02:00",
+     "checked_at": "2026-11-27T07:08:28+02:00",
      "affected_after_utc": null,
      "provider_arco_updated_at": "2026-11-27T02:22:52.970Z",
      "source_url": "https://data.marine.copernicus.eu/product/MEDSEA_ANALYSISFORECAST_WAV_006_017/description",
      "evidence": "provider catalogue metadata used by normal open_dataset",
      "meaning": "Provider update status, not proof of wrong values or a new model run; retrieval time is not model initialization time."
     },
-    "comparison_retrieved_at": "2026-11-27T04:11:19.201Z",
+    "comparison_retrieved_at": "2026-11-27T05:09:06.979Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 32.854168,
@@ -57366,7 +57366,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-27T06:11:01+02:00",
+    "retrieved_at": "2026-11-27T07:08:28+02:00",
     "cell_lat": 32.729168,
     "cell_lon": 34.916668,
     "dist_km": 3,
@@ -57384,7 +57384,7 @@
      "attribution": "Generated using E.U. Copernicus Marine Service Information",
      "provider_status": {
       "state": "not_updating",
-      "checked_at": "2026-11-27T06:11:01+02:00",
+      "checked_at": "2026-11-27T07:08:28+02:00",
       "affected_after_utc": null,
       "provider_arco_updated_at": "2026-11-27T02:22:52.970Z",
       "source_url": "https://data.marine.copernicus.eu/product/MEDSEA_ANALYSISFORECAST_WAV_006_017/description",
@@ -57394,14 +57394,14 @@
     },
     "copernicus_provider_status": {
      "state": "not_updating",
-     "checked_at": "2026-11-27T06:11:01+02:00",
+     "checked_at": "2026-11-27T07:08:28+02:00",
      "affected_after_utc": null,
      "provider_arco_updated_at": "2026-11-27T02:22:52.970Z",
      "source_url": "https://data.marine.copernicus.eu/product/MEDSEA_ANALYSISFORECAST_WAV_006_017/description",
      "evidence": "provider catalogue metadata used by normal open_dataset",
      "meaning": "Provider update status, not proof of wrong values or a new model run; retrieval time is not model initialization time."
     },
-    "comparison_retrieved_at": "2026-11-27T04:11:19.201Z",
+    "comparison_retrieved_at": "2026-11-27T05:09:06.979Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 32.729168,
@@ -63219,7 +63219,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-27T06:11:01+02:00",
+    "retrieved_at": "2026-11-27T07:08:28+02:00",
     "cell_lat": 32.604168,
     "cell_lon": 34.875,
     "dist_km": 4,
@@ -63237,7 +63237,7 @@
      "attribution": "Generated using E.U. Copernicus Marine Service Information",
      "provider_status": {
       "state": "not_updating",
-      "checked_at": "2026-11-27T06:11:01+02:00",
+      "checked_at": "2026-11-27T07:08:28+02:00",
       "affected_after_utc": null,
       "provider_arco_updated_at": "2026-11-27T02:22:52.970Z",
       "source_url": "https://data.marine.copernicus.eu/product/MEDSEA_ANALYSISFORECAST_WAV_006_017/description",
@@ -63247,14 +63247,14 @@
     },
     "copernicus_provider_status": {
      "state": "not_updating",
-     "checked_at": "2026-11-27T06:11:01+02:00",
+     "checked_at": "2026-11-27T07:08:28+02:00",
      "affected_after_utc": null,
      "provider_arco_updated_at": "2026-11-27T02:22:52.970Z",
      "source_url": "https://data.marine.copernicus.eu/product/MEDSEA_ANALYSISFORECAST_WAV_006_017/description",
      "evidence": "provider catalogue metadata used by normal open_dataset",
      "meaning": "Provider update status, not proof of wrong values or a new model run; retrieval time is not model initialization time."
     },
-    "comparison_retrieved_at": "2026-11-27T04:11:19.201Z",
+    "comparison_retrieved_at": "2026-11-27T05:09:06.979Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 32.604168,
@@ -69072,7 +69072,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-27T06:11:01+02:00",
+    "retrieved_at": "2026-11-27T07:08:28+02:00",
     "cell_lat": 32.520832,
     "cell_lon": 34.875,
     "dist_km": 2.9,
@@ -69090,7 +69090,7 @@
      "attribution": "Generated using E.U. Copernicus Marine Service Information",
      "provider_status": {
       "state": "not_updating",
-      "checked_at": "2026-11-27T06:11:01+02:00",
+      "checked_at": "2026-11-27T07:08:28+02:00",
       "affected_after_utc": null,
       "provider_arco_updated_at": "2026-11-27T02:22:52.970Z",
       "source_url": "https://data.marine.copernicus.eu/product/MEDSEA_ANALYSISFORECAST_WAV_006_017/description",
@@ -69100,14 +69100,14 @@
     },
     "copernicus_provider_status": {
      "state": "not_updating",
-     "checked_at": "2026-11-27T06:11:01+02:00",
+     "checked_at": "2026-11-27T07:08:28+02:00",
      "affected_after_utc": null,
      "provider_arco_updated_at": "2026-11-27T02:22:52.970Z",
      "source_url": "https://data.marine.copernicus.eu/product/MEDSEA_ANALYSISFORECAST_WAV_006_017/description",
      "evidence": "provider catalogue metadata used by normal open_dataset",
      "meaning": "Provider update status, not proof of wrong values or a new model run; retrieval time is not model initialization time."
     },
-    "comparison_retrieved_at": "2026-11-27T04:11:19.201Z",
+    "comparison_retrieved_at": "2026-11-27T05:09:06.979Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 32.520832,
@@ -74925,7 +74925,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-27T06:11:01+02:00",
+    "retrieved_at": "2026-11-27T07:08:28+02:00",
     "cell_lat": 32.4375,
     "cell_lon": 34.833336,
     "dist_km": 4.2,
@@ -74943,7 +74943,7 @@
      "attribution": "Generated using E.U. Copernicus Marine Service Information",
      "provider_status": {
       "state": "not_updating",
-      "checked_at": "2026-11-27T06:11:01+02:00",
+      "checked_at": "2026-11-27T07:08:28+02:00",
       "affected_after_utc": null,
       "provider_arco_updated_at": "2026-11-27T02:22:52.970Z",
       "source_url": "https://data.marine.copernicus.eu/product/MEDSEA_ANALYSISFORECAST_WAV_006_017/description",
@@ -74953,14 +74953,14 @@
     },
     "copernicus_provider_status": {
      "state": "not_updating",
-     "checked_at": "2026-11-27T06:11:01+02:00",
+     "checked_at": "2026-11-27T07:08:28+02:00",
      "affected_after_utc": null,
      "provider_arco_updated_at": "2026-11-27T02:22:52.970Z",
      "source_url": "https://data.marine.copernicus.eu/product/MEDSEA_ANALYSISFORECAST_WAV_006_017/description",
      "evidence": "provider catalogue metadata used by normal open_dataset",
      "meaning": "Provider update status, not proof of wrong values or a new model run; retrieval time is not model initialization time."
     },
-    "comparison_retrieved_at": "2026-11-27T04:11:19.201Z",
+    "comparison_retrieved_at": "2026-11-27T05:09:06.979Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 32.4375,
@@ -80778,7 +80778,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-27T06:11:01+02:00",
+    "retrieved_at": "2026-11-27T07:08:28+02:00",
     "cell_lat": 32.395832,
     "cell_lon": 34.833336,
     "dist_km": 3.8,
@@ -80796,7 +80796,7 @@
      "attribution": "Generated using E.U. Copernicus Marine Service Information",
      "provider_status": {
       "state": "not_updating",
-      "checked_at": "2026-11-27T06:11:01+02:00",
+      "checked_at": "2026-11-27T07:08:28+02:00",
       "affected_after_utc": null,
       "provider_arco_updated_at": "2026-11-27T02:22:52.970Z",
       "source_url": "https://data.marine.copernicus.eu/product/MEDSEA_ANALYSISFORECAST_WAV_006_017/description",
@@ -80806,14 +80806,14 @@
     },
     "copernicus_provider_status": {
      "state": "not_updating",
-     "checked_at": "2026-11-27T06:11:01+02:00",
+     "checked_at": "2026-11-27T07:08:28+02:00",
      "affected_after_utc": null,
      "provider_arco_updated_at": "2026-11-27T02:22:52.970Z",
      "source_url": "https://data.marine.copernicus.eu/product/MEDSEA_ANALYSISFORECAST_WAV_006_017/description",
      "evidence": "provider catalogue metadata used by normal open_dataset",
      "meaning": "Provider update status, not proof of wrong values or a new model run; retrieval time is not model initialization time."
     },
-    "comparison_retrieved_at": "2026-11-27T04:11:19.201Z",
+    "comparison_retrieved_at": "2026-11-27T05:09:06.979Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 32.395832,
@@ -86631,7 +86631,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-27T06:11:01+02:00",
+    "retrieved_at": "2026-11-27T07:08:28+02:00",
     "cell_lat": 32.354168,
     "cell_lon": 34.833336,
     "dist_km": 4.1,
@@ -86649,7 +86649,7 @@
      "attribution": "Generated using E.U. Copernicus Marine Service Information",
      "provider_status": {
       "state": "not_updating",
-      "checked_at": "2026-11-27T06:11:01+02:00",
+      "checked_at": "2026-11-27T07:08:28+02:00",
       "affected_after_utc": null,
       "provider_arco_updated_at": "2026-11-27T02:22:52.970Z",
       "source_url": "https://data.marine.copernicus.eu/product/MEDSEA_ANALYSISFORECAST_WAV_006_017/description",
@@ -86659,14 +86659,14 @@
     },
     "copernicus_provider_status": {
      "state": "not_updating",
-     "checked_at": "2026-11-27T06:11:01+02:00",
+     "checked_at": "2026-11-27T07:08:28+02:00",
      "affected_after_utc": null,
      "provider_arco_updated_at": "2026-11-27T02:22:52.970Z",
      "source_url": "https://data.marine.copernicus.eu/product/MEDSEA_ANALYSISFORECAST_WAV_006_017/description",
      "evidence": "provider catalogue metadata used by normal open_dataset",
      "meaning": "Provider update status, not proof of wrong values or a new model run; retrieval time is not model initialization time."
     },
-    "comparison_retrieved_at": "2026-11-27T04:11:19.201Z",
+    "comparison_retrieved_at": "2026-11-27T05:09:06.979Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 32.354168,
@@ -92484,7 +92484,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-27T06:11:01+02:00",
+    "retrieved_at": "2026-11-27T07:08:28+02:00",
     "cell_lat": 32.1875,
     "cell_lon": 34.791668,
     "dist_km": 2.5,
@@ -92502,7 +92502,7 @@
      "attribution": "Generated using E.U. Copernicus Marine Service Information",
      "provider_status": {
       "state": "not_updating",
-      "checked_at": "2026-11-27T06:11:01+02:00",
+      "checked_at": "2026-11-27T07:08:28+02:00",
       "affected_after_utc": null,
       "provider_arco_updated_at": "2026-11-27T02:22:52.970Z",
       "source_url": "https://data.marine.copernicus.eu/product/MEDSEA_ANALYSISFORECAST_WAV_006_017/description",
@@ -92512,14 +92512,14 @@
     },
     "copernicus_provider_status": {
      "state": "not_updating",
-     "checked_at": "2026-11-27T06:11:01+02:00",
+     "checked_at": "2026-11-27T07:08:28+02:00",
      "affected_after_utc": null,
      "provider_arco_updated_at": "2026-11-27T02:22:52.970Z",
      "source_url": "https://data.marine.copernicus.eu/product/MEDSEA_ANALYSISFORECAST_WAV_006_017/description",
      "evidence": "provider catalogue metadata used by normal open_dataset",
      "meaning": "Provider update status, not proof of wrong values or a new model run; retrieval time is not model initialization time."
     },
-    "comparison_retrieved_at": "2026-11-27T04:11:19.201Z",
+    "comparison_retrieved_at": "2026-11-27T05:09:06.979Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 32.1875,
@@ -98337,7 +98337,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-27T06:11:01+02:00",
+    "retrieved_at": "2026-11-27T07:08:28+02:00",
     "cell_lat": 32.0625,
     "cell_lon": 34.75,
     "dist_km": 2.4,
@@ -98355,7 +98355,7 @@
      "attribution": "Generated using E.U. Copernicus Marine Service Information",
      "provider_status": {
       "state": "not_updating",
-      "checked_at": "2026-11-27T06:11:01+02:00",
+      "checked_at": "2026-11-27T07:08:28+02:00",
       "affected_after_utc": null,
       "provider_arco_updated_at": "2026-11-27T02:22:52.970Z",
       "source_url": "https://data.marine.copernicus.eu/product/MEDSEA_ANALYSISFORECAST_WAV_006_017/description",
@@ -98365,14 +98365,14 @@
     },
     "copernicus_provider_status": {
      "state": "not_updating",
-     "checked_at": "2026-11-27T06:11:01+02:00",
+     "checked_at": "2026-11-27T07:08:28+02:00",
      "affected_after_utc": null,
      "provider_arco_updated_at": "2026-11-27T02:22:52.970Z",
      "source_url": "https://data.marine.copernicus.eu/product/MEDSEA_ANALYSISFORECAST_WAV_006_017/description",
      "evidence": "provider catalogue metadata used by normal open_dataset",
      "meaning": "Provider update status, not proof of wrong values or a new model run; retrieval time is not model initialization time."
     },
-    "comparison_retrieved_at": "2026-11-27T04:11:19.201Z",
+    "comparison_retrieved_at": "2026-11-27T05:09:06.979Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 32.0625,
@@ -104190,7 +104190,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-27T06:11:01+02:00",
+    "retrieved_at": "2026-11-27T07:08:28+02:00",
     "cell_lat": 32.0625,
     "cell_lon": 34.75,
     "dist_km": 2.2,
@@ -104208,7 +104208,7 @@
      "attribution": "Generated using E.U. Copernicus Marine Service Information",
      "provider_status": {
       "state": "not_updating",
-      "checked_at": "2026-11-27T06:11:01+02:00",
+      "checked_at": "2026-11-27T07:08:28+02:00",
       "affected_after_utc": null,
       "provider_arco_updated_at": "2026-11-27T02:22:52.970Z",
       "source_url": "https://data.marine.copernicus.eu/product/MEDSEA_ANALYSISFORECAST_WAV_006_017/description",
@@ -104218,14 +104218,14 @@
     },
     "copernicus_provider_status": {
      "state": "not_updating",
-     "checked_at": "2026-11-27T06:11:01+02:00",
+     "checked_at": "2026-11-27T07:08:28+02:00",
      "affected_after_utc": null,
      "provider_arco_updated_at": "2026-11-27T02:22:52.970Z",
      "source_url": "https://data.marine.copernicus.eu/product/MEDSEA_ANALYSISFORECAST_WAV_006_017/description",
      "evidence": "provider catalogue metadata used by normal open_dataset",
      "meaning": "Provider update status, not proof of wrong values or a new model run; retrieval time is not model initialization time."
     },
-    "comparison_retrieved_at": "2026-11-27T04:11:19.201Z",
+    "comparison_retrieved_at": "2026-11-27T05:09:06.979Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 32.0625,
@@ -110043,7 +110043,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-27T06:11:01+02:00",
+    "retrieved_at": "2026-11-27T07:08:28+02:00",
     "cell_lat": 31.979166,
     "cell_lon": 34.708336,
     "dist_km": 1.5,
@@ -110061,7 +110061,7 @@
      "attribution": "Generated using E.U. Copernicus Marine Service Information",
      "provider_status": {
       "state": "not_updating",
-      "checked_at": "2026-11-27T06:11:01+02:00",
+      "checked_at": "2026-11-27T07:08:28+02:00",
       "affected_after_utc": null,
       "provider_arco_updated_at": "2026-11-27T02:22:52.970Z",
       "source_url": "https://data.marine.copernicus.eu/product/MEDSEA_ANALYSISFORECAST_WAV_006_017/description",
@@ -110071,14 +110071,14 @@
     },
     "copernicus_provider_status": {
      "state": "not_updating",
-     "checked_at": "2026-11-27T06:11:01+02:00",
+     "checked_at": "2026-11-27T07:08:28+02:00",
      "affected_after_utc": null,
      "provider_arco_updated_at": "2026-11-27T02:22:52.970Z",
      "source_url": "https://data.marine.copernicus.eu/product/MEDSEA_ANALYSISFORECAST_WAV_006_017/description",
      "evidence": "provider catalogue metadata used by normal open_dataset",
      "meaning": "Provider update status, not proof of wrong values or a new model run; retrieval time is not model initialization time."
     },
-    "comparison_retrieved_at": "2026-11-27T04:11:19.201Z",
+    "comparison_retrieved_at": "2026-11-27T05:09:06.979Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 31.979166,
@@ -115896,7 +115896,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-27T06:11:01+02:00",
+    "retrieved_at": "2026-11-27T07:08:28+02:00",
     "cell_lat": 31.9375,
     "cell_lon": 34.666668,
     "dist_km": 3.4,
@@ -115914,7 +115914,7 @@
      "attribution": "Generated using E.U. Copernicus Marine Service Information",
      "provider_status": {
       "state": "not_updating",
-      "checked_at": "2026-11-27T06:11:01+02:00",
+      "checked_at": "2026-11-27T07:08:28+02:00",
       "affected_after_utc": null,
       "provider_arco_updated_at": "2026-11-27T02:22:52.970Z",
       "source_url": "https://data.marine.copernicus.eu/product/MEDSEA_ANALYSISFORECAST_WAV_006_017/description",
@@ -115924,14 +115924,14 @@
     },
     "copernicus_provider_status": {
      "state": "not_updating",
-     "checked_at": "2026-11-27T06:11:01+02:00",
+     "checked_at": "2026-11-27T07:08:28+02:00",
      "affected_after_utc": null,
      "provider_arco_updated_at": "2026-11-27T02:22:52.970Z",
      "source_url": "https://data.marine.copernicus.eu/product/MEDSEA_ANALYSISFORECAST_WAV_006_017/description",
      "evidence": "provider catalogue metadata used by normal open_dataset",
      "meaning": "Provider update status, not proof of wrong values or a new model run; retrieval time is not model initialization time."
     },
-    "comparison_retrieved_at": "2026-11-27T04:11:19.201Z",
+    "comparison_retrieved_at": "2026-11-27T05:09:06.979Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 31.9375,
@@ -121749,7 +121749,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-27T06:11:01+02:00",
+    "retrieved_at": "2026-11-27T07:08:28+02:00",
     "cell_lat": 31.8125,
     "cell_lon": 34.625,
     "dist_km": 1.6,
@@ -121767,7 +121767,7 @@
      "attribution": "Generated using E.U. Copernicus Marine Service Information",
      "provider_status": {
       "state": "not_updating",
-      "checked_at": "2026-11-27T06:11:01+02:00",
+      "checked_at": "2026-11-27T07:08:28+02:00",
       "affected_after_utc": null,
       "provider_arco_updated_at": "2026-11-27T02:22:52.970Z",
       "source_url": "https://data.marine.copernicus.eu/product/MEDSEA_ANALYSISFORECAST_WAV_006_017/description",
@@ -121777,14 +121777,14 @@
     },
     "copernicus_provider_status": {
      "state": "not_updating",
-     "checked_at": "2026-11-27T06:11:01+02:00",
+     "checked_at": "2026-11-27T07:08:28+02:00",
      "affected_after_utc": null,
      "provider_arco_updated_at": "2026-11-27T02:22:52.970Z",
      "source_url": "https://data.marine.copernicus.eu/product/MEDSEA_ANALYSISFORECAST_WAV_006_017/description",
      "evidence": "provider catalogue metadata used by normal open_dataset",
      "meaning": "Provider update status, not proof of wrong values or a new model run; retrieval time is not model initialization time."
     },
-    "comparison_retrieved_at": "2026-11-27T04:11:19.201Z",
+    "comparison_retrieved_at": "2026-11-27T05:09:06.979Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 31.8125,
@@ -127602,7 +127602,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-27T06:11:01+02:00",
+    "retrieved_at": "2026-11-27T07:08:28+02:00",
     "cell_lat": 31.729166,
     "cell_lon": 34.583336,
     "dist_km": 2.4,
@@ -127620,7 +127620,7 @@
      "attribution": "Generated using E.U. Copernicus Marine Service Information",
      "provider_status": {
       "state": "not_updating",
-      "checked_at": "2026-11-27T06:11:01+02:00",
+      "checked_at": "2026-11-27T07:08:28+02:00",
       "affected_after_utc": null,
       "provider_arco_updated_at": "2026-11-27T02:22:52.970Z",
       "source_url": "https://data.marine.copernicus.eu/product/MEDSEA_ANALYSISFORECAST_WAV_006_017/description",
@@ -127630,14 +127630,14 @@
     },
     "copernicus_provider_status": {
      "state": "not_updating",
-     "checked_at": "2026-11-27T06:11:01+02:00",
+     "checked_at": "2026-11-27T07:08:28+02:00",
      "affected_after_utc": null,
      "provider_arco_updated_at": "2026-11-27T02:22:52.970Z",
      "source_url": "https://data.marine.copernicus.eu/product/MEDSEA_ANALYSISFORECAST_WAV_006_017/description",
      "evidence": "provider catalogue metadata used by normal open_dataset",
      "meaning": "Provider update status, not proof of wrong values or a new model run; retrieval time is not model initialization time."
     },
-    "comparison_retrieved_at": "2026-11-27T04:11:19.201Z",
+    "comparison_retrieved_at": "2026-11-27T05:09:06.979Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 31.729166,
@@ -133455,7 +133455,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-27T06:11:01+02:00",
+    "retrieved_at": "2026-11-27T07:08:28+02:00",
     "cell_lat": 31.6875,
     "cell_lon": 34.541668,
     "dist_km": 3.2,
@@ -133473,7 +133473,7 @@
      "attribution": "Generated using E.U. Copernicus Marine Service Information",
      "provider_status": {
       "state": "not_updating",
-      "checked_at": "2026-11-27T06:11:01+02:00",
+      "checked_at": "2026-11-27T07:08:28+02:00",
       "affected_after_utc": null,
       "provider_arco_updated_at": "2026-11-27T02:22:52.970Z",
       "source_url": "https://data.marine.copernicus.eu/product/MEDSEA_ANALYSISFORECAST_WAV_006_017/description",
@@ -133483,14 +133483,14 @@
     },
     "copernicus_provider_status": {
      "state": "not_updating",
-     "checked_at": "2026-11-27T06:11:01+02:00",
+     "checked_at": "2026-11-27T07:08:28+02:00",
      "affected_after_utc": null,
      "provider_arco_updated_at": "2026-11-27T02:22:52.970Z",
      "source_url": "https://data.marine.copernicus.eu/product/MEDSEA_ANALYSISFORECAST_WAV_006_017/description",
      "evidence": "provider catalogue metadata used by normal open_dataset",
      "meaning": "Provider update status, not proof of wrong values or a new model run; retrieval time is not model initialization time."
     },
-    "comparison_retrieved_at": "2026-11-27T04:11:19.201Z",
+    "comparison_retrieved_at": "2026-11-27T05:09:06.979Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 31.6875,
@@ -139308,7 +139308,7 @@
    "wave_provenance": {
     "primary": "copernicus_med",
     "primary_label": "Copernicus MED-WAV",
-    "retrieved_at": "2026-11-27T06:11:01+02:00",
+    "retrieved_at": "2026-11-27T07:08:28+02:00",
     "cell_lat": 31.645834,
     "cell_lon": 34.5,
     "dist_km": 3.7,
@@ -139326,7 +139326,7 @@
      "attribution": "Generated using E.U. Copernicus Marine Service Information",
      "provider_status": {
       "state": "not_updating",
-      "checked_at": "2026-11-27T06:11:01+02:00",
+      "checked_at": "2026-11-27T07:08:28+02:00",
       "affected_after_utc": null,
       "provider_arco_updated_at": "2026-11-27T02:22:52.970Z",
       "source_url": "https://data.marine.copernicus.eu/product/MEDSEA_ANALYSISFORECAST_WAV_006_017/description",
@@ -139336,14 +139336,14 @@
     },
     "copernicus_provider_status": {
      "state": "not_updating",
-     "checked_at": "2026-11-27T06:11:01+02:00",
+     "checked_at": "2026-11-27T07:08:28+02:00",
      "affected_after_utc": null,
      "provider_arco_updated_at": "2026-11-27T02:22:52.970Z",
      "source_url": "https://data.marine.copernicus.eu/product/MEDSEA_ANALYSISFORECAST_WAV_006_017/description",
      "evidence": "provider catalogue metadata used by normal open_dataset",
      "meaning": "Provider update status, not proof of wrong values or a new model run; retrieval time is not model initialization time."
     },
-    "comparison_retrieved_at": "2026-11-27T04:11:19.201Z",
+    "comparison_retrieved_at": "2026-11-27T05:09:06.979Z",
     "model_series": {
      "copernicus_med": {
       "cell_lat": 31.645834,
