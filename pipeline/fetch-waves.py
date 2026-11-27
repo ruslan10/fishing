@@ -3,7 +3,8 @@
 No shoreline transformation or cross-model averaging. Writes a fresh cache atomically;
 consumer rejects caches older than 3h. Source time is valid time, not model run time.
 """
-import json, os, sys, math
+import json, os, sys, math, logging
+from wave_provider_status import WaveStatusCapture
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -24,11 +25,31 @@ def main():
     now = datetime.now(TZ)
     start = datetime.combine(now.date(), datetime.min.time(), TZ).astimezone(timezone.utc)
     end = start + timedelta(days=7, hours=-1)
-    ds = cm.open_dataset(username=u, password=p, dataset_id=DATASET,
-        minimum_longitude=34.2, maximum_longitude=35.4,
-        minimum_latitude=31.3, maximum_latitude=33.3,
-        start_datetime=start.isoformat(), end_datetime=end.isoformat())
-    cube = ds[list(FIELDS.values())].load()
+    status_capture = WaveStatusCapture()
+    provider_logger = logging.getLogger("copernicusmarine")
+    provider_logger.addHandler(status_capture)
+    # Observe the exact catalogue response open_dataset already uses, no second fetch.
+    from copernicusmarine.core_functions import services_utils
+    original_metadata = services_utils.get_dataset_metadata
+    def capture_metadata(*args, **kwargs):
+        dataset = original_metadata(*args, **kwargs)
+        status_capture.observe_dataset(dataset)
+        return dataset
+    services_utils.get_dataset_metadata = capture_metadata
+    try:
+        ds = cm.open_dataset(username=u, password=p, dataset_id=DATASET,
+            minimum_longitude=34.2, maximum_longitude=35.4,
+            minimum_latitude=31.3, maximum_latitude=33.3,
+            start_datetime=start.isoformat(), end_datetime=end.isoformat())
+        cube = ds[list(FIELDS.values())].load()
+    finally:
+        services_utils.get_dataset_metadata = original_metadata
+        provider_logger.removeHandler(status_capture)
+    previous_status = None
+    try:
+        previous_status = json.loads((DATA/'wave-provider-status.json').read_text())
+    except (OSError, ValueError):
+        pass
     vals = cube.VHM0.values
     good = np.isfinite(vals).mean(axis=0) >= .9
     lon, lat = np.meshgrid(ds.longitude.values, ds.latitude.values)
@@ -42,7 +63,8 @@ def main():
         'period': 'VTM02: mean period Tm02, seconds; not peak period',
         'selection': 'nearest sea cell with >=90% valid fetched heights; great-circle distance',
         'time_note': 'hourly valid times; retrieval time is not an asserted model initialization time',
-        'attribution': 'Generated using E.U. Copernicus Marine Service Information'}, 'beaches': {}}
+        'attribution': 'Generated using E.U. Copernicus Marine Service Information',
+        'provider_status': status_capture.status(now.isoformat(timespec='seconds'), previous_status)}, 'beaches': {}}
     for b in json.loads((DATA/'beaches.json').read_text())['beaches']:
         # Haversine distances account for longitude contraction at Israeli latitudes.
         a = np.sin(np.radians(lat-b['lat'])/2)**2 + math.cos(math.radians(b['lat']))*np.cos(np.radians(lat))*np.sin(np.radians(lon-b['lon'])/2)**2
@@ -66,6 +88,9 @@ def main():
     temp = DATA/'copernicus-waves.json.tmp'
     temp.write_text(json.dumps(out,ensure_ascii=False,indent=1)+'\n')
     temp.replace(DATA/'copernicus-waves.json')
+    status_temp = DATA/'wave-provider-status.json.tmp'
+    status_temp.write_text(json.dumps(out['source']['provider_status'], indent=2)+'\n')
+    status_temp.replace(DATA/'wave-provider-status.json')
     print(f"Copernicus waves: {len(out['beaches'])} beaches, {len(times)} valid-time slots")
 
 if __name__ == '__main__':

@@ -218,6 +218,11 @@ async function main() {
 
   // Independent named wave models: no source averaging and no use as observations.
   const cpWaves = readFreshCache(fs, path.join(DATA,'copernicus-waves.json'));
+  let cpProviderStatus = cpWaves?.source?.provider_status??null;
+  try {
+    const saved=JSON.parse(fs.readFileSync(path.join(DATA,'wave-provider-status.json'),'utf8'));
+    if(!cpProviderStatus || Date.parse(saved.checked_at)>Date.parse(cpProviderStatus.checked_at)) cpProviderStatus=saved;
+  } catch {}
   const cross = {};
   for (const model of ['ecmwf_wam','ncep_gfswave025']) {
     try {
@@ -395,6 +400,7 @@ async function main() {
         retrieved_at:primary.id==='copernicus_med'?cpWaves.generated_at:nowUtc.toISOString(),
         cell_lat:primary.series.cell_lat,cell_lon:primary.series.cell_lon,dist_km:primary.series.dist_km??null,
         copernicus_source:cp?cpWaves.source:null,
+        copernicus_provider_status:cpProviderStatus,
         comparison_retrieved_at:nowUtc.toISOString(),
         model_series:modelSeries,
         field_sources:{wave_height:primary.id,wave_direction:primary.id,wave_period:primary.id==='copernicus_med'?'Copernicus VTM02 (Tm02)':'Open-Meteo mean period',swell:'Open-Meteo Marine best match',water_temperature:'Open-Meteo Marine best match',current:'Open-Meteo Marine best match',wind:'Open-Meteo Forecast',salinity:'Copernicus MEDSEA PHY'},
@@ -482,7 +488,8 @@ async function main() {
       wave_policy: {primary:'Copernicus MED-WAV if current first-day coverage passes availability gate, otherwise explicitly labeled Open-Meteo best match',
         comparison:['ecmwf_wam','ncep_gfswave025'],
         spread:'largest simultaneous hourly spread, never a calibrated confidence interval',
-        copernicus_retrieved_at:cpWaves?.generated_at??null},
+        copernicus_retrieved_at:cpWaves?.generated_at??null,
+        copernicus_provider_status:cpProviderStatus},
       tide_policy: {source:'The Tide Chart',model:'FES2022',acquisition:'monthly cached quotation; original retrieval time preserved',coverage:'11 matched named localities plus 8 explicitly labeled nearest-locality proxies, not exact shoreline measurements',missing_beaches:outBeaches.filter(b=>!b.days?.some(d=>d.tides?.available)).map(b=>b.id)},
       sources: [
         {name:'The Tide Chart tide predictions',url:'https://www.thetidechart.com/terms',license:'Prediction quotation with source-page backlink'},

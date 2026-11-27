@@ -46,7 +46,7 @@ jobs:
         run: |
           git config user.name "fishing-forecast-bot"
           git config user.email "fishing-forecast-bot@users.noreply.github.com"
-          git add data/issues data/latest.json data/archive-index.json data/change48 data/change48-latest.json data/tide-cache
+          git add data/wave-provider-status.json data/issues data/latest.json data/archive-index.json data/change48 data/change48-latest.json data/tide-cache
           if git diff --cached --quiet; then
             echo "No data changes"
             echo "changed=false" >> "$GITHUB_OUTPUT"
