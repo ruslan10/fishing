@@ -1,8 +1,9 @@
 {
-  "state": "updating",
-  "checked_at": "2026-11-27T04:07:27+02:00",
-  "affected_after_utc": "2026-11-26T00:00:00.000Z",
+  "state": "not_updating",
+  "checked_at": "2026-11-27T06:11:01+02:00",
+  "affected_after_utc": null,
+  "provider_arco_updated_at": "2026-11-27T02:22:52.970Z",
   "source_url": "https://data.marine.copernicus.eu/product/MEDSEA_ANALYSISFORECAST_WAV_006_017/description",
-  "evidence": "provider catalogue status emitted during successful normal open_dataset",
-  "meaning": "Provider update warning, not proof of wrong values; retrieval time is not model initialization time."
+  "evidence": "provider catalogue metadata used by normal open_dataset",
+  "meaning": "Provider update status, not proof of wrong values or a new model run; retrieval time is not model initialization time."
 }
